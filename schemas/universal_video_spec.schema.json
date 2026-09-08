@@ -1,9 +1,110 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"UniversalVideoSpec",
-  "type":"object",
-  "required":["spec_version","purpose","global","locks","stages","performance","camera","audio","success_conditions"],
-  "properties":{
-    "spec_version":{"type":"string"},"purpose":{"type":"string"},"global":{"type":"object"},"locks":{"type":"array","items":{"$ref":"reference_binding.schema.json"}},"initial_state":{"type":"object"},"stages":{"type":"array","items":{"type":"object","required":["primary_change","end_state"],"properties":{"duration_hint":{"type":["number","null"]},"primary_change":{"type":"string"},"end_state":{"type":"object"}}}},"performance":{"type":"object"},"camera":{"type":"object"},"audio":{"type":"object"},"negative_risks":{"type":"array","items":{"type":"string"}},"continuity_in":{"type":"object"},"continuity_out":{"type":"object"},"success_conditions":{"type":"array","items":{"type":"string"}}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UniversalVideoSpec",
+  "type": "object",
+  "required": ["spec_version", "purpose", "global", "locks", "time_granularity", "stages", "performance", "camera", "audio", "success_conditions"],
+  "properties": {
+    "spec_version": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "global": {
+      "type": "object",
+      "required": ["content_type", "scene", "premise", "camera_principle"],
+      "properties": {
+        "content_type": {"type": "string", "minLength": 1},
+        "scene": {"type": "string", "minLength": 1},
+        "style": {"type": ["string", "null"]},
+        "premise": {"type": "string", "minLength": 1},
+        "camera_principle": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "locks": {"type": "array", "items": {"$ref": "reference_binding.schema.json"}},
+    "initial_state": {
+      "type": "object",
+      "properties": {
+        "state_summary": {"type": ["string", "null"]},
+        "continuity_baton_id": {"type": ["string", "null"]},
+        "source_artifact_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "time_granularity": {"enum": ["NONE", "STAGES", "SECOND_LEVEL"]},
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage_id", "primary_change", "end_state"],
+        "properties": {
+          "stage_id": {"type": "string", "minLength": 1},
+          "duration_hint_seconds": {"type": ["number", "null"], "exclusiveMinimum": 0},
+          "primary_change": {"type": "string", "minLength": 1},
+          "end_state": {"type": "string", "minLength": 1},
+          "dialogue_ids": {"type": "array", "items": {"type": "string"}},
+          "critical_reference_binding_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "performance": {
+      "type": "object",
+      "required": ["primary_action", "acting_intent", "blocking"],
+      "properties": {
+        "primary_action": {"type": "string", "minLength": 1},
+        "acting_intent": {"type": "string", "minLength": 1},
+        "subtext": {"type": ["string", "null"]},
+        "blocking": {"type": "string", "minLength": 1},
+        "eyelines": {"type": "array", "items": {"type": "string"}},
+        "body_state": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "required": ["framing", "movement", "composition"],
+      "properties": {
+        "framing": {"type": "string", "minLength": 1},
+        "movement": {"type": "string", "minLength": 1},
+        "composition": {"type": "string", "minLength": 1},
+        "lens_feel": {"type": ["string", "null"]},
+        "camera_height": {"type": ["string", "null"]},
+        "continuity_direction": {"type": ["string", "null"]},
+        "start_framing": {"type": ["string", "null"]},
+        "end_framing": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "audio": {
+      "type": "object",
+      "required": ["route", "dialogue", "ambience", "sfx", "music"],
+      "properties": {
+        "route": {"enum": ["NATIVE", "POST", "HYBRID", "NONE"]},
+        "dialogue": {"type": "array", "items": {"type": "string"}},
+        "ambience": {"type": "array", "items": {"type": "string"}},
+        "sfx": {"type": "array", "items": {"type": "string"}},
+        "music": {"type": "array", "items": {"type": "string"}},
+        "voice_profile_ids": {"type": "array", "items": {"type": "string"}},
+        "audio_reference_binding_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "negative_risks": {"type": "array", "items": {"type": "string"}},
+    "continuity_in": {
+      "type": "object",
+      "properties": {
+        "baton_id": {"type": ["string", "null"]},
+        "required_start_state": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "continuity_out": {
+      "type": "object",
+      "properties": {
+        "required_end_state": {"type": ["string", "null"]},
+        "next_dependency_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "success_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
 }
