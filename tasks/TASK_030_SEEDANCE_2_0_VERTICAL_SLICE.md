@@ -4,7 +4,10 @@
 Connect one **real** Seedance provider through canonical planning/compiler/job/spend/QA/revision/finalization flow.
 
 ## Mandatory prerequisites
-TASK-019..029 plus **TASK-032 Durable Jobs and TASK-033 SpendAuthorization/PaidAttemptGuard must be implemented before the first billable Seedance submission**. Do not bypass this dependency because task number 030 is lower.
+TASK-019..029 (using the canonical non-numeric order that places TASK-024 after TASK-028) plus **TASK-032 Durable Jobs and TASK-033 SpendAuthorization/PaidAttemptGuard must be implemented before the first billable Seedance submission**.
+
+## Exposure restriction
+This phase uses controlled internal/staging test projects and approved test assets. Do **not** expose arbitrary public/commercial user traffic merely because a paid provider path works. Public beta requires TASK-042 rights/security/privacy/operations and TASK-043 release gate.
 
 ## Read first
 - `spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md`
@@ -22,7 +25,7 @@ TASK-019..029 plus **TASK-032 Durable Jobs and TASK-033 SpendAuthorization/PaidA
 - durable upstream task identity and restart-safe polling;
 - cost estimate + SpendAuthorization before submit;
 - ambiguous timeout enters reconciliation, never duplicate submit;
-- GS01 and GS03 real smoke path;
+- GS01 and GS03 controlled real smoke path;
 - QA-triggered automatic paid regeneration impossible;
 - accepted output can seed dependent next shot.
 

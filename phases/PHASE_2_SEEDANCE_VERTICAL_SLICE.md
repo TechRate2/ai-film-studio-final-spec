@@ -4,9 +4,12 @@
 Prove one real end-to-end production route, not merely a successful provider API call.
 
 ## Mandatory order
-Production planning (019–029) → Durable Jobs (032) → SpendAuthorization/PaidAttemptGuard (033) → real Seedance (030) → QA/revision/versioning/finalization (034–037) → Probe/Benchmark evidence (031).
+Production planning 019–023 → 025–029 → 024 (after ImageProvider port) → Durable Jobs 032 → SpendAuthorization/PaidAttemptGuard 033 → real Seedance 030 → QA/revision/versioning/finalization 034–037 → Probe/Benchmark evidence 031.
 
 **No production billable Seedance submission is allowed before TASK-032 and TASK-033 pass.**
+
+## Exposure restriction
+Use controlled internal/staging projects and approved test assets. This phase does not authorize public/commercial beta traffic. TASK-042 + TASK-043 are required before arbitrary user production is considered release-ready.
 
 ## Required demonstrations
 1. 30s UGC/product: references grouped, selective/internal-or-none keyframe path, cost authorization, real generation, QA, preview and final master.

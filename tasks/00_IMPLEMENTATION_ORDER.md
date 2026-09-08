@@ -1,6 +1,6 @@
 # Canonical Implementation Order V4.2
 
-Task numbers are stable identifiers, **not permission to execute in numeric order when a safety dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
+Task numbers are stable identifiers, **not permission to execute in numeric order when a dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
 
 ## Phase 0 — Contract & reality
 001 Repository Reality Audit  
@@ -33,19 +33,19 @@ Exit: `phases/PHASE_1_BRAIN_PROOF.md`.
 021 Continuity Dependency Scheduler  
 022 Continuity Baton  
 023 Selective Keyframe Controller  
-024 Keyframe Source Workflows: internal/external/user/previous/none  
 025 UniversalVideoSpec  
 026 Model Profiles/Effective Capability Resolver  
 027 Model Prompt Compilers  
 028 Provider Ports/Profiles/Adapters  
-029 Degrade Planner
+029 Degrade Planner  
+024 Keyframe Source Workflows — executes here so AUTO_INTERNAL can use the ImageProvider port created by TASK-028; External/User/Previous/None remain provider-independent routes.
 
 ### 2B — Mandatory paid-safety prerequisites **before first real billable video call**
 032 Durable Jobs  
 033 Cost + SpendAuthorization + PaidAttemptGuard
 
 ### 2C — Real first provider
-030 Seedance 2.0 Vertical Slice
+030 Seedance 2.0 Vertical Slice — controlled internal/staging smoke only until commercial security/rights gate passes.
 
 ### 2D — Review/repair/finalization required for a true vertical slice
 034 Media QA/Diagnosis  

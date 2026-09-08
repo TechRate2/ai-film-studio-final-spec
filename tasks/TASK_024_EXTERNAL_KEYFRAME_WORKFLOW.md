@@ -3,6 +3,9 @@
 ## Goal
 Implement every canonical KeyframeSourceRouter route while keeping keyframe generation selective.
 
+## Execution dependency
+The source-routing/domain/UI contract may be designed earlier, but **full task acceptance for `AUTO_INTERNAL` requires TASK-028 ImageProvider port/adapter boundary to exist**. Canonical implementation order therefore executes TASK-024 after TASK-028.
+
 ## Read first
 - `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md`
 - `spec/20_CHAT_FIRST_WORKSPACE_UX.md`
@@ -11,7 +14,7 @@ Implement every canonical KeyframeSourceRouter route while keeping keyframe gene
 - `schemas/keyframe_generation_pack.schema.json`
 
 ## Acceptance criteria
-- `AUTO_INTERNAL` calls a real/replaceable ImageProvider only after cost policy/authorization when billable;
+- `AUTO_INTERNAL` calls a real/replaceable ImageProvider through the provider port only after cost policy/authorization when billable;
 - `EXTERNAL_ASSISTED` emits copy-ready prompt + exact reference pack + constraints and incurs no internal image generation cost;
 - `USER_SUPPLIED` validates imported asset;
 - `PREVIOUS_ACCEPTED_FRAME` can reuse the continuity anchor without new image generation;
