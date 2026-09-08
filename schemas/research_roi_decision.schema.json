@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ResearchROIDecision","type":"object",
+  "required":["decision_id","action","factors","reason"],
+  "properties":{"decision_id":{"type":"string"},"action":{"enum":["SKIP","USE_CACHE","SEARCH","PROBE","BLOCK_FOR_EVIDENCE"]},"factors":{"type":"object"},"reason":{"type":"string"},"max_cost":{"type":["number","null"],"minimum":0},"max_latency_seconds":{"type":["number","null"],"minimum":0},"stop_condition":{"type":["string","null"]}}
+}

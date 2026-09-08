@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"AssetIngestionRecord","type":"object",
+  "required":["ingestion_id","project_id","state","source_type","content_hash"],
+  "properties":{"ingestion_id":{"type":"string"},"project_id":{"type":"string"},"state":{"enum":["UPLOADING","RECEIVED","VALIDATING","PROCESSING","READY","FAILED","QUARANTINED","NEEDS_USER_ACTION"]},"source_type":{"enum":["USER_UPLOAD","EXTERNAL_GENERATED","CONNECTED_SOURCE","INTERNAL_GENERATED"]},"content_hash":{"type":"string"},"mime_type":{"type":["string","null"]},"media_metadata":{"type":"object"},"source_provenance":{"type":"object"},"derived_artifact_ids":{"type":"array","items":{"type":"string"}},"failure":{"type":["object","null"]}}
+}

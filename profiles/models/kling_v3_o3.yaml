@@ -1,0 +1,16 @@
+model_id: kling-v3-o3-family
+verification_status: PARTIAL
+last_verified_at: null
+scope_note: "Placeholder knowledge family from historical public/provider snapshots; exact V3/O3 endpoints/capabilities must be separated by model/provider during integration."
+capabilities:
+  duration_seconds: "historical snapshot suggested up to 15s for some routes; VERIFY"
+  native_audio: "historical snapshot suggested available on some routes; VERIFY"
+  reference_to_video: "provider/model dependent; VERIFY"
+behavior:
+  preferred_timing_granularity: UNKNOWN
+known_failures: []
+compile_notes:
+  - split exact model profiles after probes
+  - do not merge video-edit and generation behavior
+sources:
+  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md

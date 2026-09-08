@@ -1,16 +1,24 @@
-# Phase 2 — Seedance Vertical Slice
+# Phase 2 — Safe Seedance Vertical Slice
 
 ## Goal
-Prove the complete real production loop with one Seedance route before adding provider breadth.
+Prove one real end-to-end production route, not merely a successful provider API call.
 
-## Required path
-Input → reference/research → CreativeStrategy/story/directing → ProductionStrategy/GenerationPlan → continuity/keyframe strategy → UniversalVideoSpec → Seedance profile/compiler → provider adapter → cost/approval → real paid attempt → QA → user revision/version → voice/edit/export.
+## Mandatory order
+Production planning (019–029) → Durable Jobs (032) → SpendAuthorization/PaidAttemptGuard (033) → real Seedance (030) → QA/revision/versioning/finalization (034–037) → Probe/Benchmark evidence (031).
+
+**No production billable Seedance submission is allowed before TASK-032 and TASK-033 pass.**
 
 ## Required demonstrations
-- approximately 30s UGC/product scenario;
-- approximately 60s xianxia/drama with dependent continuity;
-- external keyframe path;
-- at least one shot-level contextual revision.
+1. 30s UGC/product: references grouped, selective/internal-or-none keyframe path, cost authorization, real generation, QA, preview and final master.
+2. 60s xianxia: multiple dependent segments, previous accepted output continuity, dialogue/audio route, contextual revision of one shot/version without blind downstream regeneration.
+3. External keyframe path with zero internal image cost.
+4. Controlled post-voice path through real VoiceProvider or production-supported adapter.
 
 ## Exit gate
-No production mock fallback; attempt provenance/cost stored; revision preserves original; no blind paid retry; dependent shots respect acceptance dependencies.
+- durable restart-safe jobs and upstream IDs;
+- no duplicate submit on timeout/unknown;
+- user Create authorizes planned first attempts under cap;
+- no QA-triggered paid retry;
+- one shot can be revised as a new version and continuity re-evaluated;
+- deterministic CompositionTimeline and FinalMaster QA/export;
+- measured Seedance profile/probe evidence stored with date/provider/version.

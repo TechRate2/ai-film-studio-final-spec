@@ -1,16 +1,25 @@
-# Security, Privacy and Provenance
+# Security, Privacy, Rights and Provenance
 
 ## Secrets
-API keys never stored in prompts/chat logs. Encrypt provider credentials at rest and separate credentials from project content.
+API keys never stored in prompts/chat logs. Encrypt/protect provider credentials and separate credentials from project content.
+
+## Tenant/project access
+Authenticate users and authorize project/artifact/job/media operations. Worker/provider URLs are scoped/signed; knowledge of an object URL must not grant permanent access.
 
 ## Media
-Private object storage by default. Use signed/temporary URLs where needed. Record imported vs generated provenance.
+Private object storage by default. Store source/imported/generated provenance, content hash and ownership/project scope.
+
+## Provider callbacks
+Verify callback/webhook signatures/tokens where supported, reject replay/duplicate mutation through idempotency and never trust callback project identifiers without matching persisted upstream task ownership.
 
 ## Source provenance
-For current/news/competitor research store source identifier, retrieved/verified time, confidence, claim links and licensing/rights metadata where relevant.
+For current/news/competitor/product research store source identifier, retrieved/verified time, confidence, claim links and licensing/rights metadata where relevant.
 
-## Production
-Authenticated project access, authorization checks on media/tasks, audit log for paid generation/destructive actions and backup/migration strategy for canon/media.
+## Identity/voice and rights
+Support provenance/consent state for real-person face/voice conditioning according to product policy. Track copyright/brand/music usage metadata relevant to commercial export. Provider rejection is not a signal to secretly bypass policy through another provider.
 
-## External content
-Do not copy protected characters/worlds or expressive content simply because a reference was supplied. Reference analysis extracts transferable mechanisms.
+## Data lifecycle
+Define retention and deletion for projects, source assets, derived media, credentials and research caches. Deletion requests propagate according to ownership/policy while preserving only required security/billing/audit records.
+
+## Audit/backup
+Audit paid attempts, destructive actions and material safety decisions. Maintain tested backup/restore and migration strategy for canon/project/media metadata.

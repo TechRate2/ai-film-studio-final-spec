@@ -1,0 +1,17 @@
+model_id: example-voice-model
+modality: voice
+verification_status: UNVERIFIED
+last_verified_at: null
+capabilities:
+  languages: UNKNOWN
+  reference_audio: UNKNOWN
+  voice_clone: UNKNOWN
+  pronunciation_control: UNKNOWN
+  streaming: UNKNOWN
+policy:
+  consent_requirements: UNKNOWN
+behavior:
+  emotion_control: UNKNOWN
+  timing_stability: UNKNOWN
+known_failures: []
+sources: []

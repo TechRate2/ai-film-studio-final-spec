@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"DecisionRecord","type":"object",
+  "required":["decision_id","decision_type","selected","reason","inputs"],
+  "properties":{"decision_id":{"type":"string"},"decision_type":{"type":"string"},"selected":{},"alternatives":{"type":"array","items":{}},"reason":{"type":"string"},"inputs":{"type":"object"},"evidence_ids":{"type":"array","items":{"type":"string"}},"profile_versions":{"type":"object"},"created_at":{"type":"string"}}
+}

@@ -1,0 +1,15 @@
+model_id: veo-3.1
+verification_status: PARTIAL
+last_verified_at: null
+scope_note: "Historical public/provider snapshot only; current exposure, duration, resolution and audio behavior must be live-verified during Phase 5."
+capabilities:
+  duration_seconds: "historical snapshot suggested fixed short durations; VERIFY"
+  high_resolution: "historical provider exposure included high-resolution tiers; VERIFY"
+  native_audio: "historical snapshot suggested yes; VERIFY"
+behavior:
+  preferred_timing_granularity: UNKNOWN
+known_failures: []
+compile_notes:
+  - probe reference/timing/audio separately for exact provider
+sources:
+  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md

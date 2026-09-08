@@ -1,6 +1,6 @@
-# Canonical Implementation Order V4.1
+# Canonical Implementation Order V4.2
 
-Do not execute the whole project as one autonomous coding run. Phase exit gates in `/phases` are binding.
+Task numbers are stable identifiers, **not permission to execute in numeric order when a safety dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
 
 ## Phase 0 — Contract & reality
 001 Repository Reality Audit  
@@ -10,46 +10,56 @@ Do not execute the whole project as one autonomous coding run. Phase exit gates 
 003 Project domain persistence  
 004 Artifact versioning/currency/dependencies  
 005 Chat-first workspace  
-006 Generalist Director runtime  
+006 Generalist Director runtime **behind provider-neutral LLM/tool ports from day one**  
 007 Scope/Content Intelligence  
-008 Reference Analyzer  
+008 Reference Analyzer + ingestion integration  
 009 Entity grouping/locks/lifetimes  
 010 Dynamic Skill Registry  
-011 Adaptive Research Controller  
-012 EvidencePack/freshness  
-013 Creative Strategy/Retention  
+011 Adaptive Research Controller + ROI decision  
+012 EvidencePack/freshness + CreativeEvidenceGraph  
+013 Creative Strategy/Retention + StyleDNA/grammar integration  
 014 Story hierarchy  
 015 Character/Relationship/Knowledge  
-016 Project Canon/Episode Memory  
+016 Project Canon/Episode Memory + ActiveContextPack  
 017 Dialogue/Voice/Localization  
 018 Performance/Camera/Audio/Editorial
 
 Exit: `phases/PHASE_1_BRAIN_PROOF.md`.
 
-## Phase 2 — Production planning + Seedance vertical slice
+## Phase 2 — Safe real Seedance vertical slice
+### 2A — Provider-neutral production planning
 019 Production Strategy Engine  
 020 Scene Complexity Planner  
 021 Continuity Dependency Scheduler  
 022 Continuity Baton  
 023 Selective Keyframe Controller  
-024 External Keyframe Workflow  
+024 Keyframe Source Workflows: internal/external/user/previous/none  
 025 UniversalVideoSpec  
-026 Model Profiles/Capability Resolver  
+026 Model Profiles/Effective Capability Resolver  
 027 Model Prompt Compilers  
-028 Provider Profiles/Adapters  
-029 Degrade Planner  
-030 Seedance 2.0 Vertical Slice  
-031 Probe/Benchmark Harness
+028 Provider Ports/Profiles/Adapters  
+029 Degrade Planner
 
-Exit: `phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md`.
-
-## Phase 3 — Paid execution hardening/review
+### 2B — Mandatory paid-safety prerequisites **before first real billable video call**
 032 Durable Jobs  
-033 Cost + PaidAttemptGuard  
+033 Cost + SpendAuthorization + PaidAttemptGuard
+
+### 2C — Real first provider
+030 Seedance 2.0 Vertical Slice
+
+### 2D — Review/repair/finalization required for a true vertical slice
 034 Media QA/Diagnosis  
 035 Contextual Shot Revision  
 036 Shot Version Graph + Continuity Sandwich  
-037 Voice/Subtitle/Music Assembly
+037 Voice/Subtitle/Music + CompositionTimeline + FinalMaster QA
+
+### 2E — Evidence
+031 Probe/Benchmark Harness
+
+Exit only when `phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md` passes. A paid render alone is not a vertical slice.
+
+## Phase 3 — Production hardening gate
+Re-run failure injection against 032–037: restart, timeout, ambiguous submit, cancel, provider outage, stale/revert and spend-cap cases. No new feature count is implied; this phase proves production safety.
 
 Exit: `phases/PHASE_3_PRODUCTION_HARDENING.md`.
 
@@ -61,8 +71,13 @@ Exit: `phases/PHASE_3_PRODUCTION_HARDENING.md`.
 
 Exit: `phases/PHASE_4_LONG_FORM_SERIES.md`.
 
-## Phase 5/6 — Operations and release
-042 Security/Backup/Observability  
+## Phase 5 — Multi-provider expansion
+Use `tasks/PROVIDER_EXPANSION_TEMPLATE.md` for each Wan/Vidu/Kling/Veo/future model/provider. Do not rewrite Director. Expansion starts only after Seedance vertical-slice evidence.
+
+Exit: `phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md`.
+
+## Phase 6 — Commercial beta
+042 Security/Privacy/Rights/Backup/Observability  
 043 Beta Release Gate
 
-Provider expansion is governed by Phase 5 and happens only after Seedance vertical slice evidence. Beta release follows Phase 6.
+Exit: `phases/PHASE_6_BETA_RELEASE.md`.

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"SpendAuthorization","type":"object",
+  "required":["authorization_id","project_id","status","hard_cap","allowed_attempts"],
+  "properties":{"authorization_id":{"type":"string"},"project_id":{"type":"string"},"run_id":{"type":"string"},"status":{"enum":["DRAFT","AUTHORIZED","EXHAUSTED","CANCELLED","EXPIRED"]},"hard_cap":{"type":"number","minimum":0},"estimated_total":{"type":"number","minimum":0},"allowed_attempts":{"type":"array","items":{"type":"object","required":["logical_attempt_id","modality","candidate_count"],"properties":{"logical_attempt_id":{"type":"string"},"artifact_or_scope_id":{"type":"string"},"modality":{"type":"string"},"provider_policy":{"type":"object"},"candidate_count":{"type":"integer","minimum":1},"max_cost":{"type":"number","minimum":0}}}},"consumed_cost":{"type":"number","minimum":0},"created_by_user_action":{"type":"string"},"expires_at":{"type":["string","null"]}}
+}

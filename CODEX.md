@@ -1,7 +1,7 @@
 # CODEX.md
 
-Codex must follow `AGENTS.md`, `SPEC_LOCK` and `governance/AI_CODING_PROTOCOL.md`.
+Codex follows `AGENTS.md`, `spec/00_SPEC_LOCK.md`, `governance/AI_CODING_PROTOCOL.md` and the active numbered task packet.
 
-Canonical loop: `REALITY → GAP MAP → PLAN → IMPLEMENT VERTICALLY → TEST → GOLDEN → SPEC AUDIT → TRACEABILITY → COMMIT`.
+Workflow: `REPOSITORY REALITY → GAP MAP → PLAN → IMPLEMENT → TEST → GOLDEN → SPEC AUDIT → TRACEABILITY → REPORT`.
 
-Do not use a long open-ended “pursue the entire project” run as a substitute for task packets. Do not implement provider breadth before the Seedance vertical slice is proven. Do not silently change canonical behavior, submit paid retries, overwrite versions or bypass dependency/cost guards.
+Do not run an open-ended whole-project pursuit. Respect safety prerequisites even when task numbers are non-sequential: TASK-032 and TASK-033 precede any real billable TASK-030 Seedance smoke. Provider/model expansion uses the non-numbered expansion/probe templates and must not rewrite Director.

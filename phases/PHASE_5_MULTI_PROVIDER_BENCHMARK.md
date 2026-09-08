@@ -4,12 +4,14 @@
 Add Wan/Vidu/Kling/Veo/future engines without rewriting the Director.
 
 ## Integration rule
-Every addition goes through ModelProfile + compiler + ProviderProfile + adapter + probes + benchmark evidence.
+Each addition uses `tasks/PROVIDER_EXPANSION_TEMPLATE.md`: ModelProfile + compiler when needed + ProviderProfile + adapter + EffectiveCapability + probes + benchmark evidence + cost semantics.
 
-## Exit gate
-- provider switch golden scenario passes;
-- routing uses measured scenario quality/reliability/cost rather than marketing names;
+Initial non-Seedance profiles may be PARTIAL/UNVERIFIED placeholders; they are not routable as measured production truth until provider-specific probes are completed.
+
+## Exit gate per integration
+- provider-switch/effective-capability golden scenarios pass;
 - same model through different providers can expose different API capabilities;
 - unknown capability remains explicit;
-- `cost_per_accepted_second` can influence routing;
+- fallback obeys paid-state certainty/SpendAuthorization;
+- routing uses measured scenario quality/reliability/latency/cost_per_accepted_second rather than marketing names;
 - no new provider-specific branch appears in creative/story logic.

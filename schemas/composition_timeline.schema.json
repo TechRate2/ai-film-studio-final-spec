@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"CompositionTimeline","type":"object",
+  "required":["timeline_id","project_id","video_tracks","audio_tracks","export_target"],
+  "properties":{"timeline_id":{"type":"string"},"project_id":{"type":"string"},"video_tracks":{"type":"array","items":{"type":"object"}},"audio_tracks":{"type":"array","items":{"type":"object"}},"subtitle_tracks":{"type":"array","items":{"type":"object"}},"graphics_tracks":{"type":"array","items":{"type":"object"}},"transitions":{"type":"array","items":{"type":"object"}},"export_target":{"type":"object"},"source_artifact_versions":{"type":"array","items":{"type":"string"}},"compiler_version":{"type":"string"}}
+}

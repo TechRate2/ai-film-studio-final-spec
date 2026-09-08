@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ActiveContextPack","type":"object",
+  "required":["project_id","scope","active_entity_ids","canon_fact_ids","source_versions"],
+  "properties":{"project_id":{"type":"string"},"episode_id":{"type":["string","null"]},"scene_id":{"type":["string","null"]},"shot_id":{"type":["string","null"]},"scope":{"enum":["PROJECT","EPISODE","SCENE","SHOT"]},"active_entity_ids":{"type":"array","items":{"type":"string"}},"canon_fact_ids":{"type":"array","items":{"type":"string"}},"relationship_edge_ids":{"type":"array","items":{"type":"string"}},"knowledge_state_refs":{"type":"array","items":{"type":"string"}},"reference_binding_ids":{"type":"array","items":{"type":"string"}},"recent_state_summary":{"type":["string","null"]},"unresolved_thread_ids":{"type":"array","items":{"type":"string"}},"source_versions":{"type":"object"},"token_budget":{"type":["integer","null"],"minimum":1}}
+}

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"CostEstimate","type":"object",
+  "required":["estimate_id","scope_id","currency_unit","components","total_estimate"],
+  "properties":{"estimate_id":{"type":"string"},"scope_id":{"type":"string"},"currency_unit":{"type":"string"},"components":{"type":"array","items":{"type":"object","required":["category","estimated_cost"],"properties":{"category":{"enum":["RESEARCH","LLM","IMAGE","VIDEO","VOICE","EDIT_COMPUTE","STORAGE_BANDWIDTH","OTHER"]},"provider":{"type":["string","null"]},"model":{"type":["string","null"]},"estimated_cost":{"type":"number","minimum":0},"quantity":{"type":["number","null"]}}}},"total_estimate":{"type":"number","minimum":0},"hard_cap":{"type":["number","null"],"minimum":0},"assumptions":{"type":"array","items":{"type":"string"}},"expires_at":{"type":["string","null"]}}
+}

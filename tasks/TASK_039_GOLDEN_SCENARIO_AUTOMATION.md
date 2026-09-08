@@ -1,30 +1,17 @@
 # TASK-039 — Golden Scenario Automation
 
 ## Goal
-Automate behavioral acceptance with fixtures and optional paid smoke tests.
+Turn canonical behavioral scenarios into regression gates that prevent future Codex/Claude/provider changes from violating product semantics.
 
 ## Read first
 - `evals/GOLDEN_SCENARIOS.md`
-
-## Implementation contract
-- Inspect repository reality for this capability before editing.
-- Preserve `spec/00_SPEC_LOCK.md`.
-- Implement vertically when persistence/API/UI are implicated.
-- Do not broaden scope to unrelated future architecture.
-- Add typed contracts/migrations where required.
-- Add structured errors, provenance and observability.
-- Update traceability.
+- `spec/34_TEST_AND_EVAL_STRATEGY.md`
+- `spec/45_END_TO_END_WORKFLOW_STATE_MACHINES.md`
 
 ## Acceptance criteria
-- Non-paid scenarios CI-capable
-- Paid tests explicitly gated
-- Regression report readable
-
-## Required report
-- Current reality before this task
-- Files changed
-- State/schema/API/UI changes
-- Tests added and results
-- Golden scenarios affected
-- Remaining gaps
-- Real-provider benchmark risk, if any
+- all non-paid deterministic scenarios runnable in CI with fixtures/test doubles only in test environment;
+- paid/provider smoke tests explicitly opted in and capped;
+- core invariants (no silent paid retry, dependent sequencing, version preservation, scoped context, capability resolution, artifact currency) have deterministic assertions;
+- Smart Auto internal keyframe, controlled voice, asset-ingestion failure, final-master QA, provider fallback certainty and accepted-version revert scenarios covered;
+- test report maps failures to requirement IDs;
+- production code cannot substitute test fake media fallback.

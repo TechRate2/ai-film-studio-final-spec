@@ -1,30 +1,20 @@
-# TASK-013 — Creative Strategy and Retention
+# TASK-013 — Creative Strategy, Retention and Style/Grammar
 
 ## Goal
-Implement provider-neutral CreativeStrategy and Audience Brain.
+Produce provider-neutral CreativeStrategy informed by audience, evidence, StyleDNA and only relevant grammar layers.
 
 ## Read first
 - `spec/05_CREATIVE_STORY_RETENTION.md`
-
-## Implementation contract
-- Inspect repository reality for this capability before editing.
-- Preserve `spec/00_SPEC_LOCK.md`.
-- Implement vertically when persistence/API/UI are implicated.
-- Do not broaden scope to unrelated future architecture.
-- Add typed contracts/migrations where required.
-- Add structured errors, provenance and observability.
-- Update traceability.
+- `spec/39_STYLE_DNA_AND_GRAMMAR_LAYERS.md`
+- `schemas/creative_strategy.schema.json`
+- `schemas/style_dna.schema.json`
+- `schemas/user_taste_profile.schema.json`
 
 ## Acceptance criteria
-- Different niches yield materially different mechanisms
-- No universal fast-cut rule
-- Creative critic before paid media
-
-## Required report
-- Current reality before this task
-- Files changed
-- State/schema/API/UI changes
-- Tests added and results
-- Golden scenarios affected
-- Remaining gaps
-- Real-provider benchmark risk, if any
+- different niches/platforms produce materially different mechanisms without niche-hardcoded pipeline branches;
+- StyleDNA extracts transferable mechanisms and do-not-copy elements;
+- Genre/Platform/Brand/UserTaste layers have explicit conflict precedence;
+- retention does not force fast cuts universally;
+- Creative Critic runs before paid media;
+- user hard constraints/canon/product truth outrank style/taste heuristics;
+- decision provenance available for major trade-offs.

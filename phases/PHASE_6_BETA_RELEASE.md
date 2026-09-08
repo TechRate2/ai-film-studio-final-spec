@@ -1,15 +1,16 @@
-# Phase 6 — Beta Release Gate
+# Phase 6 — Commercial Beta Release
 
 ## Goal
-Release only after behavioral, production, cost and operational contracts are demonstrated.
+Release only when canonical behavior, paid safety, user data/rights and operational recovery are demonstrably correct.
 
 ## Exit gate
-- all applicable golden scenarios pass;
-- real-provider smoke/benchmark suite documents current limitations;
-- no CRITICAL SPEC_LOCK violation;
-- security/authorization/secrets checks pass;
-- backup/restore verified;
-- observability and paid-attempt audit operational;
-- cost reporting and spend controls verified;
-- known limitations published honestly;
-- traceability has implementation/test refs for release-critical requirements.
+- all 25 golden scenarios pass at required deterministic/real-provider levels;
+- critical traceability requirements have implementation + test refs;
+- real Seedance end-to-end benchmark dates/providers documented;
+- no unresolved critical SPEC_LOCK violation;
+- backup restore and project/media deletion tested;
+- provider callback/auth/security controls tested where used;
+- identity/voice consent and source-rights handling represented;
+- global/provider/user/project spend controls and paid queue kill switch tested;
+- known model/provider limitations are explicit;
+- no fake/demo production fallback.

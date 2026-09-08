@@ -1,30 +1,17 @@
 # TASK-023 — Selective Keyframe Controller
 
 ## Goal
-Decide whether a keyframe is justified.
+Decide whether a visual anchor is worth its cost/risk and emit a source-neutral keyframe need, not automatically generate an image.
 
 ## Read first
 - `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md`
-
-## Implementation contract
-- Inspect repository reality for this capability before editing.
-- Preserve `spec/00_SPEC_LOCK.md`.
-- Implement vertically when persistence/API/UI are implicated.
-- Do not broaden scope to unrelated future architecture.
-- Add typed contracts/migrations where required.
-- Add structured errors, provenance and observability.
-- Update traceability.
+- `spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md`
 
 ## Acceptance criteria
-- Keyframe not mandatory
-- Risk/cost drives decision
-- Previous frame may satisfy need
-
-## Required report
-- Current reality before this task
-- Files changed
-- State/schema/API/UI changes
-- Tests added and results
-- Golden scenarios affected
-- Remaining gaps
-- Real-provider benchmark risk, if any
+- keyframe is never mandatory per shot/segment;
+- decision considers identity/product/new-state/composition/action risk, previous accepted frame availability, provider capability, video-failure cost and image cost;
+- previous accepted frame may satisfy the need;
+- NONE is first-class;
+- decision does not itself call ImageProvider;
+- source choice is handed to KeyframeSourceRouter/workflow;
+- GS14 no-keyframe path passes.

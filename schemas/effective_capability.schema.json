@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"EffectiveCapability","type":"object",
+  "required":["capability","status","model_status","provider_status","resolution"],
+  "properties":{"capability":{"type":"string"},"status":{"enum":["SUPPORTED","UNSUPPORTED","UNKNOWN","DEGRADED"]},"model_status":{"type":"object"},"provider_status":{"type":"object"},"account_entitlement":{"type":"object"},"product_policy":{"type":"object"},"project_policy":{"type":"object"},"resolution":{"type":"string"},"degrade_decision_id":{"type":["string","null"]}}
+}

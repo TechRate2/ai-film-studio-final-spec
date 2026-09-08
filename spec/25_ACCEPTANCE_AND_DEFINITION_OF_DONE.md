@@ -1,20 +1,37 @@
 # Acceptance and Definition of Done
 
 ## Feature Definition of Done
-Applicable items must be complete: persistent state/schema, migrations, service/domain logic, API contract, required UI path, actionable errors, provenance/cost, logs/metrics, unit tests, integration tests, affected golden scenarios, traceability, no production TODO/mock fallback and docs.
+A feature is complete only when applicable:
+- persistent state/schema + migration implemented;
+- domain/service logic complete;
+- API/event contract complete;
+- required chat-first UI path complete;
+- authorization/error states actionable;
+- provenance/cost/DecisionRecords captured where material;
+- structured logs/metrics added;
+- unit/integration/contract tests pass;
+- affected Golden Scenarios pass;
+- traceability implementation/test refs populated;
+- no production TODO/mock fallback bypasses canonical safety/cost/continuity behavior;
+- docs/profile evidence updated.
+
+`PARTIAL` is not DONE. A task may be BLOCKED on real-provider evidence instead of pretending success.
 
 ## Release gates
 ### Gate A — Brain Proof
-Ten diverse scenarios produce materially different and credible strategies before expensive media generation.
+Diverse scenarios produce materially different credible strategies using provider-neutral Director ports, evidence/scoped context and no expensive-video dependency.
 
-### Gate B — Seedance Vertical Slice
-Real end-to-end: input → research → refs → plan → compile → Seedance → QA → revision → edit/export.
+### Gate B — Safe Seedance Vertical Slice
+Real end-to-end: input/ingestion → research/refs/creative plan → production plan → Durable Jobs + SpendAuthorization → UniversalVideoSpec/compiler/provider → real generation → QA → contextual revision/versioning → continuity → voice/audio → CompositionTimeline → FinalMaster QA/export.
 
-### Gate C — Long-form/Series
-Multi-character episode continuation preserves canon, voices and continuity state.
+### Gate C — Production Hardening
+Restart/timeout/cancel/outage/callback/stale/revert/spend-cap failure injection does not duplicate paid attempts or corrupt state.
 
-### Gate D — Cost/Failure Safety
-No duplicate paid submission on recoverable/uncertain upstream states; spend caps enforced.
+### Gate D — Long-form/Series
+Multi-character episode continuation preserves canon, Character Knowledge/relationships, voices, scoped context and accepted continuity.
 
-### Gate E — Beta
-Golden scenarios pass, provider failure modes are surfaced, and backup/observability/security are production-ready.
+### Gate E — Multi-provider
+New providers/models integrate through profiles/compilers/adapters/probes/EffectiveCapability without Director rewrite.
+
+### Gate F — Commercial Beta
+All critical traceability requirements have implementation + test evidence; Golden Scenarios pass at their required deterministic/paid levels; rights/privacy/deletion/backup/restore/observability/spend controls are proven; known model/provider limitations are published.

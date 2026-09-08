@@ -1,0 +1,16 @@
+model_id: vidu-q3-pro
+verification_status: PARTIAL
+last_verified_at: null
+scope_note: "Historical public/provider snapshot only; verify current API exposure and model behavior before production routing."
+capabilities:
+  duration_seconds: "historical snapshot suggested up to 16s; VERIFY"
+  resolutions: "historical snapshot suggested 540p/720p/1080p; VERIFY"
+  native_audio: "historical snapshot suggested yes; VERIFY"
+behavior:
+  preferred_timing_granularity: UNKNOWN
+known_failures: []
+compile_notes:
+  - build model-specific compiler only after probe evidence
+  - do not copy Seedance reference syntax
+sources:
+  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md

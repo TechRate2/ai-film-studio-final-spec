@@ -1,0 +1,16 @@
+model_id: wan-2.6
+verification_status: PARTIAL
+last_verified_at: null
+scope_note: "Historical public/provider snapshot exists, but current provider exposure must be re-verified and probed before production routing. Do not treat as live truth."
+capabilities:
+  duration_seconds: "historical provider snapshot suggested 5/10/15; VERIFY"
+  resolutions: "historical provider snapshot suggested 720p/1080p; VERIFY"
+  native_audio: "historical provider snapshot suggested yes; VERIFY"
+behavior:
+  preferred_timing_granularity: UNKNOWN
+known_failures: []
+compile_notes:
+  - do not inherit Wan 2.2 or Seedance prompt behavior
+  - run MODEL_PROBE_TEMPLATE before production routing
+sources:
+  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md

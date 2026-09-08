@@ -11,19 +11,37 @@ jobs:
           set -euo pipefail
           test -f AGENTS.md
           test -f SPEC_VERSION
+          test -f MANIFEST.md
           test -f spec/00_SPEC_LOCK.md
-          test -f spec/38_GLOSSARY.md
+          test -f spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md
           test -f governance/AI_CODING_PROTOCOL.md
           test -f tasks/00_IMPLEMENTATION_ORDER.md
           test -f tasks/TASK_001_REPOSITORY_REALITY_AUDIT.md
           test -f tasks/TASK_043_BETA_RELEASE_GATE.md
+          test -f tasks/PROVIDER_EXPANSION_TEMPLATE.md
           test -f evals/GOLDEN_SCENARIOS.md
           test -f traceability/REQUIREMENTS_TRACEABILITY.csv
           grep -q "Generalist Director" spec/00_SPEC_LOCK.md
           grep -q "No silent/automatic paid media regeneration" spec/00_SPEC_LOCK.md
+          grep -q "SpendAuthorization" spec/00_SPEC_LOCK.md
+          grep -q "PRODUCT_DEMO" spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md
+          grep -q "TASK-032 Durable Jobs and TASK-033" tasks/TASK_030_SEEDANCE_2_0_VERTICAL_SLICE.md
           SPEC_COUNT=$(find spec -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')
-          TASK_COUNT=$(find tasks -maxdepth 1 -type f -name 'TASK_*.md' | wc -l | tr -d ' ')
+          TASK_COUNT=$(find tasks -maxdepth 1 -type f -name 'TASK_[0-9][0-9][0-9]_*.md' | wc -l | tr -d ' ')
           SCHEMA_COUNT=$(find schemas -maxdepth 1 -type f -name '*.schema.json' | wc -l | tr -d ' ')
-          test "$SPEC_COUNT" -ge 39
+          GS_COUNT=$(grep -c '^## GS[0-9][0-9] ' evals/GOLDEN_SCENARIOS.md)
+          REQ_COUNT=$(tail -n +2 traceability/REQUIREMENTS_TRACEABILITY.csv | grep -c '^R-')
+          PHASE_COUNT=$(find phases -maxdepth 1 -type f -name 'PHASE_*.md' | wc -l | tr -d ' ')
+          test "$SPEC_COUNT" -eq 47
           test "$TASK_COUNT" -eq 43
-          test "$SCHEMA_COUNT" -ge 16
+          test "$SCHEMA_COUNT" -eq 42
+          test "$GS_COUNT" -eq 25
+          test "$REQ_COUNT" -eq 75
+          test "$PHASE_COUNT" -eq 7
+          python - <<'PY'
+          import json, glob
+          for p in glob.glob('schemas/*.schema.json'):
+              with open(p, encoding='utf-8') as f:
+                  json.load(f)
+          print('All JSON schemas parse.')
+          PY

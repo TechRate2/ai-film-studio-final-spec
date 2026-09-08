@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"QAReport","type":"object",
+  "required":["qa_id","artifact_id","severity","checks","disposition"],
+  "properties":{"qa_id":{"type":"string"},"artifact_id":{"type":"string"},"severity":{"enum":["PASS","MINOR","MAJOR","FATAL"]},"checks":{"type":"array","items":{"type":"object","required":["name","status"],"properties":{"name":{"type":"string"},"status":{"enum":["PASS","WARN","FAIL","UNKNOWN"]},"score":{"type":["number","null"]},"evidence":{"type":"object"},"notes":{"type":"string"}}}},"diagnosis":{"type":"array","items":{"type":"string"}},"recommended_repairs":{"type":"array","items":{"type":"object"}},"disposition":{"enum":["ACCEPTABLE","USER_REVIEW","REVISE","BLOCKED"]},"auto_paid_retry_allowed":{"const":false}}
+}

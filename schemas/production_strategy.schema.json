@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ProductionStrategy","type":"object",
+  "required":["strategy_id","objective","routes","cost_rationale"],
+  "properties":{"strategy_id":{"type":"string"},"objective":{"type":"string"},"routes":{"type":"array","items":{"type":"object","required":["scope_id","mode","reason"],"properties":{"scope_id":{"type":"string"},"mode":{"enum":["DIRECT_T2V","IMAGE_TO_VIDEO","REFERENCE_TO_VIDEO","STORYBOARD_TO_VIDEO","CONTINUATION","SPEECH_TO_VIDEO","CHARACTER_ANIMATE","MIXED_MEDIA","EXISTING_MEDIA"]},"reason":{"type":"string"},"quality_risk":{"type":"object"},"estimated_cost":{"type":["number","null"]}}}},"cost_rationale":{"type":"string"},"mixed_media_allowed":{"type":"boolean"},"constraints":{"type":"object"}}
+}

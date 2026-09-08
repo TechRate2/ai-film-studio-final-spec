@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"FinalMaster","type":"object",
+  "required":["master_id","timeline_id","artifact_id","qa_report_id","checksum","export_metadata"],
+  "properties":{"master_id":{"type":"string"},"timeline_id":{"type":"string"},"artifact_id":{"type":"string"},"qa_report_id":{"type":"string"},"checksum":{"type":"string"},"export_metadata":{"type":"object"},"language":{"type":["string","null"]},"status":{"enum":["READY","FAILED_QA","EXPORTED"]},"created_at":{"type":"string"}}
+}

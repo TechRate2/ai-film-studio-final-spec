@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"UserTasteProfile","type":"object",
+  "required":["profile_id","version","signals"],
+  "properties":{"profile_id":{"type":"string"},"version":{"type":"integer","minimum":1},"signals":{"type":"array","items":{"type":"object","required":["dimension","preference","confidence","evidence_count"],"properties":{"dimension":{"type":"string"},"preference":{},"confidence":{"type":"number","minimum":0,"maximum":1},"evidence_count":{"type":"integer","minimum":1},"last_observed_at":{"type":"string"}}}},"do_not_overfit":{"const":true}}
+}

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"StyleDNA","type":"object",
+  "required":["style_dna_id","source_artifact_ids","transferable_traits","do_not_copy_elements"],
+  "properties":{"style_dna_id":{"type":"string"},"source_artifact_ids":{"type":"array","items":{"type":"string"}},"narrative_structure":{"type":"object"},"hook_pattern":{"type":"object"},"emotional_curve":{"type":"object"},"pacing_profile":{"type":"object"},"shot_scale_distribution":{"type":"object"},"camera_movement_profile":{"type":"object"},"lens_feel":{"type":"object"},"composition_rules":{"type":"object"},"lighting_color":{"type":"object"},"performance_density":{"type":"object"},"transition_language":{"type":"object"},"audio_hierarchy":{"type":"object"},"realism_vfx":{"type":"object"},"transferable_traits":{"type":"array","items":{"type":"string"}},"do_not_copy_elements":{"type":"array","items":{"type":"string"}},"confidence":{"type":"number","minimum":0,"maximum":1}}
+}

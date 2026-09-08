@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ProjectIntent","type":"object",
+  "required":["project_id","user_request","objective","constraints"],
+  "properties":{"project_id":{"type":"string"},"user_request":{"type":"string"},"objective":{"type":"string"},"target_audience":{"type":"object"},"platform":{"type":["string","null"]},"duration_target_seconds":{"type":["number","null"]},"aspect_ratio":{"type":["string","null"]},"language":{"type":["string","null"]},"constraints":{"type":"object"},"attachment_ids":{"type":"array","items":{"type":"string"}},"created_at":{"type":"string"}}
+}

@@ -1,0 +1,14 @@
+model_id: example-image-model
+modality: image
+verification_status: UNVERIFIED
+last_verified_at: null
+capabilities:
+  reference_images: UNKNOWN
+  aspect_ratio_control: UNKNOWN
+  editing: UNKNOWN
+behavior:
+  identity_fidelity: UNKNOWN
+  text_rendering: UNKNOWN
+known_failures: []
+compile_notes: []
+sources: []

@@ -12,6 +12,14 @@
     "default_appearance":{"type":"object"},
     "current_state":{"type":"object"},
     "voice_profile_id":{"type":["string","null"]},
-    "knowledge_state":{"type":"object","properties":{"knows":{"type":"array","items":{"type":"string"}},"believes":{"type":"array","items":{"type":"string"}},"suspects":{"type":"array","items":{"type":"string"}},"misunderstands":{"type":"array","items":{"type":"string"}},"hides":{"type":"array","items":{"type":"string"}}}}
+    "knowledge_state":{"type":"object","required":["knows","believes","suspects","misunderstands","hides","wants","fears"],"properties":{
+      "knows":{"type":"array","items":{"type":"string"}},
+      "believes":{"type":"array","items":{"type":"string"}},
+      "suspects":{"type":"array","items":{"type":"string"}},
+      "misunderstands":{"type":"array","items":{"type":"string"}},
+      "hides":{"type":"array","items":{"type":"string"}},
+      "wants":{"type":"array","items":{"type":"string"}},
+      "fears":{"type":"array","items":{"type":"string"}}
+    }}
   }
 }

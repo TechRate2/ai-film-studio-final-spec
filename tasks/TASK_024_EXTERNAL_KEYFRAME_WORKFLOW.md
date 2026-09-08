@@ -1,31 +1,21 @@
-# TASK-024 — External Keyframe Workflow
+# TASK-024 — Keyframe Source Workflows (Smart Auto + External + User + Previous)
 
 ## Goal
-Implement copy prompt/ref pack/upload/validator path.
+Implement every canonical KeyframeSourceRouter route while keeping keyframe generation selective.
 
 ## Read first
 - `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md`
 - `spec/20_CHAT_FIRST_WORKSPACE_UX.md`
-
-## Implementation contract
-- Inspect repository reality for this capability before editing.
-- Preserve `spec/00_SPEC_LOCK.md`.
-- Implement vertically when persistence/API/UI are implicated.
-- Do not broaden scope to unrelated future architecture.
-- Add typed contracts/migrations where required.
-- Add structured errors, provenance and observability.
-- Update traceability.
+- `spec/41_MULTIMODAL_ASSET_INGESTION.md`
+- `spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md`
+- `schemas/keyframe_generation_pack.schema.json`
 
 ## Acceptance criteria
-- No internal image charge in external mode
-- Imported keyframe validated
-- Correction patch supported
-
-## Required report
-- Current reality before this task
-- Files changed
-- State/schema/API/UI changes
-- Tests added and results
-- Golden scenarios affected
-- Remaining gaps
-- Real-provider benchmark risk, if any
+- `AUTO_INTERNAL` calls a real/replaceable ImageProvider only after cost policy/authorization when billable;
+- `EXTERNAL_ASSISTED` emits copy-ready prompt + exact reference pack + constraints and incurs no internal image generation cost;
+- `USER_SUPPLIED` validates imported asset;
+- `PREVIOUS_ACCEPTED_FRAME` can reuse the continuity anchor without new image generation;
+- `NONE` continues directly;
+- validator checks identity/product/outfit/location/composition/aspect/continuity as applicable;
+- failed external/user image returns a minimal correction patch, not silent internal fallback;
+- all source routes create provenance-compatible artifacts.

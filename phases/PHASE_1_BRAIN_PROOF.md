@@ -1,18 +1,25 @@
 # Phase 1 — Brain Proof
 
 ## Goal
-Prove one Generalist Director can reason differently across diverse requests before spending heavily on media generation.
+Prove the Generalist Director can reason correctly across materially different content before expensive video integration dominates debugging.
 
-## Focus
-Domain foundation, chat-first workspace, scope/content routing, references/entities, dynamic skills, adaptive research/evidence, creative strategy/retention, story hierarchy, character/canon/knowledge, dialogue/voice/localization and directing intelligence.
+## Required capabilities
+- provider-neutral Director/tool ports;
+- scope/content router including PRODUCT_DEMO;
+- validated multimodal ingestion/reference roles;
+- research ROI + EvidencePack/CreativeEvidenceGraph;
+- CreativeStrategy + StyleDNA/grammar retrieval;
+- Project Canon/Character Knowledge/Relationship/ActiveContextPack;
+- dialogue/voice/localization and directing passes.
 
-## Evaluation set
-At least UGC product, fashion, xianxia drama, sci-fi film, current explainer, dialogue scene, comedy/horror or equivalent contrasting scenarios.
+## Brain-proof suite
+At minimum compare UGC product, fashion, xianxia drama, factual sci-fi/documentary, current-news explainer, multi-character dialogue and serialized continuation plan. Strategies must differ for reasons connected to audience/evidence/content, not hard-coded niche branches.
 
 ## Exit gate
-- materially different credible strategies by niche/objective;
-- no provider hardcoding in Director;
-- scoped context/evidence packs;
-- structured artifacts validate against contracts;
-- creative preflight can explain why a plan is filmable/retentive/cost-conscious;
-- no need for broad paid video generation to prove architecture.
+- no concrete LLM/provider SDK in Director domain;
+- no full-spec/full-Series Bible default context dump;
+- current/factual tasks request evidence while simple creative task may skip;
+- same reference video can influence camera/style without copying identity/story;
+- product truth is not inferred from image alone;
+- all structured outputs validate against schemas;
+- no billable video call required to prove this phase.

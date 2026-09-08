@@ -1,30 +1,19 @@
-# TASK-026 — Model Profiles and Capability Resolver
+# TASK-026 — Model Profiles and Effective Capability Resolver
 
 ## Goal
-Implement profile registry with unknown/verification status.
+Resolve what the system can actually do from measured model behavior plus provider/account/policy exposure.
 
 ## Read first
 - `spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md`
-
-## Implementation contract
-- Inspect repository reality for this capability before editing.
-- Preserve `spec/00_SPEC_LOCK.md`.
-- Implement vertically when persistence/API/UI are implicated.
-- Do not broaden scope to unrelated future architecture.
-- Add typed contracts/migrations where required.
-- Add structured errors, provenance and observability.
-- Update traceability.
+- `spec/37_MODEL_PROBE_PLAYBOOK.md`
+- `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md`
+- `schemas/model_profile.schema.json`
+- `schemas/effective_capability.schema.json`
 
 ## Acceptance criteria
-- Model behavior not guessed
-- Profile version in provenance
-- Unknown capability can block/degrade
-
-## Required report
-- Current reality before this task
-- Files changed
-- State/schema/API/UI changes
-- Tests added and results
-- Golden scenarios affected
-- Remaining gaps
-- Real-provider benchmark risk, if any
+- ModelProfile never conflated with ProviderProfile;
+- `EffectiveCapability = model ∩ provider ∩ account ∩ product policy ∩ project/user policy`;
+- UNKNOWN is representable and never guessed as supported;
+- material unknown can trigger probe/research/degrade/block;
+- profile/version/probe provenance persisted;
+- Seedance 2.5 does not inherit 2.0 bias automatically.
