@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelProfile",
+  "type": "object",
+  "required": ["model_id","verification_status","capabilities","known_failures","last_verified_at"],
+  "properties": {
+    "model_id": {"type":"string"},
+    "version": {"type":["string","null"]},
+    "verification_status": {"enum":["MEASURED","PARTIAL","UNVERIFIED"]},
+    "capabilities": {"type":"object"},
+    "bias": {"type":"object"},
+    "known_failures": {"type":"array","items":{"type":"string"}},
+    "compile_notes": {"type":"array","items":{"type":"string"}},
+    "last_verified_at": {"type":["string","null"]},
+    "sources": {"type":"array","items":{"type":"string"}}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProviderProfile",
+  "type": "object",
+  "required": ["provider_id","models","billing","limits"],
+  "properties": {
+    "provider_id": {"type":"string"},
+    "models": {"type":"array","items":{"type":"string"}},
+    "billing": {"type":"object"},
+    "limits": {"type":"object"},
+    "regions": {"type":"array","items":{"type":"string"}}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"RevisionRequest",
+  "type":"object",
+  "required":["shot_id","base_version_id","user_intent","change_set","preserve_set"],
+  "properties":{
+    "shot_id":{"type":"string"},"base_version_id":{"type":"string"},"user_intent":{"type":"string"},"edit_class":{"type":"string"},"change_set":{"type":"array","items":{"type":"string"}},"preserve_set":{"type":"array","items":{"type":"string"}},"incoming_baton_id":{"type":["string","null"]},"outgoing_target_shot_id":{"type":["string","null"]},"affected_modalities":{"type":"array","items":{"type":"string"}},"estimated_incremental_cost":{"type":"number","minimum":0}
+  }
+}

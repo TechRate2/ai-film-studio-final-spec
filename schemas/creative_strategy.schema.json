@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"CreativeStrategy",
+  "type":"object",
+  "required":["objective","audience","content_form","hook","narrative_structure","pacing","visual_language","audio_hierarchy"],
+  "properties":{
+    "objective":{"type":"string"},"audience":{"type":"object"},"content_form":{"type":"string"},"emotional_mechanism":{"type":"string"},"hook":{"type":"object"},"narrative_structure":{"type":"object"},"information_density":{"type":"string"},"pacing":{"type":"object"},"visual_language":{"type":"object"},"camera_language":{"type":"object"},"subject_priority":{"type":"array","items":{"type":"string"}},"performance_style":{"type":"object"},"audio_hierarchy":{"type":"object"},"payoff_or_cta":{"type":"object"},"constraints":{"type":"object"},"action_vfx_complexity":{"type":"string"},"realism_level":{"type":"string"}
+  }
+}

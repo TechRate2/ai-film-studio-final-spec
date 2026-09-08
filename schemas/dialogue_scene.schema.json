@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"DialogueScene",
+  "type":"object",
+  "required":["speaker_id","line","intent","emotion"],
+  "properties":{
+    "speaker_id":{"type":"string"},"listener_ids":{"type":"array","items":{"type":"string"}},"line":{"type":"string"},"language":{"type":"string"},"emotion":{"type":"string"},"subtext":{"type":"string"},"intent":{"type":"string"},"pace":{"type":"string"},"pause_after_seconds":{"type":["number","null"],"minimum":0},"eyeline_target":{"type":["string","null"]},"blocking":{"type":"object"},"pronunciation_keys":{"type":"array","items":{"type":"string"}}
+  }
+}

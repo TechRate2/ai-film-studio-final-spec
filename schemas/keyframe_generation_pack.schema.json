@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"KeyframeGenerationPack",
+  "type":"object",
+  "required":["keyframe_id","purpose","target_shot_or_segment","source_strategy","model_neutral_prompt","reference_bindings","success_conditions"],
+  "properties":{
+    "keyframe_id":{"type":"string"},"purpose":{"type":"string"},"target_shot_or_segment":{"type":"string"},"source_strategy":{"enum":["AUTO_INTERNAL","EXTERNAL_ASSISTED","USER_SUPPLIED","PREVIOUS_ACCEPTED_FRAME","NONE"]},"model_neutral_prompt":{"type":"string"},"reference_bindings":{"type":"array","items":{"type":"object"}},"continuity_locks":{"type":"array","items":{"type":"string"}},"aspect_ratio":{"type":["string","null"]},"success_conditions":{"type":"array","items":{"type":"string"}},"correction_patch":{"type":["string","null"]}
+  }
+}

@@ -1,0 +1,29 @@
+name: spec-governance
+on: [push, pull_request]
+jobs:
+  canonical-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f AGENTS.md
+          test -f SPEC_VERSION
+          test -f spec/00_SPEC_LOCK.md
+          test -f spec/38_GLOSSARY.md
+          test -f governance/AI_CODING_PROTOCOL.md
+          test -f tasks/00_IMPLEMENTATION_ORDER.md
+          test -f tasks/TASK_001_REPOSITORY_REALITY_AUDIT.md
+          test -f tasks/TASK_043_BETA_RELEASE_GATE.md
+          test -f evals/GOLDEN_SCENARIOS.md
+          test -f traceability/REQUIREMENTS_TRACEABILITY.csv
+          grep -q "Generalist Director" spec/00_SPEC_LOCK.md
+          grep -q "No silent/automatic paid media regeneration" spec/00_SPEC_LOCK.md
+          SPEC_COUNT=$(find spec -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')
+          TASK_COUNT=$(find tasks -maxdepth 1 -type f -name 'TASK_*.md' | wc -l | tr -d ' ')
+          SCHEMA_COUNT=$(find schemas -maxdepth 1 -type f -name '*.schema.json' | wc -l | tr -d ' ')
+          test "$SPEC_COUNT" -ge 39
+          test "$TASK_COUNT" -eq 43
+          test "$SCHEMA_COUNT" -ge 16

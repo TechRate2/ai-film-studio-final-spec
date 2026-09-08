@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenerationPlan",
+  "type": "object",
+  "required": ["mode","segments","dependency_edges","keyframe_policy","expected_cost"],
+  "properties": {
+    "mode": {"enum":["CONTINUOUS","SEGMENTED","CONTINUATION"]},
+    "segments": {"type":"array","items":{"type":"object","required":["id","duration_seconds","purpose"],"properties":{"id":{"type":"string"},"duration_seconds":{"type":"number","exclusiveMinimum":0},"purpose":{"type":"string"},"boundary_reason":{"type":["string","null"]},"generation_mode":{"type":"string"}}}},
+    "dependency_edges": {"type":"array","items":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"string"}}},
+    "keyframe_policy": {"enum":["NONE","MASTER_ONLY","SELECTIVE","EACH_SEGMENT"]},
+    "expected_cost": {"type":"number","minimum":0},
+    "expected_acceptance_probability": {"type":"number","minimum":0,"maximum":1}
+  }
+}

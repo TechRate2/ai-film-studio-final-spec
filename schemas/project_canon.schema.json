@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectCanon",
+  "type": "object",
+  "required": ["project_id","version","world_facts","characters","unresolved_threads"],
+  "properties": {
+    "project_id": {"type":"string"},
+    "version": {"type":"integer","minimum":1},
+    "world_facts": {"type":"array","items":{"type":"object","required":["id","statement","status"],"properties":{"id":{"type":"string"},"statement":{"type":"string"},"status":{"enum":["IMMUTABLE","CURRENT","RETCONNED","RUMOR","UNKNOWN"]}}}},
+    "characters": {"type":"array","items":{"type":"string"}},
+    "relationships": {"type":"array","items":{"type":"object"}},
+    "unresolved_threads": {"type":"array","items":{"type":"string"}},
+    "episode_state": {"type":"object"}
+  }
+}

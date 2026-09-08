@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"UniversalVideoSpec",
+  "type":"object",
+  "required":["spec_version","purpose","global","locks","stages","performance","camera","audio","success_conditions"],
+  "properties":{
+    "spec_version":{"type":"string"},"purpose":{"type":"string"},"global":{"type":"object"},"locks":{"type":"array","items":{"$ref":"reference_binding.schema.json"}},"initial_state":{"type":"object"},"stages":{"type":"array","items":{"type":"object","required":["primary_change","end_state"],"properties":{"duration_hint":{"type":["number","null"]},"primary_change":{"type":"string"},"end_state":{"type":"object"}}}},"performance":{"type":"object"},"camera":{"type":"object"},"audio":{"type":"object"},"negative_risks":{"type":"array","items":{"type":"string"}},"continuity_in":{"type":"object"},"continuity_out":{"type":"object"},"success_conditions":{"type":"array","items":{"type":"string"}}
+  }
+}

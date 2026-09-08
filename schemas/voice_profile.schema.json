@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"VoiceProfile",
+  "type":"object",
+  "required":["voice_profile_id","speaker_id","identity","language_capabilities","pronunciation_lexicon"],
+  "properties":{
+    "voice_profile_id":{"type":"string"},"speaker_id":{"type":"string"},"identity":{"type":"object"},"provider_voice_ids":{"type":"object"},"reference_audio_ids":{"type":"array","items":{"type":"string"}},"language_capabilities":{"type":"array","items":{"type":"string"}},"pace":{"type":["string","null"]},"pitch":{"type":["string","null"]},"accent":{"type":["string","null"]},"emotion_range":{"type":"array","items":{"type":"string"}},"pronunciation_lexicon":{"type":"object"}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ShotVersion",
+  "type": "object",
+  "required": ["shot_id","version_id","universal_spec","references","status"],
+  "properties": {
+    "shot_id": {"type":"string"},
+    "version_id": {"type":"string"},
+    "parent_version_id": {"type":["string","null"]},
+    "user_revision_intent": {"type":["string","null"]},
+    "universal_spec": {"type":"object"},
+    "compiled_prompt": {"type":["string","null"]},
+    "references": {"type":"array","items":{"type":"string"}},
+    "status": {"enum":["DRAFT","GENERATING","READY","ACCEPTED","REJECTED","FAILED","STALE"]},
+    "artifact_id": {"type":["string","null"]},
+    "qa": {"type":["object","null"]},
+    "cost": {"type":["number","null"]}
+  }
+}

@@ -1,0 +1,23 @@
+model_id: wan-2.2-family
+verification_status: PARTIAL
+last_verified_at: "2026-09-08"
+scope_note: "Family-level public official-repo capabilities; concrete hosted-provider behavior must be profiled separately."
+capabilities:
+  variants:
+    - T2V-A14B
+    - I2V-A14B
+    - TI2V-5B
+    - S2V-14B
+    - Animate-14B
+  speech_to_video: true
+  character_animate_or_replacement: true
+  ti2v_open_model_720p_24fps: true
+behavior:
+  prompt_extension: "official repo recommends prompt extension in some workflows"
+known_failures: []
+compile_notes:
+  - do not treat the Wan family as one generic endpoint
+  - select variant by production mode and provider exposure
+  - benchmark identity/dialogue/action per hosted route
+sources:
+  - https://github.com/Wan-Video/Wan2.2

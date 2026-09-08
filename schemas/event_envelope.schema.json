@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"EventEnvelope",
+  "type":"object",
+  "required":["event_id","event_type","project_id","sequence","occurred_at","payload_version","payload"],
+  "properties":{
+    "event_id":{"type":"string"},"event_type":{"type":"string"},"project_id":{"type":"string"},"run_id":{"type":["string","null"]},"job_id":{"type":["string","null"]},"shot_id":{"type":["string","null"]},"version_id":{"type":["string","null"]},"attempt_id":{"type":["string","null"]},"sequence":{"type":"integer","minimum":0},"occurred_at":{"type":"string"},"payload_version":{"type":"string"},"payload":{"type":"object"}
+  }
+}

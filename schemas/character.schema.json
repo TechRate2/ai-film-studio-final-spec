@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Character",
+  "type":"object",
+  "required":["character_id","name","aliases","canonical_reference_ids","knowledge_state"],
+  "properties":{
+    "character_id":{"type":"string"},
+    "name":{"type":"string"},
+    "aliases":{"type":"array","items":{"type":"string"}},
+    "role":{"type":["string","null"]},
+    "canonical_reference_ids":{"type":"array","items":{"type":"string"}},
+    "default_appearance":{"type":"object"},
+    "current_state":{"type":"object"},
+    "voice_profile_id":{"type":["string","null"]},
+    "knowledge_state":{"type":"object","properties":{"knows":{"type":"array","items":{"type":"string"}},"believes":{"type":"array","items":{"type":"string"}},"suspects":{"type":"array","items":{"type":"string"}},"misunderstands":{"type":"array","items":{"type":"string"}},"hides":{"type":"array","items":{"type":"string"}}}}
+  }
+}

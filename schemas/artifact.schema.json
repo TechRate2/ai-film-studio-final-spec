@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Artifact",
+  "type": "object",
+  "required": ["artifact_id","artifact_type","currency","provenance"],
+  "properties": {
+    "artifact_id": {"type":"string"},
+    "artifact_type": {"type":"string"},
+    "currency": {"enum":["CURRENT","STALE","MISSING","BLOCKED"]},
+    "dependencies": {"type":"array","items":{"type":"string"}},
+    "provenance": {"type":"object"}
+  }
+}

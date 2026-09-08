@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ReferenceBinding",
+  "type":"object",
+  "required":["reference_id","role","lock_mode","lifetime","positive_scope","negative_scope"],
+  "properties":{
+    "reference_id":{"type":"string"},"entity_id":{"type":["string","null"]},"role":{"type":"string"},"lock_mode":{"enum":["HARD_LOCK","SOFT_LOCK","STYLE_ONLY","MOTION_ONLY"]},"lifetime":{"enum":["PERSISTENT","EPISODE","SCENE","SHOT"]},"positive_scope":{"type":"array","items":{"type":"string"}},"negative_scope":{"type":"array","items":{"type":"string"}},"source_artifact_id":{"type":"string"},"confidence":{"type":"number","minimum":0,"maximum":1}
+  }
+}

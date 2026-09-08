@@ -1,0 +1,21 @@
+provider_id: example
+last_verified_at: null
+models: []
+endpoints:
+  video: null
+  image: null
+  voice: null
+capability_exposure: {}
+billing:
+  currency: null
+  price_rules: []
+limits:
+  rpm: null
+  concurrency: null
+  duration: null
+  resolution: null
+timeout_semantics:
+  upstream_task_id: null
+  idempotency_supported: null
+regions: []
+notes: []

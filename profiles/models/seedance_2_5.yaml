@@ -1,0 +1,21 @@
+model_id: seedance-2.5
+verification_status: PARTIAL
+last_verified_at: null
+scope_note: "Do not inherit Seedance 2.0 prompt bias. Provider/API behavior must be probed."
+capabilities:
+  reference_addressing: UNKNOWN
+  practical_reference_limit: UNKNOWN
+  multi_shot: EXPECTED_UNVERIFIED
+  duration_seconds: "provider/public-launch-material dependent; verify"
+  native_audio: EXPECTED_UNVERIFIED
+  audio_reference: PROVIDER_DEPENDENT
+behavior:
+  preferred_timing_granularity: UNKNOWN
+known_failures: []
+compile_notes:
+  - run reference-binding probe
+  - run stage-vs-timestamp timing probe
+  - run subtitle/music default-behavior baseline
+  - measure practical reference stability ceiling
+sources:
+  - https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills

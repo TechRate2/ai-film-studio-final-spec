@@ -1,0 +1,32 @@
+model_id: seedance-2.0
+verification_status: MEASURED
+last_verified_at: "2026-08-03"
+scope_note: "Profile is based on inspected public evidence and must be re-probed for each provider integration."
+capabilities:
+  reference_addressing: "@imageN on measured provider"
+  max_images: 9
+  multi_shot: true
+  hard_cuts: true
+  duration_seconds: [4, 15]
+  resolutions: ["480p", "720p", "1080p/provider-dependent"]
+  native_audio: true
+  audio_reference: false_on_measured_provider
+  first_end_frame: provider_dependent
+  continuation: tail_frame_or_provider_reference
+behavior:
+  preferred_timing_granularity: stages
+  timing_note: "Measured beats may drift late while order remains."
+  image_vs_text_composition: "Image composition can dominate conflicting text."
+known_failures:
+  - small text/signage errors
+  - list-item omission
+  - camera move may be ignored
+  - timing drift
+  - overloaded 15s multi-event sequences can drop middle states
+compile_notes:
+  - bind each reference explicitly
+  - use staged state changes and visible end states
+  - avoid image/text composition conflicts
+  - avoid overloaded heavy-VFX storyboard constraints unless benchmarks support them
+sources:
+  - https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
