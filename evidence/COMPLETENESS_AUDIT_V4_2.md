@@ -1,10 +1,11 @@
-# V4.2 Completeness Audit
+# V4.2 Completeness Audit — CLOSED
 
-Date: 2026-09-08
-Repository: `TechRate2/ai-film-studio-final-spec`
+Date: 2026-09-08  
+Repository: `TechRate2/ai-film-studio-final-spec`  
+Final canonical branch: `main`
 
 ## Purpose
-Verify that Codex/Claude can implement the discussed AI Creative Director without silently simplifying critical behavior.
+Verify that Codex/Claude can implement the AI Creative Director without silently simplifying critical behavior, and close all paper/spec gaps that could cause implementation drift.
 
 ## Material V4.1 gaps resolved
 1. Manifest/schema-count drift → exact CI count + JSON parse.
@@ -29,15 +30,17 @@ Verify that Codex/Claude can implement the discussed AI Creative Director withou
 20. Creative/research/planning loops could theoretically run indefinitely → bounded stop/convergence semantics.
 21. Traceability/golden coverage too coarse → **78 requirements + 25 Golden Scenarios**.
 
-## Remaining intentional unknowns
-Not architecture gaps; require live docs/probes/benchmarks:
+## Intentional empirical unknowns
+These are not architecture/spec gaps and must be resolved by current provider documentation, controlled probes, benchmarks and beta evidence rather than guesses:
 - Seedance 2.5 exact provider/API behavior and prompt bias;
 - current Wan/Vidu/Kling/Veo exposure/cost/reliability;
 - current best image/voice provider behavior/pricing;
 - empirical audience/viral performance by niche/platform;
 - production scaling numbers after beta load.
 
-Live web verification was unavailable during this audit, so time-sensitive non-Seedance model placeholders remain PARTIAL/UNVERIFIED. UNKNOWN is valid and requires probes rather than guesses.
+Live web verification was unavailable during this audit, so time-sensitive non-Seedance model placeholders remain `PARTIAL/UNVERIFIED`. `UNKNOWN` is an allowed evidence state and must never be silently promoted to capability truth.
 
-## Freeze recommendation
-After branch CI + independent semantic review pass, V4.2 is sufficient to begin/continue implementation. Further architecture work should be triggered only by a real benchmark, provider limitation, policy/legal requirement or beta outcome.
+## Closure
+The completeness audit is closed. V4.2 is the **final canonical build contract** and is sufficient to begin/continue implementation. Further architecture changes are not justified without new evidence from a real benchmark, provider limitation, policy/legal requirement or beta outcome.
+
+There must be only one active build contract: V4.2 on `main`. Historical Git commits may remain for auditability but must not be treated as alternative specifications.

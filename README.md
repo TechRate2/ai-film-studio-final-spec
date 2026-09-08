@@ -1,7 +1,8 @@
 # AI Film Studio — Final Canonical Build Spec V4.2
 
-**Status:** CANONICAL CANDIDATE under completeness audit  
-**Repository role:** source of truth for Codex, Claude and human engineers  
+**Status:** FINAL CANONICAL BUILD CONTRACT  
+**Repository role:** sole active source of truth for Codex, Claude and human engineers  
+**Canonical branch:** `main`  
 **Product:** AI Creative Director + Autonomous Video Production Studio
 
 This repository is deliberately **spec-first**. It is not application code. Its job is to stop long vibe-coding sessions from drifting, simplifying continuity/cost rules, hard-coding providers, over-generating media or quietly turning the product into a generic text-to-video wrapper.
@@ -33,7 +34,7 @@ Do **not** read every document into every task context. Retrieval must be scoped
 - `/tasks` — **43** numbered vertical implementation packets + provider/probe templates
 - `/evals` — **25** Golden Scenarios + benchmark rubric
 - `/traceability` — **78** requirements mapped to implementation/test evidence
-- `/evidence` — public evidence, verification status and completeness audit
+- `/evidence` — public evidence, verification status and closed completeness audit
 - `/examples`, `/prompts`, `/governance`, `/.github` — walkthroughs, coding-agent bootstraps and enforcement
 
 ## Non-negotiable highlights
@@ -47,7 +48,10 @@ Task numbers are stable IDs, not naive numeric order. Before the first billable 
 
 Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md`.
 
-## Remaining intentional unknowns
-Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence.
+## Intentional empirical unknowns
+Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
+
+## Freeze rule
+**V4.2 on `main` is the only active build contract.** Do not create V4.1/V4.2-alternative copies or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
 See `evidence/COMPLETENESS_AUDIT_V4_2.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.
