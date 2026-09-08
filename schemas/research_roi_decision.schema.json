@@ -1,5 +1,85 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ResearchROIDecision","type":"object",
-  "required":["decision_id","action","factors","reason"],
-  "properties":{"decision_id":{"type":"string"},"action":{"enum":["SKIP","USE_CACHE","SEARCH","PROBE","BLOCK_FOR_EVIDENCE"]},"factors":{"type":"object"},"reason":{"type":"string"},"max_cost":{"type":["number","null"],"minimum":0},"max_latency_seconds":{"type":["number","null"],"minimum":0},"stop_condition":{"type":["string","null"]}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchROIDecision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "action",
+    "factors",
+    "reason",
+    "budget",
+    "stop_condition"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "SKIP",
+        "USE_CACHE",
+        "SEARCH",
+        "PROBE",
+        "BLOCK_FOR_EVIDENCE"
+      ]
+    },
+    "factors": {
+      "type": "object",
+      "properties": {
+        "material_uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_availability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "freshness_required": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_decision_change": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "material_uncertainty",
+        "consequence",
+        "evidence_availability",
+        "freshness_required",
+        "expected_decision_change"
+      ],
+      "additionalProperties": false
+    },
+    "reason": {
+      "type": "string"
+    },
+    "max_cost": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "max_latency_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "stop_condition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "budget": {
+      "$ref": "common.schema.json#/$defs/budget"
+    }
+  },
+  "additionalProperties": false
 }

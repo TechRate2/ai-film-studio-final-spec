@@ -23,3 +23,22 @@ At minimum: `LLMProvider`, `ImageProvider`, `VideoProvider`, `VoiceProvider`, `S
 - no creative/story/prompt-strategy logic in provider adapter;
 - a provider can be disabled without corrupting queued project state;
 - fake production media fallback prohibited.
+
+## Binding execution and verification packet
+
+Dependencies: TASK-027. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/16_PROVIDER_ABSTRACTION_ROUTING.md`
+- `spec/23_SECURITY_PRIVACY_PROVENANCE.md`
+- `spec/36_PROVIDER_INTEGRATION_PLAYBOOK.md`
+- `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md`
+- `schemas/provider_profile.schema.json`
+- `schemas/paid_attempt.schema.json`
+
+Requirements: R-016, R-035, R-059, R-065, R-088.
+Golden coverage: GS15, GS16, GS17, GS24, GS27.
+
+- [ ] Provide neutral LLM/image/video/voice/storage ports with structured transport outcomes, protected credentials and capability/billing metadata.
+- [ ] Do not enable billable submission before jobs/guard pass; authenticated callbacks or trusted polling only, and disable/outage never selects fake media.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

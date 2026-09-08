@@ -1,6 +1,6 @@
-# AI Film Studio — Final Canonical Build Spec V4.2
+# AI Film Studio — Final Canonical Build Spec V4.3
 
-**Status:** FINAL CANONICAL BUILD CONTRACT  
+**Status:** CANONICAL SPECIFICATION — implementation evidence remains required
 **Repository role:** sole active source of truth for Codex, Claude and human engineers  
 **Canonical branch:** `main`  
 **Product:** AI Creative Director + Autonomous Video Production Studio
@@ -27,21 +27,21 @@ Do **not** read every document into every task context. Retrieval must be scoped
 
 ## Canonical map
 - `/spec` — **47** canonical contracts (`00`–`46`)
-- `/schemas` — **42** normative structured contracts
+- `/schemas` — **43** normative structured contracts
 - `/profiles` — evidence-backed model/provider/image/voice knowledge; never product law
 - `/skills` + `/knowledge/filmcraft` — retrieved creative/directing knowledge, not hard-coded pipelines
 - `/phases` — **7** binding phase gates
 - `/tasks` — **43** numbered vertical implementation packets + provider/probe templates
-- `/evals` — **25** Golden Scenarios + benchmark rubric
-- `/traceability` — **78** requirements mapped to implementation/test evidence
-- `/evidence` — public evidence, verification status and closed completeness audit
+- `/evals` — **28** Golden Scenarios + benchmark rubric
+- `/traceability` — **88** requirements mapped to implementation/test evidence
+- `/evidence` — public evidence, verification status and audit evidence
 - `/examples`, `/prompts`, `/governance`, `/.github` — walkthroughs, coding-agent bootstraps and enforcement
 
 ## Non-negotiable highlights
 One Director behind provider-neutral ports; no niche-hardcoded architecture; evidence-first research with ROI/stop/freshness; Project Canon + scoped ActiveContextPack; StyleDNA/grammar/taste as lower-priority layers; validated refs/locks/lifetimes; all five selective keyframe sources; dependent shots sequential; canonical identity separate from observed continuity; UniversalVideoSpec → model compiler → provider adapter; EffectiveCapability rather than marketing claims; SpendAuthorization for planned first attempts; no automatic new paid generation after quality output; ambiguous submit reconciliation; contextual shot versioning/Continuity Sandwich; deterministic non-paid repair; CURRENT/STALE/MISSING/BLOCKED dependency semantics; real controlled voice route; CompositionTimeline + FinalMaster QA; VN/EN UI locale separate from output language; bounded Director/research/critic loops; rights/consent/deletion/backup/restore/spend incident controls; no production fake fallback.
 
 ## Critical execution-order correction
-Task numbers are stable IDs, not naive numeric order. Before the first billable Seedance test, **TASK-032 Durable Jobs and TASK-033 SpendAuthorization/PaidAttemptGuard must pass**. TASK-024 full Smart Auto acceptance executes after TASK-028 ImageProvider port exists. See `tasks/00_IMPLEMENTATION_ORDER.md`.
+Task numbers are stable IDs, not naive numeric order. Before the first billable Seedance test, **TASK-032 Durable Jobs and TASK-033 SpendAuthorization/PaidAttemptGuard must pass**. TASK-024 full Smart Auto acceptance executes after TASK-028 and the TASK-032/TASK-033 safety prerequisites. See `tasks/00_IMPLEMENTATION_ORDER.md`.
 
 ## Development loop
 `REALITY → GAP MAP → PLAN → IMPLEMENT VERTICALLY → TEST → GOLDEN → SPEC REVIEW → TRACEABILITY → COMMIT`.
@@ -52,6 +52,6 @@ Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md
 Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
 
 ## Freeze rule
-**V4.2 on `main` is the only active build contract.** Do not create V4.1/V4.2-alternative copies or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
+**V4.3 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
-See `evidence/COMPLETENESS_AUDIT_V4_2.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.
+See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.

@@ -1,5 +1,92 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"RelationshipEdge","type":"object",
-  "required":["relationship_id","from_character_id","to_character_id","state"],
-  "properties":{"relationship_id":{"type":"string"},"from_character_id":{"type":"string"},"to_character_id":{"type":"string"},"state":{"type":"object"},"trust":{"type":["number","null"]},"affection":{"type":["number","null"]},"fear":{"type":["number","null"]},"resentment":{"type":["number","null"]},"authority":{"type":["number","null"]},"secrets":{"type":"array","items":{"type":"string"}},"knowledge_asymmetry":{"type":"array","items":{"type":"string"}},"version":{"type":"integer","minimum":1}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RelationshipEdge",
+  "type": "object",
+  "required": [
+    "relationship_id",
+    "from_character_id",
+    "to_character_id",
+    "state",
+    "project_id",
+    "version",
+    "story_position",
+    "source_ids"
+  ],
+  "properties": {
+    "relationship_id": {
+      "type": "string"
+    },
+    "from_character_id": {
+      "type": "string"
+    },
+    "to_character_id": {
+      "type": "string"
+    },
+    "state": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "trust": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "affection": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "fear": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "resentment": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "authority": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "knowledge_asymmetry": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "story_position": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

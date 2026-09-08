@@ -26,3 +26,6 @@ Provider architecture must cover at minimum LLM, image, video, voice/audio and s
 
 ## Expansion
 A new model/provider requires profile + compiler (when model behavior differs) + provider exposure + adapter + probes + benchmark evidence. No Director rewrite is permitted merely to add a provider.
+
+## Intersection algorithm
+Resolve each requested feature against all five layers with versioned evidence: any hard denial makes the route UNSUPPORTED; otherwise any unresolved relevant layer yields UNKNOWN; only all affirmative constraints with nonempty limit intersection yield SUPPORTED. Null entitlement is UNKNOWN, not unlimited. Intersect sets, numeric ranges and regions using the same declared units. DEGRADED describes an explicit alternative with a linked DegradeDecision; resolve that alternative again and preserve hard constraints. Neither majority vote nor high confidence can override a denial. Pin the resulting snapshot and revalidate before spend; changed route/cost/input outside authorization requires a new user action.

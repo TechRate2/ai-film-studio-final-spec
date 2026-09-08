@@ -17,3 +17,6 @@ Before paid rendering evaluate hook, clarity, emotional progression, novelty, ni
 
 ## Bounded self-critique / replanning
 The Director may revise a draft plan after critic feedback, but self-critique is bounded by configured iteration/budget/convergence policy. It must not endlessly rewrite creative strategy trying to reach a subjective perfect score. When material uncertainty remains after the bound, choose one of: targeted research/probe, surface user decision when genuinely necessary, accept a documented trade-off, or BLOCK before expensive generation. The loop and stop reason are observable.
+
+## Inspectable creative decision contract
+CreativeStrategy records audience prior knowledge/desire/objection, the promised experience, hook mechanism, beat-level viewer question, new information/emotion, proof or payoff and drop-off risk. Each scene records purpose, objective, obstacle, entry state, causal change and exit state; each shot records its information or performance function. These fields may be concise for simple requests. Do not invent conflict for a demonstration that is better served by clear proof. A critic must cite a beat, constraint or evidence ID and a concrete feasible correction; a generic score is insufficient. Hard constraint failures block, while subjective preferences permit a bounded documented trade-off.

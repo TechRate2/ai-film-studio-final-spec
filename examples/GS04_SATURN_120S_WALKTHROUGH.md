@@ -6,7 +6,7 @@
 Optional user refs: character, spacecraft, cockpit, camera reference, voice reference.
 
 ## 1. Scope/Content
-`scope=LONG_SINGLE`, `content_mode=VISUAL_FILM/DRAMA`, `duration=120s`, `language=vi-VN`, `continuity=HIGH`, `research=factual + cinematography + model`.
+`scope=LONG_SINGLE`, `content_mode=VISUAL_FILM` (drama is a retrieved grammar), `duration=120s`, `language=vi-VN`, `continuity=HIGH`, `research=factual + cinematography + model`.
 
 ## 2. Research
 Create Fact Pack for Saturn visual/scientific anchors and Evidence Pack for cinematic scale/space-camera grammar/model prompting. Research must be distilled before creative writing.
@@ -25,7 +25,7 @@ Voice: Vietnamese male, calm/restrained.
 Persistent locks: face, suit, ship design, cockpit architecture, lighting direction.
 
 ## 5. Example segment plan for Seedance 2.0 profile
-Eight 15-second segments are acceptable only because measured profile caps at 15s; this is not a universal split rule.
+Hypothetical timing sketch only: if an exact verified route permits a 15-second maximum, the following eight equal windows still require complexity/editorial justification. They are not a measured plan or a template for division; actual segments may have unequal lengths, shared generations or existing media. No current provider limit is asserted here.
 
 1. 0–15 Hook/scale reveal
 2. 15–30 cockpit arrival

@@ -1,5 +1,130 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ActiveContextPack","type":"object",
-  "required":["project_id","scope","active_entity_ids","canon_fact_ids","source_versions"],
-  "properties":{"project_id":{"type":"string"},"episode_id":{"type":["string","null"]},"scene_id":{"type":["string","null"]},"shot_id":{"type":["string","null"]},"scope":{"enum":["PROJECT","EPISODE","SCENE","SHOT"]},"active_entity_ids":{"type":"array","items":{"type":"string"}},"canon_fact_ids":{"type":"array","items":{"type":"string"}},"relationship_edge_ids":{"type":"array","items":{"type":"string"}},"knowledge_state_refs":{"type":"array","items":{"type":"string"}},"reference_binding_ids":{"type":"array","items":{"type":"string"}},"recent_state_summary":{"type":["string","null"]},"unresolved_thread_ids":{"type":"array","items":{"type":"string"}},"source_versions":{"type":"object"},"token_budget":{"type":["integer","null"],"minimum":1}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActiveContextPack",
+  "type": "object",
+  "required": [
+    "project_id",
+    "scope",
+    "active_entity_ids",
+    "canon_fact_ids",
+    "source_versions",
+    "context_pack_id",
+    "version",
+    "purpose",
+    "canon_version",
+    "story_position",
+    "token_budget",
+    "omitted_context_summary"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scene_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "PROJECT",
+        "EPISODE",
+        "SCENE",
+        "SHOT"
+      ]
+    },
+    "active_entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canon_fact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relationship_edge_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "knowledge_state_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reference_binding_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recent_state_summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unresolved_thread_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/source_pin"
+      },
+      "minItems": 0
+    },
+    "token_budget": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "context_pack_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canon_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "story_position": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "omitted_context_summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
 }

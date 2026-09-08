@@ -23,3 +23,21 @@ Polish artifact/shot/version/revision/keyframe/cost review UX without losing cha
 - localization and state tests;
 - Golden scenarios affected;
 - remaining accessibility/provider limitations.
+
+## Binding execution and verification packet
+
+Dependencies: TASK-040. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/20_CHAT_FIRST_WORKSPACE_UX.md`
+- `spec/28_API_AND_EVENT_CONTRACTS.md`
+- `spec/30_UI_STATE_MACHINE.md`
+- `schemas/event_envelope.schema.json`
+- `schemas/revision_request.schema.json`
+
+Requirements: R-023, R-029, R-076.
+Golden coverage: GS08, GS09, GS11.
+
+- [ ] Exercise accept/revert/revision/keyframe/cost details and error/reconciliation/stale states in vi/en through real persisted APIs.
+- [ ] Reload and out-of-order events preserve version/cost truth; raw provider errors do not replace actionable localized state and no advanced knobs are mandatory.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

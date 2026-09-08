@@ -2,16 +2,112 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ModelProfile",
   "type": "object",
-  "required": ["model_id","verification_status","capabilities","known_failures","last_verified_at"],
+  "required": [
+    "model_id",
+    "verification_status",
+    "capabilities",
+    "known_failures",
+    "last_verified_at",
+    "profile_version",
+    "version",
+    "modality",
+    "routable",
+    "scope_note",
+    "sources",
+    "unknowns"
+  ],
   "properties": {
-    "model_id": {"type":"string"},
-    "version": {"type":["string","null"]},
-    "verification_status": {"enum":["MEASURED","PARTIAL","UNVERIFIED"]},
-    "capabilities": {"type":"object"},
-    "bias": {"type":"object"},
-    "known_failures": {"type":"array","items":{"type":"string"}},
-    "compile_notes": {"type":"array","items":{"type":"string"}},
-    "last_verified_at": {"type":["string","null"]},
-    "sources": {"type":"array","items":{"type":"string"}}
-  }
+    "model_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "verification_status": {
+      "enum": [
+        "MEASURED",
+        "PARTIAL",
+        "UNVERIFIED"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/claim"
+      }
+    },
+    "bias": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/claim"
+      }
+    },
+    "known_failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compile_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "profile_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modality": {
+      "enum": [
+        "VIDEO",
+        "IMAGE",
+        "VOICE",
+        "FAMILY"
+      ]
+    },
+    "routable": {
+      "type": "boolean"
+    },
+    "scope_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "behavior": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/claim"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

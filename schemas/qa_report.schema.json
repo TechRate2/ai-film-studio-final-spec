@@ -1,5 +1,185 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"QAReport","type":"object",
-  "required":["qa_id","artifact_id","severity","checks","disposition"],
-  "properties":{"qa_id":{"type":"string"},"artifact_id":{"type":"string"},"severity":{"enum":["PASS","MINOR","MAJOR","FATAL"]},"checks":{"type":"array","items":{"type":"object","required":["name","status"],"properties":{"name":{"type":"string"},"status":{"enum":["PASS","WARN","FAIL","UNKNOWN"]},"score":{"type":["number","null"]},"evidence":{"type":"object"},"notes":{"type":"string"}}}},"diagnosis":{"type":"array","items":{"type":"string"}},"recommended_repairs":{"type":"array","items":{"type":"object"}},"disposition":{"enum":["ACCEPTABLE","USER_REVIEW","REVISE","BLOCKED"]},"auto_paid_retry_allowed":{"const":false}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QAReport",
+  "type": "object",
+  "required": [
+    "qa_id",
+    "artifact_id",
+    "severity",
+    "checks",
+    "disposition",
+    "project_id",
+    "artifact_version_id",
+    "policy_version",
+    "auto_paid_retry_allowed"
+  ],
+  "properties": {
+    "qa_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "PASS",
+        "MINOR",
+        "MAJOR",
+        "FATAL"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "WARN",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence": {
+            "type": "object",
+            "properties": {
+              "artifact_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/version_ref"
+                },
+                "minItems": 0
+              },
+              "measurements": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "artifact_refs",
+              "measurements",
+              "notes"
+            ],
+            "additionalProperties": false
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "required",
+          "score",
+          "evidence",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "diagnosis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_repairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "affected_modalities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "billable_generation": {
+            "type": "boolean"
+          },
+          "estimated_incremental_cost": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "description",
+          "affected_modalities",
+          "billable_generation",
+          "estimated_incremental_cost"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "disposition": {
+      "enum": [
+        "ACCEPTABLE",
+        "USER_REVIEW",
+        "REVISE",
+        "BLOCKED"
+      ]
+    },
+    "auto_paid_retry_allowed": {
+      "const": false
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
 }

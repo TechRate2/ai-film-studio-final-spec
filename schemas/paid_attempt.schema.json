@@ -1,9 +1,142 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"PaidAttempt",
-  "type":"object",
-  "required":["attempt_id","artifact_id","provider_id","model_id","status","estimated_cost","paid_state_certainty"],
-  "properties":{
-    "attempt_id":{"type":"string"},"artifact_id":{"type":"string"},"shot_id":{"type":["string","null"]},"version_id":{"type":["string","null"]},"provider_id":{"type":"string"},"model_id":{"type":"string"},"upstream_task_id":{"type":["string","null"]},"idempotency_key":{"type":["string","null"]},"prompt_hash":{"type":"string"},"reference_hash":{"type":"string"},"estimated_cost":{"type":"number","minimum":0},"actual_cost":{"type":["number","null"],"minimum":0},"status":{"enum":["PLANNED","AWAITING_APPROVAL","SUBMITTING","SUBMITTED","POLLING","RECONCILING","SUCCEEDED","FAILED","CANCELLED"]},"paid_state_certainty":{"enum":["NOT_SUBMITTED","SUBMITTED","UNKNOWN"]},"created_at":{"type":"string"},"updated_at":{"type":"string"}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PaidAttempt",
+  "type": "object",
+  "required": [
+    "attempt_id",
+    "artifact_id",
+    "provider_id",
+    "model_id",
+    "status",
+    "estimated_cost",
+    "paid_state_certainty",
+    "logical_attempt_id",
+    "authorization_id",
+    "project_id",
+    "job_id",
+    "candidate_index",
+    "currency",
+    "reserved_cost",
+    "prompt_hash",
+    "reference_hash",
+    "idempotency_key",
+    "upstream_task_id",
+    "actual_cost",
+    "created_at",
+    "updated_at",
+    "request_snapshot_id",
+    "request_snapshot"
+  ],
+  "properties": {
+    "attempt_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "shot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "upstream_task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotency_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_hash": {
+      "type": "string"
+    },
+    "reference_hash": {
+      "type": "string"
+    },
+    "estimated_cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "actual_cost": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "status": {
+      "$ref": "common.schema.json#/$defs/job_status"
+    },
+    "paid_state_certainty": {
+      "$ref": "common.schema.json#/$defs/paid_certainty"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logical_attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "predecessor_attempt_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reserved_cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "request_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "request_snapshot": {
+      "$ref": "common.schema.json#/$defs/request_snapshot"
+    }
+  },
+  "additionalProperties": false
 }

@@ -4,7 +4,7 @@
 Prove one real end-to-end production route, not merely a successful provider API call.
 
 ## Mandatory order
-Production planning 019–023 → 025–029 → 024 (after ImageProvider port) → Durable Jobs 032 → SpendAuthorization/PaidAttemptGuard 033 → real Seedance 030 → QA/revision/versioning/finalization 034–037 → Probe/Benchmark evidence 031.
+Production planning 019–023 → 025–029 → Durable Jobs 032 → SpendAuthorization/PaidAttemptGuard 033 → keyframes 024 → preflight/QA 034 → real Seedance 030 → revision/versioning/finalization 035–037 → Probe/Benchmark evidence 031.
 
 **No production billable Seedance submission is allowed before TASK-032 and TASK-033 pass.**
 

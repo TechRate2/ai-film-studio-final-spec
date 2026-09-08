@@ -41,3 +41,7 @@ Extract mechanisms rather than copying expressive content: hook mechanism, pacin
 
 ## Opening–Body–Ending intelligence
 For each section ask: why stop, why care, why believe/feel, what payoff, why continue/remember/act?
+
+## Bounded evidence decisions
+Every research plan has finite max_queries, max_sources, max_iterations, max_cost and max_latency_seconds, a currency and a deadline. Persist consumed counters across restarts, redirects, cache misses, critic re-entry and tool failures. Child research shares the parent's remaining budget; it cannot recursively acquire a fresh budget. Exhaustion produces USE_CACHE with disclosed limits, a documented creative trade-off, WAITING_USER or BLOCK_FOR_EVIDENCE; it never guesses a material current fact.
+Source ranking is claim-specific: primary factual sources for factual claims, exact endpoint documentation for exposure, scoped measurements for reliability, and observed examples for creative hypotheses. Repeated copies of one source are not independent evidence. Missing evidence is distinct from evidence of absence. Record contradicting claim IDs, scope differences and the reason for resolution; unresolved material contradictions block that assertion, not unrelated creative work. Paid probes require the same explicit spend authorization as production and may not be autonomously purchased by research.

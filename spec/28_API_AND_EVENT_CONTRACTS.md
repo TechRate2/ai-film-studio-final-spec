@@ -27,7 +27,7 @@ All asynchronous events carry:
 ## Important event types
 `director.started|progress|checkpoint|required_input|completed|failed`
 `artifact.created|stale|validated|accepted|rejected`
-`job.queued|submitted|polling|completed|failed|cancelled|reconciling`
+`job.state_changed` (typed previous/current DurableJob status; polling is progress, not another state)
 `paid_attempt.estimated|approved|submitted|reconciled|charged|failed`
 `shot.version_created|qa_completed|accepted|rejected`
 `canon.version_created`
@@ -36,7 +36,12 @@ All asynchronous events carry:
 User command retries and network retries must not create duplicate paid attempts. Mutation endpoints accept command/idempotency identity when semantics allow.
 
 ## Error contract
-Structured errors include code, user-safe message, retryability, paid-state certainty (`NOT_SUBMITTED | SUBMITTED | UNKNOWN`), provider correlation ID where available, and remediation options.
+Structured errors include code, user-safe message, retryability, paid-state certainty (`NOT_SUBMITTED | SUBMITTED | UNKNOWN | FAILED_UNBILLED_CONFIRMED | BILLED_OR_OUTPUT_PRODUCED`), provider correlation ID where available, and remediation options.
 
 ## UI contract
 UI reconstructs progress from durable project/job state plus events. Missing websocket/SSE messages cannot be the sole source of truth.
+
+## Mutation and event consistency
+Mutations carry command_id, expected resource version and authenticated project scope. A repeated command returns the original effect/result; conflicting payload reuse returns a conflict. The committed state and outbox event are atomic. Sequence is monotonic per project stream; clients deduplicate event_id and refetch durable state on gaps. Event payloads are versioned typed records; job.state_changed carries the canonical job vocabulary. Provider status strings remain adapter metadata only. Retriable error describes recovery of the current command; it never independently authorizes a new billable attempt. Material events link the affected resource version and attempt/authorization where relevant.
+
+Wire payload shape is the versioned resource-event record in schemas/event_envelope.schema.json: resource_type/id/version, message, optional job status transition/error and related IDs. Resource state itself is fetched from durable typed contracts; adapters must not invent competing inline payload shapes. A new payload variant requires a versioned schema change. `run_id=null` is allowed for project mutations outside a run but the field is present.

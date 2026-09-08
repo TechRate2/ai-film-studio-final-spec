@@ -9,18 +9,18 @@ Refs may include three characters, sword, sect hall, camera-motion video and voi
 If user signals continuing episodes/recurring cast, `scope=SERIES`, `content_mode=DRAMA`, current episode 1.
 
 ## 2. Reference Intelligence
-- Lâm Uyên → CHARACTER_IDENTITY/HARD
-- Tô Nghi → CHARACTER_IDENTITY/HARD
-- Huyền Tôn → CHARACTER_IDENTITY/HARD
-- sword → PROP_IDENTITY/HARD
+- Lâm Uyên → CHARACTER_IDENTITY/HARD_LOCK
+- Tô Nghi → CHARACTER_IDENTITY/HARD_LOCK
+- Huyền Tôn → CHARACTER_IDENTITY/HARD_LOCK
+- sword → PROP_IDENTITY/HARD_LOCK
 - sect hall → LOCATION
-- sample video → CAMERA/MOTION_ONLY; explicitly do not copy story/characters/location
+- sample video → CAMERA_REFERENCE/MOTION_ONLY; explicitly do not copy story/characters/location
 - voice sample → VOICE_REFERENCE
 
 ## 3. Canon
 Store world/faction/power-system, the hidden truth that Lâm Uyên is tied to the seal, and separate audience/character knowledge states.
 
-## 4. Episode arc
+## 4. Episode arc (illustrative beat windows, not generation boundaries)
 0–15 catastrophe hook  
 15–30 missing seal/mystery  
 30–45 attack + master reveal  

@@ -18,3 +18,7 @@ On episode acceptance: generate canonical summary; commit accepted character/rel
 
 ## Retcon/update
 When user changes a fact: create a new canon version, mark affected downstream artifacts STALE through dependency graph, and never silently regenerate paid media.
+
+## Temporal canon and atomic commits
+Fact IDs are stable and refer to versioned propositions, not free-text chat assertions. Track valid story position (episode/scene/beat) separately from recorded_at. World truth, audience disclosure and each character's knowledge access are separate records. Corrections preserve superseded versions with causal source IDs. Canon patches use expected_base_version; concurrent edits reject stale writes and request rebase instead of last-write-wins.
+Episode acceptance atomically pins accepted master/timeline, canon version, state/relationship/voice versions and unresolved threads. The episode commit has an idempotency key. A crash either commits the complete snapshot or none. Later revisions create a new snapshot; historical episodes retain their original pins. Long-single films use the same scene/checkpoint semantics without artificial episode overhead.

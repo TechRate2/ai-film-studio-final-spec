@@ -2,19 +2,203 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ContinuityBaton",
   "type": "object",
-  "required": ["shot_id","accepted_version_id","characters","story_state"],
+  "required": [
+    "shot_id",
+    "accepted_version_id",
+    "characters",
+    "story_state",
+    "baton_id",
+    "project_id",
+    "canon_version",
+    "observed_state",
+    "observation_evidence_ids",
+    "source_versions",
+    "last_frame_artifact_id",
+    "last_video_artifact_id"
+  ],
   "properties": {
-    "shot_id": {"type":"string"},
-    "accepted_version_id": {"type":"string"},
-    "characters": {"type":"array","items":{"type":"object","properties":{"character_id":{"type":"string"},"outfit":{"type":["string","null"]},"hair":{"type":["string","null"]},"injury_state":{"type":["string","null"]},"position":{"type":["string","null"]},"movement_direction":{"type":["string","null"]},"eyeline":{"type":["string","null"]},"emotion":{"type":["string","null"]}}}},
-    "props": {"type":"array","items":{"type":"object","properties":{"prop_id":{"type":"string"},"state":{"type":"string"}}}},
-    "location": {"type":["string","null"]},
-    "lighting": {"type":["string","null"]},
-    "time": {"type":["string","null"]},
-    "story_state": {"type":"object"},
-    "music_state": {"type":["string","null"]},
-    "ambience": {"type":["string","null"]},
-    "last_frame_artifact_id": {"type":["string","null"]},
-    "last_video_artifact_id": {"type":["string","null"]}
-  }
+    "shot_id": {
+      "type": "string"
+    },
+    "accepted_version_id": {
+      "type": "string"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "character_id": {
+            "type": "string"
+          },
+          "outfit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hair": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "injury_state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "position": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "movement_direction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eyeline": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "emotion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "character_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "props": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prop_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "prop_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lighting": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "story_state": {
+      "type": "object",
+      "properties": {
+        "fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "story_position": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "fact_ids",
+        "story_position"
+      ],
+      "additionalProperties": false
+    },
+    "music_state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ambience": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_frame_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_video_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "baton_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canon_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "observed_state": {
+      "$ref": "common.schema.json#/$defs/state"
+    },
+    "weather": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "observation_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "source_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/source_pin"
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

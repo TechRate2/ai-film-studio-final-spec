@@ -1,49 +1,18 @@
 name: spec-governance
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   canonical-contract:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify canonical contract
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f AGENTS.md
-          test -f SPEC_VERSION
-          test -f MANIFEST.md
-          test -f spec/00_SPEC_LOCK.md
-          test -f spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md
-          test -f governance/AI_CODING_PROTOCOL.md
-          test -f tasks/00_IMPLEMENTATION_ORDER.md
-          test -f tasks/TASK_001_REPOSITORY_REALITY_AUDIT.md
-          test -f tasks/TASK_043_BETA_RELEASE_GATE.md
-          test -f tasks/PROVIDER_EXPANSION_TEMPLATE.md
-          test -f evals/GOLDEN_SCENARIOS.md
-          test -f traceability/REQUIREMENTS_TRACEABILITY.csv
-          grep -q "Generalist Director" spec/00_SPEC_LOCK.md
-          grep -q "No silent/automatic paid media regeneration" spec/00_SPEC_LOCK.md
-          grep -q "SpendAuthorization" spec/00_SPEC_LOCK.md
-          grep -q "PRODUCT_DEMO" spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md
-          grep -q "TASK-032 Durable Jobs and TASK-033" tasks/TASK_030_SEEDANCE_2_0_VERTICAL_SLICE.md
-          grep -q "Vietnamese and English" spec/20_CHAT_FIRST_WORKSPACE_UX.md
-          grep -q "Bounded agent loops" spec/29_RUNTIME_ORCHESTRATION.md
-          SPEC_COUNT=$(find spec -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')
-          TASK_COUNT=$(find tasks -maxdepth 1 -type f -name 'TASK_[0-9][0-9][0-9]_*.md' | wc -l | tr -d ' ')
-          SCHEMA_COUNT=$(find schemas -maxdepth 1 -type f -name '*.schema.json' | wc -l | tr -d ' ')
-          GS_COUNT=$(grep -c '^## GS[0-9][0-9] ' evals/GOLDEN_SCENARIOS.md)
-          REQ_COUNT=$(tail -n +2 traceability/REQUIREMENTS_TRACEABILITY.csv | grep -c '^R-')
-          PHASE_COUNT=$(find phases -maxdepth 1 -type f -name 'PHASE_*.md' | wc -l | tr -d ' ')
-          test "$SPEC_COUNT" -eq 47
-          test "$TASK_COUNT" -eq 43
-          test "$SCHEMA_COUNT" -eq 42
-          test "$GS_COUNT" -eq 25
-          test "$REQ_COUNT" -eq 78
-          test "$PHASE_COUNT" -eq 7
-          python - <<'PY'
-          import json, glob
-          for p in glob.glob('schemas/*.schema.json'):
-              with open(p, encoding='utf-8') as f:
-                  json.load(f)
-          print('All JSON schemas parse.')
-          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: python -m pip install -r governance/requirements.txt
+      - name: Validate canonical contract offline
+        run: python governance/validate_spec.py --json
+      - name: Prove drift is rejected
+        run: python -m unittest discover -s governance -p 'test_*.py' -v

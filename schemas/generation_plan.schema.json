@@ -1,19 +1,174 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"GenerationPlan",
-  "type":"object",
-  "required":["mode","segments","dependency_edges","keyframe_policy","expected_cost"],
-  "properties":{
-    "mode":{"enum":["CONTINUOUS","SEGMENTED","CONTINUATION"]},
-    "segments":{"type":"array","items":{"type":"object","required":["id","duration_seconds","purpose"],"properties":{"id":{"type":"string"},"duration_seconds":{"type":"number","exclusiveMinimum":0},"purpose":{"type":"string"},"boundary_reason":{"type":["string","null"]},"generation_mode":{"type":"string"},"risk":{"type":"object"}}}},
-    "dependency_edges":{"type":"array","items":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"string"}}},
-    "sequential_groups":{"type":"array","items":{"type":"array","items":{"type":"string"}}},
-    "parallel_groups":{"type":"array","items":{"type":"array","items":{"type":"string"}}},
-    "keyframe_policy":{"enum":["NONE","MASTER_ONLY","SELECTIVE","EACH_SEGMENT"]},
-    "shared_reference_pack":{"type":"array","items":{"type":"string"}},
-    "per_segment_reference_overrides":{"type":"object"},
-    "expected_cost":{"type":"number","minimum":0},
-    "expected_acceptance_probability":{"type":"number","minimum":0,"maximum":1},
-    "expected_cost_per_accepted_second":{"type":["number","null"],"minimum":0}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenerationPlan",
+  "type": "object",
+  "required": [
+    "mode",
+    "segments",
+    "dependency_edges",
+    "keyframe_policy",
+    "expected_cost",
+    "project_id",
+    "plan_id",
+    "version",
+    "currency"
+  ],
+  "properties": {
+    "mode": {
+      "enum": [
+        "CONTINUOUS",
+        "SEGMENTED",
+        "CONTINUATION"
+      ]
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "duration_seconds",
+          "purpose",
+          "generation_mode",
+          "shot_ids",
+          "entry_state",
+          "exit_state",
+          "boundary_reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "boundary_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "generation_mode": {
+            "$ref": "common.schema.json#/$defs/generation_mode"
+          },
+          "risk": {
+            "$ref": "common.schema.json#/$defs/risk"
+          },
+          "shot_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "entry_state": {
+            "$ref": "common.schema.json#/$defs/state"
+          },
+          "exit_state": {
+            "$ref": "common.schema.json#/$defs/state"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dependency_edges": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "sequential_groups": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "parallel_groups": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "keyframe_policy": {
+      "enum": [
+        "NONE",
+        "MASTER_ONLY",
+        "SELECTIVE",
+        "EACH_SEGMENT"
+      ]
+    },
+    "shared_reference_pack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "per_segment_reference_overrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      }
+    },
+    "expected_cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "expected_acceptance_probability": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "expected_cost_per_accepted_second": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
 }

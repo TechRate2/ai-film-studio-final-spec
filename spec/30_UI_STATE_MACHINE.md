@@ -24,3 +24,6 @@ Card provides purpose, copy prompt, reference bundle, upload slot and validation
 
 ## Advanced Director details
 Optional drawer can show evidence, CreativeStrategy, shot plan, UniversalVideoSpec, model/compiler decision, reference mapping, continuity and cost rationale.
+
+## Projection, not competing persistence
+UI labels are projections of canonical run/job/artifact/acceptance records, not alternate worker states. AUTHORIZED/SUBMITTING/RUNNING project to producing; RECONCILING shows recovery; SUCCEEDED projects to review only after output/QA exists; CANCEL_REQUESTED remains cancelling until confirmation. STALE/BLOCKED/MISSING artifacts override any completed preview label. Persist locale as user preference; render the same resource IDs, amounts and authorization meaning in vi/en. Out-of-order events cannot roll back accepted versions or show false completion. Locale changes and refreshes are read-only for production state.

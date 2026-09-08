@@ -2,18 +2,168 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ShotVersion",
   "type": "object",
-  "required": ["shot_id","version_id","universal_spec","references","status"],
+  "required": [
+    "shot_id",
+    "version_id",
+    "universal_spec",
+    "references",
+    "status",
+    "project_id",
+    "parent_version_id",
+    "user_revision_intent",
+    "input_versions",
+    "provider_id",
+    "model_id",
+    "profile_versions",
+    "compiler_version",
+    "request_snapshot_id",
+    "attempt_ids",
+    "created_at",
+    "request_snapshot"
+  ],
   "properties": {
-    "shot_id": {"type":"string"},
-    "version_id": {"type":"string"},
-    "parent_version_id": {"type":["string","null"]},
-    "user_revision_intent": {"type":["string","null"]},
-    "universal_spec": {"type":"object"},
-    "compiled_prompt": {"type":["string","null"]},
-    "references": {"type":"array","items":{"type":"string"}},
-    "status": {"enum":["DRAFT","GENERATING","READY","ACCEPTED","REJECTED","FAILED","STALE"]},
-    "artifact_id": {"type":["string","null"]},
-    "qa": {"type":["object","null"]},
-    "cost": {"type":["number","null"]}
-  }
+    "shot_id": {
+      "type": "string"
+    },
+    "version_id": {
+      "type": "string"
+    },
+    "parent_version_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_revision_intent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "universal_spec": {
+      "$ref": "universal_video_spec.schema.json"
+    },
+    "compiled_prompt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "reference_binding.schema.json"
+      },
+      "minItems": 0
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "GENERATING",
+        "READY",
+        "ACCEPTED",
+        "REJECTED",
+        "FAILED",
+        "STALE"
+      ]
+    },
+    "artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qa": {
+      "anyOf": [
+        {
+          "$ref": "qa_report.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cost": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/source_pin"
+      },
+      "minItems": 0
+    },
+    "provider_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "model_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "profile_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "compiler_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "request_snapshot_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "attempt_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "continuity_baton_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "request_snapshot": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/request_snapshot"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
 }

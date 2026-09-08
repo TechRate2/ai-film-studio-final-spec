@@ -1,0 +1,1560 @@
+{
+  "version": "4.3",
+  "counts": {
+    "specs": 47,
+    "tasks": 43,
+    "schemas": 43,
+    "goldens": 28,
+    "requirements": 88,
+    "phases": 7
+  },
+  "execution_order": [
+    "TASK-001",
+    "TASK-002",
+    "TASK-003",
+    "TASK-004",
+    "TASK-005",
+    "TASK-006",
+    "TASK-007",
+    "TASK-008",
+    "TASK-009",
+    "TASK-010",
+    "TASK-011",
+    "TASK-012",
+    "TASK-013",
+    "TASK-014",
+    "TASK-015",
+    "TASK-016",
+    "TASK-017",
+    "TASK-018",
+    "TASK-019",
+    "TASK-020",
+    "TASK-021",
+    "TASK-022",
+    "TASK-023",
+    "TASK-025",
+    "TASK-026",
+    "TASK-027",
+    "TASK-028",
+    "TASK-029",
+    "TASK-032",
+    "TASK-033",
+    "TASK-024",
+    "TASK-034",
+    "TASK-030",
+    "TASK-035",
+    "TASK-036",
+    "TASK-037",
+    "TASK-031",
+    "TASK-038",
+    "TASK-039",
+    "TASK-040",
+    "TASK-041",
+    "TASK-042",
+    "TASK-043"
+  ],
+  "tasks": {
+    "TASK-001": {
+      "path": "tasks/TASK_001_REPOSITORY_REALITY_AUDIT.md",
+      "depends_on": [],
+      "specs": [
+        "spec/00_SPEC_LOCK.md",
+        "spec/01_VISION_AND_NON_GOALS.md",
+        "spec/26_IMPLEMENTATION_GOVERNANCE.md"
+      ],
+      "schemas": [],
+      "requirements": [
+        "R-079"
+      ],
+      "goldens": [
+        "GS26"
+      ]
+    },
+    "TASK-002": {
+      "path": "tasks/TASK_002_CANONICAL_SPEC_EMBEDDING_AND_TRACEABILITY.md",
+      "depends_on": [
+        "TASK-001"
+      ],
+      "specs": [
+        "spec/00_SPEC_LOCK.md",
+        "spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md",
+        "spec/26_IMPLEMENTATION_GOVERNANCE.md"
+      ],
+      "schemas": [
+        "schemas/common.schema.json"
+      ],
+      "requirements": [
+        "R-079"
+      ],
+      "goldens": [
+        "GS26"
+      ]
+    },
+    "TASK-003": {
+      "path": "tasks/TASK_003_PROJECT_DOMAIN_PERSISTENCE.md",
+      "depends_on": [
+        "TASK-002"
+      ],
+      "specs": [
+        "spec/07_PROJECT_CANON_AND_SERIES_MEMORY.md",
+        "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+        "spec/27_DOMAIN_DATA_MODEL.md",
+        "spec/23_SECURITY_PRIVACY_PROVENANCE.md"
+      ],
+      "schemas": [
+        "schemas/project_intent.schema.json",
+        "schemas/project_canon.schema.json",
+        "schemas/character.schema.json",
+        "schemas/artifact.schema.json"
+      ],
+      "requirements": [
+        "R-080"
+      ],
+      "goldens": [
+        "GS26",
+        "GS27"
+      ]
+    },
+    "TASK-004": {
+      "path": "tasks/TASK_004_ARTIFACT_VERSIONING_AND_CURRENCY.md",
+      "depends_on": [
+        "TASK-003"
+      ],
+      "specs": [
+        "spec/17_SHOT_REVISION_VERSIONING.md",
+        "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+        "spec/27_DOMAIN_DATA_MODEL.md"
+      ],
+      "schemas": [
+        "schemas/artifact.schema.json",
+        "schemas/artifact_dependency.schema.json",
+        "schemas/shot_version.schema.json"
+      ],
+      "requirements": [
+        "R-022",
+        "R-063"
+      ],
+      "goldens": [
+        "GS09",
+        "GS11",
+        "GS21"
+      ]
+    },
+    "TASK-005": {
+      "path": "tasks/TASK_005_CHAT_FIRST_WORKSPACE.md",
+      "depends_on": [
+        "TASK-004"
+      ],
+      "specs": [
+        "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
+        "spec/28_API_AND_EVENT_CONTRACTS.md",
+        "spec/30_UI_STATE_MACHINE.md"
+      ],
+      "schemas": [
+        "schemas/project_intent.schema.json",
+        "schemas/event_envelope.schema.json"
+      ],
+      "requirements": [
+        "R-023",
+        "R-029",
+        "R-076"
+      ],
+      "goldens": [
+        "GS08",
+        "GS09",
+        "GS11"
+      ]
+    },
+    "TASK-006": {
+      "path": "tasks/TASK_006_GENERALIST_DIRECTOR_RUNTIME.md",
+      "depends_on": [
+        "TASK-005"
+      ],
+      "specs": [
+        "spec/02_GENERALIST_DIRECTOR_ARCHITECTURE.md",
+        "spec/29_RUNTIME_ORCHESTRATION.md",
+        "spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/decision_record.schema.json",
+        "schemas/active_context_pack.schema.json",
+        "schemas/event_envelope.schema.json"
+      ],
+      "requirements": [
+        "R-001",
+        "R-002",
+        "R-026",
+        "R-048",
+        "R-077",
+        "R-078",
+        "R-086"
+      ],
+      "goldens": [
+        "GS01",
+        "GS03",
+        "GS04",
+        "GS10",
+        "GS15",
+        "GS18",
+        "GS23",
+        "GS25"
+      ]
+    },
+    "TASK-007": {
+      "path": "tasks/TASK_007_SCOPE_AND_CONTENT_INTELLIGENCE.md",
+      "depends_on": [
+        "TASK-006"
+      ],
+      "specs": [
+        "spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md"
+      ],
+      "schemas": [
+        "schemas/scope_decision.schema.json"
+      ],
+      "requirements": [
+        "R-003",
+        "R-041"
+      ],
+      "goldens": [
+        "GS01",
+        "GS05",
+        "GS12"
+      ]
+    },
+    "TASK-008": {
+      "path": "tasks/TASK_008_REFERENCE_ANALYZER.md",
+      "depends_on": [
+        "TASK-007"
+      ],
+      "specs": [
+        "spec/06_REFERENCE_INTELLIGENCE.md",
+        "spec/23_SECURITY_PRIVACY_PROVENANCE.md",
+        "spec/41_MULTIMODAL_ASSET_INGESTION.md"
+      ],
+      "schemas": [
+        "schemas/asset_ingestion_record.schema.json",
+        "schemas/reference_binding.schema.json",
+        "schemas/artifact.schema.json",
+        "schemas/content_safety_decision.schema.json"
+      ],
+      "requirements": [
+        "R-005",
+        "R-047",
+        "R-062",
+        "R-064",
+        "R-074",
+        "R-086"
+      ],
+      "goldens": [
+        "GS02",
+        "GS03",
+        "GS08",
+        "GS12",
+        "GS18",
+        "GS23"
+      ]
+    },
+    "TASK-009": {
+      "path": "tasks/TASK_009_ENTITY_GROUPING_AND_LOCKS.md",
+      "depends_on": [
+        "TASK-008"
+      ],
+      "specs": [
+        "spec/06_REFERENCE_INTELLIGENCE.md",
+        "spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md"
+      ],
+      "schemas": [
+        "schemas/reference_binding.schema.json",
+        "schemas/character.schema.json"
+      ],
+      "requirements": [
+        "R-005"
+      ],
+      "goldens": [
+        "GS02",
+        "GS03"
+      ]
+    },
+    "TASK-010": {
+      "path": "tasks/TASK_010_DYNAMIC_SKILL_REGISTRY.md",
+      "depends_on": [
+        "TASK-009"
+      ],
+      "specs": [
+        "spec/02_GENERALIST_DIRECTOR_ARCHITECTURE.md",
+        "spec/05_CREATIVE_STORY_RETENTION.md",
+        "spec/10_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md"
+      ],
+      "schemas": [
+        "schemas/decision_record.schema.json"
+      ],
+      "requirements": [
+        "R-081"
+      ],
+      "goldens": [
+        "GS02",
+        "GS07",
+        "GS13"
+      ]
+    },
+    "TASK-011": {
+      "path": "tasks/TASK_011_ADAPTIVE_RESEARCH_CONTROLLER.md",
+      "depends_on": [
+        "TASK-010"
+      ],
+      "specs": [
+        "spec/04_ADAPTIVE_RESEARCH_INTELLIGENCE.md",
+        "spec/33_RESEARCH_INGESTION_KNOWLEDGE_PLAYBOOK.md",
+        "spec/40_RESEARCH_ROI_AND_CREATIVE_EVIDENCE_GRAPH.md"
+      ],
+      "schemas": [
+        "schemas/research_plan.schema.json",
+        "schemas/research_roi_decision.schema.json"
+      ],
+      "requirements": [
+        "R-004",
+        "R-044",
+        "R-073",
+        "R-078"
+      ],
+      "goldens": [
+        "GS04",
+        "GS06",
+        "GS25"
+      ]
+    },
+    "TASK-012": {
+      "path": "tasks/TASK_012_EVIDENCEPACK_AND_FRESHNESS.md",
+      "depends_on": [
+        "TASK-011"
+      ],
+      "specs": [
+        "spec/04_ADAPTIVE_RESEARCH_INTELLIGENCE.md",
+        "spec/24_EVIDENCE_AND_VERIFICATION_POLICY.md",
+        "spec/33_RESEARCH_INGESTION_KNOWLEDGE_PLAYBOOK.md",
+        "spec/40_RESEARCH_ROI_AND_CREATIVE_EVIDENCE_GRAPH.md"
+      ],
+      "schemas": [
+        "schemas/evidence_pack.schema.json",
+        "schemas/research_evidence.schema.json",
+        "schemas/creative_evidence_graph.schema.json"
+      ],
+      "requirements": [
+        "R-004",
+        "R-032",
+        "R-045",
+        "R-062"
+      ],
+      "goldens": [
+        "GS01",
+        "GS02",
+        "GS04",
+        "GS06",
+        "GS12",
+        "GS25"
+      ]
+    },
+    "TASK-013": {
+      "path": "tasks/TASK_013_CREATIVE_STRATEGY_AND_RETENTION.md",
+      "depends_on": [
+        "TASK-012"
+      ],
+      "specs": [
+        "spec/05_CREATIVE_STORY_RETENTION.md",
+        "spec/39_STYLE_DNA_AND_GRAMMAR_LAYERS.md"
+      ],
+      "schemas": [
+        "schemas/creative_strategy.schema.json",
+        "schemas/style_dna.schema.json",
+        "schemas/user_taste_profile.schema.json"
+      ],
+      "requirements": [
+        "R-002",
+        "R-042",
+        "R-043",
+        "R-078"
+      ],
+      "goldens": [
+        "GS01",
+        "GS02",
+        "GS03",
+        "GS04",
+        "GS25"
+      ]
+    },
+    "TASK-014": {
+      "path": "tasks/TASK_014_STORY_HIERARCHY.md",
+      "depends_on": [
+        "TASK-013"
+      ],
+      "specs": [
+        "spec/05_CREATIVE_STORY_RETENTION.md",
+        "spec/07_PROJECT_CANON_AND_SERIES_MEMORY.md",
+        "spec/27_DOMAIN_DATA_MODEL.md"
+      ],
+      "schemas": [
+        "schemas/project_canon.schema.json",
+        "schemas/creative_strategy.schema.json",
+        "schemas/generation_plan.schema.json"
+      ],
+      "requirements": [
+        "R-082"
+      ],
+      "goldens": [
+        "GS03",
+        "GS05"
+      ]
+    },
+    "TASK-015": {
+      "path": "tasks/TASK_015_CHARACTER_RELATIONSHIP_KNOWLEDGE.md",
+      "depends_on": [
+        "TASK-014"
+      ],
+      "specs": [
+        "spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md",
+        "spec/32_LONG_FORM_SERIES_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/character.schema.json",
+        "schemas/relationship_edge.schema.json"
+      ],
+      "requirements": [
+        "R-007",
+        "R-072",
+        "R-085"
+      ],
+      "goldens": [
+        "GS05",
+        "GS27"
+      ]
+    },
+    "TASK-016": {
+      "path": "tasks/TASK_016_PROJECT_CANON_AND_EPISODE_MEMORY.md",
+      "depends_on": [
+        "TASK-015"
+      ],
+      "specs": [
+        "spec/07_PROJECT_CANON_AND_SERIES_MEMORY.md",
+        "spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md",
+        "spec/32_LONG_FORM_SERIES_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/project_canon.schema.json",
+        "schemas/active_context_pack.schema.json",
+        "schemas/episode_snapshot.schema.json"
+      ],
+      "requirements": [
+        "R-006",
+        "R-031",
+        "R-037",
+        "R-046",
+        "R-085"
+      ],
+      "goldens": [
+        "GS05",
+        "GS27"
+      ]
+    },
+    "TASK-017": {
+      "path": "tasks/TASK_017_DIALOGUE_VOICE_LOCALIZATION.md",
+      "depends_on": [
+        "TASK-016"
+      ],
+      "specs": [
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+        "spec/17_SHOT_REVISION_VERSIONING.md"
+      ],
+      "schemas": [
+        "schemas/dialogue_scene.schema.json",
+        "schemas/voice_profile.schema.json"
+      ],
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS07",
+        "GS11",
+        "GS17"
+      ]
+    },
+    "TASK-018": {
+      "path": "tasks/TASK_018_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md",
+      "depends_on": [
+        "TASK-017"
+      ],
+      "specs": [
+        "spec/10_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md",
+        "spec/14_UNIVERSAL_VIDEO_SPEC.md"
+      ],
+      "schemas": [
+        "schemas/universal_video_spec.schema.json",
+        "schemas/dialogue_scene.schema.json"
+      ],
+      "requirements": [
+        "R-009",
+        "R-081"
+      ],
+      "goldens": [
+        "GS02",
+        "GS03",
+        "GS07",
+        "GS13"
+      ]
+    },
+    "TASK-019": {
+      "path": "tasks/TASK_019_PRODUCTION_STRATEGY_ENGINE.md",
+      "depends_on": [
+        "TASK-018"
+      ],
+      "specs": [
+        "spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md",
+        "spec/18_COST_SPEND_ATTEMPT_POLICY.md"
+      ],
+      "schemas": [
+        "schemas/production_strategy.schema.json",
+        "schemas/cost_estimate.schema.json"
+      ],
+      "requirements": [
+        "R-083"
+      ],
+      "goldens": [
+        "GS04",
+        "GS14"
+      ]
+    },
+    "TASK-020": {
+      "path": "tasks/TASK_020_SCENE_COMPLEXITY_PLANNER.md",
+      "depends_on": [
+        "TASK-019"
+      ],
+      "specs": [
+        "spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md",
+        "spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md"
+      ],
+      "schemas": [
+        "schemas/generation_plan.schema.json"
+      ],
+      "requirements": [
+        "R-010",
+        "R-083"
+      ],
+      "goldens": [
+        "GS03",
+        "GS04",
+        "GS13",
+        "GS14"
+      ]
+    },
+    "TASK-021": {
+      "path": "tasks/TASK_021_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+      "depends_on": [
+        "TASK-020"
+      ],
+      "specs": [
+        "spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+        "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+        "spec/29_RUNTIME_ORCHESTRATION.md"
+      ],
+      "schemas": [
+        "schemas/generation_plan.schema.json",
+        "schemas/artifact_dependency.schema.json",
+        "schemas/job.schema.json"
+      ],
+      "requirements": [
+        "R-011"
+      ],
+      "goldens": [
+        "GS03",
+        "GS09"
+      ]
+    },
+    "TASK-022": {
+      "path": "tasks/TASK_022_CONTINUITY_BATON.md",
+      "depends_on": [
+        "TASK-021"
+      ],
+      "specs": [
+        "spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+        "spec/32_LONG_FORM_SERIES_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/continuity_baton.schema.json"
+      ],
+      "requirements": [
+        "R-012",
+        "R-037"
+      ],
+      "goldens": [
+        "GS03",
+        "GS05"
+      ]
+    },
+    "TASK-023": {
+      "path": "tasks/TASK_023_SELECTIVE_KEYFRAME_CONTROLLER.md",
+      "depends_on": [
+        "TASK-022"
+      ],
+      "specs": [
+        "spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/decision_record.schema.json",
+        "schemas/keyframe_generation_pack.schema.json"
+      ],
+      "requirements": [
+        "R-013"
+      ],
+      "goldens": [
+        "GS14",
+        "GS16"
+      ]
+    },
+    "TASK-024": {
+      "path": "tasks/TASK_024_EXTERNAL_KEYFRAME_WORKFLOW.md",
+      "depends_on": [
+        "TASK-033"
+      ],
+      "specs": [
+        "spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md",
+        "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
+        "spec/41_MULTIMODAL_ASSET_INGESTION.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/keyframe_generation_pack.schema.json",
+        "schemas/artifact.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-014",
+        "R-039",
+        "R-049",
+        "R-050",
+        "R-088"
+      ],
+      "goldens": [
+        "GS08",
+        "GS14",
+        "GS16",
+        "GS17",
+        "GS27"
+      ]
+    },
+    "TASK-025": {
+      "path": "tasks/TASK_025_UNIVERSALVIDEOSPEC.md",
+      "depends_on": [
+        "TASK-023"
+      ],
+      "specs": [
+        "spec/14_UNIVERSAL_VIDEO_SPEC.md",
+        "spec/27_DOMAIN_DATA_MODEL.md"
+      ],
+      "schemas": [
+        "schemas/universal_video_spec.schema.json",
+        "schemas/reference_binding.schema.json"
+      ],
+      "requirements": [
+        "R-015"
+      ],
+      "goldens": [
+        "GS03",
+        "GS04"
+      ]
+    },
+    "TASK-026": {
+      "path": "tasks/TASK_026_MODEL_PROFILES_AND_CAPABILITY_RESOLVER.md",
+      "depends_on": [
+        "TASK-025"
+      ],
+      "specs": [
+        "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
+        "spec/37_MODEL_PROBE_PLAYBOOK.md",
+        "spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/model_profile.schema.json",
+        "schemas/provider_profile.schema.json",
+        "schemas/effective_capability.schema.json"
+      ],
+      "requirements": [
+        "R-016",
+        "R-058",
+        "R-065"
+      ],
+      "goldens": [
+        "GS15",
+        "GS20"
+      ]
+    },
+    "TASK-027": {
+      "path": "tasks/TASK_027_MODEL_PROMPT_COMPILERS.md",
+      "depends_on": [
+        "TASK-026"
+      ],
+      "specs": [
+        "spec/14_UNIVERSAL_VIDEO_SPEC.md",
+        "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
+        "spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/universal_video_spec.schema.json",
+        "schemas/model_profile.schema.json",
+        "schemas/reference_binding.schema.json"
+      ],
+      "requirements": [
+        "R-017",
+        "R-030"
+      ],
+      "goldens": [
+        "GS03"
+      ]
+    },
+    "TASK-028": {
+      "path": "tasks/TASK_028_PROVIDER_PROFILES_AND_ADAPTERS.md",
+      "depends_on": [
+        "TASK-027"
+      ],
+      "specs": [
+        "spec/16_PROVIDER_ABSTRACTION_ROUTING.md",
+        "spec/23_SECURITY_PRIVACY_PROVENANCE.md",
+        "spec/36_PROVIDER_INTEGRATION_PLAYBOOK.md",
+        "spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/provider_profile.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-016",
+        "R-035",
+        "R-059",
+        "R-065",
+        "R-088"
+      ],
+      "goldens": [
+        "GS15",
+        "GS16",
+        "GS17",
+        "GS24",
+        "GS27"
+      ]
+    },
+    "TASK-029": {
+      "path": "tasks/TASK_029_DEGRADE_PLANNER.md",
+      "depends_on": [
+        "TASK-028"
+      ],
+      "specs": [
+        "spec/16_PROVIDER_ABSTRACTION_ROUTING.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md",
+        "spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/degrade_decision.schema.json",
+        "schemas/effective_capability.schema.json"
+      ],
+      "requirements": [
+        "R-018"
+      ],
+      "goldens": [
+        "GS15",
+        "GS20"
+      ]
+    },
+    "TASK-030": {
+      "path": "tasks/TASK_030_SEEDANCE_2_0_VERTICAL_SLICE.md",
+      "depends_on": [
+        "TASK-034"
+      ],
+      "specs": [
+        "spec/14_UNIVERSAL_VIDEO_SPEC.md",
+        "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
+        "spec/18_COST_SPEND_ATTEMPT_POLICY.md",
+        "spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/universal_video_spec.schema.json",
+        "schemas/paid_attempt.schema.json",
+        "schemas/artifact.schema.json",
+        "schemas/qa_report.schema.json"
+      ],
+      "requirements": [
+        "R-030",
+        "R-040",
+        "R-069"
+      ],
+      "goldens": [
+        "GS01",
+        "GS03",
+        "GS10"
+      ]
+    },
+    "TASK-031": {
+      "path": "tasks/TASK_031_PROBE_AND_BENCHMARK_HARNESS.md",
+      "depends_on": [
+        "TASK-037"
+      ],
+      "specs": [
+        "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
+        "spec/37_MODEL_PROBE_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/model_profile.schema.json",
+        "schemas/provider_profile.schema.json",
+        "schemas/qa_report.schema.json",
+        "schemas/cost_estimate.schema.json"
+      ],
+      "requirements": [
+        "R-024",
+        "R-036",
+        "R-065",
+        "R-083"
+      ],
+      "goldens": [
+        "GS03",
+        "GS04",
+        "GS14",
+        "GS15"
+      ]
+    },
+    "TASK-032": {
+      "path": "tasks/TASK_032_DURABLE_JOBS.md",
+      "depends_on": [
+        "TASK-029"
+      ],
+      "specs": [
+        "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+        "spec/28_API_AND_EVENT_CONTRACTS.md",
+        "spec/29_RUNTIME_ORCHESTRATION.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/job.schema.json",
+        "schemas/event_envelope.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-026",
+        "R-027",
+        "R-028",
+        "R-056",
+        "R-059",
+        "R-069",
+        "R-084"
+      ],
+      "goldens": [
+        "GS03",
+        "GS10",
+        "GS22",
+        "GS24",
+        "GS27"
+      ]
+    },
+    "TASK-033": {
+      "path": "tasks/TASK_033_COST_AND_PAID_ATTEMPT_GUARD.md",
+      "depends_on": [
+        "TASK-032"
+      ],
+      "specs": [
+        "spec/18_COST_SPEND_ATTEMPT_POLICY.md",
+        "spec/29_RUNTIME_ORCHESTRATION.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/cost_estimate.schema.json",
+        "schemas/spend_authorization.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-020",
+        "R-021",
+        "R-024",
+        "R-028",
+        "R-054",
+        "R-055",
+        "R-056",
+        "R-066",
+        "R-069",
+        "R-084",
+        "R-088"
+      ],
+      "goldens": [
+        "GS01",
+        "GS04",
+        "GS09",
+        "GS10",
+        "GS16",
+        "GS17",
+        "GS22",
+        "GS24",
+        "GS27"
+      ]
+    },
+    "TASK-034": {
+      "path": "tasks/TASK_034_MEDIA_QA_AND_DIAGNOSIS.md",
+      "depends_on": [
+        "TASK-024"
+      ],
+      "specs": [
+        "spec/19_QUALITY_GATES_QA.md",
+        "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/qa_report.schema.json"
+      ],
+      "requirements": [
+        "R-020",
+        "R-057"
+      ],
+      "goldens": [
+        "GS09",
+        "GS10",
+        "GS19",
+        "GS24"
+      ]
+    },
+    "TASK-035": {
+      "path": "tasks/TASK_035_CONTEXTUAL_SHOT_REVISION.md",
+      "depends_on": [
+        "TASK-030"
+      ],
+      "specs": [
+        "spec/17_SHOT_REVISION_VERSIONING.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/revision_request.schema.json"
+      ],
+      "requirements": [
+        "R-019"
+      ],
+      "goldens": [
+        "GS09",
+        "GS21"
+      ]
+    },
+    "TASK-036": {
+      "path": "tasks/TASK_036_SHOT_VERSION_GRAPH_AND_CONTINUITY_SANDWICH.md",
+      "depends_on": [
+        "TASK-035"
+      ],
+      "specs": [
+        "spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+        "spec/17_SHOT_REVISION_VERSIONING.md",
+        "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md"
+      ],
+      "schemas": [
+        "schemas/shot_version.schema.json",
+        "schemas/continuity_baton.schema.json",
+        "schemas/artifact_dependency.schema.json"
+      ],
+      "requirements": [
+        "R-019",
+        "R-038",
+        "R-063"
+      ],
+      "goldens": [
+        "GS09",
+        "GS21"
+      ]
+    },
+    "TASK-037": {
+      "path": "tasks/TASK_037_VOICE_SUBTITLE_MUSIC_ASSEMBLY.md",
+      "depends_on": [
+        "TASK-036"
+      ],
+      "specs": [
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+        "spec/10_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md",
+        "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md"
+      ],
+      "schemas": [
+        "schemas/voice_profile.schema.json",
+        "schemas/composition_timeline.schema.json",
+        "schemas/final_master.schema.json",
+        "schemas/qa_report.schema.json"
+      ],
+      "requirements": [
+        "R-051",
+        "R-052",
+        "R-053",
+        "R-057",
+        "R-075",
+        "R-088"
+      ],
+      "goldens": [
+        "GS16",
+        "GS17",
+        "GS19",
+        "GS21",
+        "GS27"
+      ]
+    },
+    "TASK-038": {
+      "path": "tasks/TASK_038_TASTE_OUTCOME_RESEARCH_MEMORY.md",
+      "depends_on": [
+        "TASK-031"
+      ],
+      "specs": [
+        "spec/22_OUTCOME_TASTE_RESEARCH_MEMORY.md",
+        "spec/40_RESEARCH_ROI_AND_CREATIVE_EVIDENCE_GRAPH.md"
+      ],
+      "schemas": [
+        "schemas/user_taste_profile.schema.json",
+        "schemas/decision_record.schema.json",
+        "schemas/research_evidence.schema.json"
+      ],
+      "requirements": [
+        "R-025",
+        "R-071",
+        "R-087"
+      ],
+      "goldens": [
+        "GS01",
+        "GS09",
+        "GS28"
+      ]
+    },
+    "TASK-039": {
+      "path": "tasks/TASK_039_GOLDEN_SCENARIO_AUTOMATION.md",
+      "depends_on": [
+        "TASK-038"
+      ],
+      "specs": [
+        "spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md",
+        "spec/34_TEST_AND_EVAL_STRATEGY.md",
+        "spec/45_END_TO_END_WORKFLOW_STATE_MACHINES.md"
+      ],
+      "schemas": [
+        "schemas/common.schema.json"
+      ],
+      "requirements": [
+        "R-033",
+        "R-079"
+      ],
+      "goldens": [
+        "GS01",
+        "GS05",
+        "GS08",
+        "GS09",
+        "GS10",
+        "GS15",
+        "GS26"
+      ]
+    },
+    "TASK-040": {
+      "path": "tasks/TASK_040_SERIES_CONTINUATION_ACCEPTANCE.md",
+      "depends_on": [
+        "TASK-039"
+      ],
+      "specs": [
+        "spec/07_PROJECT_CANON_AND_SERIES_MEMORY.md",
+        "spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md",
+        "spec/32_LONG_FORM_SERIES_PLAYBOOK.md"
+      ],
+      "schemas": [
+        "schemas/episode_snapshot.schema.json",
+        "schemas/active_context_pack.schema.json",
+        "schemas/character.schema.json"
+      ],
+      "requirements": [
+        "R-031",
+        "R-085"
+      ],
+      "goldens": [
+        "GS05",
+        "GS27"
+      ]
+    },
+    "TASK-041": {
+      "path": "tasks/TASK_041_UI_REVIEW_SURFACES.md",
+      "depends_on": [
+        "TASK-040"
+      ],
+      "specs": [
+        "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
+        "spec/28_API_AND_EVENT_CONTRACTS.md",
+        "spec/30_UI_STATE_MACHINE.md"
+      ],
+      "schemas": [
+        "schemas/event_envelope.schema.json",
+        "schemas/revision_request.schema.json"
+      ],
+      "requirements": [
+        "R-023",
+        "R-029",
+        "R-076"
+      ],
+      "goldens": [
+        "GS08",
+        "GS09",
+        "GS11"
+      ]
+    },
+    "TASK-042": {
+      "path": "tasks/TASK_042_SECURITY_BACKUP_OBSERVABILITY.md",
+      "depends_on": [
+        "TASK-041"
+      ],
+      "specs": [
+        "spec/23_SECURITY_PRIVACY_PROVENANCE.md",
+        "spec/35_DEPLOYMENT_OPERATIONS.md",
+        "spec/41_MULTIMODAL_ASSET_INGESTION.md",
+        "spec/43_CONTENT_SAFETY_RIGHTS_COMPLIANCE.md"
+      ],
+      "schemas": [
+        "schemas/content_safety_decision.schema.json",
+        "schemas/asset_ingestion_record.schema.json"
+      ],
+      "requirements": [
+        "R-034",
+        "R-059",
+        "R-060",
+        "R-061",
+        "R-067",
+        "R-068",
+        "R-086",
+        "R-087"
+      ],
+      "goldens": [
+        "GS10",
+        "GS18",
+        "GS23",
+        "GS24",
+        "GS28"
+      ]
+    },
+    "TASK-043": {
+      "path": "tasks/TASK_043_BETA_RELEASE_GATE.md",
+      "depends_on": [
+        "TASK-042"
+      ],
+      "specs": [
+        "spec/00_SPEC_LOCK.md",
+        "spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md",
+        "spec/34_TEST_AND_EVAL_STRATEGY.md",
+        "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+        "spec/43_CONTENT_SAFETY_RIGHTS_COMPLIANCE.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md",
+        "spec/45_END_TO_END_WORKFLOW_STATE_MACHINES.md"
+      ],
+      "schemas": [
+        "schemas/final_master.schema.json"
+      ],
+      "requirements": [
+        "R-040",
+        "R-070"
+      ],
+      "goldens": [
+        "GS01",
+        "GS03",
+        "GS25"
+      ]
+    }
+  },
+  "invariants": [
+    {
+      "spec": "spec/29_RUNTIME_ORCHESTRATION.md",
+      "key": "job_status",
+      "targets": [
+        {
+          "schema": "schemas/job.schema.json",
+          "pointer": "/properties/status",
+          "keyword": "enum"
+        },
+        {
+          "schema": "schemas/paid_attempt.schema.json",
+          "pointer": "/properties/status",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md",
+      "key": "paid_certainty",
+      "targets": [
+        {
+          "schema": "schemas/paid_attempt.schema.json",
+          "pointer": "/properties/paid_state_certainty",
+          "keyword": "enum"
+        },
+        {
+          "schema": "schemas/common.schema.json",
+          "pointer": "/$defs/error/properties/paid_state_certainty",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+      "key": "artifact_currency",
+      "targets": [
+        {
+          "schema": "schemas/artifact.schema.json",
+          "pointer": "/properties/currency",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md",
+      "key": "content_modes",
+      "targets": [
+        {
+          "schema": "schemas/scope_decision.schema.json",
+          "pointer": "/properties/content_mode",
+          "keyword": "enum"
+        },
+        {
+          "schema": "schemas/universal_video_spec.schema.json",
+          "pointer": "/properties/global/properties/content_mode",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md",
+      "key": "scopes",
+      "targets": [
+        {
+          "schema": "schemas/scope_decision.schema.json",
+          "pointer": "/properties/scope",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md",
+      "key": "keyframe_sources",
+      "targets": [
+        {
+          "schema": "schemas/keyframe_generation_pack.schema.json",
+          "pointer": "/properties/source_strategy",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/06_REFERENCE_INTELLIGENCE.md",
+      "key": "reference_locks",
+      "targets": [
+        {
+          "schema": "schemas/reference_binding.schema.json",
+          "pointer": "/properties/lock_mode",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/06_REFERENCE_INTELLIGENCE.md",
+      "key": "reference_lifetimes",
+      "targets": [
+        {
+          "schema": "schemas/reference_binding.schema.json",
+          "pointer": "/properties/lifetime",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "spec": "spec/18_COST_SPEND_ATTEMPT_POLICY.md",
+      "key": "auto_paid_retry_allowed",
+      "targets": [
+        {
+          "schema": "schemas/qa_report.schema.json",
+          "pointer": "/properties/auto_paid_retry_allowed",
+          "keyword": "const"
+        }
+      ]
+    }
+  ],
+  "required_fields": {
+    "paid_attempt.schema.json": [
+      "attempt_id",
+      "logical_attempt_id",
+      "authorization_id",
+      "candidate_index",
+      "project_id",
+      "request_snapshot_id",
+      "paid_state_certainty",
+      "prompt_hash",
+      "reference_hash",
+      "created_at",
+      "updated_at",
+      "request_snapshot"
+    ],
+    "qa_report.schema.json": [
+      "auto_paid_retry_allowed",
+      "checks",
+      "policy_version"
+    ],
+    "artifact.schema.json": [
+      "project_id",
+      "version_id",
+      "acceptance",
+      "provenance"
+    ],
+    "composition_timeline.schema.json": [
+      "version_id",
+      "ticks_per_second",
+      "source_artifact_versions",
+      "compiler_version",
+      "export_target"
+    ],
+    "universal_video_spec.schema.json": [
+      "initial_state",
+      "continuity_in",
+      "continuity_out",
+      "negative_risks",
+      "timing_granularity"
+    ]
+  },
+  "required_canonical_paths": [
+    ".github/ISSUE_TEMPLATE/task.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/spec-governance.yml",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CODEX.md",
+    "MANIFEST.md",
+    "README.md",
+    "SPEC_VERSION",
+    "docs/adr/ADR_TEMPLATE.md",
+    "evals/BENCHMARK_RUBRIC.md",
+    "evals/GOLDEN_SCENARIOS.md",
+    "evidence/CHINESE_AI_FILM_WORKFLOW_SYNTHESIS.md",
+    "evidence/COMPLETENESS_AUDIT_V4_2.md",
+    "evidence/PUBLIC_SOURCE_MAP.md",
+    "evidence/SEEDANCE_KNOWLEDGE_STATUS.md",
+    "evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md",
+    "examples/EXTERNAL_KEYFRAME_PACK.md",
+    "examples/GS03_XIANXIA_60S_WALKTHROUGH.md",
+    "examples/GS04_SATURN_120S_WALKTHROUGH.md",
+    "examples/SHOT_REVISION_CONTINUITY_SANDWICH.md",
+    "governance/AI_CODING_PROTOCOL.md",
+    "governance/CANONICAL_CHANGE_POLICY.md",
+    "governance/CANONICAL_COMPLETENESS_CHECKLIST.md",
+    "governance/CONTEXT_LOADING_RULES.md",
+    "governance/REVIEW_PROTOCOL.md",
+    "governance/TASK_STATE_MACHINE.md",
+    "knowledge/filmcraft/ACTION_SCENES.md",
+    "knowledge/filmcraft/COMPOSITION_AND_LENS_LANGUAGE.md",
+    "knowledge/filmcraft/DIALOGUE_SCENES.md",
+    "knowledge/filmcraft/DIRECTING_PRINCIPLES.md",
+    "knowledge/filmcraft/EDITING_GRAMMAR.md",
+    "knowledge/filmcraft/LIGHTING_CONTINUITY.md",
+    "knowledge/filmcraft/OPENING_BODY_ENDING.md",
+    "knowledge/filmcraft/SCENE_BLOCKING.md",
+    "knowledge/filmcraft/SERIES_STORY_LOGIC.md",
+    "knowledge/filmcraft/SOUND_DESIGN.md",
+    "phases/PHASE_0_CONTRACT_AND_REALITY.md",
+    "phases/PHASE_1_BRAIN_PROOF.md",
+    "phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md",
+    "phases/PHASE_3_PRODUCTION_HARDENING.md",
+    "phases/PHASE_4_LONG_FORM_SERIES.md",
+    "phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md",
+    "phases/PHASE_6_BETA_RELEASE.md",
+    "profiles/images/IMAGE_MODEL_PROFILE_TEMPLATE.yaml",
+    "profiles/images/README.md",
+    "profiles/models/README.md",
+    "profiles/models/kling_v3_o3.yaml",
+    "profiles/models/seedance_2_0.yaml",
+    "profiles/models/seedance_2_5.yaml",
+    "profiles/models/veo_3_1.yaml",
+    "profiles/models/vidu_q3.yaml",
+    "profiles/models/wan_2_2_family.yaml",
+    "profiles/models/wan_2_6.yaml",
+    "profiles/providers/PROVIDER_PROFILE_TEMPLATE.yaml",
+    "profiles/providers/README.md",
+    "profiles/voices/README.md",
+    "profiles/voices/VOICE_MODEL_PROFILE_TEMPLATE.yaml",
+    "prompts/CLAUDE_TASK_BOOTSTRAP.md",
+    "prompts/CODEX_TASK_BOOTSTRAP.md",
+    "prompts/INDEPENDENT_REVIEWER_PROMPT.md",
+    "prompts/MASTER_IMPLEMENTER_PROMPT.md",
+    "prompts/REAL_PROVIDER_BENCHMARK_PROMPT.md",
+    "prompts/REPOSITORY_REALITY_AUDIT_PROMPT.md",
+    "prompts/SPEC_CHANGE_REQUEST_PROMPT.md",
+    "schemas/active_context_pack.schema.json",
+    "schemas/artifact.schema.json",
+    "schemas/artifact_dependency.schema.json",
+    "schemas/asset_ingestion_record.schema.json",
+    "schemas/character.schema.json",
+    "schemas/composition_timeline.schema.json",
+    "schemas/content_safety_decision.schema.json",
+    "schemas/continuity_baton.schema.json",
+    "schemas/cost_estimate.schema.json",
+    "schemas/creative_evidence_graph.schema.json",
+    "schemas/creative_strategy.schema.json",
+    "schemas/decision_record.schema.json",
+    "schemas/degrade_decision.schema.json",
+    "schemas/dialogue_scene.schema.json",
+    "schemas/effective_capability.schema.json",
+    "schemas/episode_snapshot.schema.json",
+    "schemas/event_envelope.schema.json",
+    "schemas/evidence_pack.schema.json",
+    "schemas/final_master.schema.json",
+    "schemas/generation_plan.schema.json",
+    "schemas/job.schema.json",
+    "schemas/keyframe_generation_pack.schema.json",
+    "schemas/model_profile.schema.json",
+    "schemas/paid_attempt.schema.json",
+    "schemas/production_strategy.schema.json",
+    "schemas/project_canon.schema.json",
+    "schemas/project_intent.schema.json",
+    "schemas/provider_profile.schema.json",
+    "schemas/qa_report.schema.json",
+    "schemas/reference_binding.schema.json",
+    "schemas/relationship_edge.schema.json",
+    "schemas/research_evidence.schema.json",
+    "schemas/research_plan.schema.json",
+    "schemas/research_roi_decision.schema.json",
+    "schemas/revision_request.schema.json",
+    "schemas/scope_decision.schema.json",
+    "schemas/shot_version.schema.json",
+    "schemas/spend_authorization.schema.json",
+    "schemas/style_dna.schema.json",
+    "schemas/universal_video_spec.schema.json",
+    "schemas/user_taste_profile.schema.json",
+    "schemas/voice_profile.schema.json",
+    "skills/README.md",
+    "skills/cinematography/action_readability.md",
+    "skills/cinematography/camera_language.md",
+    "skills/cinematography/dialogue_scene.md",
+    "skills/cinematography/product.md",
+    "skills/cinematography/vfx_fantasy.md",
+    "skills/creative/advertising.md",
+    "skills/creative/beauty.md",
+    "skills/creative/comedy.md",
+    "skills/creative/documentary_explainer.md",
+    "skills/creative/drama.md",
+    "skills/creative/education.md",
+    "skills/creative/fashion.md",
+    "skills/creative/food.md",
+    "skills/creative/hook_retention.md",
+    "skills/creative/horror.md",
+    "skills/creative/music_visual.md",
+    "skills/creative/news_current.md",
+    "skills/creative/product_demo.md",
+    "skills/creative/real_estate.md",
+    "skills/creative/romance.md",
+    "skills/creative/sci_fi.md",
+    "skills/creative/storytelling.md",
+    "skills/creative/ugc.md",
+    "skills/creative/xianxia_wuxia.md",
+    "skills/editorial/edit_rhythm.md",
+    "skills/editorial/j_l_cuts_audio_bridges.md",
+    "skills/performance/blocking.md",
+    "skills/performance/multi_character.md",
+    "skills/platform/ads.md",
+    "skills/platform/reels.md",
+    "skills/platform/tiktok.md",
+    "skills/platform/youtube_long_form.md",
+    "skills/platform/youtube_shorts.md",
+    "skills/production/continuity.md",
+    "skills/production/cost_first_pass.md",
+    "skills/production/generation_length_optimization.md",
+    "skills/production/selective_keyframe_policy.md",
+    "skills/reference/reference_roles.md",
+    "spec/00_SPEC_LOCK.md",
+    "spec/01_VISION_AND_NON_GOALS.md",
+    "spec/02_GENERALIST_DIRECTOR_ARCHITECTURE.md",
+    "spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md",
+    "spec/04_ADAPTIVE_RESEARCH_INTELLIGENCE.md",
+    "spec/05_CREATIVE_STORY_RETENTION.md",
+    "spec/06_REFERENCE_INTELLIGENCE.md",
+    "spec/07_PROJECT_CANON_AND_SERIES_MEMORY.md",
+    "spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md",
+    "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+    "spec/10_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md",
+    "spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md",
+    "spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+    "spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md",
+    "spec/14_UNIVERSAL_VIDEO_SPEC.md",
+    "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
+    "spec/16_PROVIDER_ABSTRACTION_ROUTING.md",
+    "spec/17_SHOT_REVISION_VERSIONING.md",
+    "spec/18_COST_SPEND_ATTEMPT_POLICY.md",
+    "spec/19_QUALITY_GATES_QA.md",
+    "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
+    "spec/21_JOBS_ARTIFACT_DEPENDENCY_GRAPH.md",
+    "spec/22_OUTCOME_TASTE_RESEARCH_MEMORY.md",
+    "spec/23_SECURITY_PRIVACY_PROVENANCE.md",
+    "spec/24_EVIDENCE_AND_VERIFICATION_POLICY.md",
+    "spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md",
+    "spec/26_IMPLEMENTATION_GOVERNANCE.md",
+    "spec/27_DOMAIN_DATA_MODEL.md",
+    "spec/28_API_AND_EVENT_CONTRACTS.md",
+    "spec/29_RUNTIME_ORCHESTRATION.md",
+    "spec/30_UI_STATE_MACHINE.md",
+    "spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md",
+    "spec/32_LONG_FORM_SERIES_PLAYBOOK.md",
+    "spec/33_RESEARCH_INGESTION_KNOWLEDGE_PLAYBOOK.md",
+    "spec/34_TEST_AND_EVAL_STRATEGY.md",
+    "spec/35_DEPLOYMENT_OPERATIONS.md",
+    "spec/36_PROVIDER_INTEGRATION_PLAYBOOK.md",
+    "spec/37_MODEL_PROBE_PLAYBOOK.md",
+    "spec/38_GLOSSARY.md",
+    "spec/39_STYLE_DNA_AND_GRAMMAR_LAYERS.md",
+    "spec/40_RESEARCH_ROI_AND_CREATIVE_EVIDENCE_GRAPH.md",
+    "spec/41_MULTIMODAL_ASSET_INGESTION.md",
+    "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+    "spec/43_CONTENT_SAFETY_RIGHTS_COMPLIANCE.md",
+    "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md",
+    "spec/45_END_TO_END_WORKFLOW_STATE_MACHINES.md",
+    "spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md",
+    "tasks/00_IMPLEMENTATION_ORDER.md",
+    "tasks/MODEL_PROBE_TEMPLATE.md",
+    "tasks/PROVIDER_EXPANSION_TEMPLATE.md",
+    "tasks/TASK_001_REPOSITORY_REALITY_AUDIT.md",
+    "tasks/TASK_002_CANONICAL_SPEC_EMBEDDING_AND_TRACEABILITY.md",
+    "tasks/TASK_003_PROJECT_DOMAIN_PERSISTENCE.md",
+    "tasks/TASK_004_ARTIFACT_VERSIONING_AND_CURRENCY.md",
+    "tasks/TASK_005_CHAT_FIRST_WORKSPACE.md",
+    "tasks/TASK_006_GENERALIST_DIRECTOR_RUNTIME.md",
+    "tasks/TASK_007_SCOPE_AND_CONTENT_INTELLIGENCE.md",
+    "tasks/TASK_008_REFERENCE_ANALYZER.md",
+    "tasks/TASK_009_ENTITY_GROUPING_AND_LOCKS.md",
+    "tasks/TASK_010_DYNAMIC_SKILL_REGISTRY.md",
+    "tasks/TASK_011_ADAPTIVE_RESEARCH_CONTROLLER.md",
+    "tasks/TASK_012_EVIDENCEPACK_AND_FRESHNESS.md",
+    "tasks/TASK_013_CREATIVE_STRATEGY_AND_RETENTION.md",
+    "tasks/TASK_014_STORY_HIERARCHY.md",
+    "tasks/TASK_015_CHARACTER_RELATIONSHIP_KNOWLEDGE.md",
+    "tasks/TASK_016_PROJECT_CANON_AND_EPISODE_MEMORY.md",
+    "tasks/TASK_017_DIALOGUE_VOICE_LOCALIZATION.md",
+    "tasks/TASK_018_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md",
+    "tasks/TASK_019_PRODUCTION_STRATEGY_ENGINE.md",
+    "tasks/TASK_020_SCENE_COMPLEXITY_PLANNER.md",
+    "tasks/TASK_021_CONTINUITY_DEPENDENCY_SCHEDULER.md",
+    "tasks/TASK_022_CONTINUITY_BATON.md",
+    "tasks/TASK_023_SELECTIVE_KEYFRAME_CONTROLLER.md",
+    "tasks/TASK_024_EXTERNAL_KEYFRAME_WORKFLOW.md",
+    "tasks/TASK_025_UNIVERSALVIDEOSPEC.md",
+    "tasks/TASK_026_MODEL_PROFILES_AND_CAPABILITY_RESOLVER.md",
+    "tasks/TASK_027_MODEL_PROMPT_COMPILERS.md",
+    "tasks/TASK_028_PROVIDER_PROFILES_AND_ADAPTERS.md",
+    "tasks/TASK_029_DEGRADE_PLANNER.md",
+    "tasks/TASK_030_SEEDANCE_2_0_VERTICAL_SLICE.md",
+    "tasks/TASK_031_PROBE_AND_BENCHMARK_HARNESS.md",
+    "tasks/TASK_032_DURABLE_JOBS.md",
+    "tasks/TASK_033_COST_AND_PAID_ATTEMPT_GUARD.md",
+    "tasks/TASK_034_MEDIA_QA_AND_DIAGNOSIS.md",
+    "tasks/TASK_035_CONTEXTUAL_SHOT_REVISION.md",
+    "tasks/TASK_036_SHOT_VERSION_GRAPH_AND_CONTINUITY_SANDWICH.md",
+    "tasks/TASK_037_VOICE_SUBTITLE_MUSIC_ASSEMBLY.md",
+    "tasks/TASK_038_TASTE_OUTCOME_RESEARCH_MEMORY.md",
+    "tasks/TASK_039_GOLDEN_SCENARIO_AUTOMATION.md",
+    "tasks/TASK_040_SERIES_CONTINUATION_ACCEPTANCE.md",
+    "tasks/TASK_041_UI_REVIEW_SURFACES.md",
+    "tasks/TASK_042_SECURITY_BACKUP_OBSERVABILITY.md",
+    "tasks/TASK_043_BETA_RELEASE_GATE.md",
+    "traceability/PHASE_GATE_MATRIX.csv",
+    "traceability/README.md",
+    "traceability/REQUIREMENTS_TRACEABILITY.csv"
+  ]
+}

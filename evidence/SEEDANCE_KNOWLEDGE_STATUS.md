@@ -1,12 +1,10 @@
 # Seedance Knowledge Status
 
-## Seedance 2.0
-The included profile contains public evidence/measurements previously inspected: reference addressing on measured provider, staged prompting usefulness, 4–15s measured duration exposure, native audio on measured route, timing drift risk, event-drop risk when overloaded, reference/text composition conflict and other known failure notes.
+## Source inspection, 2026-09-08
+Inspected `https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md`, returned Git blob `3b9ba23388da5d58777c1ec9ae573ea69f4e1fed`.
 
-Every real provider integration must re-confirm API exposure, pricing, duration/resolution and task semantics.
+The source reports Seedance 2.0 experiments and documentation claims dated 2026-08-03. It describes reference binding, timing drift, composition conflict and overloaded-event omissions. It does not establish this project's exact provider/account/endpoint or a complete inspectable sample ledger. Therefore the bundled profile is PARTIAL, its runtime claims remain UNKNOWN and it is not routable. Prior MEASURED labeling overstated what the repository could substantiate. Do not turn the reported event-count anecdote into a fixed generation ceiling or discard hard composition constraints because an image is reported to dominate text.
 
-## Seedance 2.5
-Profile is deliberately PARTIAL. Do not copy 2.0 bias/limits. Provider-specific availability, practical reference count, duration, audio/reference/editing behavior and prompt timing should be probed before routing production jobs.
+The same source explicitly labels Seedance 2.5 behavior unmeasured and separates announced features from executable exposure. The 2.5 profile remains independent and non-routable. Launch claims do not establish endpoint availability, pricing, reference ceilings, audio control or reliability.
 
-## Principle
-Prompt “tricks” are evidence with scope/freshness, not eternal system rules. The model registry and benchmark lab exist so the Director can improve without architectural rewrites.
+No paid sample or account entitlement was tested during this audit. Integration must inspect exact current provider docs and run explicitly authorized probes through Durable Jobs/PaidAttemptGuard. Record model/provider/account scope, source versions, sample count, input/output hashes and failures before promotion. Historical source inspection is not an API guarantee.

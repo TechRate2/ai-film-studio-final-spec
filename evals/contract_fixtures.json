@@ -1,0 +1,2056 @@
+{
+  "purpose": "Offline contract examples; no provider/model capability or application behavior is claimed.",
+  "cases": [
+    {
+      "id": "paid-unknown-reserved",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "certainty-NOT_SUBMITTED",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "NOT_SUBMITTED",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "certainty-SUBMITTED",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "SUBMITTED",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "certainty-UNKNOWN",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "certainty-FAILED_UNBILLED_CONFIRMED",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "FAILED_UNBILLED_CONFIRMED",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "certainty-BILLED_OR_OUTPUT_PRODUCED",
+      "schema": "paid_attempt.schema.json",
+      "valid": true,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "BILLED_OR_OUTPUT_PRODUCED",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-missing-authorization_id",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-missing-logical_attempt_id",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-missing-candidate_index",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-missing-prompt_hash",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-missing-reference_hash",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "UNKNOWN",
+        "prompt_hash": "sha256:prompt",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "paid-old-certainty",
+      "schema": "paid_attempt.schema.json",
+      "valid": false,
+      "instance": {
+        "attempt_id": "attempt-1",
+        "logical_attempt_id": "shot6-first",
+        "authorization_id": "auth-1",
+        "project_id": "project-1",
+        "job_id": "job-1",
+        "candidate_index": 0,
+        "artifact_id": "artifact-1",
+        "provider_id": "provider-A",
+        "model_id": "model-A",
+        "status": "RECONCILING",
+        "estimated_cost": 2,
+        "actual_cost": null,
+        "reserved_cost": 2,
+        "currency": "USD",
+        "paid_state_certainty": "FAILED_UNBILLED",
+        "prompt_hash": "sha256:prompt",
+        "reference_hash": "sha256:refs",
+        "idempotency_key": "request-1",
+        "upstream_task_id": null,
+        "request_snapshot_id": "request-1",
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z",
+        "request_snapshot": {
+          "snapshot_id": "request-1",
+          "project_id": "project-1",
+          "universal_spec_version_id": "spec1",
+          "provider_id": "provider-A",
+          "model_id": "model-A",
+          "model_version": "version1",
+          "model_profile_version": "profile1",
+          "provider_profile_version": "provider-profile1",
+          "effective_capability_snapshot_id": "cap1",
+          "compiler_version": "compiler1",
+          "compiled_prompt": "Hold on the listener reaction.",
+          "reference_versions": [],
+          "parameters": {
+            "duration": 10
+          },
+          "prompt_hash": "sha256:prompt",
+          "reference_hash": "sha256:refs",
+          "request_hash": "sha256:request"
+        }
+      }
+    },
+    {
+      "id": "job-authorized",
+      "schema": "job.schema.json",
+      "valid": true,
+      "instance": {
+        "job_id": "j1",
+        "project_id": "p1",
+        "run_id": "r1",
+        "job_type": "VIDEO",
+        "status": "AUTHORIZED",
+        "dependencies": [],
+        "revision": 1,
+        "input_versions": [],
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z"
+      }
+    },
+    {
+      "id": "job-reject-QUEUED",
+      "schema": "job.schema.json",
+      "valid": false,
+      "instance": {
+        "job_id": "j1",
+        "project_id": "p1",
+        "run_id": "r1",
+        "job_type": "VIDEO",
+        "status": "QUEUED",
+        "dependencies": [],
+        "revision": 1,
+        "input_versions": [],
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z"
+      }
+    },
+    {
+      "id": "job-reject-SUBMITTED",
+      "schema": "job.schema.json",
+      "valid": false,
+      "instance": {
+        "job_id": "j1",
+        "project_id": "p1",
+        "run_id": "r1",
+        "job_type": "VIDEO",
+        "status": "SUBMITTED",
+        "dependencies": [],
+        "revision": 1,
+        "input_versions": [],
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z"
+      }
+    },
+    {
+      "id": "job-reject-POLLING",
+      "schema": "job.schema.json",
+      "valid": false,
+      "instance": {
+        "job_id": "j1",
+        "project_id": "p1",
+        "run_id": "r1",
+        "job_type": "VIDEO",
+        "status": "POLLING",
+        "dependencies": [],
+        "revision": 1,
+        "input_versions": [],
+        "created_at": "2026-09-08T00:00:00Z",
+        "updated_at": "2026-09-08T00:00:00Z"
+      }
+    },
+    {
+      "id": "reference-isolation",
+      "schema": "reference_binding.schema.json",
+      "valid": true,
+      "instance": {
+        "reference_id": "ref1",
+        "project_id": "p1",
+        "entity_id": "person1",
+        "role": "CAMERA_REFERENCE",
+        "lock_mode": "MOTION_ONLY",
+        "lifetime": "SHOT",
+        "positive_scope": [
+          "camera path"
+        ],
+        "negative_scope": [
+          "identity",
+          "background",
+          "story"
+        ],
+        "source_artifact_id": "video-ref",
+        "source_version_id": "v1",
+        "target_scope_id": "shot6"
+      }
+    },
+    {
+      "id": "reference-old-lock",
+      "schema": "reference_binding.schema.json",
+      "valid": false,
+      "instance": {
+        "reference_id": "ref1",
+        "project_id": "p1",
+        "entity_id": "person1",
+        "role": "CAMERA_REFERENCE",
+        "lock_mode": "HARD",
+        "lifetime": "SHOT",
+        "positive_scope": [
+          "camera path"
+        ],
+        "negative_scope": [
+          "identity",
+          "background",
+          "story"
+        ],
+        "source_artifact_id": "video-ref",
+        "source_version_id": "v1",
+        "target_scope_id": "shot6"
+      }
+    },
+    {
+      "id": "uv-reaction-no-audio",
+      "schema": "universal_video_spec.schema.json",
+      "valid": true,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "uv-empty-global",
+      "schema": "universal_video_spec.schema.json",
+      "valid": false,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {},
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "uv-empty-performance",
+      "schema": "universal_video_spec.schema.json",
+      "valid": false,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {},
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "uv-empty-camera",
+      "schema": "universal_video_spec.schema.json",
+      "valid": false,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {},
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "uv-empty-audio",
+      "schema": "universal_video_spec.schema.json",
+      "valid": false,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {},
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "uv-empty-initial_state",
+      "schema": "universal_video_spec.schema.json",
+      "valid": false,
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {},
+        "timing_granularity": "stages",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      }
+    },
+    {
+      "id": "timeline-rational-fps",
+      "schema": "composition_timeline.schema.json",
+      "valid": true,
+      "instance": {
+        "timeline_id": "tl1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "ticks_per_second": 48000,
+        "duration_ticks": 480000,
+        "video_tracks": [
+          {
+            "track_id": "picture",
+            "order": 0,
+            "clips": [
+              {
+                "clip_id": "clip1",
+                "source": {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                },
+                "source_in_tick": 0,
+                "source_out_tick": 480000,
+                "start_tick": 0,
+                "duration_ticks": 480000,
+                "speed": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "hold_ticks": 0,
+                "transform": {
+                  "crop": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "fit": "CONTAIN",
+                  "rotation_degrees": 0
+                }
+              }
+            ]
+          }
+        ],
+        "audio_tracks": [],
+        "subtitle_tracks": [],
+        "graphics_tracks": [],
+        "transitions": [],
+        "styles": {},
+        "intentional_gaps": [],
+        "export_target": {
+          "width": 1080,
+          "height": 1920,
+          "frame_rate": {
+            "numerator": 30000,
+            "denominator": 1001
+          },
+          "container": "mp4",
+          "video_codec": "h264",
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "audio_channels": 2,
+          "target": "project-delivery",
+          "language": "vi",
+          "qa_policy_version": "qa1"
+        },
+        "source_artifact_versions": [
+          {
+            "artifact_id": "accepted-clip",
+            "version_id": "v1"
+          }
+        ],
+        "compiler_version": "timeline1",
+        "rounding_policy": "NEAREST_TIES_EVEN",
+        "edit_decision_ids": [
+          "decision1"
+        ]
+      }
+    },
+    {
+      "id": "timeline-empty-track",
+      "schema": "composition_timeline.schema.json",
+      "valid": false,
+      "instance": {
+        "timeline_id": "tl1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "ticks_per_second": 48000,
+        "duration_ticks": 480000,
+        "video_tracks": [
+          {}
+        ],
+        "audio_tracks": [],
+        "subtitle_tracks": [],
+        "graphics_tracks": [],
+        "transitions": [],
+        "styles": {},
+        "intentional_gaps": [],
+        "export_target": {
+          "width": 1080,
+          "height": 1920,
+          "frame_rate": {
+            "numerator": 30000,
+            "denominator": 1001
+          },
+          "container": "mp4",
+          "video_codec": "h264",
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "audio_channels": 2,
+          "target": "project-delivery",
+          "language": "vi",
+          "qa_policy_version": "qa1"
+        },
+        "source_artifact_versions": [
+          {
+            "artifact_id": "accepted-clip",
+            "version_id": "v1"
+          }
+        ],
+        "compiler_version": "timeline1",
+        "rounding_policy": "NEAREST_TIES_EVEN",
+        "edit_decision_ids": [
+          "decision1"
+        ]
+      }
+    },
+    {
+      "id": "timeline-empty-export",
+      "schema": "composition_timeline.schema.json",
+      "valid": false,
+      "instance": {
+        "timeline_id": "tl1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "ticks_per_second": 48000,
+        "duration_ticks": 480000,
+        "video_tracks": [
+          {
+            "track_id": "picture",
+            "order": 0,
+            "clips": [
+              {
+                "clip_id": "clip1",
+                "source": {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                },
+                "source_in_tick": 0,
+                "source_out_tick": 480000,
+                "start_tick": 0,
+                "duration_ticks": 480000,
+                "speed": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "hold_ticks": 0,
+                "transform": {
+                  "crop": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "fit": "CONTAIN",
+                  "rotation_degrees": 0
+                }
+              }
+            ]
+          }
+        ],
+        "audio_tracks": [],
+        "subtitle_tracks": [],
+        "graphics_tracks": [],
+        "transitions": [],
+        "styles": {},
+        "intentional_gaps": [],
+        "export_target": {},
+        "source_artifact_versions": [
+          {
+            "artifact_id": "accepted-clip",
+            "version_id": "v1"
+          }
+        ],
+        "compiler_version": "timeline1",
+        "rounding_policy": "NEAREST_TIES_EVEN",
+        "edit_decision_ids": [
+          "decision1"
+        ]
+      }
+    },
+    {
+      "id": "timeline-zero-speed-denominator",
+      "schema": "composition_timeline.schema.json",
+      "valid": false,
+      "instance": {
+        "timeline_id": "tl1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "ticks_per_second": 48000,
+        "duration_ticks": 480000,
+        "video_tracks": [
+          {
+            "track_id": "picture",
+            "order": 0,
+            "clips": [
+              {
+                "clip_id": "clip1",
+                "source": {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                },
+                "source_in_tick": 0,
+                "source_out_tick": 480000,
+                "start_tick": 0,
+                "duration_ticks": 480000,
+                "speed": {
+                  "numerator": 1,
+                  "denominator": 0
+                },
+                "hold_ticks": 0,
+                "transform": {
+                  "crop": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "fit": "CONTAIN",
+                  "rotation_degrees": 0
+                }
+              }
+            ]
+          }
+        ],
+        "audio_tracks": [],
+        "subtitle_tracks": [],
+        "graphics_tracks": [],
+        "transitions": [],
+        "styles": {},
+        "intentional_gaps": [],
+        "export_target": {
+          "width": 1080,
+          "height": 1920,
+          "frame_rate": {
+            "numerator": 30000,
+            "denominator": 1001
+          },
+          "container": "mp4",
+          "video_codec": "h264",
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "audio_channels": 2,
+          "target": "project-delivery",
+          "language": "vi",
+          "qa_policy_version": "qa1"
+        },
+        "source_artifact_versions": [
+          {
+            "artifact_id": "accepted-clip",
+            "version_id": "v1"
+          }
+        ],
+        "compiler_version": "timeline1",
+        "rounding_policy": "NEAREST_TIES_EVEN",
+        "edit_decision_ids": [
+          "decision1"
+        ]
+      }
+    },
+    {
+      "id": "timeline-negative-trim",
+      "schema": "composition_timeline.schema.json",
+      "valid": false,
+      "instance": {
+        "timeline_id": "tl1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "ticks_per_second": 48000,
+        "duration_ticks": 480000,
+        "video_tracks": [
+          {
+            "track_id": "picture",
+            "order": 0,
+            "clips": [
+              {
+                "clip_id": "clip1",
+                "source": {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                },
+                "source_in_tick": -1,
+                "source_out_tick": 480000,
+                "start_tick": 0,
+                "duration_ticks": 480000,
+                "speed": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "hold_ticks": 0,
+                "transform": {
+                  "crop": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "fit": "CONTAIN",
+                  "rotation_degrees": 0
+                }
+              }
+            ]
+          }
+        ],
+        "audio_tracks": [],
+        "subtitle_tracks": [],
+        "graphics_tracks": [],
+        "transitions": [],
+        "styles": {},
+        "intentional_gaps": [],
+        "export_target": {
+          "width": 1080,
+          "height": 1920,
+          "frame_rate": {
+            "numerator": 30000,
+            "denominator": 1001
+          },
+          "container": "mp4",
+          "video_codec": "h264",
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "audio_channels": 2,
+          "target": "project-delivery",
+          "language": "vi",
+          "qa_policy_version": "qa1"
+        },
+        "source_artifact_versions": [
+          {
+            "artifact_id": "accepted-clip",
+            "version_id": "v1"
+          }
+        ],
+        "compiler_version": "timeline1",
+        "rounding_policy": "NEAREST_TIES_EVEN",
+        "edit_decision_ids": [
+          "decision1"
+        ]
+      }
+    },
+    {
+      "id": "external-origin-unknown-tool",
+      "schema": "artifact.schema.json",
+      "valid": true,
+      "instance": {
+        "artifact_id": "external-frame",
+        "artifact_type": "IMAGE",
+        "project_id": "p1",
+        "version_id": "v1",
+        "currency": "CURRENT",
+        "acceptance": "ACCEPTED",
+        "content_hash": "sha256:image",
+        "storage_key": "p1/image",
+        "provenance": {
+          "origin": "EXTERNAL_IMPORTED",
+          "source_label": "user external tool",
+          "source_uri": null,
+          "source_hash": "sha256:image",
+          "uploader_id": "user1",
+          "rights_refs": [
+            "rights1"
+          ],
+          "external_tool": null,
+          "external_cost": null,
+          "input_versions": [],
+          "attempt_id": null,
+          "authorization_id": null,
+          "spec_version": null,
+          "profile_versions": {},
+          "compiler_version": null,
+          "request_snapshot_id": null,
+          "prompt_hash": null,
+          "reference_hash": null,
+          "result_hash": "sha256:image",
+          "qa_report_id": "qa1",
+          "cost": null,
+          "currency": null,
+          "created_at": "2026-09-08T00:00:00Z",
+          "provider_id": null,
+          "model_id": null
+        }
+      }
+    },
+    {
+      "id": "artifact-empty-provenance",
+      "schema": "artifact.schema.json",
+      "valid": false,
+      "instance": {
+        "artifact_id": "external-frame",
+        "artifact_type": "IMAGE",
+        "project_id": "p1",
+        "version_id": "v1",
+        "currency": "CURRENT",
+        "acceptance": "ACCEPTED",
+        "content_hash": "sha256:image",
+        "storage_key": "p1/image",
+        "provenance": {}
+      }
+    },
+    {
+      "id": "generated-missing-paid-provenance",
+      "schema": "artifact.schema.json",
+      "valid": false,
+      "instance": {
+        "artifact_id": "external-frame",
+        "artifact_type": "IMAGE",
+        "project_id": "p1",
+        "version_id": "v1",
+        "currency": "CURRENT",
+        "acceptance": "ACCEPTED",
+        "content_hash": "sha256:image",
+        "storage_key": "p1/image",
+        "provenance": {
+          "origin": "INTERNAL_GENERATED",
+          "source_label": "user external tool",
+          "source_uri": null,
+          "source_hash": "sha256:image",
+          "uploader_id": "user1",
+          "rights_refs": [
+            "rights1"
+          ],
+          "external_tool": null,
+          "external_cost": null,
+          "input_versions": [],
+          "attempt_id": null,
+          "authorization_id": null,
+          "spec_version": null,
+          "profile_versions": {},
+          "compiler_version": null,
+          "request_snapshot_id": null,
+          "prompt_hash": null,
+          "reference_hash": null,
+          "result_hash": "sha256:image",
+          "qa_report_id": "qa1",
+          "cost": null,
+          "currency": null,
+          "created_at": "2026-09-08T00:00:00Z",
+          "provider_id": null,
+          "model_id": null
+        }
+      }
+    },
+    {
+      "id": "qa-no-paid-retry",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      }
+    },
+    {
+      "id": "qa-retry-forbidden",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": true
+      }
+    },
+    {
+      "id": "qa-missing-retry-policy",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE"
+      }
+    },
+    {
+      "id": "keyframe-none-no-pack",
+      "schema": "keyframe_generation_pack.schema.json",
+      "valid": true,
+      "instance": {
+        "keyframe_id": "none1",
+        "purpose": "No anchor needed",
+        "target_shot_or_segment": "shot1",
+        "source_strategy": "NONE",
+        "project_id": "p1",
+        "target_version_id": "v1"
+      }
+    },
+    {
+      "id": "none-rejects-generation-prompt",
+      "schema": "keyframe_generation_pack.schema.json",
+      "instance": {
+        "keyframe_id": "none1",
+        "purpose": "No anchor needed",
+        "target_shot_or_segment": "shot1",
+        "source_strategy": "NONE",
+        "project_id": "p1",
+        "target_version_id": "v1",
+        "model_neutral_prompt": "Generate a new paid image"
+      },
+      "valid": false
+    },
+    {
+      "id": "external-requires-full-pack",
+      "schema": "keyframe_generation_pack.schema.json",
+      "instance": {
+        "keyframe_id": "none1",
+        "purpose": "No anchor needed",
+        "target_shot_or_segment": "shot1",
+        "source_strategy": "EXTERNAL_ASSISTED",
+        "project_id": "p1",
+        "target_version_id": "v1"
+      },
+      "valid": false
+    },
+    {
+      "id": "uv-no-stage-timing",
+      "schema": "universal_video_spec.schema.json",
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "none",
+        "stages": [],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      },
+      "valid": true
+    },
+    {
+      "id": "uv-second-level-needs-ranges",
+      "schema": "universal_video_spec.schema.json",
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "second-level",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            }
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      },
+      "valid": false
+    },
+    {
+      "id": "uv-second-level-explicit-ranges",
+      "schema": "universal_video_spec.schema.json",
+      "instance": {
+        "spec_version": "4.3",
+        "purpose": "Reveal a clue through a held reaction",
+        "project_id": "p1",
+        "shot_id": "shot6",
+        "version_id": "v1",
+        "global": {
+          "content_mode": "DRAMA",
+          "scene_id": "scene1",
+          "premise": "A listener recognizes a hidden clue",
+          "style": "restrained naturalism",
+          "camera_principle": "reaction reveals recognition"
+        },
+        "locks": [
+          {
+            "reference_id": "ref1",
+            "project_id": "p1",
+            "entity_id": "person1",
+            "role": "CAMERA_REFERENCE",
+            "lock_mode": "MOTION_ONLY",
+            "lifetime": "SHOT",
+            "positive_scope": [
+              "camera path"
+            ],
+            "negative_scope": [
+              "identity",
+              "background",
+              "story"
+            ],
+            "source_artifact_id": "video-ref",
+            "source_version_id": "v1",
+            "target_scope_id": "shot6"
+          }
+        ],
+        "initial_state": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "timing_granularity": "second-level",
+        "stages": [
+          {
+            "stage_id": "recognition",
+            "duration_hint": null,
+            "primary_change": "Listener recognizes clue",
+            "end_state": {
+              "entities": [],
+              "fact_ids": []
+            },
+            "start_seconds": 0,
+            "end_seconds": 4
+          }
+        ],
+        "performance": {
+          "actions": [],
+          "dominant_change": "Stillness changes to recognition"
+        },
+        "camera": {
+          "function": "reveal recognition",
+          "framing": "close-up",
+          "movement": "locked",
+          "composition": "listener face and clue remain readable"
+        },
+        "audio": {
+          "route": "NONE",
+          "dialogue": [],
+          "ambience": [],
+          "sfx": [],
+          "music": [],
+          "hierarchy": []
+        },
+        "negative_risks": [
+          "Do not copy identity from motion reference"
+        ],
+        "continuity_in": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "continuity_out": {
+          "entities": [],
+          "fact_ids": []
+        },
+        "success_conditions": [
+          "Recognition is visible without a new spoken line"
+        ]
+      },
+      "valid": true
+    }
+  ]
+}

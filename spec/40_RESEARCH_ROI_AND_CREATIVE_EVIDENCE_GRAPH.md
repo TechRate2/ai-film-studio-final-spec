@@ -27,3 +27,6 @@ Example relationships can link a hook mechanism, camera treatment, proof pattern
 
 ## Decision provenance
 Important Director choices should link to the evidence/skill/taste/profile inputs that materially influenced them. Advanced UI may expose this rationale without dumping raw search results.
+
+## Decision and evidence graph integrity
+Questions and claims have stable IDs. Graph edges link existing nodes/evidence and record scope, confidence and whether the outcome is EXPECTED or OBSERVED. A reused source cannot self-corroborate through a graph cycle. EvidencePack claims each link to ResearchEvidence IDs and freshness; a bare confident sentence is not evidence. Cache keys include source/profile/version, provider/endpoint where relevant, scenario, locale and policy scope. Retrieval never crosses private projects without authorization. Source disagreement and stale entries remain inspectable but excluded from confident capability resolution. A cinematography observation distinguishes measured cut times from estimated lens feel and uncertainty; no guessed focal length becomes an empirical constraint.

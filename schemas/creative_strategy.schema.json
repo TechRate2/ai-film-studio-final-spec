@@ -1,9 +1,203 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"CreativeStrategy",
-  "type":"object",
-  "required":["objective","audience","content_form","hook","narrative_structure","pacing","visual_language","audio_hierarchy"],
-  "properties":{
-    "objective":{"type":"string"},"audience":{"type":"object"},"content_form":{"type":"string"},"emotional_mechanism":{"type":"string"},"hook":{"type":"object"},"narrative_structure":{"type":"object"},"information_density":{"type":"string"},"pacing":{"type":"object"},"visual_language":{"type":"object"},"camera_language":{"type":"object"},"subject_priority":{"type":"array","items":{"type":"string"}},"performance_style":{"type":"object"},"audio_hierarchy":{"type":"object"},"payoff_or_cta":{"type":"object"},"constraints":{"type":"object"},"action_vfx_complexity":{"type":"string"},"realism_level":{"type":"string"}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CreativeStrategy",
+  "type": "object",
+  "required": [
+    "objective",
+    "audience",
+    "content_form",
+    "hook",
+    "narrative_structure",
+    "pacing",
+    "visual_language",
+    "audio_hierarchy",
+    "strategy_id",
+    "project_id",
+    "version",
+    "constraints",
+    "evidence_ids",
+    "skill_versions"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prior_knowledge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "desire": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objection": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "description",
+        "prior_knowledge",
+        "desire",
+        "objection"
+      ],
+      "additionalProperties": false
+    },
+    "content_form": {
+      "type": "string"
+    },
+    "emotional_mechanism": {
+      "type": "string"
+    },
+    "hook": {
+      "type": "object",
+      "properties": {
+        "promise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_care": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "promise",
+        "mechanism",
+        "why_care"
+      ],
+      "additionalProperties": false
+    },
+    "narrative_structure": {
+      "type": "object",
+      "properties": {
+        "premise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "beats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "beat_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              },
+              "viewer_question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "change": {
+                "type": "string",
+                "minLength": 1
+              },
+              "payoff": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dropoff_risk": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "beat_id",
+              "purpose",
+              "viewer_question",
+              "change",
+              "payoff",
+              "dropoff_risk"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "premise",
+        "beats"
+      ],
+      "additionalProperties": false
+    },
+    "information_density": {
+      "type": "string"
+    },
+    "pacing": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "visual_language": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "camera_language": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "subject_priority": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "performance_style": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "audio_hierarchy": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "payoff_or_cta": {
+      "$ref": "common.schema.json#/$defs/description"
+    },
+    "constraints": {
+      "$ref": "common.schema.json#/$defs/constraints"
+    },
+    "action_vfx_complexity": {
+      "type": "string"
+    },
+    "realism_level": {
+      "type": "string"
+    },
+    "strategy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "skill_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
 }

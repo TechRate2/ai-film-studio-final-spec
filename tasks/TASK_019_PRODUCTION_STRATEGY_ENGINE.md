@@ -28,3 +28,20 @@ Choose mixed-media/direct/reference routes by quality and cost.
 - Golden scenarios affected
 - Remaining gaps
 - Real-provider benchmark risk, if any
+
+## Binding execution and verification packet
+
+Dependencies: TASK-018. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md`
+- `spec/18_COST_SPEND_ATTEMPT_POLICY.md`
+- `schemas/production_strategy.schema.json`
+- `schemas/cost_estimate.schema.json`
+
+Requirements: R-083.
+Golden coverage: GS04, GS14.
+
+- [ ] Compare existing media, still+motion, continuation and full generation for the same intent; costs and unknown acceptance estimates are explicit.
+- [ ] Select reusable footage when sufficient without buying video; a cheap route cannot drop product truth or hard locks.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

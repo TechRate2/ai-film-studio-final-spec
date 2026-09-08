@@ -34,5 +34,5 @@ Use before declaring a spec release canonical.
 - phase order reflects safety dependencies;
 - traceability maps every critical behavior;
 - golden scenarios cover regressions;
-- JSON schemas parse;
+- JSON schemas pass metaschema, local-ref, typed-contract and positive/negative fixture validation;
 - time-sensitive model claims carry verification status.

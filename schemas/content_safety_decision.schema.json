@@ -1,5 +1,71 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ContentSafetyDecision","type":"object",
-  "required":["decision_id","status","categories","affected_artifact_ids"],
-  "properties":{"decision_id":{"type":"string"},"status":{"enum":["ALLOW","ALLOW_WITH_CONSTRAINTS","NEEDS_USER_ACTION","BLOCK"]},"categories":{"type":"array","items":{"type":"string"}},"affected_artifact_ids":{"type":"array","items":{"type":"string"}},"consent_or_rights_refs":{"type":"array","items":{"type":"string"}},"constraints":{"type":"array","items":{"type":"string"}},"user_action":{"type":["string","null"]},"policy_version":{"type":"string"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContentSafetyDecision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "status",
+    "categories",
+    "affected_artifact_ids",
+    "project_id",
+    "policy_version",
+    "created_at",
+    "user_action"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ALLOW",
+        "ALLOW_WITH_CONSTRAINTS",
+        "NEEDS_USER_ACTION",
+        "BLOCK"
+      ]
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consent_or_rights_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
 }

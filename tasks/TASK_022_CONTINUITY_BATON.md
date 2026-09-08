@@ -28,3 +28,19 @@ Persist accepted output state and cross-shot QA.
 - Golden scenarios affected
 - Remaining gaps
 - Real-provider benchmark risk, if any
+
+## Binding execution and verification packet
+
+Dependencies: TASK-021. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md`
+- `spec/32_LONG_FORM_SERIES_PLAYBOOK.md`
+- `schemas/continuity_baton.schema.json`
+
+Requirements: R-012, R-037.
+Golden coverage: GS03, GS05.
+
+- [ ] Persist observed accepted entity/prop/body/screen/lighting/weather/emotion/story/audio state plus frame/video evidence and source versions.
+- [ ] Rejected/unaccepted output cannot publish a baton; unknown off-screen detail stays null and canonical identity is not replaced by generated drift.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

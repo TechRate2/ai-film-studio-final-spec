@@ -23,3 +23,6 @@ Define retention and deletion for projects, source assets, derived media, creden
 
 ## Audit/backup
 Audit paid attempts, destructive actions and material safety decisions. Maintain tested backup/restore and migration strategy for canon/project/media metadata.
+
+## Untrusted content and execution isolation
+Treat web pages, OCR/transcripts, uploaded documents, filenames, metadata and external skills as untrusted data, never system/tool instructions. Distillation preserves source identity and does not promote embedded commands. Domain tools enforce tenant scope and effect permissions independently of LLM output. Remote imports revalidate redirects/DNS and reject private/link-local/metadata endpoints; do not forward credentials across origins. Probe files in resource-limited media/parser workers; limit decompressed size, duration, CPU and extraction output. Signatures verify raw callback bodies and freshness before lookup; unsupported callback authentication uses trusted status polling instead of trusting unauthenticated payloads. Duplicate callbacks cannot reverse terminal success or move a result to another project.

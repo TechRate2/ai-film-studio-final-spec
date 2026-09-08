@@ -23,3 +23,21 @@ Generic B-roll, simple continuation, previous accepted frame already anchors sta
 7. If incorrect, Agent produces a minimal correction patch.
 
 External keyframes are first-class artifacts and do not incur internal image generation cost.
+
+## External round trip and source selection
+KeyframeGenerationPack pins purpose, target ID/version, composition, camera, lighting, continuity locks, negative risks, reference bundle and observable success conditions. Copy/export includes ordered reference identities and their allowed roles; signed URLs are refreshed on demand without changing source identity. Upload validates hash, dimensions, rights, target version and constraints. An old pack uploaded after canon/revision changes is marked STALE for revalidation rather than attached to the new shot silently. Invalid uploads return an actionable correction patch. NONE requires no prompt or reference bundle; an accepted previous frame retains its original artifact/version provenance. External cost is unknown/user-reported separately; zero internal image calls does not imply all external work was free.
+
+## Machine-checkable invariants
+```json
+{
+  "keyframe_sources": [
+    "AUTO_INTERNAL",
+    "EXTERNAL_ASSISTED",
+    "USER_SUPPLIED",
+    "PREVIOUS_ACCEPTED_FRAME",
+    "NONE"
+  ]
+}
+```
+
+For source NONE, the compact decision contains only ID, purpose and version-pinned target. No generation prompt or reference bindings are required; if supplied, the prompt is empty and bindings are empty. A non-NONE pack requires its full prompt/reference/composition/continuity/success contract. This distinction is enforced in schema fixtures.

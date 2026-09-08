@@ -1,16 +1,76 @@
 model_id: wan-2.6
+profile_version: '4.3'
+version: null
+modality: VIDEO
+routable: false
 verification_status: PARTIAL
+scope_note: Historical public/provider snapshot exists, but current provider exposure
+  must be re-verified and probed before production routing. Do not treat as live truth.
 last_verified_at: null
-scope_note: "Historical public/provider snapshot exists, but current provider exposure must be re-verified and probed before production routing. Do not treat as live truth."
 capabilities:
-  duration_seconds: "historical provider snapshot suggested 5/10/15; VERIFY"
-  resolutions: "historical provider snapshot suggested 720p/1080p; VERIFY"
-  native_audio: "historical provider snapshot suggested yes; VERIFY"
+  duration_seconds:
+    status: UNKNOWN
+    value: historical provider snapshot suggested 5/10/15; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  resolutions:
+    status: UNKNOWN
+    value: historical provider snapshot suggested 720p/1080p; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: historical provider snapshot suggested yes; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: UNKNOWN
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - do not inherit Wan 2.2 or Seedance prompt behavior
-  - run MODEL_PROBE_TEMPLATE before production routing
+- do not inherit Wan 2.2 or Seedance prompt behavior
+- run MODEL_PROBE_TEMPLATE before production routing
 sources:
-  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+- evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

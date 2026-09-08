@@ -1,14 +1,86 @@
 model_id: example-image-model
-modality: image
+profile_version: '4.3'
+version: null
+modality: IMAGE
+routable: false
 verification_status: UNVERIFIED
+scope_note: Template only; populate exact model/provider evidence before routing.
 last_verified_at: null
 capabilities:
-  reference_images: UNKNOWN
-  aspect_ratio_control: UNKNOWN
-  editing: UNKNOWN
+  reference_images:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  aspect_ratio_control:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  editing:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  identity_fidelity: UNKNOWN
-  text_rendering: UNKNOWN
+  identity_fidelity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  text_rendering:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes: []
 sources: []
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

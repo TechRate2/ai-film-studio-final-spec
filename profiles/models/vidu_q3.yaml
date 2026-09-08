@@ -1,16 +1,76 @@
 model_id: vidu-q3-pro
+profile_version: '4.3'
+version: null
+modality: VIDEO
+routable: false
 verification_status: PARTIAL
+scope_note: Historical public/provider snapshot only; verify current API exposure
+  and model behavior before production routing.
 last_verified_at: null
-scope_note: "Historical public/provider snapshot only; verify current API exposure and model behavior before production routing."
 capabilities:
-  duration_seconds: "historical snapshot suggested up to 16s; VERIFY"
-  resolutions: "historical snapshot suggested 540p/720p/1080p; VERIFY"
-  native_audio: "historical snapshot suggested yes; VERIFY"
+  duration_seconds:
+    status: UNKNOWN
+    value: historical snapshot suggested up to 16s; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  resolutions:
+    status: UNKNOWN
+    value: historical snapshot suggested 540p/720p/1080p; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: historical snapshot suggested yes; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: UNKNOWN
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - build model-specific compiler only after probe evidence
-  - do not copy Seedance reference syntax
+- build model-specific compiler only after probe evidence
+- do not copy Seedance reference syntax
 sources:
-  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+- evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

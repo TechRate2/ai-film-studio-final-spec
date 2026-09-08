@@ -2,12 +2,201 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ProviderProfile",
   "type": "object",
-  "required": ["provider_id","models","billing","limits"],
+  "required": [
+    "provider_id",
+    "models",
+    "billing",
+    "limits",
+    "profile_version",
+    "verification_status",
+    "last_verified_at",
+    "sources",
+    "unknowns",
+    "endpoints",
+    "capability_exposure",
+    "timeout_semantics"
+  ],
   "properties": {
-    "provider_id": {"type":"string"},
-    "models": {"type":"array","items":{"type":"string"}},
-    "billing": {"type":"object"},
-    "limits": {"type":"object"},
-    "regions": {"type":"array","items":{"type":"string"}}
-  }
+    "provider_id": {
+      "type": "string"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "billing": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "price_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "model_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "max_liability": {
+                "type": "number",
+                "minimum": 0
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "last_verified_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "expires_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "rule_id",
+              "model_id",
+              "unit",
+              "unit_price",
+              "max_liability",
+              "source",
+              "last_verified_at",
+              "expires_at"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "charge_semantics": {
+          "$ref": "common.schema.json#/$defs/claim"
+        }
+      },
+      "required": [
+        "currency",
+        "price_rules",
+        "charge_semantics"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/claim"
+      }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "profile_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification_status": {
+      "enum": [
+        "MEASURED",
+        "PARTIAL",
+        "UNVERIFIED"
+      ]
+    },
+    "last_verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "endpoints": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "capability_exposure": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/claim"
+      }
+    },
+    "timeout_semantics": {
+      "type": "object",
+      "properties": {
+        "idempotency": {
+          "$ref": "common.schema.json#/$defs/claim"
+        },
+        "lookup": {
+          "$ref": "common.schema.json#/$defs/claim"
+        },
+        "cancellation": {
+          "$ref": "common.schema.json#/$defs/claim"
+        }
+      },
+      "required": [
+        "idempotency",
+        "lookup",
+        "cancellation"
+      ],
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

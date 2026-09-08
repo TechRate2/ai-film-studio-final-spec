@@ -1,4 +1,4 @@
-# Canonical Implementation Order V4.2
+# Canonical Implementation Order V4.3
 
 Task numbers are stable identifiers, **not permission to execute in numeric order when a dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
 
@@ -38,22 +38,25 @@ Exit: `phases/PHASE_1_BRAIN_PROOF.md`.
 027 Model Prompt Compilers  
 028 Provider Ports/Profiles/Adapters  
 029 Degrade Planner  
-024 Keyframe Source Workflows — executes here so AUTO_INTERNAL can use the ImageProvider port created by TASK-028; External/User/Previous/None remain provider-independent routes.
+024 is deliberately deferred until both provider boundary and paid safety prerequisites pass; see 2C.
 
-### 2B — Mandatory paid-safety prerequisites **before first real billable video call**
+### 2B — Mandatory paid-safety prerequisites **before first billable media call**
 032 Durable Jobs  
 033 Cost + SpendAuthorization + PaidAttemptGuard
 
-### 2C — Real first provider
+### 2C — Guarded keyframe and QA foundation
+024 Keyframe Source Workflows — all sources; internal billable images now have completed jobs and guard.
+034 Media QA/Diagnosis — deterministic preflight/acceptance contracts and fixtures before real smoke.
+
+### 2D — Real first provider
 030 Seedance 2.0 Vertical Slice — controlled internal/staging smoke only until commercial security/rights gate passes.
 
-### 2D — Review/repair/finalization required for a true vertical slice
-034 Media QA/Diagnosis  
+### 2E — Review/repair/finalization required for a true vertical slice
 035 Contextual Shot Revision  
 036 Shot Version Graph + Continuity Sandwich  
 037 Voice/Subtitle/Music + CompositionTimeline + FinalMaster QA
 
-### 2E — Evidence
+### 2F — Evidence
 031 Probe/Benchmark Harness
 
 Exit only when `phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md` passes. A paid render alone is not a vertical slice.
@@ -81,3 +84,6 @@ Exit: `phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md`.
 043 Beta Release Gate
 
 Exit: `phases/PHASE_6_BETA_RELEASE.md`.
+
+## Machine-readable task prerequisites
+`governance/contract_index.json` records the exact safe execution order and conservative dependency chain. A dependency means its own acceptance is complete, not that all later phase demonstrations already exist. TASK-030 proves real generation/QA; Phase 2 proves the full revision/voice/master route after 035–037 and 031. Earlier task tests are mandatory; TASK-039 consolidates automation rather than postponing tests. All billable image/voice/video/probe submissions require 032 and 033; provider ports before that point remain submission-disabled. Foundation rights/tenant controls apply from ingestion, and commercial hardening is verified again in 042.

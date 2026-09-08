@@ -1,32 +1,215 @@
 model_id: seedance-2.0
-verification_status: MEASURED
-last_verified_at: "2026-08-03"
-scope_note: "Profile is based on inspected public evidence and must be re-probed for each provider integration."
+profile_version: '4.3'
+version: null
+modality: VIDEO
+routable: false
+verification_status: PARTIAL
+scope_note: Public profile inspected 2026-09-08; source reports experiments dated
+  2026-08-03 but lacks exact endpoint/account and complete sample ledger. REPO_REPORTED;
+  not production MEASURED.
+last_verified_at: null
 capabilities:
-  reference_addressing: "@imageN on measured provider"
-  max_images: 9
-  multi_shot: true
-  hard_cuts: true
-  duration_seconds: [4, 15]
-  resolutions: ["480p", "720p", "1080p/provider-dependent"]
-  native_audio: true
-  audio_reference: false_on_measured_provider
-  first_end_frame: provider_dependent
-  continuation: tail_frame_or_provider_reference
+  reference_addressing:
+    status: UNKNOWN
+    value: '@imageN on measured provider'
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  max_images:
+    status: UNKNOWN
+    value: 9
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  multi_shot:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  hard_cuts:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  duration_seconds:
+    status: UNKNOWN
+    value:
+    - 4
+    - 15
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  resolutions:
+    status: UNKNOWN
+    value:
+    - 480p
+    - 720p
+    - 1080p/provider-dependent
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  audio_reference:
+    status: UNKNOWN
+    value: false_on_measured_provider
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  first_end_frame:
+    status: UNKNOWN
+    value: provider_dependent
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  continuation:
+    status: UNKNOWN
+    value: tail_frame_or_provider_reference
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: stages
-  timing_note: "Measured beats may drift late while order remains."
-  image_vs_text_composition: "Image composition can dominate conflicting text."
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: stages
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  timing_note:
+    status: UNKNOWN
+    value: Measured beats may drift late while order remains.
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  image_vs_text_composition:
+    status: UNKNOWN
+    value: Image composition can dominate conflicting text.
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+    source_version: blob:3b9ba23388da5d58777c1ec9ae573ea69f4e1fed
+    model_version: null
+    provider_scope: null
+    last_verified_at: '2026-09-08T00:00:00Z'
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures:
-  - small text/signage errors
-  - list-item omission
-  - camera move may be ignored
-  - timing drift
-  - overloaded 15s multi-event sequences can drop middle states
+- small text/signage errors
+- list-item omission
+- camera move may be ignored
+- timing drift
+- overloaded 15s multi-event sequences can drop middle states
 compile_notes:
-  - bind each reference explicitly
-  - use staged state changes and visible end states
-  - avoid image/text composition conflicts
-  - avoid overloaded heavy-VFX storyboard constraints unless benchmarks support them
+- bind each reference explicitly
+- use staged state changes and visible end states
+- avoid image/text composition conflicts
+- avoid overloaded heavy-VFX storyboard constraints unless benchmarks support them
 sources:
-  - https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+- https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

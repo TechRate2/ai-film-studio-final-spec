@@ -1,9 +1,166 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"EventEnvelope",
-  "type":"object",
-  "required":["event_id","event_type","project_id","sequence","occurred_at","payload_version","payload"],
-  "properties":{
-    "event_id":{"type":"string"},"event_type":{"type":"string"},"project_id":{"type":"string"},"run_id":{"type":["string","null"]},"job_id":{"type":["string","null"]},"shot_id":{"type":["string","null"]},"version_id":{"type":["string","null"]},"attempt_id":{"type":["string","null"]},"sequence":{"type":"integer","minimum":0},"occurred_at":{"type":"string"},"payload_version":{"type":"string"},"payload":{"type":"object"}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EventEnvelope",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "project_id",
+    "sequence",
+    "occurred_at",
+    "payload_version",
+    "payload",
+    "run_id"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "job_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "attempt_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "payload_version": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "resource_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string"
+        },
+        "from_status": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/job_status"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "to_status": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/job_status"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/error"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "related_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "resource_type",
+        "resource_id",
+        "resource_version",
+        "message",
+        "from_status",
+        "to_status",
+        "error",
+        "related_ids"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "job.state_changed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "payload": {
+            "properties": {
+              "to_status": {
+                "$ref": "common.schema.json#/$defs/job_status"
+              }
+            }
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      }
+    }
+  ]
 }

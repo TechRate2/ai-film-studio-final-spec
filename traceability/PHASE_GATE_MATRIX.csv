@@ -1,8 +1,8 @@
 phase,gate_document,required_tasks,required_evidence,status
-0,phases/PHASE_0_CONTRACT_AND_REALITY.md,"001-002","reality report; canonical embedding; governance CI",NOT_STARTED
-1,phases/PHASE_1_BRAIN_PROOF.md,"003-018","diverse brain scenarios; structured contracts; scoped context",NOT_STARTED
-2,phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md,"019-031","real UGC+xianxia; external keyframe; revision; paid provenance",NOT_STARTED
-3,phases/PHASE_3_PRODUCTION_HARDENING.md,"032-037","restart/reconciliation; spend guard; revision/versioning; GS08-10",NOT_STARTED
-4,phases/PHASE_4_LONG_FORM_SERIES.md,"038-041 + series dependencies","GS05 Episode2 continuation; scoped canon; voice/knowledge continuity",NOT_STARTED
-5,phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md,"provider expansion","profile+compiler+adapter+probe evidence; GS15",NOT_STARTED
-6,phases/PHASE_6_BETA_RELEASE.md,"042-043","golden suite; real benchmarks; restore; security; known limits",NOT_STARTED
+0,phases/PHASE_0_CONTRACT_AND_REALITY.md,"TASK-001,TASK-002",reality report; canonical embedding; governance CI; exact gate document remains binding,NOT_STARTED
+1,phases/PHASE_1_BRAIN_PROOF.md,"TASK-003,TASK-004,TASK-005,TASK-006,TASK-007,TASK-008,TASK-009,TASK-010,TASK-011,TASK-012,TASK-013,TASK-014,TASK-015,TASK-016,TASK-017,TASK-018",diverse brain scenarios; structured contracts; scoped context; exact gate document remains binding,NOT_STARTED
+2,phases/PHASE_2_SEEDANCE_VERTICAL_SLICE.md,"TASK-019,TASK-020,TASK-021,TASK-022,TASK-023,TASK-025,TASK-026,TASK-027,TASK-028,TASK-029,TASK-032,TASK-033,TASK-024,TASK-034,TASK-030,TASK-035,TASK-036,TASK-037,TASK-031",real UGC+xianxia; external keyframe; revision; paid provenance; exact gate document remains binding,NOT_STARTED
+3,phases/PHASE_3_PRODUCTION_HARDENING.md,"TASK-032,TASK-033,TASK-034,TASK-035,TASK-036,TASK-037",restart/reconciliation; spend guard; revision/versioning; GS08-10; exact gate document remains binding,NOT_STARTED
+4,phases/PHASE_4_LONG_FORM_SERIES.md,"TASK-038,TASK-039,TASK-040,TASK-041",GS05 Episode2 continuation; scoped canon; voice/knowledge continuity; exact gate document remains binding,NOT_STARTED
+5,phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md,PROVIDER_EXPANSION_TEMPLATE,profile+compiler+adapter+probe evidence; GS15; exact gate document remains binding,NOT_STARTED
+6,phases/PHASE_6_BETA_RELEASE.md,"TASK-042,TASK-043",golden suite; real benchmarks; restore; security; known limits; exact gate document remains binding,NOT_STARTED

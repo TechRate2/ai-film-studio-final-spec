@@ -29,3 +29,20 @@ Embed this spec repo into implementation source-of-truth and wire traceability/C
 - Golden scenarios affected
 - Remaining gaps
 - Real-provider benchmark risk, if any
+
+## Binding execution and verification packet
+
+Dependencies: TASK-001. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/00_SPEC_LOCK.md`
+- `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`
+- `spec/26_IMPLEMENTATION_GOVERNANCE.md`
+- `schemas/common.schema.json`
+
+Requirements: R-079.
+Golden coverage: GS26.
+
+- [ ] Pin one canonical revision in the implementation repository; validate schemas, refs, contract enums, task graph and traceability with the canonical validator.
+- [ ] Demonstrate validation failure after removing a required file or mutating a dangerous enum; do not count mere copies/file existence as enforcement.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

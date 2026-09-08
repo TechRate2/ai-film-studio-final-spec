@@ -1,5 +1,90 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"UserTasteProfile","type":"object",
-  "required":["profile_id","version","signals"],
-  "properties":{"profile_id":{"type":"string"},"version":{"type":"integer","minimum":1},"signals":{"type":"array","items":{"type":"object","required":["dimension","preference","confidence","evidence_count"],"properties":{"dimension":{"type":"string"},"preference":{},"confidence":{"type":"number","minimum":0,"maximum":1},"evidence_count":{"type":"integer","minimum":1},"last_observed_at":{"type":"string"}}}},"do_not_overfit":{"const":true}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserTasteProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "version",
+    "signals",
+    "user_id",
+    "enabled",
+    "do_not_overfit"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "preference",
+          "confidence",
+          "evidence_count",
+          "source_versions",
+          "source_action_ids",
+          "scope",
+          "last_observed_at"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string"
+          },
+          "preference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "last_observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_versions": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/source_pin"
+            },
+            "minItems": 0
+          },
+          "source_action_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "scope": {
+            "$ref": "common.schema.json#/$defs/scope"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "do_not_overfit": {
+      "const": true
+    },
+    "user_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "enabled": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
 }

@@ -28,3 +28,20 @@ Implement CharacterRegistry, aliases, knowledge/belief and relationship state.
 - Golden scenarios affected
 - Remaining gaps
 - Real-provider benchmark risk, if any
+
+## Binding execution and verification packet
+
+Dependencies: TASK-014. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/08_CHARACTER_RELATIONSHIP_KNOWLEDGE_STATE.md`
+- `spec/32_LONG_FORM_SERIES_PLAYBOOK.md`
+- `schemas/character.schema.json`
+- `schemas/relationship_edge.schema.json`
+
+Requirements: R-007, R-072, R-085.
+Golden coverage: GS05, GS27.
+
+- [ ] Use story-positioned proposition/acquisition IDs for knowledge, false belief, suspicion, misunderstanding and concealment; wants/fears remain motivations.
+- [ ] Test duplicate aliases, directional relationships and a later revelation viewed in flashback; no omniscient dialogue or cross-character leakage.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

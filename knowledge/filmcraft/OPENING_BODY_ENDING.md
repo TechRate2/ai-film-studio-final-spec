@@ -1,13 +1,9 @@
 # Opening–Body–Ending Intelligence
 
-## Opening — Why stop?
-Create immediate value, curiosity, conflict, beauty, novelty, specificity or emotional tension appropriate to the format. Do not force a universal loud 2-second hook.
+Evidence class: SYNTHESIS — reusable directing heuristics, not measured provider behavior.
 
-## Body — Why continue?
-Progress information/emotion/state. Each beat should answer or deepen a viewer question. Alternate setup/reward, tension/release, proof/reaction or cause/consequence according to genre.
+Identify audience awareness before choosing a hook: an unfamiliar viewer needs context; a knowledgeable viewer may value a precise contradiction; a loyal series viewer may enter through consequence. Separate curiosity (an answer is missing), suspense (an outcome is feared), surprise (expectation breaks) and identification (a desire feels personal). Select the mechanism that the body can pay off honestly. Avoid bait that a different video would have to answer.
 
-## Ending — Why remember/act?
-Deliver payoff, reversal, proof, emotion, CTA or an intentional cliffhanger. Ending must resolve or transform the promise made by the opening rather than merely stop when duration expires.
+Build a beat ledger: promise → viewer question → new evidence/action → emotional update → remaining question. Close some loops before opening more; sustained mystery without new information becomes confusion. Escalation can narrow options, increase sacrifice or reverse belief without more cuts or spectacle. A proof demonstration needs readable before/action/after states; an emotional scene needs time for the reaction to register. Test removal or reordering of each beat: if meaning, anticipation and emotion do not change, merge it.
 
-## Retention check
-At each beat ask: what question is active, what changed, what reward was delivered, and what reason exists to watch the next beat?
+Payoff must connect causally to setup. A reversal reinterprets earlier evidence; a cliffhanger resolves a local action while leaving a consequential choice. Do not end every series episode by inventing a new threat. Advertising CTA follows credible value and a feasible action; reflective film may end on an image or silence. Record drop-off hypotheses as hypotheses, not promised retention numbers. Measure audience behavior only with exposure/context; never infer universal hook duration from one successful sample.

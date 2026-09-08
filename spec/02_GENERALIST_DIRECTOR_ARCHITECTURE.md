@@ -61,3 +61,9 @@ Research/search, file/reference analysis, memory/canon retrieval, creative/story
 
 ## Agentic vs deterministic boundary
 Creative decisions may be LLM-driven and adaptive. Once a paid production plan is approved, execution is represented by explicit typed jobs, state transitions and dependency graphs.
+
+## Adaptive execution, not mandatory stages
+The diagram is a capability map, not a fixed runtime pipeline. Skip satisfied or irrelevant work and reuse CURRENT artifacts. A subtitle correction can go directly to timeline validation; a simple B-roll request need not create a series, storyboard, research run or keyframe. Persist the selected prerequisite DAG and reason for material omissions. The Director requests compilation through neutral tools; it does not write vendor prompts or invoke transport. PaidAttemptGuard encloses the adapter submission, including image, voice and billable probe calls.
+
+## Tool and run boundary
+Each tool declares a versioned input/output schema, read/write scope, idempotency behavior and effect class READ_ONLY, DETERMINISTIC_WRITE or BILLABLE_GENERATION. Director suggestions cannot grant authorization. Production services validate permissions, input versions and spend independently. Persist run ID, optimistic revision, context-pack ID/version, pending command IDs, loop counters, deadlines and terminal reason before yielding. Failed tool calls do not reset budgets. No tool executes instructions extracted from a reference, web page or document as trusted commands.

@@ -1,16 +1,76 @@
 model_id: kling-v3-o3-family
+profile_version: '4.3'
+version: null
+modality: FAMILY
+routable: false
 verification_status: PARTIAL
+scope_note: Placeholder knowledge family from historical public/provider snapshots;
+  exact V3/O3 endpoints/capabilities must be separated by model/provider during integration.
 last_verified_at: null
-scope_note: "Placeholder knowledge family from historical public/provider snapshots; exact V3/O3 endpoints/capabilities must be separated by model/provider during integration."
 capabilities:
-  duration_seconds: "historical snapshot suggested up to 15s for some routes; VERIFY"
-  native_audio: "historical snapshot suggested available on some routes; VERIFY"
-  reference_to_video: "provider/model dependent; VERIFY"
+  duration_seconds:
+    status: UNKNOWN
+    value: historical snapshot suggested up to 15s for some routes; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: historical snapshot suggested available on some routes; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  reference_to_video:
+    status: UNKNOWN
+    value: provider/model dependent; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: UNKNOWN
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - split exact model profiles after probes
-  - do not merge video-edit and generation behavior
+- split exact model profiles after probes
+- do not merge video-edit and generation behavior
 sources:
-  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+- evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

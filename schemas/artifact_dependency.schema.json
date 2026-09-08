@@ -1,9 +1,64 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"ArtifactDependency",
-  "type":"object",
-  "required":["upstream_artifact_id","downstream_artifact_id","dependency_kind","invalidation_policy"],
-  "properties":{
-    "upstream_artifact_id":{"type":"string"},"downstream_artifact_id":{"type":"string"},"dependency_kind":{"type":"string"},"invalidation_policy":{"enum":["STALE_DOWNSTREAM","BLOCK_UNTIL_CURRENT","NO_INVALIDATION"]},"reason":{"type":"string"}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArtifactDependency",
+  "type": "object",
+  "required": [
+    "upstream_artifact_id",
+    "downstream_artifact_id",
+    "dependency_kind",
+    "invalidation_policy",
+    "project_id",
+    "upstream_version_id",
+    "downstream_version_id",
+    "consumed_fields"
+  ],
+  "properties": {
+    "upstream_artifact_id": {
+      "type": "string"
+    },
+    "downstream_artifact_id": {
+      "type": "string"
+    },
+    "dependency_kind": {
+      "type": "string"
+    },
+    "invalidation_policy": {
+      "enum": [
+        "STALE_DOWNSTREAM",
+        "BLOCK_UNTIL_CURRENT",
+        "NO_INVALIDATION"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "upstream_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "downstream_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consumed_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "compatibility_evidence_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
 }
