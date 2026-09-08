@@ -16,5 +16,6 @@ Produce provider-neutral CreativeStrategy informed by audience, evidence, StyleD
 - Genre/Platform/Brand/UserTaste layers have explicit conflict precedence;
 - retention does not force fast cuts universally;
 - Creative Critic runs before paid media;
+- critic/replan loop is bounded and exposes stop reason;
 - user hard constraints/canon/product truth outrank style/taste heuristics;
 - decision provenance available for major trade-offs.

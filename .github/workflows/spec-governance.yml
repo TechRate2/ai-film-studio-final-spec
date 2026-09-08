@@ -26,6 +26,8 @@ jobs:
           grep -q "SpendAuthorization" spec/00_SPEC_LOCK.md
           grep -q "PRODUCT_DEMO" spec/03_SCOPE_AND_CONTENT_INTELLIGENCE.md
           grep -q "TASK-032 Durable Jobs and TASK-033" tasks/TASK_030_SEEDANCE_2_0_VERTICAL_SLICE.md
+          grep -q "Vietnamese and English" spec/20_CHAT_FIRST_WORKSPACE_UX.md
+          grep -q "Bounded agent loops" spec/29_RUNTIME_ORCHESTRATION.md
           SPEC_COUNT=$(find spec -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')
           TASK_COUNT=$(find tasks -maxdepth 1 -type f -name 'TASK_[0-9][0-9][0-9]_*.md' | wc -l | tr -d ' ')
           SCHEMA_COUNT=$(find schemas -maxdepth 1 -type f -name '*.schema.json' | wc -l | tr -d ' ')
@@ -36,7 +38,7 @@ jobs:
           test "$TASK_COUNT" -eq 43
           test "$SCHEMA_COUNT" -eq 42
           test "$GS_COUNT" -eq 25
-          test "$REQ_COUNT" -eq 75
+          test "$REQ_COUNT" -eq 78
           test "$PHASE_COUNT" -eq 7
           python - <<'PY'
           import json, glob

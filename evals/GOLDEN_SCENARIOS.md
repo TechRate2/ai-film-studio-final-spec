@@ -29,11 +29,11 @@ Agent creates copy-ready prompt + exact ref pack, imports external image, valida
 ## GS09 — Shot revision / Continuity Sandwich
 Accepted Shot5→Shot6→Shot7. User: “Make Shot6 sword motion slower, keep face/outfit/light/end state.” Keep v1, create v2, semantic diff only, use incoming Shot5 + outgoing Shot7 target, show incremental cost, stale Shot7 only if necessary.
 
-## GS10 — Spend/timeout safety
-Potential upstream creation followed by timeout must not trigger blind second paid task. Reconcile upstream status and enforce spend cap.
+## GS10 — Spend/timeout/session-resume safety
+Potential upstream creation followed by timeout must not trigger blind second paid task. Reconcile upstream status and enforce spend cap. Restart/fresh runtime resumes from durable job/context state without relying on hidden chat memory.
 
-## GS11 — Language change
-Changing Vietnamese to Chinese after visual acceptance must not regenerate visuals unless chosen lip-sync route truly requires it. Voice identity remains same character identity.
+## GS11 — UI locale vs content language
+Workspace can switch Vietnamese ↔ English without mutating project canon/output language. Separately changing project dialogue Vietnamese → Chinese after visual acceptance must not regenerate visuals unless chosen lip-sync route truly requires it. Voice identity remains same character identity.
 
 ## GS12 — Product factual claim
 Ad script must not invent material product claims from image appearance. Claim comes from FACT_SOURCE/user-verified data.
@@ -74,5 +74,5 @@ Project includes real-person voice/face reference, licensed brand asset and unve
 ## GS24 — Provider fallback and paid-state certainty
 Provider A fails in NOT_SUBMITTED state: same logical authorized attempt may route to allowed provider B within cap. Provider A returns UNKNOWN: system enters RECONCILING. Provider A produced/billed output: provider B cannot be silently called as retry.
 
-## GS25 — Research cache/freshness/stop rule
-Two projects ask same stable model question within valid cache window; second reuses evidence. A current/provider-version change invalidates relevant evidence. Research stops once decision confidence/stop condition is met and does not loop for marginal sources.
+## GS25 — Research and critique stop rules
+Two projects ask same stable model question within valid cache window; second reuses evidence. A current/provider-version change invalidates relevant evidence. Research stops once decision confidence/stop condition is met. Creative Critic/replan also stops at configured convergence/budget and escalates unresolved uncertainty rather than looping indefinitely.

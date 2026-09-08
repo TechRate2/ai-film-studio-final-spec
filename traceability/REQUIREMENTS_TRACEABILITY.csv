@@ -74,3 +74,6 @@ R-072,Character knowledge includes wants and fears,spec/08_CHARACTER_RELATIONSHI
 R-073,Research has explicit stop rule,spec/40_RESEARCH_ROI_AND_CREATIVE_EVIDENCE_GRAPH.md,TASK-011,GS25,NOT_STARTED,,
 R-074,External generated assets preserve external provenance,spec/41_MULTIMODAL_ASSET_INGESTION.md,TASK-008,"GS08,GS18",NOT_STARTED,,
 R-075,Final export uses only CURRENT accepted source versions,spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md,TASK-037,"GS19,GS21",NOT_STARTED,,
+R-076,Global UI supports Vietnamese and English independently from content language,spec/20_CHAT_FIRST_WORKSPACE_UX.md,"TASK-005,TASK-041",GS11,NOT_STARTED,,
+R-077,Runtime resumes from compacted durable structured state without hidden model memory,spec/29_RUNTIME_ORCHESTRATION.md,TASK-006,GS10,NOT_STARTED,,
+R-078,Research creative critic and planning loops are bounded with explicit stop states,spec/29_RUNTIME_ORCHESTRATION.md,"TASK-006,TASK-011,TASK-013",GS25,NOT_STARTED,,

@@ -1,29 +1,28 @@
 # Runtime Orchestration
 
 ## Two planes
-**Director plane:** adaptive reasoning, planning, research, tool selection and structured artifact creation.  
-**Production plane:** deterministic/durable execution of approved plans, provider jobs, dependencies, retries of polling, QA and assembly.
+**Director plane:** adaptive reasoning, research, planning, tool selection and user-facing explanation.  
+**Production plane:** explicit typed state machines, durable jobs, dependencies, cost authorization, provider transport and artifact persistence.
 
-Do not let an unbounded LLM loop directly own paid execution lifecycle.
+Creative reasoning may be agentic; billable production execution is never an opaque LLM loop.
 
-## Director run
-`CREATED → UNDERSTANDING → RESEARCHING? → PLANNING → PREFLIGHT → WAITING_INPUT/READY → COMPLETED|FAILED|CANCELLED`
+## Director run state
+A run persists request/project IDs, current objective, plan/artifact refs, active task/tool state, decision records, context-pack version and checkpoint summary. Chat transcript may be an input but is not durable source of truth.
 
-Each transition is persisted enough to resume safely.
+## Session resume and compaction
+Long sessions periodically compact conversational/reasoning history into durable structured artifacts + concise checkpoint summaries. Compaction must preserve IDs/source versions/unresolved decisions rather than free-form paraphrase alone. A new process/model session reconstructs from Project Canon, ActiveContextPack, artifacts/jobs and checkpoint state; it must not require hidden model memory or the entire historical transcript.
 
-## Media job
-`PLANNED → COSTED → AWAITING_APPROVAL? → QUEUED → SUBMITTING → SUBMITTED → POLLING → SUCCEEDED|FAILED|CANCELLED|RECONCILING`
+## Bounded agent loops
+Research, creative critique, planning and repair reasoning have explicit budgets/stop conditions. If a loop cannot converge, it transitions to targeted research, WAITING_USER, BLOCKED or a documented trade-off; it does not spin indefinitely.
 
-`RECONCILING` is mandatory when local submission outcome is uncertain but provider may have created a billable task.
+## Production job state
+`PLANNED | READY | AUTHORIZED | SUBMITTING | RUNNING | RECONCILING | SUCCEEDED | FAILED | CANCEL_REQUESTED | CANCELLED | BLOCKED`.
 
-## Dependency scheduler
-A child is runnable only when all required parent dependencies are accepted/current and spend/provider constraints permit execution. Independent DAG branches may parallelize.
-
-## Checkpoints
-Human input is required when: user explicitly chooses revision, external keyframe is requested, spend policy requires approval, an important degrade needs consent, or canon conflict cannot be safely inferred.
+## Scheduler
+Jobs run only when dependencies, authorization, capability and spend conditions are satisfied. Independent jobs may parallelize; dependency edges constrain children.
 
 ## Resume
-On restart, reconstruct from durable state and provider upstream IDs. Never restart from chat transcript alone.
+After restart, recover from durable jobs/upstream task IDs. Events accelerate UI updates but durable state remains authoritative.
 
 ## Cancellation
-Cancellation stops not-yet-submitted work immediately and attempts provider cancellation where supported; it never lies about already-spent cost.
+Cancel prevents not-yet-submitted work immediately; submitted provider work follows provider cancel/reconcile semantics and never assumes refund/cancellation unless confirmed.

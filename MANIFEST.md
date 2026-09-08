@@ -11,9 +11,7 @@ Required roots:
 - exactly 43 numbered `tasks/TASK_001...TASK_043` plus non-numbered provider/probe templates
 - `evals/GOLDEN_SCENARIOS.md`, `evals/BENCHMARK_RUBRIC.md`
 - `traceability/REQUIREMENTS_TRACEABILITY.csv`
-- `evidence/`
-- `examples/`
-- `prompts/`
+- `evidence/`, `examples/`, `prompts/`
 - `.github/workflows/spec-governance.yml`
 
 Current canonical counts:
@@ -21,7 +19,7 @@ Current canonical counts:
 - numbered implementation task packets: **43**
 - normative JSON schemas: **42**
 - golden scenarios: **25**
-- traceability requirements: **75**
+- traceability requirements: **78**
 - phase gate docs: **7**
 
 Git commit/tree identity is the immutable version anchor. No other repository is required to interpret this canonical spec. When adding/removing canonical contracts, update MANIFEST + SPEC_VERSION + CI in the same change.

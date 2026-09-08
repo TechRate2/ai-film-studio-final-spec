@@ -14,3 +14,6 @@ Every scene declares narrative purpose, active character objective, conflict, in
 
 ## Creative Critic
 Before paid rendering evaluate hook, clarity, emotional progression, novelty, niche/platform fit, filmability, shot purpose, performance naturalness, audio/visual fit, reference compliance, continuity risk, generation difficulty, expected acceptance, cost risk, retention and payoff.
+
+## Bounded self-critique / replanning
+The Director may revise a draft plan after critic feedback, but self-critique is bounded by configured iteration/budget/convergence policy. It must not endlessly rewrite creative strategy trying to reach a subjective perfect score. When material uncertainty remains after the bound, choose one of: targeted research/probe, surface user decision when genuinely necessary, accept a documented trade-off, or BLOCK before expensive generation. The loop and stop reason are observable.
