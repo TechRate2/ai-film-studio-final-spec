@@ -2,12 +2,49 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Artifact",
   "type": "object",
-  "required": ["artifact_id","artifact_type","currency","provenance"],
+  "required": ["artifact_id", "project_id", "artifact_type", "currency", "dependencies", "provenance"],
   "properties": {
-    "artifact_id": {"type":"string"},
-    "artifact_type": {"type":"string"},
-    "currency": {"enum":["CURRENT","STALE","MISSING","BLOCKED"]},
-    "dependencies": {"type":"array","items":{"type":"string"}},
-    "provenance": {"type":"object"}
-  }
+    "artifact_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "version_id": {"type": ["string", "null"]},
+    "artifact_type": {"type": "string", "minLength": 1},
+    "role": {"type": ["string", "null"]},
+    "currency": {"enum": ["CURRENT", "STALE", "MISSING", "BLOCKED"]},
+    "dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "provenance": {
+      "type": "object",
+      "required": ["project_id", "source_kind", "spec_version", "source_refs", "created_at"],
+      "properties": {
+        "project_id": {"type": "string"},
+        "owner_id": {"type": ["string", "null"]},
+        "source_kind": {
+          "enum": ["USER_UPLOAD", "EXTERNAL_GENERATED", "INTERNAL_GENERATED", "PROVIDER_GENERATED", "DERIVED_DETERMINISTIC", "RESEARCH_DERIVED"]
+        },
+        "spec_version": {"type": "string"},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "source_artifact_ids": {"type": "array", "items": {"type": "string"}},
+        "provider_id": {"type": ["string", "null"]},
+        "model_id": {"type": ["string", "null"]},
+        "attempt_id": {"type": ["string", "null"]},
+        "universal_spec_version": {"type": ["string", "null"]},
+        "profile_versions": {"type": "object", "additionalProperties": {"type": "string"}},
+        "compiler_version": {"type": ["string", "null"]},
+        "compiled_prompt_hash": {"type": ["string", "null"]},
+        "reference_binding_ids": {"type": "array", "items": {"type": "string"}},
+        "cost": {"type": ["number", "null"], "minimum": 0},
+        "currency_unit": {"type": ["string", "null"]},
+        "qa_report_id": {"type": ["string", "null"]},
+        "content_hash": {"type": ["string", "null"]},
+        "created_at": {"type": "string", "format": "date-time"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"source_kind": {"const": "PROVIDER_GENERATED"}}},
+          "then": {"required": ["provider_id", "model_id", "attempt_id", "compiled_prompt_hash"]}
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
 }
