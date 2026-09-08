@@ -1,9 +1,39 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"PaidAttempt",
-  "type":"object",
-  "required":["attempt_id","artifact_id","provider_id","model_id","status","estimated_cost","paid_state_certainty"],
-  "properties":{
-    "attempt_id":{"type":"string"},"artifact_id":{"type":"string"},"shot_id":{"type":["string","null"]},"version_id":{"type":["string","null"]},"provider_id":{"type":"string"},"model_id":{"type":"string"},"upstream_task_id":{"type":["string","null"]},"idempotency_key":{"type":["string","null"]},"prompt_hash":{"type":"string"},"reference_hash":{"type":"string"},"estimated_cost":{"type":"number","minimum":0},"actual_cost":{"type":["number","null"],"minimum":0},"status":{"enum":["PLANNED","AWAITING_APPROVAL","SUBMITTING","SUBMITTED","POLLING","RECONCILING","SUCCEEDED","FAILED","CANCELLED"]},"paid_state_certainty":{"enum":["NOT_SUBMITTED","SUBMITTED","UNKNOWN"]},"created_at":{"type":"string"},"updated_at":{"type":"string"}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PaidAttempt",
+  "type": "object",
+  "required": ["attempt_id", "logical_attempt_id", "authorization_id", "artifact_id", "provider_id", "model_id", "status", "estimated_cost", "currency_unit", "paid_state_certainty", "created_at", "updated_at"],
+  "properties": {
+    "attempt_id": {"type": "string", "minLength": 1},
+    "logical_attempt_id": {"type": "string", "minLength": 1},
+    "authorization_id": {"type": "string", "minLength": 1},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "shot_id": {"type": ["string", "null"]},
+    "version_id": {"type": ["string", "null"]},
+    "candidate_index": {"type": "integer", "minimum": 1},
+    "provider_id": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "upstream_task_id": {"type": ["string", "null"]},
+    "provider_correlation_id": {"type": ["string", "null"]},
+    "idempotency_key": {"type": ["string", "null"]},
+    "prompt_hash": {"type": "string"},
+    "reference_hash": {"type": "string"},
+    "universal_spec_version": {"type": ["string", "null"]},
+    "compiler_version": {"type": ["string", "null"]},
+    "profile_versions": {"type": "object", "additionalProperties": {"type": "string"}},
+    "estimated_cost": {"type": "number", "minimum": 0},
+    "actual_cost": {"type": ["number", "null"], "minimum": 0},
+    "currency_unit": {"type": "string", "minLength": 1},
+    "status": {
+      "enum": ["PLANNED", "AUTHORIZED", "SUBMITTING", "SUBMITTED", "RUNNING", "RECONCILING", "SUCCEEDED", "FAILED", "CANCEL_REQUESTED", "CANCELLED"]
+    },
+    "paid_state_certainty": {
+      "enum": ["NOT_SUBMITTED", "SUBMITTED", "UNKNOWN", "FAILED_UNBILLED_CONFIRMED", "BILLED_OR_OUTPUT_PRODUCED"]
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "submitted_at": {"type": ["string", "null"], "format": "date-time"},
+    "charged_at": {"type": ["string", "null"], "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
 }
