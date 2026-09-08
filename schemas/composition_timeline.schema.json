@@ -1,5 +1,160 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"CompositionTimeline","type":"object",
-  "required":["timeline_id","project_id","video_tracks","audio_tracks","export_target"],
-  "properties":{"timeline_id":{"type":"string"},"project_id":{"type":"string"},"video_tracks":{"type":"array","items":{"type":"object"}},"audio_tracks":{"type":"array","items":{"type":"object"}},"subtitle_tracks":{"type":"array","items":{"type":"object"}},"graphics_tracks":{"type":"array","items":{"type":"object"}},"transitions":{"type":"array","items":{"type":"object"}},"export_target":{"type":"object"},"source_artifact_versions":{"type":"array","items":{"type":"string"}},"compiler_version":{"type":"string"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CompositionTimeline",
+  "type": "object",
+  "$defs": {
+    "sourceVersionRef": {
+      "type": "object",
+      "required": ["artifact_id", "version_id"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "version_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "visualItem": {
+      "type": "object",
+      "required": ["item_id", "source_artifact_id", "source_version_id", "timeline_start_seconds", "source_in_seconds", "source_out_seconds"],
+      "properties": {
+        "item_id": {"type": "string", "minLength": 1},
+        "source_artifact_id": {"type": "string", "minLength": 1},
+        "source_version_id": {"type": "string", "minLength": 1},
+        "timeline_start_seconds": {"type": "number", "minimum": 0},
+        "source_in_seconds": {"type": "number", "minimum": 0},
+        "source_out_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "speed": {"type": "number", "exclusiveMinimum": 0, "default": 1},
+        "hold_seconds": {"type": "number", "minimum": 0, "default": 0},
+        "opacity": {"type": "number", "minimum": 0, "maximum": 1, "default": 1},
+        "fit": {"enum": ["CONTAIN", "COVER", "STRETCH", "NATIVE"]},
+        "transform": {"type": "object"},
+        "edit_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "audioItem": {
+      "type": "object",
+      "required": ["item_id", "source_artifact_id", "source_version_id", "timeline_start_seconds", "source_in_seconds", "source_out_seconds"],
+      "properties": {
+        "item_id": {"type": "string", "minLength": 1},
+        "source_artifact_id": {"type": "string", "minLength": 1},
+        "source_version_id": {"type": "string", "minLength": 1},
+        "timeline_start_seconds": {"type": "number", "minimum": 0},
+        "source_in_seconds": {"type": "number", "minimum": 0},
+        "source_out_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "gain_db": {"type": "number", "default": 0},
+        "fade_in_seconds": {"type": "number", "minimum": 0, "default": 0},
+        "fade_out_seconds": {"type": "number", "minimum": 0, "default": 0},
+        "duck_under_track_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "subtitleCue": {
+      "type": "object",
+      "required": ["cue_id", "start_seconds", "end_seconds", "text"],
+      "properties": {
+        "cue_id": {"type": "string", "minLength": 1},
+        "start_seconds": {"type": "number", "minimum": 0},
+        "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "text": {"type": "string"},
+        "speaker_id": {"type": ["string", "null"]},
+        "position": {"type": ["string", "null"]},
+        "style_token": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["timeline_id", "project_id", "timeline_version", "video_tracks", "audio_tracks", "subtitle_tracks", "graphics_tracks", "transitions", "export_target", "source_artifact_versions", "compiler_version"],
+  "properties": {
+    "timeline_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "timeline_version": {"type": "integer", "minimum": 1},
+    "video_tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["track_id", "kind", "items"],
+        "properties": {
+          "track_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["VIDEO", "IMAGE"]},
+          "items": {"type": "array", "items": {"$ref": "#/$defs/visualItem"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "audio_tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["track_id", "kind", "items"],
+        "properties": {
+          "track_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["DIALOGUE", "ADR", "NARRATION", "AMBIENCE", "FOLEY", "SFX", "MUSIC"]},
+          "items": {"type": "array", "items": {"$ref": "#/$defs/audioItem"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "subtitle_tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["track_id", "language", "cues"],
+        "properties": {
+          "track_id": {"type": "string", "minLength": 1},
+          "language": {"type": "string", "minLength": 1},
+          "cues": {"type": "array", "items": {"$ref": "#/$defs/subtitleCue"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "graphics_tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["track_id", "items"],
+        "properties": {
+          "track_id": {"type": "string"},
+          "items": {"type": "array", "items": {"type": "object"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["transition_id", "from_item_id", "to_item_id", "type", "duration_seconds"],
+        "properties": {
+          "transition_id": {"type": "string", "minLength": 1},
+          "from_item_id": {"type": "string", "minLength": 1},
+          "to_item_id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["CUT", "DISSOLVE", "FADE", "WIPE", "CUSTOM"]},
+          "duration_seconds": {"type": "number", "minimum": 0},
+          "parameters": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "export_target": {
+      "type": "object",
+      "required": ["container", "video_codec", "audio_codec", "width", "height", "frame_rate"],
+      "properties": {
+        "container": {"type": "string", "minLength": 1},
+        "video_codec": {"type": "string", "minLength": 1},
+        "audio_codec": {"type": "string", "minLength": 1},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "frame_rate": {"type": "number", "exclusiveMinimum": 0},
+        "audio_sample_rate_hz": {"type": ["integer", "null"], "minimum": 1},
+        "loudness_target_lufs": {"type": ["number", "null"]},
+        "peak_target_dbfs": {"type": ["number", "null"]},
+        "language_variant": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "source_artifact_versions": {"type": "array", "items": {"$ref": "#/$defs/sourceVersionRef"}},
+    "compiler_version": {"type": "string", "minLength": 1},
+    "created_at": {"type": ["string", "null"], "format": "date-time"}
+  },
+  "additionalProperties": false
 }
