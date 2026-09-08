@@ -1,7 +1,5 @@
 # Dynamic Skill Library
 
-Skills are retrieved by the Generalist Director when relevant; they are not separate user-visible agents and do not define rigid pipelines.
+One visible Generalist Director retrieves optional capabilities; these cards are not agents or fixed niche workflows. Index skill_id, version, retrieve-when text and linked knowledge. Retrieve the smallest relevant set by unresolved decision, objective and risk; record chosen versions and exclude irrelevant cards. Genre/platform cards are applications of shared mechanisms, never architecture switches. Shared deep filmcraft documents own the reusable reasoning; do not copy all of them into a shot context.
 
-Retrieve the smallest useful set based on objective, audience, content mode, genre, platform, active scene and production risks. Skills may add heuristics/critic questions but must not override SPEC_LOCK, Project Canon, evidence or Model/Provider capability truth.
-
-A new niche should usually be represented by evidence + CreativeStrategy + retrieved skills rather than new hard-coded `if niche` branches.
+Each card has decision logic, trade-offs, contraindications and an observable check. Knowledge is SYNTHESIS unless explicitly evidenced otherwise; it is not a claim of empirical provider success. Provider/version-specific advice belongs in evidence-scoped profiles. Skills cannot authorize spending, relax hard constraints or override Project Canon. A critic can recommend a bounded plan correction, not invoke a paid retry. Examples are illustrative, not mandatory stages or durations.

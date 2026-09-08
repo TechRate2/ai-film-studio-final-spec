@@ -4,7 +4,7 @@
 Release only when canonical behavior, paid safety, user data/rights and operational recovery are demonstrably correct.
 
 ## Exit gate
-- all 25 golden scenarios pass at required deterministic/real-provider levels;
+- all 28 golden scenarios pass at required deterministic/real-provider levels;
 - critical traceability requirements have implementation + test refs;
 - real Seedance end-to-end benchmark dates/providers documented;
 - no unresolved critical SPEC_LOCK violation;

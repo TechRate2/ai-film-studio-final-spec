@@ -1,5 +1,81 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"FinalMaster","type":"object",
-  "required":["master_id","timeline_id","artifact_id","qa_report_id","checksum","export_metadata"],
-  "properties":{"master_id":{"type":"string"},"timeline_id":{"type":"string"},"artifact_id":{"type":"string"},"qa_report_id":{"type":"string"},"checksum":{"type":"string"},"export_metadata":{"type":"object"},"language":{"type":["string","null"]},"status":{"enum":["READY","FAILED_QA","EXPORTED"]},"created_at":{"type":"string"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FinalMaster",
+  "type": "object",
+  "required": [
+    "master_id",
+    "timeline_id",
+    "artifact_id",
+    "qa_report_id",
+    "checksum",
+    "export_metadata",
+    "project_id",
+    "timeline_version_id",
+    "timeline_hash",
+    "exporter_version",
+    "source_artifact_versions",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "master_id": {
+      "type": "string"
+    },
+    "timeline_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "qa_report_id": {
+      "type": "string"
+    },
+    "checksum": {
+      "type": "string"
+    },
+    "export_metadata": {
+      "$ref": "common.schema.json#/$defs/export"
+    },
+    "language": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "READY",
+        "FAILED_QA",
+        "EXPORTED"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timeline_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timeline_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exporter_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_artifact_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/version_ref"
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

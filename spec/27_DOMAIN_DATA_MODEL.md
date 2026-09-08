@@ -55,3 +55,11 @@ speaker identity, reference audio/provider ID, timbre, pace, accent, emotional r
 
 ## Immutability
 Accepted/generated provenance and historical shot versions are never destructively rewritten. Canon changes create new versions. Derived artifacts become stale rather than disappearing.
+
+## Shared contract rules
+JSON Schema draft 2020-12 is normative for wire structure; `schemas/common.schema.json` contains shared value records, not a service. IDs are nonempty project-scoped opaque strings. Versions are immutable IDs or explicitly declared positive integers. Timestamps are RFC3339 UTC; costs use a declared currency and fixed-decimal arithmetic at runtime (never binary float for ledger comparisons). Null means unknown/not applicable as documented, never zero cost or unsupported by implication. Domain referential, temporal and transaction constraints below cannot be replaced by JSON parsing.
+Closed records reject misspelled fields. Free creative semantics live in explicit descriptive text/list fields or a documented typed extension map; extensions cannot carry new execution commands or silently change normative behavior. Schema revisions preserve the same canonical tree, bump SPEC_VERSION and require migration compatibility for persisted projects.
+
+Cross-object validation additionally enforces unique IDs within arrays, owned/resolvable references, source-pin/version agreement, required knowledge acquisition paths, graph acyclicity and timeline arithmetic. These are application domain tests specified in GS05/GS19/GS27; metaschema/fixture validation alone cannot prove them. Keyframe source NONE needs only an ID/target/reason decision; it does not require a generation prompt, pack, camera or image dependency.
+
+The shared schema also defines Scene, Shot (including the accepted-version pointer), DirectorRun checkpoint and ToolContract records. Scene/shot entry/exit states and story_position are durable; the lightweight SHORT path may omit episode_id using null. DirectorRun is a reasoning lifecycle, not a second production-job vocabulary. Task implementations validate these definitions at their storage/tool boundaries.

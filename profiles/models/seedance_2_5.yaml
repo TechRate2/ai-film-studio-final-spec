@@ -1,21 +1,120 @@
 model_id: seedance-2.5
+profile_version: '4.3'
+version: null
+modality: VIDEO
+routable: false
 verification_status: PARTIAL
+scope_note: Do not inherit Seedance 2.0 prompt bias. Provider/API behavior must be
+  probed.
 last_verified_at: null
-scope_note: "Do not inherit Seedance 2.0 prompt bias. Provider/API behavior must be probed."
 capabilities:
-  reference_addressing: UNKNOWN
-  practical_reference_limit: UNKNOWN
-  multi_shot: EXPECTED_UNVERIFIED
-  duration_seconds: "provider/public-launch-material dependent; verify"
-  native_audio: EXPECTED_UNVERIFIED
-  audio_reference: PROVIDER_DEPENDENT
+  reference_addressing:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  practical_reference_limit:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  multi_shot:
+    status: UNKNOWN
+    value: EXPECTED_UNVERIFIED
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  duration_seconds:
+    status: UNKNOWN
+    value: provider/public-launch-material dependent; verify
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: EXPECTED_UNVERIFIED
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  audio_reference:
+    status: UNKNOWN
+    value: PROVIDER_DEPENDENT
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: UNKNOWN
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - run reference-binding probe
-  - run stage-vs-timestamp timing probe
-  - run subtitle/music default-behavior baseline
-  - measure practical reference stability ceiling
+- run reference-binding probe
+- run stage-vs-timestamp timing probe
+- run subtitle/music default-behavior baseline
+- measure practical reference stability ceiling
 sources:
-  - https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+- https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

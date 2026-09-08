@@ -1,3 +1,22 @@
+---
+skill_id: editorial.j_l_cuts_audio_bridges
+version: 1
+knowledge: knowledge/filmcraft/EDITING_GRAMMAR.md
+evidence_class: SYNTHESIS
+---
+
 # J/L Cuts and Audio Bridges
 
-A J-cut introduces next-scene audio before visual cut; an L-cut lets prior audio continue under next image. Use to preserve conversational flow, anticipation, memory or location transition. Generated clip boundaries should not force audio resets. Audio bridge decisions belong to Editorial/Audio Director and final assembly timeline.
+## Retrieve when
+Audio continuity or anticipation should cross a picture cut. Match decision need, not a hardcoded niche branch.
+
+## Decision
+Place incoming audio early for a J-cut or outgoing audio late for an L-cut using independent timeline ranges.
+
+## Trade-offs and when not to use
+Do not imply the wrong location/time or cause accidental overlapping dialogue; check source handles.
+
+## Output and check
+Record the chosen mechanism, reason and source skill version in the relevant CreativeStrategy, UniversalVideoSpec or timeline decision. Timeline preserves intended A/V offset and intelligible speech without audio resets.
+
+Read the linked knowledge only for the missing decision. Capability/rights/locks/canon and spend rules outrank this heuristic. No failed aesthetic check authorizes paid regeneration.

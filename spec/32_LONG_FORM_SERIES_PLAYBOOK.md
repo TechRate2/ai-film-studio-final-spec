@@ -23,3 +23,6 @@ A project may maintain 5–10+ recurring characters. A single shot should includ
 
 ## Series acceptance
 A later episode must resume without requiring the user to re-upload canonical refs unless the asset is missing/invalidated or user requests replacement.
+
+## ActiveContextPack validity
+Each pack has its own ID/version, retrieval purpose, project/canon versions, story position, role-specific knowledge refs, source version pins, token budget and omitted-context summary. Retrieve by active entities, causal relevance and required incoming/outgoing continuity, not transcript recency alone. Mandatory hard facts/locks/knowledge cannot be silently truncated to fit budget: reduce optional context, retrieve more narrowly or block. Revalidate pins before planning commit, paid submission and acceptance. Pack construction supports 10+ registered characters with a small active subset and paginated retrieval, including cross-episode props and unresolved promises.

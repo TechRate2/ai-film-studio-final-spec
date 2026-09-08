@@ -2,14 +2,159 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ProjectCanon",
   "type": "object",
-  "required": ["project_id","version","world_facts","characters","unresolved_threads"],
+  "required": [
+    "project_id",
+    "version",
+    "world_facts",
+    "characters",
+    "unresolved_threads",
+    "recorded_at",
+    "audience_knowledge"
+  ],
   "properties": {
-    "project_id": {"type":"string"},
-    "version": {"type":"integer","minimum":1},
-    "world_facts": {"type":"array","items":{"type":"object","required":["id","statement","status"],"properties":{"id":{"type":"string"},"statement":{"type":"string"},"status":{"enum":["IMMUTABLE","CURRENT","RETCONNED","RUMOR","UNKNOWN"]}}}},
-    "characters": {"type":"array","items":{"type":"string"}},
-    "relationships": {"type":"array","items":{"type":"object"}},
-    "unresolved_threads": {"type":"array","items":{"type":"string"}},
-    "episode_state": {"type":"object"}
-  }
+    "project_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "world_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "status",
+          "source_ids",
+          "valid_from_story_position"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "IMMUTABLE",
+              "CURRENT",
+              "RETCONNED",
+              "RUMOR",
+              "UNKNOWN"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "valid_from_story_position": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "supersedes_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "relationship_edge.schema.json"
+      },
+      "minItems": 0
+    },
+    "unresolved_threads": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "episode_state": {
+      "type": "object",
+      "properties": {
+        "episode_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "story_position": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshot_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "episode_id",
+        "story_position",
+        "snapshot_id"
+      ],
+      "additionalProperties": false
+    },
+    "source_version_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "audience_knowledge": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposition_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disclosure_event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "story_position": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "proposition_id",
+          "disclosure_event_id",
+          "story_position"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

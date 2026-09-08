@@ -1,5 +1,92 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"EpisodeSnapshot","type":"object",
-  "required":["episode_id","canon_version","character_state_refs","unresolved_threads","accepted_master_ids"],
-  "properties":{"episode_id":{"type":"string"},"canon_version":{"type":"integer","minimum":1},"character_state_refs":{"type":"array","items":{"type":"string"}},"relationship_state_refs":{"type":"array","items":{"type":"string"}},"voice_profile_versions":{"type":"object"},"location_prop_state":{"type":"object"},"unresolved_threads":{"type":"array","items":{"type":"string"}},"accepted_master_ids":{"type":"array","items":{"type":"string"}},"summary":{"type":"string"},"created_at":{"type":"string"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EpisodeSnapshot",
+  "type": "object",
+  "required": [
+    "episode_id",
+    "canon_version",
+    "character_state_refs",
+    "unresolved_threads",
+    "accepted_master_ids",
+    "snapshot_id",
+    "project_id",
+    "version",
+    "commit_key",
+    "source_versions",
+    "created_at"
+  ],
+  "properties": {
+    "episode_id": {
+      "type": "string"
+    },
+    "canon_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "character_state_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relationship_state_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "voice_profile_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "location_prop_state": {
+      "$ref": "common.schema.json#/$defs/state"
+    },
+    "unresolved_threads": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accepted_master_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "commit_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/source_pin"
+      },
+      "minItems": 0
+    }
+  },
+  "additionalProperties": false
 }

@@ -1,5 +1,108 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ResearchPlan","type":"object",
-  "required":["research_plan_id","questions","budget","stop_condition"],
-  "properties":{"research_plan_id":{"type":"string"},"questions":{"type":"array","items":{"type":"object","required":["question","type","materiality"],"properties":{"question":{"type":"string"},"type":{"enum":["FACTUAL","CURRENT","TREND","NICHE","FILMCRAFT","MODEL","PROVIDER","PROMPT","REFERENCE"]},"materiality":{"type":"number","minimum":0,"maximum":1}}}},"budget":{"type":"object"},"stop_condition":{"type":"string"},"cache_keys":{"type":"array","items":{"type":"string"}}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchPlan",
+  "type": "object",
+  "required": [
+    "research_plan_id",
+    "questions",
+    "budget",
+    "stop_condition",
+    "project_id",
+    "consumed",
+    "deadline"
+  ],
+  "properties": {
+    "research_plan_id": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "type",
+          "materiality"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "FACTUAL",
+              "CURRENT",
+              "TREND",
+              "NICHE",
+              "FILMCRAFT",
+              "MODEL",
+              "PROVIDER",
+              "PROMPT",
+              "REFERENCE"
+            ]
+          },
+          "materiality": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "budget": {
+      "$ref": "common.schema.json#/$defs/budget"
+    },
+    "stop_condition": {
+      "type": "string"
+    },
+    "cache_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consumed": {
+      "type": "object",
+      "properties": {
+        "cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "queries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "iterations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "latency_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "cost",
+        "queries",
+        "sources",
+        "iterations",
+        "latency_seconds"
+      ],
+      "additionalProperties": false
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
 }

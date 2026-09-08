@@ -1,23 +1,96 @@
 model_id: wan-2.2-family
+profile_version: '4.3'
+version: null
+modality: FAMILY
+routable: false
 verification_status: PARTIAL
-last_verified_at: "2026-09-08"
-scope_note: "Family-level public official-repo capabilities; concrete hosted-provider behavior must be profiled separately."
+scope_note: Family-level public official-repo capabilities; concrete hosted-provider
+  behavior must be profiled separately.
+last_verified_at: null
 capabilities:
   variants:
+    status: UNKNOWN
+    value:
     - T2V-A14B
     - I2V-A14B
     - TI2V-5B
     - S2V-14B
     - Animate-14B
-  speech_to_video: true
-  character_animate_or_replacement: true
-  ti2v_open_model_720p_24fps: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/Wan-Video/Wan2.2
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  speech_to_video:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/Wan-Video/Wan2.2
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  character_animate_or_replacement:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/Wan-Video/Wan2.2
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  ti2v_open_model_720p_24fps:
+    status: UNKNOWN
+    value: true
+    evidence_label: REPO_REPORTED
+    source: https://github.com/Wan-Video/Wan2.2
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  prompt_extension: "official repo recommends prompt extension in some workflows"
+  prompt_extension:
+    status: UNKNOWN
+    value: official repo recommends prompt extension in some workflows
+    evidence_label: REPO_REPORTED
+    source: https://github.com/Wan-Video/Wan2.2
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - do not treat the Wan family as one generic endpoint
-  - select variant by production mode and provider exposure
-  - benchmark identity/dialogue/action per hosted route
+- do not treat the Wan family as one generic endpoint
+- select variant by production mode and provider exposure
+- benchmark identity/dialogue/action per hosted route
 sources:
-  - https://github.com/Wan-Video/Wan2.2
+- https://github.com/Wan-Video/Wan2.2
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

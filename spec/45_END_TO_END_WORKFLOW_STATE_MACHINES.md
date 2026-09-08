@@ -37,3 +37,6 @@ with `REJECTED | NEEDS_CORRECTION`.
 
 ## Long-form/series
 Episode completion is not `COMPLETE` until accepted outputs are summarized into a versioned episode/canon snapshot and unresolved state is persisted for next episode.
+
+## Optional stages and durable authority
+Steps list available capabilities, not a mandatory identical workflow. Reused CURRENT inputs and simple edits may skip satisfied stages. Production jobs use only spec/29 statuses; shot acceptance and artifact currency are orthogonal domain facts. QA can persist an observation for review but only accepted output releases a continuity dependency. A user-approved paid plan authorizes its enumerated first candidates, never an unbounded Director repair loop. Series acceptance commits the episode snapshot transaction before reporting completion.

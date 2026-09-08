@@ -43,3 +43,6 @@ Observed official family capabilities include T2V/I2V/TI2V, speech-to-video and 
 https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills
 
 Architecture use: universal language / measured bias / capability separation; Seedance 2.0 staged timing/reference notes; Seedance 2.5 must be independently probed.
+
+## Audit qualification
+Earlier VERIFIED_SOURCE labels describe historical author-reported inspections; this repository did not pin those source commits or sample records. They are not evidence of current availability, pricing or this product's measurement. During the 4.3 audit only the exact Seedance profile source documented in evidence/SEEDANCE_KNOWLEDGE_STATUS.md was re-inspected. Other links remain historical provenance requiring revalidation for a material runtime decision. Synthesis conclusions do not grant rights or override SPEC_LOCK.

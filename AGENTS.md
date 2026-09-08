@@ -52,7 +52,7 @@ If implementation and canonical spec conflict, report the conflict; do not silen
 - CompositionTimeline is source of deterministic final assembly; FinalMaster requires QA.
 
 ## Paid safety prerequisite
-No real billable Seedance/video provider smoke may occur until `TASK-032` and `TASK-033` pass. Confirmed recovery of the same upstream task is not a new generation; a new post-output paid attempt is user-directed.
+No real billable image/video/voice/lip-sync/generative-repair/probe submission may occur until `TASK-032` and `TASK-033` pass. Confirmed recovery of the same upstream task is not a new generation; a new post-output paid attempt is user-directed.
 
 ## Engineering quality
 Use typed contracts, explicit state transitions, migrations, structured errors, provenance, observability, authorization, cancellation/resume and tests. Develop UI/backend vertically where user interaction exists.

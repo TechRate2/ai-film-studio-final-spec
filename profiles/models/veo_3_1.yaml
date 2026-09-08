@@ -1,15 +1,75 @@
 model_id: veo-3.1
+profile_version: '4.3'
+version: null
+modality: VIDEO
+routable: false
 verification_status: PARTIAL
+scope_note: Historical public/provider snapshot only; current exposure, duration,
+  resolution and audio behavior must be live-verified during Phase 5.
 last_verified_at: null
-scope_note: "Historical public/provider snapshot only; current exposure, duration, resolution and audio behavior must be live-verified during Phase 5."
 capabilities:
-  duration_seconds: "historical snapshot suggested fixed short durations; VERIFY"
-  high_resolution: "historical provider exposure included high-resolution tiers; VERIFY"
-  native_audio: "historical snapshot suggested yes; VERIFY"
+  duration_seconds:
+    status: UNKNOWN
+    value: historical snapshot suggested fixed short durations; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  high_resolution:
+    status: UNKNOWN
+    value: historical provider exposure included high-resolution tiers; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  native_audio:
+    status: UNKNOWN
+    value: historical snapshot suggested yes; VERIFY
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  preferred_timing_granularity: UNKNOWN
+  preferred_timing_granularity:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: REPO_REPORTED
+    source: evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
 compile_notes:
-  - probe reference/timing/audio separately for exact provider
+- probe reference/timing/audio separately for exact provider
 sources:
-  - evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+- evidence/TOPVIEW_PUBLIC_COST_SNAPSHOT.md
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

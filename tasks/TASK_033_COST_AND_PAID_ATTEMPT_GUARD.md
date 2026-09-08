@@ -24,3 +24,22 @@ Implement estimate/authorization/spend/idempotency/reconciliation semantics for 
 - actual cost/reconciliation auditable and `cost_per_accepted_second` computable.
 
 This task is a prerequisite of any production billable Seedance smoke test.
+
+## Binding execution and verification packet
+
+Dependencies: TASK-032. Stable IDs follow `tasks/00_IMPLEMENTATION_ORDER.md`, not numeric order.
+
+Additional mandatory reading (including transitive local schema refs):
+- `spec/18_COST_SPEND_ATTEMPT_POLICY.md`
+- `spec/29_RUNTIME_ORCHESTRATION.md`
+- `spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md`
+- `schemas/cost_estimate.schema.json`
+- `schemas/spend_authorization.schema.json`
+- `schemas/paid_attempt.schema.json`
+
+Requirements: R-020, R-021, R-024, R-028, R-054, R-055, R-056, R-066, R-069, R-084, R-088.
+Golden coverage: GS01, GS04, GS09, GS10, GS16, GS17, GS22, GS24, GS27.
+
+- [ ] Atomically reserve all applicable caps and one authorized candidate slot; persist linkage/hash/request before transport and reconcile append-only settlement.
+- [ ] Race duplicate Create/workers/fallback, exceed cap, expire/cancel, refund after output and ambiguous timeout: no blind resubmit, hidden extra candidate or quality auto-retry.
+- [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

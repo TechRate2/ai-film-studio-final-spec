@@ -1,7 +1,7 @@
 # Phase 0 — Contract and Repository Reality
 
 ## Goal
-Install canonical V4.1 into the implementation workflow and discover actual code reality before refactoring.
+Install the current canonical version into the implementation workflow and discover actual code reality before refactoring.
 
 ## Tasks
 TASK-001, TASK-002.

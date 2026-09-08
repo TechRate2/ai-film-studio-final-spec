@@ -16,3 +16,6 @@ Stable evidence is reused within freshness scope. Provider/model/current evidenc
 
 ## No weight training initially
 Learning is retrieval/memory/benchmark driven; production does not require model weight training to become useful.
+
+## Learning hygiene
+Signals pin project, artifact/version, decision, user action, timestamp and dimension. Record whether rejection concerned identity, technical QA or subjective taste; a failed face must not teach a global dislike of that camera. Explicit preferences apply immediately within their scope; inferred preferences carry confidence and independent evidence count and never override hard constraints. Outcome metrics retain platform, exposure window, denominator, audience and attribution uncertainty; missing analytics are UNKNOWN and correlation is not causation. Users can inspect/correct/disable learned taste. Deletion/withdrawal removes owned signals from retrieval and recalculates derived profiles without deleting required billing audit records.

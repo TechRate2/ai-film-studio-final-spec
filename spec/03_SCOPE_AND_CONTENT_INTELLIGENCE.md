@@ -23,3 +23,26 @@ Per-shot routes can include `DIRECT_T2V`, `IMAGE_TO_VIDEO`, `REFERENCE_TO_VIDEO`
 
 ## Router output
 The router must persist the scope decision, content mode, genre/platform tags, memory depth, continuity level, research modes and the factors that materially caused the decision. It must be possible to re-evaluate the decision after user intent or project scale changes without rewriting historical accepted artifacts.
+
+## Machine-checkable invariants
+```json
+{
+  "content_modes": [
+    "DRAMA",
+    "UGC",
+    "ADVERTISEMENT",
+    "PRODUCT_DEMO",
+    "NARRATION",
+    "DOCUMENTARY",
+    "EXPLAINER",
+    "MUSIC_VISUAL",
+    "VISUAL_FILM",
+    "OTHER_GENERALIST"
+  ],
+  "scopes": [
+    "SHORT",
+    "LONG_SINGLE",
+    "SERIES"
+  ]
+}
+```

@@ -1,17 +1,100 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"ScopeDecision",
-  "type":"object",
-  "required":["scope","content_mode","reasoning_factors","memory_depth"],
-  "properties":{
-    "scope":{"enum":["SHORT","LONG_SINGLE","SERIES"]},
-    "content_mode":{"enum":["DRAMA","UGC","ADVERTISEMENT","PRODUCT_DEMO","NARRATION","DOCUMENTARY","EXPLAINER","MUSIC_VISUAL","VISUAL_FILM","OTHER_GENERALIST"]},
-    "genre_tags":{"type":"array","items":{"type":"string"}},
-    "platform_tags":{"type":"array","items":{"type":"string"}},
-    "reasoning_factors":{"type":"object"},
-    "memory_depth":{"enum":["SHOT_LOCAL","PROJECT","SERIES"]},
-    "continuity_level":{"enum":["LOW","MEDIUM","HIGH"]},
-    "research_modes":{"type":"array","items":{"type":"string"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScopeDecision",
+  "type": "object",
+  "required": [
+    "scope",
+    "content_mode",
+    "reasoning_factors",
+    "memory_depth"
+  ],
+  "properties": {
+    "scope": {
+      "enum": [
+        "SHORT",
+        "LONG_SINGLE",
+        "SERIES"
+      ]
+    },
+    "content_mode": {
+      "enum": [
+        "DRAMA",
+        "UGC",
+        "ADVERTISEMENT",
+        "PRODUCT_DEMO",
+        "NARRATION",
+        "DOCUMENTARY",
+        "EXPLAINER",
+        "MUSIC_VISUAL",
+        "VISUAL_FILM",
+        "OTHER_GENERALIST"
+      ]
+    },
+    "genre_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "platform_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reasoning_factors": {
+      "type": "object",
+      "properties": {
+        "continuity_horizon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recurring_cast": {
+          "type": "string",
+          "minLength": 1
+        },
+        "complexity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "continuation_intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "continuity_horizon",
+        "recurring_cast",
+        "complexity",
+        "continuation_intent",
+        "duration_reason"
+      ],
+      "additionalProperties": false
+    },
+    "memory_depth": {
+      "enum": [
+        "SHOT_LOCAL",
+        "PROJECT",
+        "SERIES"
+      ]
+    },
+    "continuity_level": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "research_modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   },
-  "additionalProperties":false
+  "additionalProperties": false
 }

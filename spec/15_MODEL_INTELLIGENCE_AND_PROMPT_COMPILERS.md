@@ -17,3 +17,6 @@ On integration/version change: reference binding; timing adherence (stages vs ti
 
 ## Prompt provenance
 Every media attempt stores UniversalVideoSpec version, ModelProfile version, compiler version, compiled prompt, refs, provider/model/params, result, cost and QA.
+
+## Evidence-bound profile promotion
+Profiles distinguish reported capability from runtime-supported capability. Each claim has status, typed value, exact model version, provider/account/region scope, source locator/version, verified time, sample count and unknown/failure notes. MEASURED requires inspectable sample records with inputs/outputs, route and date; reading a repository that calls itself measured is REPO_REPORTED evidence, not this product's measurement. A family profile is non-routable; choose an exact variant before resolving capabilities. Model release, endpoint, entitlement or policy changes invalidate the corresponding EffectiveCapability snapshot.

@@ -1,9 +1,241 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"UniversalVideoSpec",
-  "type":"object",
-  "required":["spec_version","purpose","global","locks","stages","performance","camera","audio","success_conditions"],
-  "properties":{
-    "spec_version":{"type":"string"},"purpose":{"type":"string"},"global":{"type":"object"},"locks":{"type":"array","items":{"$ref":"reference_binding.schema.json"}},"initial_state":{"type":"object"},"stages":{"type":"array","items":{"type":"object","required":["primary_change","end_state"],"properties":{"duration_hint":{"type":["number","null"]},"primary_change":{"type":"string"},"end_state":{"type":"object"}}}},"performance":{"type":"object"},"camera":{"type":"object"},"audio":{"type":"object"},"negative_risks":{"type":"array","items":{"type":"string"}},"continuity_in":{"type":"object"},"continuity_out":{"type":"object"},"success_conditions":{"type":"array","items":{"type":"string"}}
-  }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UniversalVideoSpec",
+  "type": "object",
+  "required": [
+    "spec_version",
+    "purpose",
+    "global",
+    "locks",
+    "stages",
+    "performance",
+    "camera",
+    "audio",
+    "success_conditions",
+    "project_id",
+    "shot_id",
+    "version_id",
+    "timing_granularity",
+    "initial_state",
+    "continuity_in",
+    "continuity_out",
+    "negative_risks"
+  ],
+  "properties": {
+    "spec_version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "global": {
+      "type": "object",
+      "properties": {
+        "content_mode": {
+          "enum": [
+            "DRAMA",
+            "UGC",
+            "ADVERTISEMENT",
+            "PRODUCT_DEMO",
+            "NARRATION",
+            "DOCUMENTARY",
+            "EXPLAINER",
+            "MUSIC_VISUAL",
+            "VISUAL_FILM",
+            "OTHER_GENERALIST"
+          ]
+        },
+        "scene_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "premise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "style": {
+          "type": "string",
+          "minLength": 1
+        },
+        "camera_principle": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "content_mode",
+        "scene_id",
+        "premise",
+        "style",
+        "camera_principle"
+      ],
+      "additionalProperties": false
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "$ref": "reference_binding.schema.json"
+      }
+    },
+    "initial_state": {
+      "$ref": "common.schema.json#/$defs/state"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_hint": {
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "primary_change": {
+            "type": "string",
+            "minLength": 1
+          },
+          "end_state": {
+            "$ref": "common.schema.json#/$defs/state"
+          },
+          "start_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "end_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "stage_id",
+          "duration_hint",
+          "primary_change",
+          "end_state"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "performance": {
+      "$ref": "common.schema.json#/$defs/performance"
+    },
+    "camera": {
+      "$ref": "common.schema.json#/$defs/camera"
+    },
+    "audio": {
+      "$ref": "common.schema.json#/$defs/audio"
+    },
+    "negative_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "continuity_in": {
+      "$ref": "common.schema.json#/$defs/state"
+    },
+    "continuity_out": {
+      "$ref": "common.schema.json#/$defs/state"
+    },
+    "success_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timing_granularity": {
+      "enum": [
+        "none",
+        "stages",
+        "second-level"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "timing_granularity": {
+            "const": "none"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "stages": {
+            "maxItems": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "stages": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "timing_granularity": {
+            "const": "second-level"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "stages": {
+            "items": {
+              "required": [
+                "start_seconds",
+                "end_seconds"
+              ],
+              "properties": {
+                "start_seconds": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "end_seconds": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

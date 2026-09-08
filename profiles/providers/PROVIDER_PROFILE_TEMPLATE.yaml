@@ -1,4 +1,6 @@
 provider_id: example
+profile_version: '4.3'
+verification_status: UNVERIFIED
 last_verified_at: null
 models: []
 endpoints:
@@ -9,13 +11,123 @@ capability_exposure: {}
 billing:
   currency: null
   price_rules: []
+  charge_semantics:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 limits:
-  rpm: null
-  concurrency: null
-  duration: null
-  resolution: null
+  rpm:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  concurrency:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  duration:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  resolution:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 timeout_semantics:
-  upstream_task_id: null
-  idempotency_supported: null
+  idempotency:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  lookup:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  cancellation:
+    status: UNKNOWN
+    value: null
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 regions: []
+sources: []
+unknowns:
+- Populate exact endpoint, account, prices, bounds and reconciliation semantics before
+  routing.
 notes: []

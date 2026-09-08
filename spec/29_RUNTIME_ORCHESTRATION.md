@@ -26,3 +26,39 @@ After restart, recover from durable jobs/upstream task IDs. Events accelerate UI
 
 ## Cancellation
 Cancel prevents not-yet-submitted work immediately; submitted provider work follows provider cancel/reconcile semantics and never assumes refund/cancellation unless confirmed.
+
+## DurableJob transition table
+The sole production status vocabulary is the enum above and `schemas/job.schema.json`.
+
+| From | Allowed next | Guard/effect |
+|---|---|---|
+| PLANNED | READY, BLOCKED, CANCELLED | Valid dependencies and input versions; cancel before submission |
+| READY | AUTHORIZED, BLOCKED, CANCELLED | Resolve capabilities/rights; bind authorization or non-paid policy |
+| AUTHORIZED | SUBMITTING, BLOCKED, CANCELLED | Atomic lease, version check and spend reservation |
+| SUBMITTING | RUNNING, RECONCILING, FAILED, CANCEL_REQUESTED | Persist provider task; ambiguous outcome reconciles |
+| RUNNING | SUCCEEDED, FAILED, RECONCILING, CANCEL_REQUESTED | Poll/recover same task; persist output before success |
+| RECONCILING | RUNNING, SUCCEEDED, FAILED, CANCEL_REQUESTED, BLOCKED | Authoritative upstream evidence; unresolved certainty never resubmits |
+| CANCEL_REQUESTED | CANCELLED, SUCCEEDED, FAILED, RECONCILING | Provider confirms cancel or late completion; no assumed refund |
+| BLOCKED | READY, RECONCILING, CANCELLED | Revalidate prerequisites; UNKNOWN resumes reconciliation only |
+| SUCCEEDED, FAILED, CANCELLED | none | Terminal job immutable; any permitted retry gets a new linked job |
+
+FAILED_UNBILLED_CONFIRMED may allow a new execution record under the same logical candidate and authorization. No status transition back to SUBMITTING exists after possible creation. A new execution after a billed/output result requires a newly authorized candidate/revision. Cancellation stops unsubmitted siblings immediately; late output is retained and cost reconciled without releasing dependent children. Bounded polling exhaustion leaves unresolved liability reserved and visible; it is not evidence of unbilled failure.
+
+## Machine-checkable invariants
+```json
+{
+  "job_status": [
+    "PLANNED",
+    "READY",
+    "AUTHORIZED",
+    "SUBMITTING",
+    "RUNNING",
+    "RECONCILING",
+    "SUCCEEDED",
+    "FAILED",
+    "CANCEL_REQUESTED",
+    "CANCELLED",
+    "BLOCKED"
+  ]
+}
+```

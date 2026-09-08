@@ -1,5 +1,203 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"AssetIngestionRecord","type":"object",
-  "required":["ingestion_id","project_id","state","source_type","content_hash"],
-  "properties":{"ingestion_id":{"type":"string"},"project_id":{"type":"string"},"state":{"enum":["UPLOADING","RECEIVED","VALIDATING","PROCESSING","READY","FAILED","QUARANTINED","NEEDS_USER_ACTION"]},"source_type":{"enum":["USER_UPLOAD","EXTERNAL_GENERATED","CONNECTED_SOURCE","INTERNAL_GENERATED"]},"content_hash":{"type":"string"},"mime_type":{"type":["string","null"]},"media_metadata":{"type":"object"},"source_provenance":{"type":"object"},"derived_artifact_ids":{"type":"array","items":{"type":"string"}},"failure":{"type":["object","null"]}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AssetIngestionRecord",
+  "type": "object",
+  "required": [
+    "ingestion_id",
+    "project_id",
+    "state",
+    "source_type",
+    "content_hash",
+    "source_provenance"
+  ],
+  "properties": {
+    "ingestion_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "UPLOADING",
+        "RECEIVED",
+        "VALIDATING",
+        "PROCESSING",
+        "READY",
+        "FAILED",
+        "QUARANTINED",
+        "NEEDS_USER_ACTION"
+      ]
+    },
+    "source_type": {
+      "enum": [
+        "USER_UPLOAD",
+        "EXTERNAL_GENERATED",
+        "CONNECTED_SOURCE",
+        "INTERNAL_GENERATED"
+      ]
+    },
+    "content_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "mime_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "media_metadata": {
+      "type": "object",
+      "properties": {
+        "mime_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_seconds": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stream_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "source_provenance": {
+      "type": "object",
+      "properties": {
+        "source_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_uri": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "uploader_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "external_tool": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "rights_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "source_label",
+        "source_uri",
+        "uploader_id",
+        "external_tool",
+        "rights_refs"
+      ],
+      "additionalProperties": false
+    },
+    "derived_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/error"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "READY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content_hash": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "media_metadata",
+          "derived_artifact_ids"
+        ]
+      }
+    }
+  ]
 }

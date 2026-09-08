@@ -1,17 +1,116 @@
 model_id: example-voice-model
-modality: voice
+profile_version: '4.3'
+version: null
+modality: VOICE
+routable: false
 verification_status: UNVERIFIED
+scope_note: Template only; populate exact model/provider evidence before routing.
 last_verified_at: null
 capabilities:
-  languages: UNKNOWN
-  reference_audio: UNKNOWN
-  voice_clone: UNKNOWN
-  pronunciation_control: UNKNOWN
-  streaming: UNKNOWN
-policy:
-  consent_requirements: UNKNOWN
+  languages:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  reference_audio:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  voice_clone:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  pronunciation_control:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  streaming:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 behavior:
-  emotion_control: UNKNOWN
-  timing_stability: UNKNOWN
+  emotion_control:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
+  timing_stability:
+    status: UNKNOWN
+    value: UNKNOWN
+    evidence_label: UNVERIFIED
+    source: null
+    source_version: null
+    model_version: null
+    provider_scope: null
+    last_verified_at: null
+    sample_count: 0
+    confidence: null
+    known_failures: []
+    unknowns:
+    - Exact provider/account scope and controlled sample ledger not established.
 known_failures: []
+compile_notes:
+- Consent policy is resolved from product/provider/user policy, never assumed from
+  this template.
 sources: []
+unknowns:
+- Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
+  are not verified for this project.

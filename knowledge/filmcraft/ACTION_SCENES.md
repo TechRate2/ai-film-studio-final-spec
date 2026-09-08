@@ -1,15 +1,9 @@
 # Action Scenes
 
-Action quality depends on geography and causality more than raw motion.
+Evidence class: SYNTHESIS — reusable directing heuristics, not measured provider behavior.
 
-## Design
-Establish who/where/goal → readable initiating action → consequence/reaction → new state. Avoid asking many characters to execute independent exact choreography simultaneously.
+State objective, threat and spatial opportunity before choreography. Build cause → anticipation → action/contact → consequence → changed advantage. Establish the axis of travel and key escape/attack paths. A clear wide may be more exciting than many tight inserts when the audience can predict danger. Detail views work for a consequential prop/contact, but repeated close fragments without geography erase stakes.
 
-## Camera
-During complex action, camera should often simplify: stable tracking, motivated follow, readable wide/medium, then detail/reaction. Constant orbit/shake/zoom can destroy comprehension.
+Separate subject movement from camera movement. During difficult multi-body contact use a stable or simple motivated camera; during a simple action the camera may reveal scale. Screen direction, weapon hand, stance, target, injury and prop possession are continuity constraints. Design believable acceleration, weight and reaction in descriptive terms; do not promise exact physics from an unmeasured model. VFX follows an emitting source, path, impact and environmental response. Multiple independent effects raise omission and identity risks.
 
-## AI generation
-Split only at meaningful state/camera/location/complexity boundaries. Give visible end states. For a 10-person battle use a geography wide + focused hero interactions + reactions rather than one overloaded exact shot.
-
-## Continuity
-Track weapon hand, injury, screen direction, position and current opponent/target in Continuity Baton.
+If splitting is necessary, use a meaningful preparation, occlusion, impact, reaction or new tactical state; preserve entry/exit baton and editorial handles. Never cut solely at N seconds. In a large battle, orient the group then select a causal focal exchange; extras need not become permanent entities. Do not split a reliable coherent long action simply to manufacture coverage. Success requires readable causality and intended outcome, not maximal motion amplitude.

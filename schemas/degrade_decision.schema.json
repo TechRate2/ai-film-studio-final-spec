@@ -1,5 +1,85 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"DegradeDecision","type":"object",
-  "required":["decision_id","requested_capability","reason","selected_action","provenance"],
-  "properties":{"decision_id":{"type":"string"},"requested_capability":{"type":"string"},"reason":{"type":"string"},"selected_action":{"enum":["REDUCE_REFS","SPLIT_GENERATION","MOVE_AUDIO_TO_POST","USE_FIRST_FRAME","SWITCH_MODEL","SWITCH_PROVIDER","BLOCK","OTHER"]},"quality_tradeoff":{"type":"string"},"cost_delta":{"type":["number","null"]},"requires_user_action":{"type":"boolean"},"provenance":{"type":"object"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DegradeDecision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "requested_capability",
+    "reason",
+    "selected_action",
+    "provenance",
+    "project_id",
+    "requires_user_action",
+    "quality_tradeoff"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "requested_capability": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "selected_action": {
+      "enum": [
+        "REDUCE_REFS",
+        "SPLIT_GENERATION",
+        "MOVE_AUDIO_TO_POST",
+        "USE_FIRST_FRAME",
+        "SWITCH_MODEL",
+        "SWITCH_PROVIDER",
+        "BLOCK",
+        "OTHER"
+      ]
+    },
+    "quality_tradeoff": {
+      "type": "string"
+    },
+    "cost_delta": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "requires_user_action": {
+      "type": "boolean"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "source_versions": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/source_pin"
+          },
+          "minItems": 0
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "decision_record_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_versions",
+        "evidence_ids",
+        "decision_record_id"
+      ],
+      "additionalProperties": false
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
 }
