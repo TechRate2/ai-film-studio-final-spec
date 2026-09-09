@@ -16,3 +16,13 @@ Persist all research/LLM/image/video/voice/compute costs separately. Generation 
 
 ## Promotion
 Promote a claim only with exact route/version scope, inspected evidence, sample ledger and declared uncertainty. Keep conflicting samples, known failures and re-probe triggers. No fixed sample count proves every model behavior; justified sample design and precision are part of review. Provider/account changes invalidate applicable exposure and pricing while preserving historical evidence.
+
+
+## Source-video localization extension (Phase 7)
+Evaluate separately from generated-video acceptance. Record cost_per_accepted_localized_minute with source/target duration basis, total attempted/rejected spend, ASR/translation/separation/TTS/compute/storage breakdown and end-to-end latency. Imported minutes cannot improve generated cost_per_accepted_second.
+
+For each exposed direction, voice and provider route, pin versions/entitlement/date, source rights, representative sample IDs and reviewer proficiency. Include clean/noisy speech, mixed language, silence, accented speech, names/numbers/negation, two-speaker turns, overlap, music-under-dialogue and long-form timing. Translation fidelity, speaker attribution, natural delivery and background preservation require source/target-competent human review, not merely back-translation or the same LLM grading itself. Do not call intelligible but emotionally flat speech performance-preserving.
+
+Measure source transcription error separately from translation error; alignment boundary error separately from voice quality. Predeclare launch-specific quality thresholds, sample coverage and review procedure before selecting passing samples; report sample count and distribution, not one headline success rate. A severe factual/negation error, wrong speaker, rights violation, forbidden submission or unexplained missing range is release-blocking for the affected route. Subtitle reading density, line breaks, diacritics/script shaping, safe area, dubbing pace, clipping/loudness and source preservation use the versioned policy in spec/47. Numeric policy values must be justified on target viewing contexts before release, not invented as universal constants here.
+
+Report unresolved difficult material honestly. No claim of perfect lip synchronization: this extension never changes mouths. Missing credentials/budget or human-language review leaves empirical proof BLOCKED. Tests use licensed fixtures; no paid calls in default CI.

@@ -62,7 +62,7 @@ def validate(root: Path):
     for path in ["README.md", "MANIFEST.md"]:
         check(f'V{idx["version"]}' in (root / path).read_text(), path + " version mismatch", "version")
     spec_numbers = sorted(p.name[:2] for p in (root / "spec").glob("*.md"))
-    check(spec_numbers == [f"{n:02}" for n in range(47)], "Spec numbering mismatch", "spec_numbering")
+    check(spec_numbers == [f"{n:02}" for n in range(idx["counts"]["specs"])], "Spec numbering mismatch", "spec_numbering")
     schema_paths = sorted((root / "schemas").glob("*.schema.json"))
     schemas = {p.name: read_json(p) for p in schema_paths}
     registry = Registry().with_resources((p.as_uri(), Resource.from_contents(schemas[p.name])) for p in schema_paths)
@@ -117,7 +117,7 @@ def validate(root: Path):
     check(goldens == [f"GS{n:02}" for n in range(1, len(goldens)+1)], "Golden numbering mismatch", "goldens")
     task_files = sorted((root / "tasks").glob("TASK_[0-9][0-9][0-9]_*.md"))
     task_ids = ["TASK-" + p.name[5:8] for p in task_files]
-    check(task_ids == [f"TASK-{n:03}" for n in range(1,44)], "Task file numbering mismatch", "tasks")
+    check(task_ids == [f"TASK-{n:03}" for n in range(1,idx["counts"]["tasks"]+1)], "Task file numbering mismatch", "tasks")
     check(set(idx["tasks"]) == set(task_ids), "Task index coverage mismatch", "task_graph")
     actual_task_paths = {"TASK-" + p.name[5:8]: str(p.relative_to(root)) for p in task_files}
     for tid, packet in idx["tasks"].items():
@@ -126,6 +126,19 @@ def validate(root: Path):
         return errors, dict(checks)
     order = idx["execution_order"]
     check(len(order) == len(set(order)) and set(order) == set(task_ids), "Invalid execution order", "task_graph")
+    # Accepted ADR-0002 partitions intentionally fixed release scopes, preventing
+    # a future task from making the core gate wait on its own later extension.
+    gates = idx.get("release_gates", {})
+    expected_gates = {
+        "CORE": {"requirements": [f"R-{n:03}" for n in range(1, 89)], "goldens": [f"GS{n:02}" for n in range(1, 29)], "terminal_task": "TASK-043"},
+        "LOCALIZATION": {"requirements": [f"R-{n:03}" for n in range(89, 97)], "goldens": [f"GS{n:02}" for n in range(29, 34)], "terminal_task": "TASK-046", "requires": "CORE"},
+    }
+    check(gates == expected_gates, "Release gate partition drift", "release_gates")
+    for row in rows:
+        expected_gate = "CORE" if row["requirement_id"] in expected_gates["CORE"]["requirements"] else "LOCALIZATION"
+        check(row.get("release_gate") == expected_gate, f"{row['requirement_id']}: release gate mismatch", "release_gates")
+    for child, parent in [("TASK-044", "TASK-043"), ("TASK-045", "TASK-044"), ("TASK-046", "TASK-045")]:
+        check(parent in idx["tasks"].get(child, {}).get("depends_on", []) and parent in order and child in order and order.index(parent) < order.index(child), f"{child}: localization core-first prerequisite violated", "release_gates")
     covered_tasks, covered_gs, covered_schemas = set(), set(), set()
     for row in rows:
         rid = row["requirement_id"]
@@ -212,14 +225,14 @@ def validate(root: Path):
     for key, count in actual.items():
         check(count == idx["counts"][key] == int(versions[version_keys[key]]), f"Count drift: {key}", "counts")
         check(f"{version_keys[key]}={count}" in manifest, f"Manifest count drift: {key}", "counts")
-    check(len(list((root/"phases").glob("PHASE_*.md")))==7, "Phase files mismatch", "counts")
+    check(len(list((root/"phases").glob("PHASE_*.md")))==idx["counts"]["phases"], "Phase files mismatch", "counts")
     fixtures = read_json(root / "evals/contract_fixtures.json")
     cases = fixtures.get("cases", [])
     case_ids = [case.get("id") for case in cases]
     expected_ids = idx.get("fixture_ids", [])
     check(bool(case_ids) and all(isinstance(i, str) and i for i in case_ids) and len(case_ids) == len(set(case_ids)), "Missing/duplicate fixture IDs", "fixture_integrity")
     check(bool(expected_ids) and len(expected_ids) == len(set(expected_ids)) and set(case_ids) == set(expected_ids), "Fixture index coverage mismatch", "fixture_integrity")
-    for name in ["keyframe_generation_pack.schema.json", "effective_capability.schema.json", "model_profile.schema.json", "paid_attempt.schema.json"]:
+    for name in ["keyframe_generation_pack.schema.json", "effective_capability.schema.json", "model_profile.schema.json", "paid_attempt.schema.json", "localization_project.schema.json", "localization_review.schema.json"]:
         check({c.get("valid") for c in cases if c.get("schema") == name} == {True, False}, f"{name}: positive/negative fixture coverage missing", "fixture_integrity")
     for case in cases:
         check(case.get("schema") in validators and type(case.get("valid")) is bool and "instance" in case, f"Malformed fixture {case.get('id')}", "fixture_integrity")

@@ -5331,6 +5331,2622 @@
         "GS15",
         "GS20"
       ]
+    },
+    {
+      "id": "localization-subtitle-valid-unknown-timing",
+      "schema": "localization_project.schema.json",
+      "valid": true,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-subtitle-valid-burnin",
+      "schema": "localization_project.schema.json",
+      "valid": true,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "BURN_IN",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": "safe-v1",
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-subtitle-valid-silence",
+      "schema": "localization_project.schema.json",
+      "valid": true,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-video_generation_allowed",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": true,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-image_generation_allowed",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": true,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-lip_sync_allowed",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": true,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-auto_paid_retry_allowed",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": true
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-subtitle-voice",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": "Đừng đi.",
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-subtitle-mute",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "MUTE_SOURCE",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-no-output",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "NONE",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-burnin-no-style",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "BURN_IN",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-unknown-mode",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "AUTO",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-089"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-rejects-zero-rate",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 0,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 0,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-092"
+      ],
+      "goldens": [
+        "GS31"
+      ]
+    },
+    {
+      "id": "localization-rejects-empty-map",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-092"
+      ],
+      "goldens": [
+        "GS31"
+      ]
+    },
+    {
+      "id": "localization-rejects-missing-locks",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-092"
+      ],
+      "goldens": [
+        "GS31"
+      ]
+    },
+    {
+      "id": "localization-rejects-half-known-word-time",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "SUBTITLES_ONLY",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "ORIGINAL",
+        "background_artifact": null,
+        "speakers": [],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": null,
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": 2500,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": null,
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-090"
+      ],
+      "goldens": [
+        "GS29"
+      ]
+    },
+    {
+      "id": "localization-dub-and-subtitles-valid",
+      "schema": "localization_project.schema.json",
+      "valid": true,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "DUB_AND_SUBTITLES",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "MUTE_SOURCE",
+        "background_artifact": null,
+        "speakers": [
+          {
+            "speaker_id": "sp1",
+            "display_name": "Speaker 1",
+            "voice_profile": {
+              "artifact_id": "stock-voice",
+              "version_id": "v1"
+            },
+            "confidence": 0.9,
+            "consent_refs": []
+          }
+        ],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": "sp1",
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": "Đừng đi.",
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": {
+              "artifact_id": "accepted-speech",
+              "version_id": "v1"
+            },
+            "dub_duration_ticks": 1800,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-091"
+      ],
+      "goldens": [
+        "GS30"
+      ]
+    },
+    {
+      "id": "localization-dub-only-valid",
+      "schema": "localization_project.schema.json",
+      "valid": true,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "DUB_ONLY",
+        "subtitle_output": "NONE",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "MUTE_SOURCE",
+        "background_artifact": null,
+        "speakers": [
+          {
+            "speaker_id": "sp1",
+            "display_name": "Speaker 1",
+            "voice_profile": {
+              "artifact_id": "stock-voice",
+              "version_id": "v1"
+            },
+            "confidence": 0.9,
+            "consent_refs": []
+          }
+        ],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": "sp1",
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": null,
+            "spoken_text": "Đừng đi.",
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": {
+              "artifact_id": "accepted-speech",
+              "version_id": "v1"
+            },
+            "dub_duration_ticks": 1800,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-091"
+      ],
+      "goldens": [
+        "GS30"
+      ]
+    },
+    {
+      "id": "localization-rejects-dub-without-speaker",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "DUB_AND_SUBTITLES",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "MUTE_SOURCE",
+        "background_artifact": null,
+        "speakers": [
+          {
+            "speaker_id": "sp1",
+            "display_name": "Speaker 1",
+            "voice_profile": {
+              "artifact_id": "stock-voice",
+              "version_id": "v1"
+            },
+            "confidence": 0.9,
+            "consent_refs": []
+          }
+        ],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": null,
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": "Đừng đi.",
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": {
+              "artifact_id": "accepted-speech",
+              "version_id": "v1"
+            },
+            "dub_duration_ticks": 1800,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-091"
+      ],
+      "goldens": [
+        "GS30"
+      ]
+    },
+    {
+      "id": "localization-rejects-dub-without-duration",
+      "schema": "localization_project.schema.json",
+      "valid": false,
+      "instance": {
+        "localization_id": "loc1",
+        "project_id": "p1",
+        "version_id": "v1",
+        "workflow_kind": "LOCALIZATION",
+        "source": {
+          "artifact_id": "source",
+          "version_id": "v1"
+        },
+        "source_duration_ticks": 10000,
+        "ticks_per_second": 1000,
+        "source_analysis": null,
+        "ui_locale": "en",
+        "language_detection": {
+          "detected_language": null,
+          "confidence": null,
+          "override_language": null,
+          "evidence_refs": []
+        },
+        "target_language": "vi",
+        "mode": "DUB_AND_SUBTITLES",
+        "subtitle_output": "SIDECAR",
+        "subtitle_format": "SRT",
+        "subtitle_style_id": null,
+        "source_audio_mode": "MUTE_SOURCE",
+        "background_artifact": null,
+        "speakers": [
+          {
+            "speaker_id": "sp1",
+            "display_name": "Speaker 1",
+            "voice_profile": {
+              "artifact_id": "stock-voice",
+              "version_id": "v1"
+            },
+            "confidence": 0.9,
+            "consent_refs": []
+          }
+        ],
+        "segments": [
+          {
+            "segment_id": "seg1",
+            "speaker_id": "sp1",
+            "source_language": "en",
+            "source_start_tick": 2000,
+            "source_end_tick": 4000,
+            "source_text": "Do not go.",
+            "subtitle_text": "Đừng đi.",
+            "spoken_text": "Đừng đi.",
+            "words": [
+              {
+                "text": "Do",
+                "start_tick": null,
+                "end_tick": null,
+                "confidence": null
+              }
+            ],
+            "confidence": null,
+            "review_status": "NEEDS_REVIEW",
+            "overlap_group_id": null,
+            "delivery_note": "",
+            "dub_audio": {
+              "artifact_id": "accepted-speech",
+              "version_id": "v1"
+            },
+            "dub_duration_ticks": null,
+            "voice_speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "glossary": [],
+        "time_map": [
+          {
+            "span_id": "span1",
+            "source_start_tick": 0,
+            "source_end_tick": 10000,
+            "speed": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "locks": [],
+        "alignment_policy": {
+          "policy_id": "synthetic-policy",
+          "version_id": "v1",
+          "max_reading_units_per_second": 20,
+          "reading_unit": "GRAPHEME",
+          "min_cue_duration_ticks": 500,
+          "max_lines": 2,
+          "min_voice_speed": {
+            "numerator": 4,
+            "denominator": 5
+          },
+          "max_voice_speed": {
+            "numerator": 5,
+            "denominator": 4
+          },
+          "max_boundary_error_ticks": 100,
+          "max_pause_shift_ticks": 200,
+          "target_loudness_lufs": -16,
+          "max_true_peak_dbtp": -1
+        },
+        "timeline": null,
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-091"
+      ],
+      "goldens": [
+        "GS30"
+      ]
+    },
+    {
+      "id": "localization-review-valid-safe",
+      "schema": "localization_review.schema.json",
+      "valid": true,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-valid-no-safe-fix",
+      "schema": "localization_review.schema.json",
+      "valid": true,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [],
+        "proposed_paid_segment_ids": [
+          "seg1"
+        ],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-arbitrary-operation",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "REGENERATE_VIDEO",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-extra-command",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000,
+            "command": "synthesize"
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-missing-snapshot",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-auto-paid-retry",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": true
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-no-analysis-budget",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": {
+          "artifact_id": "timeline1",
+          "version_id": "v1"
+        },
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
+    },
+    {
+      "id": "localization-review-rejects-clip-without-timeline",
+      "schema": "localization_review.schema.json",
+      "valid": false,
+      "instance": {
+        "review_id": "review1",
+        "project_id": "p1",
+        "localization_id": "loc1",
+        "expected_project_version_id": "v1",
+        "expected_timeline": null,
+        "input_artifact_versions": [
+          {
+            "artifact_id": "source",
+            "version_id": "v1"
+          }
+        ],
+        "policy_version_id": "v1",
+        "command_id": "check1",
+        "analysis_budget_id": "analysis1",
+        "findings": [
+          {
+            "finding_id": "f1",
+            "segment_id": "seg1",
+            "category": "TIMING",
+            "result": "WARN",
+            "message": "Check cue.",
+            "evidence_refs": [
+              "analysis-span-1"
+            ],
+            "suggested_action": "Adjust unlocked cue."
+          }
+        ],
+        "safe_patches": [
+          {
+            "operation": "SET_CUE_TIMING",
+            "target_id": "subtitle-clip1",
+            "finding_ids": [
+              "f1"
+            ],
+            "start_tick": 2000,
+            "end_tick": 4000
+          }
+        ],
+        "proposed_paid_segment_ids": [],
+        "video_generation_allowed": false,
+        "image_generation_allowed": false,
+        "lip_sync_allowed": false,
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-093"
+      ],
+      "goldens": [
+        "GS32"
+      ]
     }
   ]
 }

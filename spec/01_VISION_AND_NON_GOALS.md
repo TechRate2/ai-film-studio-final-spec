@@ -24,3 +24,6 @@ Maximize narrative/visual quality, retention/purpose, reference fidelity, contin
 - Pretend every niche uses identical pacing/camera grammar.
 - Replace evidence with invented current facts.
 - Build every future provider before the first vertical slice works.
+
+## Subsequent independent service
+After core release acceptance, users may upload existing video for subtitles only, dubbing only or both. This original-media workflow has its own minimal entry and release gate; no video generation or lip-sync. Its full contract is `spec/47_SOURCE_VIDEO_LOCALIZATION.md`. The main studio's scope is not reduced or delayed by implementing this extension first.

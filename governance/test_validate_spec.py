@@ -1,5 +1,7 @@
 """Negative specification mutations. No application/provider code."""
 import json
+import csv
+import io
 import shutil
 import tempfile
 import unittest
@@ -108,6 +110,30 @@ class GovernanceTests(unittest.TestCase):
             data['capability_exposure'] = {'synthetic_feature': sample}
             path.write_text(yaml.safe_dump(data,sort_keys=False))
             self.assertEqual([], validate(root)[0])
+
+    def test_localization_release_partition(self):
+        self.mutate(lambda r:self.json_change(r,'governance/contract_index.json',lambda d:d['release_gates']['CORE']['requirements'].append('R-089')),'Release gate partition drift')
+
+    def test_localization_trace_gate(self):
+        def change(r):
+            p=r/'traceability/REQUIREMENTS_TRACEABILITY.csv'
+            rows=list(csv.DictReader(io.StringIO(p.read_text())))
+            next(x for x in rows if x['requirement_id']=='R-089')['release_gate']='CORE'
+            with p.open('w',newline='') as f:
+                writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+        self.mutate(change,'release gate mismatch')
+
+    def test_localization_core_first(self):
+        self.mutate(lambda r:self.json_change(r,'governance/contract_index.json',lambda d:d['tasks']['TASK-044'].update(depends_on=[])),'localization core-first prerequisite violated')
+
+    def test_localization_no_video(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/localization_project.schema.json',lambda d:d['properties']['video_generation_allowed'].update(const=True)),'Invariant mismatch video_generation_allowed')
+
+    def test_localization_mode_condition(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/localization_project.schema.json',lambda d:d.pop('allOf')),'Fixture localization-rejects-subtitle-voice')
+
+    def test_localization_snapshot_required(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/localization_review.schema.json',lambda d:d['required'].remove('expected_project_version_id')),'Critical required fields missing')
 
 if __name__=='__main__':
     unittest.main()

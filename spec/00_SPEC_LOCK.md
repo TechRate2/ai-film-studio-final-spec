@@ -92,3 +92,6 @@ Changing an upstream input invalidates only affected downstream artifacts. Unaff
 - No demo/mock fallback in production execution.
 - Every paid artifact stores spec/profile/compiler/prompt/model/provider/params/refs/result/cost/QA provenance.
 - Deterministic tests may use fixtures/test doubles only under test.
+
+## Source-video localization extension (owner-approved, ADR 0002)
+After the main studio's Phase 6 gate, a separate LOCALIZATION workflow translates subtitles and/or dubs original video. It shares the one Director and existing infrastructure but never creates video/images or changes faces/lips. Explicit deterministic playback-speed changes, subtitles and audio derivatives are allowed while source media remains immutable. One-click AI checking/alignment preserves user locks, versions and all paid-attempt rules. This does not require a localization customer to create or purchase a generative-video project. See `spec/47_SOURCE_VIDEO_LOCALIZATION.md`.

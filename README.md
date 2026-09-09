@@ -1,4 +1,4 @@
-# AI Film Studio — Final Canonical Build Spec V4.3.1
+# AI Film Studio — Final Canonical Build Spec V4.4.0
 
 **Status:** CANONICAL SPECIFICATION — implementation evidence remains required
 **Repository role:** sole active source of truth for Codex, Claude and human engineers  
@@ -26,14 +26,14 @@ Do **not** read every document into every task context. Retrieval must be scoped
 `SPEC_LOCK` → canonical spec → normative schema → accepted ADR → task packet → implementation → comments/ad-hoc suggestions.
 
 ## Canonical map
-- `/spec` — **47** canonical contracts (`00`–`46`)
-- `/schemas` — **43** normative structured contracts
+- `/spec` — **48** canonical contracts (`00`–`47`)
+- `/schemas` — **45** normative structured contracts
 - `/profiles` — evidence-backed model/provider/image/voice knowledge; never product law
 - `/skills` + `/knowledge/filmcraft` — retrieved creative/directing knowledge, not hard-coded pipelines
-- `/phases` — **7** binding phase gates
-- `/tasks` — **43** numbered vertical implementation packets + provider/probe templates
-- `/evals` — **28** Golden Scenarios + benchmark rubric
-- `/traceability` — **88** requirements mapped to implementation/test evidence
+- `/phases` — **8** binding phase gates
+- `/tasks` — **46** numbered vertical implementation packets + provider/probe templates
+- `/evals` — **33** Golden Scenarios + benchmark rubric
+- `/traceability` — **96** requirements mapped to implementation/test evidence
 - `/evidence` — public evidence, verification status and audit evidence
 - `/examples`, `/prompts`, `/governance`, `/.github` — walkthroughs, coding-agent bootstraps and enforcement
 
@@ -52,6 +52,9 @@ Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md
 Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
 
 ## Freeze rule
-**V4.3.1 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
+**V4.4.0 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
 See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.
+
+## Separate localization extension — core first
+After the main studio passes TASK-043/Phase 6, TASK-044–046 build a separate original-video subtitle/dubbing workspace, governed by `spec/47_SOURCE_VIDEO_LOCALIZATION.md`. It never creates video/images or modifies lips. Users select subtitles, dubbing or both, edit voice/style/speed and request bounded AI alignment with undo and explicit paid revisions. Core scope is R-001–R-088; the extension adds R-089–R-096 and a separate Phase 7 gate. See `docs/adr/ADR_0002_SOURCE_VIDEO_LOCALIZATION.md` and `evidence/LOCALIZATION_DESIGN_EVIDENCE.md`.

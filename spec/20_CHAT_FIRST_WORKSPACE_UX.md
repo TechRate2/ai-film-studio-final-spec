@@ -25,3 +25,6 @@ Keep chat primary with lightweight Project → Episode → Scene/Shot previews. 
 
 ## Accessibility/state
 Loading, blocked, waiting-user, failed-partial, stale and completed states must be understandable in both supported UI locales without exposing raw provider logs as the main UX.
+
+## Separate Translate Video entry after core completion
+`spec/47_SOURCE_VIDEO_LOCALIZATION.md` defines an independent minimal workspace: upload → detected source language → target → Subtitles/Dubbing checkboxes → estimate → Process. Show a preview and editable sentence list with progressive voice, subtitle style and speed controls. AI check & align shows safe fixes, unresolved findings and Undo; it never hides a paid regeneration. Ordinary dubbing does not modify mouth shapes. Main Studio chat/Create stays primary and unchanged. Both surfaces have vi/en UI independently of output language.

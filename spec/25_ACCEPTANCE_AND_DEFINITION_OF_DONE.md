@@ -34,4 +34,7 @@ Multi-character episode continuation preserves canon, Character Knowledge/relati
 New providers/models integrate through profiles/compilers/adapters/probes/EffectiveCapability without Director rewrite.
 
 ### Gate F — Commercial Beta
-All critical traceability requirements have implementation + test evidence; Golden Scenarios pass at their required deterministic/paid levels; rights/privacy/deletion/backup/restore/observability/spend controls are proven; known model/provider limitations are published.
+All critical CORE traceability requirements have implementation + test evidence; CORE Golden Scenarios pass at their required deterministic/paid levels; rights/privacy/deletion/backup/restore/observability/spend controls are proven; known model/provider limitations are published.
+
+## Release-scoped requirements
+The release_gate column in `traceability/REQUIREMENTS_TRACEABILITY.csv` is binding: CORE applies to R-001–R-088, LOCALIZATION to R-089–R-096. TASK-043/Phase 6 must satisfy CORE and GS01–GS28; it does not wait for TASK-044–046. Phase 7 starts only after that gate and requires all LOCALIZATION requirements plus regression of the shared CORE contracts and GS29–GS33. Do not relabel a missing core requirement as extension work. Task files, exact release ID sets and order are pinned in governance/contract_index.json and checked by CI. A passed spec fixture is never implementation evidence.
