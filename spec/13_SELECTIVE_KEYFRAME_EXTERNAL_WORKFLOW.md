@@ -40,4 +40,8 @@ KeyframeGenerationPack pins purpose, target ID/version, composition, camera, lig
 }
 ```
 
-For source NONE, the compact decision contains only ID, purpose and version-pinned target. No generation prompt or reference bindings are required; if supplied, the prompt is empty and bindings are empty. A non-NONE pack requires its full prompt/reference/composition/continuity/success contract. This distinction is enforced in schema fixtures.
+For source NONE, the compact decision contains only ID, purpose, source strategy and version-pinned project/target. No generation prompt or reference bindings are required; if supplied for compatibility, the prompt is empty and bindings are empty. Generation/composition/source-asset fields are absent. NONE neither creates nor validates a keyframe asset.
+
+For AUTO_INTERNAL and EXTERNAL_ASSISTED, require the full generation prompt/reference/composition/continuity/success contract. For USER_SUPPLIED and PREVIOUS_ACCEPTED_FRAME, require the validation contract and a `source_artifact` artifact/version pin, but do not require or invent an original generation prompt. Validation requirements describe what the asset must satisfy; they do not authorize creation. A user awaiting upload remains in the workflow's waiting state until an actual source can be bound.
+
+The selected reused source must be owned/authorized, ingested and CURRENT. PREVIOUS_ACCEPTED_FRAME selects an actual frame artifact with lineage to an accepted parent video/version; a bare video ID or a frame from a rejected/stale parent is insufficient. Frame extraction is deterministic and retains the parent pin. Canonical identity and incoming/outgoing locks are revalidated independently. Pack/source validation failure cannot call ImageProvider; switching to generation is a separate source decision with applicable authorization. These source-specific shapes are enforced in schema fixtures; ownership, acceptance and lineage are domain checks in GS08/GS14.

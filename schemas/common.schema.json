@@ -992,7 +992,91 @@
         "known_failures",
         "unknowns"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "SUPPORTED",
+                  "UNSUPPORTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_label": {
+                "enum": [
+                  "VERIFIED_SOURCE",
+                  "PRODUCT_OBSERVED"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "provider_scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "last_verified_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidence_label": {
+                "const": "PRODUCT_OBSERVED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sample_refs"
+            ],
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "provider_scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "last_verified_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "sample_count": {
+                "minimum": 1
+              },
+              "sample_refs": {
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      ]
     },
     "route_policy": {
       "type": "object",

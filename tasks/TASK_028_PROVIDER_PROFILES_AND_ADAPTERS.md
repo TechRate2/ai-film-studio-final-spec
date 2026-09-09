@@ -41,4 +41,5 @@ Golden coverage: GS15, GS16, GS17, GS24, GS27.
 
 - [ ] Provide neutral LLM/image/video/voice/storage ports with structured transport outcomes, protected credentials and capability/billing metadata.
 - [ ] Do not enable billable submission before jobs/guard pass; authenticated callbacks or trusted polling only, and disable/outage never selects fake media.
+- [ ] Validate provider exposure/billing/limit/timeout claims individually. MEASURED provider evidence may live outside model capabilities; unsupported labels, absent sample ledgers or a global profile label cannot promote unrelated UNKNOWN claims.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

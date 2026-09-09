@@ -14,7 +14,8 @@
   ],
   "properties": {
     "capability": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "status": {
       "enum": [
@@ -220,7 +221,8 @@
       "additionalProperties": false
     },
     "resolution": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "degrade_decision_id": {
       "type": [
@@ -229,5 +231,146 @@
       ]
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "SUPPORTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "model_status": {
+            "properties": {
+              "status": {
+                "const": "SUPPORTED"
+              }
+            }
+          },
+          "provider_status": {
+            "properties": {
+              "status": {
+                "const": "SUPPORTED"
+              }
+            }
+          },
+          "account_entitlement": {
+            "properties": {
+              "status": {
+                "const": "SUPPORTED"
+              }
+            }
+          },
+          "product_policy": {
+            "properties": {
+              "status": {
+                "const": "SUPPORTED"
+              }
+            }
+          },
+          "project_policy": {
+            "properties": {
+              "status": {
+                "const": "SUPPORTED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "model_status": {
+                "properties": {
+                  "status": {
+                    "const": "UNSUPPORTED"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "provider_status": {
+                "properties": {
+                  "status": {
+                    "const": "UNSUPPORTED"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "account_entitlement": {
+                "properties": {
+                  "status": {
+                    "const": "UNSUPPORTED"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "product_policy": {
+                "properties": {
+                  "status": {
+                    "const": "UNSUPPORTED"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "project_policy": {
+                "properties": {
+                  "status": {
+                    "const": "UNSUPPORTED"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "UNSUPPORTED",
+              "DEGRADED"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "DEGRADED"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "degrade_decision_id"
+        ],
+        "properties": {
+          "degrade_decision_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
 }

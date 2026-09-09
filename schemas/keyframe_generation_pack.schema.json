@@ -12,13 +12,16 @@
   ],
   "properties": {
     "keyframe_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "purpose": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "target_shot_or_segment": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "source_strategy": {
       "enum": [
@@ -56,8 +59,10 @@
     "success_conditions": {
       "type": "array",
       "items": {
-        "type": "string"
-      }
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
     },
     "correction_patch": {
       "type": [
@@ -98,6 +103,9 @@
         "$ref": "common.schema.json#/$defs/source_pin"
       },
       "minItems": 0
+    },
+    "source_artifact": {
+      "$ref": "common.schema.json#/$defs/version_ref"
     }
   },
   "additionalProperties": false,
@@ -106,45 +114,85 @@
       "if": {
         "properties": {
           "source_strategy": {
-            "not": {
-              "const": "NONE"
-            }
+            "enum": [
+              "AUTO_INTERNAL",
+              "EXTERNAL_ASSISTED"
+            ]
           }
         }
       },
       "then": {
         "required": [
-          "keyframe_id",
-          "purpose",
-          "target_shot_or_segment",
-          "source_strategy",
-          "model_neutral_prompt",
           "reference_bindings",
           "success_conditions",
-          "project_id",
-          "target_version_id",
           "composition",
           "camera",
           "lighting",
           "negative_risks",
           "continuity_locks",
-          "source_versions"
+          "source_versions",
+          "model_neutral_prompt"
         ],
         "properties": {
           "model_neutral_prompt": {
             "type": "string",
             "minLength": 1
+          },
+          "source_artifact": false
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "source_strategy": {
+            "enum": [
+              "USER_SUPPLIED",
+              "PREVIOUS_ACCEPTED_FRAME"
+            ]
           }
         }
       },
-      "else": {
+      "then": {
+        "required": [
+          "reference_bindings",
+          "success_conditions",
+          "composition",
+          "camera",
+          "lighting",
+          "negative_risks",
+          "continuity_locks",
+          "source_versions",
+          "source_artifact"
+        ]
+      }
+    },
+    {
+      "if": {
         "properties": {
+          "source_strategy": {
+            "const": "NONE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "success_conditions": false,
+          "composition": false,
+          "camera": false,
+          "lighting": false,
+          "negative_risks": false,
+          "continuity_locks": false,
+          "source_versions": false,
           "model_neutral_prompt": {
             "const": ""
           },
           "reference_bindings": {
             "maxItems": 0
-          }
+          },
+          "source_artifact": false,
+          "aspect_ratio": false,
+          "correction_patch": false
         }
       }
     }

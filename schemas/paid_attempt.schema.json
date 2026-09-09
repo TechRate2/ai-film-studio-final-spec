@@ -25,50 +25,62 @@
     "created_at",
     "updated_at",
     "request_snapshot_id",
-    "request_snapshot"
+    "request_snapshot",
+    "shot_id",
+    "version_id"
   ],
   "properties": {
     "attempt_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "artifact_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "shot_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "minLength": 1
     },
     "version_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "minLength": 1
     },
     "provider_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "model_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "upstream_task_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "minLength": 1
     },
     "idempotency_key": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "minLength": 1
     },
     "prompt_hash": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "reference_hash": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "estimated_cost": {
       "type": "number",
@@ -138,5 +150,24 @@
       "$ref": "common.schema.json#/$defs/request_snapshot"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "shot_id": {
+            "type": "string"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "version_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
 }

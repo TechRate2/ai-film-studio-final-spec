@@ -118,6 +118,12 @@ def validate(root: Path):
     task_files = sorted((root / "tasks").glob("TASK_[0-9][0-9][0-9]_*.md"))
     task_ids = ["TASK-" + p.name[5:8] for p in task_files]
     check(task_ids == [f"TASK-{n:03}" for n in range(1,44)], "Task file numbering mismatch", "tasks")
+    check(set(idx["tasks"]) == set(task_ids), "Task index coverage mismatch", "task_graph")
+    actual_task_paths = {"TASK-" + p.name[5:8]: str(p.relative_to(root)) for p in task_files}
+    for tid, packet in idx["tasks"].items():
+        check(packet.get("path") == actual_task_paths.get(tid), f"{tid}: task index path mismatch", "task_graph")
+    if errors:
+        return errors, dict(checks)
     order = idx["execution_order"]
     check(len(order) == len(set(order)) and set(order) == set(task_ids), "Invalid execution order", "task_graph")
     covered_tasks, covered_gs, covered_schemas = set(), set(), set()
@@ -163,8 +169,8 @@ def validate(root: Path):
             if data.get("routable"):
                 check(bool(data.get("version")) and data.get("modality") != "FAMILY", f"{p}: routable without exact version", "profile_evidence")
             if data.get("verification_status") == "MEASURED":
-                claims = list(data.get("capabilities",{}).values())
-                check(any(c.get("sample_count",0)>0 and c.get("sample_refs") and c.get("provider_scope") for c in claims), f"{p}: MEASURED without scoped samples", "profile_evidence")
+                claims = [node for _, node in walk(data) if {"status", "value", "evidence_label"} <= set(node)]
+                check(any(c.get("evidence_label") == "PRODUCT_OBSERVED" and c.get("sample_count",0)>0 and c.get("sample_refs") and c.get("provider_scope") for c in claims), f"{p}: MEASURED without scoped samples", "profile_evidence")
         except (ValueError, yaml.YAMLError) as exc:
             errors.append(f"Profile parse: {p}: {exc}")
     skill_ids = []
@@ -208,7 +214,23 @@ def validate(root: Path):
         check(f"{version_keys[key]}={count}" in manifest, f"Manifest count drift: {key}", "counts")
     check(len(list((root/"phases").glob("PHASE_*.md")))==7, "Phase files mismatch", "counts")
     fixtures = read_json(root / "evals/contract_fixtures.json")
-    for case in fixtures.get("cases",[]):
+    cases = fixtures.get("cases", [])
+    case_ids = [case.get("id") for case in cases]
+    expected_ids = idx.get("fixture_ids", [])
+    check(bool(case_ids) and all(isinstance(i, str) and i for i in case_ids) and len(case_ids) == len(set(case_ids)), "Missing/duplicate fixture IDs", "fixture_integrity")
+    check(bool(expected_ids) and len(expected_ids) == len(set(expected_ids)) and set(case_ids) == set(expected_ids), "Fixture index coverage mismatch", "fixture_integrity")
+    for name in ["keyframe_generation_pack.schema.json", "effective_capability.schema.json", "model_profile.schema.json", "paid_attempt.schema.json"]:
+        check({c.get("valid") for c in cases if c.get("schema") == name} == {True, False}, f"{name}: positive/negative fixture coverage missing", "fixture_integrity")
+    for case in cases:
+        check(case.get("schema") in validators and type(case.get("valid")) is bool and "instance" in case, f"Malformed fixture {case.get('id')}", "fixture_integrity")
+        check(bool(case.get("requirements")) and set(case.get("requirements", [])) <= set(req_ids), f"Fixture {case.get('id')}: invalid requirement mapping", "fixture_integrity")
+        check(bool(case.get("goldens")) and set(case.get("goldens", [])) <= set(goldens), f"Fixture {case.get('id')}: invalid Golden mapping", "fixture_integrity")
+        linked_rows = [r for r in rows if r["requirement_id"] in case.get("requirements", [])]
+        check(all("schemas/" + case.get("schema", "") in r["schemas"].split(",") for r in linked_rows), f"Fixture {case.get('id')}: schema/requirement drift", "fixture_integrity")
+        allowed_goldens = {g for r in linked_rows for g in r["golden_scenarios"].split(",")}
+        check(set(case.get("goldens", [])) <= allowed_goldens, f"Fixture {case.get('id')}: requirement/Golden drift", "fixture_integrity")
+        if case.get("schema") not in validators or type(case.get("valid")) is not bool or "instance" not in case:
+            continue
         validator = validators[case["schema"]]
         instance_errors = list(validator.iter_errors(case["instance"]))
         check(bool(instance_errors) != case["valid"], f"Fixture {case['id']}: expected valid={case['valid']}; {[e.message for e in instance_errors[:2]]}", "contract_fixtures")

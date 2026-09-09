@@ -31,4 +31,5 @@ Golden coverage: GS01, GS05, GS08, GS09, GS10, GS15, GS26.
 
 - [ ] Run deterministic behavioral tests for every Golden and map each assertion to requirements; paid smoke is separately opted in with credentials and capped plan.
 - [ ] Tests begin within each earlier task, not deferred here. Mutate critical contracts/fixtures to prove negative assertions catch drift, rather than only asserting schema parsing.
+- [ ] Deleting a task-index packet, duplicating its path, deleting/duplicating a fixture, or removing all negative cases fails governance. Preserve fixture-to-requirement/Golden mappings and distinguish schema-record validation from runtime orchestration tests.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

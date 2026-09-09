@@ -4,6 +4,8 @@
 Convert vibe coding from open-ended improvisation into controlled spec-driven implementation.
 
 ## Session bootstrap
+This numbered-task execution protocol applies to application implementation. A canonical specification audit instead follows AGENTS.md's specification-maintenance scope and reports requirement coverage/findings; it does not start TASK-001 or require an application repository.
+
 Every substantial coding session must identify exactly one active task packet. Before edits, the coding agent reads `AGENTS.md`, `spec/00_SPEC_LOCK.md`, this protocol, the task packet and only its linked canonical docs/schemas.
 
 ## Mandatory execution loop

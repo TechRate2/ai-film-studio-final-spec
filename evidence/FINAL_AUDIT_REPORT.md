@@ -1,10 +1,10 @@
-# Final Canonical Specification Audit — V4.3
+# Final Canonical Specification Audit — V4.3.1
 
-Audited base: `main@cf61168bfa8ce8303963f14fd9b45377d8690bfb`. Review branch: `audit/canonical-contract-hardening`. This report assesses the proposed hardened tree; main adoption is determined by Git history, not by the version label in this document. No application was built and no paid API credits were used.
+Audited base: `main@cf61168bfa8ce8303963f14fd9b45377d8690bfb`. Initial hardening merged as PR #9. Follow-up baseline: `main@538e63e8829af2429fc9b0b6602a544260a2d23b`; review branch: `audit/astra-followup-closure`. This report assesses the proposed hardened tree; main adoption is determined by Git history, not by the version label in this document. No application was built and no paid API credits were used.
 
 ## A. Repository inventory
 
-All **242 original tracked files** were read in full before architectural edits. Truncated display batches were re-read in smaller groups. The pre-edit inventory contains file sizes and SHA-256 identities. Final tree: **252 files**, **204 changed/added paths** (194 modified, 10 added). No original file was deleted. No runtime service, provider implementation or app mock was added.
+All **242 original tracked files** were read in full before architectural edits. Truncated display batches were re-read in smaller groups. The pre-edit inventory contains file sizes and SHA-256 identities. Final tree: **252 files**, **207 changed/added paths** (197 modified, 10 added). No original file was deleted. No runtime service, provider implementation or app mock was added.
 
 | Root/group | Base files | Final files |
 |---|---:|---:|
@@ -29,7 +29,7 @@ The canonical counts are 47 specs, 43 numbered tasks, 43 schemas (42 existing pl
 
 ## B. Critical and high findings
 
-The original closure claim was not justified. Three CRITICAL and eleven HIGH issue groups were found, plus two MEDIUM groups. All contract fixes preserve spec/00_SPEC_LOCK.md, which is byte-for-byte unchanged.
+The original closure claim was not justified. The initial pass found three CRITICAL, eleven HIGH and two MEDIUM issue groups. The 2026-09-09 counterexample pass added four HIGH and two MEDIUM groups (A17–A22), for 22 groups total: three CRITICAL, fifteen HIGH and four MEDIUM. The earlier green CI did not detect all of these conditions. All contract fixes preserve spec/00_SPEC_LOCK.md, which is byte-for-byte unchanged.
 
 | ID | Severity | Finding | Minimal resolution |
 |---|---|---|---|
@@ -49,17 +49,25 @@ The original closure claim was not justified. Three CRITICAL and eleven HIGH iss
 | A14 | MEDIUM | Linear diagram can force stages; examples imply equal duration and combined mode | Optional prerequisite graph, explicit hypothetical durations and exact enum values |
 | A15 | MEDIUM | No signal lineage, opt-out or exposure attribution; correlation may bias canon | Versioned scoped learning signals with confounding/forget controls |
 | A16 | HIGH | Dialogue text→text only ignores existing speech/lipsync dependencies | Revision uses actual modality dependency rather than unconditional shortcut |
+| A17 | HIGH | Reusable supplied/accepted assets require a fabricated generation prompt and lack a dedicated selected-source pin; NONE allows irrelevant generation fields. | Route-conditional generation vs reuse vs NONE contracts; selected artifact/version for reuse; fixtures/tasks/GS08/14. |
+| A18 | HIGH | SUPPORTED with UNKNOWN layer and unlinked DEGRADED pass structural validation. | Cross-field JSON conditions plus all-layer fixtures; retain limit/expiry revalidation as runtime obligations. |
+| A19 | HIGH | Unsupported claim promotion passes even when evidence is UNVERIFIED and samples absent; provider MEASURED checks wrong claim collection. | Claim-local conditional evidence validation; model routability conditional; correct profile-wide sample inspection. |
+| A20 | HIGH | Paid attempt may omit shot_id and version_id entirely despite persisted target contract. | Require both nullable links, nonempty identity/hash strings; non-shot case explicitly null; fixture and TASK033. |
+| A21 | MEDIUM | Deleting a task packet entry or all negative fixture cases is not guarded by exact index/case-set checks. | Exact task-index/path coverage and pinned fixture IDs, positive/negative gate coverage; mutation tests. |
+| A22 | MEDIUM | No direct 0-33 mission completion crosswalk; assistant confused audit closure with implementation tasks. Agent bootstrap lacked explicit specification-maintenance scope. | Add mission-to-existing-evidence crosswalk and correction scope in existing report; no application task execution. Explicit audit mode prevents execution of numbered application packets during this mission. |
 
 A06 remains empirical at runtime: missing measured evidence is represented as UNKNOWN/non-routable, not fabricated capability. The architecture defect was unjustified promotion; that is corrected. Full detail, authority and dependencies are in the issue matrix.
 
 ## C. Exact changes
 
-Stable task IDs and the single canonical tree are retained. SPEC_VERSION is 4.3 because schema hardening affects wire compatibility. ADR-0001 records the owner-authorized Class B correction and migration considerations. The following is the complete changed-path list, including audit evidence; unchanged paths remain in the inventory.
+Stable task IDs and the single canonical tree are retained. SPEC_VERSION is 4.3.1 because the follow-up rejects additional invalid records and permits prompt-free reuse with explicit source pins; ADR-0001 includes migration guidance. ADR-0001 records the owner-authorized Class B correction and migration considerations. The following is the complete changed-path list, including audit evidence; unchanged paths remain in the inventory.
 
 | Exact path | Change | Reason |
 |---|---|---|
 | `.github/workflows/spec-governance.yml` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
 | `AGENTS.md` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
+| `CLAUDE.md` | MODIFIED | Explicit specification-audit scope; numbered tasks remain future application work |
+| `CODEX.md` | MODIFIED | Explicit specification-audit scope; numbered tasks remain future application work |
 | `MANIFEST.md` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
 | `README.md` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
 | `SPEC_VERSION` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
@@ -75,6 +83,7 @@ Stable task IDs and the single canonical tree are retained. SPEC_VERSION is 4.3 
 | `evidence/SEEDANCE_KNOWLEDGE_STATUS.md` | MODIFIED | Scoped evidence metadata; no unsupported MEASURED or production routing claims |
 | `examples/GS03_XIANXIA_60S_WALKTHROUGH.md` | MODIFIED | Clarify illustrative timing and exact enum values; no fixed generation split |
 | `examples/GS04_SATURN_120S_WALKTHROUGH.md` | MODIFIED | Clarify illustrative timing and exact enum values; no fixed generation split |
+| `governance/AI_CODING_PROTOCOL.md` | MODIFIED | Explicit specification-audit scope; numbered tasks remain future application work |
 | `governance/CANONICAL_COMPLETENESS_CHECKLIST.md` | MODIFIED | Canonical governance/version/manifest, audit evidence and drift validation |
 | `governance/contract_index.json` | ADDED | Canonical governance/version/manifest, audit evidence and drift validation |
 | `governance/requirements.txt` | ADDED | Canonical governance/version/manifest, audit evidence and drift validation |
@@ -263,6 +272,45 @@ Stable task IDs and the single canonical tree are retained. SPEC_VERSION is 4.3 
 | `traceability/README.md` | MODIFIED | Align phase order, full task/schema/Golden coverage and evidence-only completion |
 | `traceability/REQUIREMENTS_TRACEABILITY.csv` | MODIFIED | Align phase order, full task/schema/Golden coverage and evidence-only completion |
 
+### Exact follow-up changes from merged V4.3
+
+No files were added or deleted in this follow-up. The following 32 existing paths were modified. Original 4.3 changes remain represented in the cumulative table above.
+
+| Path | Follow-up reason |
+|---|---|
+| `AGENTS.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `CLAUDE.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `CODEX.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `MANIFEST.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `README.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `SPEC_VERSION` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `docs/adr/ADR_0001_CANONICAL_CONTRACT_HARDENING.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `evals/GOLDEN_SCENARIOS.md` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `evals/contract_fixtures.json` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `evidence/AUDIT_INVENTORY.csv` | A17–A22: findings, exact inventory, validation and mission completion evidence |
+| `evidence/AUDIT_ISSUE_MATRIX.csv` | A17–A22: findings, exact inventory, validation and mission completion evidence |
+| `evidence/FINAL_AUDIT_REPORT.md` | A17–A22: findings, exact inventory, validation and mission completion evidence |
+| `governance/AI_CODING_PROTOCOL.md` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `governance/contract_index.json` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `governance/test_validate_spec.py` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `governance/validate_spec.py` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `schemas/common.schema.json` | A19: claim-local evidence and routability conditions |
+| `schemas/effective_capability.schema.json` | A18/A19: safe capability and evidence resolution |
+| `schemas/keyframe_generation_pack.schema.json` | A17: source-conditional generation/reuse/NONE |
+| `schemas/model_profile.schema.json` | A19: claim-local evidence and routability conditions |
+| `schemas/paid_attempt.schema.json` | A20: explicit nullable target links and nonempty identities |
+| `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md` | A17: source-conditional generation/reuse/NONE |
+| `spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md` | A19: claim-local evidence and routability conditions |
+| `spec/18_COST_SPEND_ATTEMPT_POLICY.md` | A20: explicit nullable target links and nonempty identities |
+| `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md` | A18/A19: safe capability and evidence resolution |
+| `tasks/00_IMPLEMENTATION_ORDER.md` | Same canonical tree: patch version, ADR migration or explicit audit scope |
+| `tasks/TASK_024_EXTERNAL_KEYFRAME_WORKFLOW.md` | A17: source-conditional generation/reuse/NONE |
+| `tasks/TASK_026_MODEL_PROFILES_AND_CAPABILITY_RESOLVER.md` | A18/A19: safe capability and evidence resolution |
+| `tasks/TASK_028_PROVIDER_PROFILES_AND_ADAPTERS.md` | A19: claim-local evidence and routability conditions |
+| `tasks/TASK_033_COST_AND_PAID_ATTEMPT_GUARD.md` | A20: explicit nullable target links and nonempty identities |
+| `tasks/TASK_039_GOLDEN_SCENARIO_AUTOMATION.md` | A21/A22: mapped counterexamples, complete coverage and audit scope |
+| `traceability/REQUIREMENTS_TRACEABILITY.csv` | Clarify existing R-016/050/056/058/079; preserve NOT_STARTED implementation statuses |
+
 ## D. Architecture verification
 
 VERIFIED below means verified in the specification/schema/task/evaluation contract. It is not proof of live product or provider performance. Every area has implementation acceptance obligations and Golden coverage in the traceability/index.
@@ -282,13 +330,13 @@ VERIFIED below means verified in the specification/schema/task/evaluation contra
 | Adaptive segmentation | `spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md` | Shots/panels/segments distinct; continuous/segmented/continuation with reasons |
 | Continuity DAG | `spec/12_CONTINUITY_DEPENDENCY_SCHEDULER.md` | Accepted CURRENT parents, acyclic owned edges, claim/submit recheck and fencing |
 | Continuity Baton | `schemas/continuity_baton.schema.json` | Observed state with body/weather/prop/audio and accepted evidence; identity remains canonical |
-| Selective keyframes | `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md` | Five routes; NONE has no fake pack; external failure never buys internal fallback |
+| Selective keyframes | `spec/13_SELECTIVE_KEYFRAME_EXTERNAL_WORKFLOW.md` | Five routes; NONE has no pack/source; user/accepted-frame reuse needs a source pin but no generation prompt; no paid fallback |
 | UniversalVideoSpec | `schemas/universal_video_spec.schema.json` | Typed global/locks/time/performance/camera/audio/initial/in/out/success/risk sections |
 | ModelProfile | `schemas/model_profile.schema.json` | Exact version, claim evidence, unknowns and sample-scoped promotion |
 | ProviderProfile | `schemas/provider_profile.schema.json` | Separate exposure, prices, limits, timeout/idempotency and evidence |
 | EffectiveCapability | `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md` | Five-layer intersection with denial/unknown precedence and explicit revalidated degrade |
 | SpendAuthorization | `spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md` | User action/plan/hash/currency/candidate slots/caps/expiry and atomic reservations |
-| PaidAttemptGuard | `schemas/paid_attempt.schema.json` | Logical attempt/authorization/candidate/request snapshot/certainty/cost links |
+| PaidAttemptGuard | `schemas/paid_attempt.schema.json` | Logical attempt/authorization/candidate/request snapshot/certainty/cost links and explicit nullable shot/version targets |
 | No blind paid retry | `spec/18_COST_SPEND_ATTEMPT_POLICY.md` | Auto regeneration OFF; ambiguous submission reconciles; produced output cannot silently fallback |
 | Contextual revision | `spec/17_SHOT_REVISION_VERSIONING.md` | Semantic change/preserve diff using actual modality dependencies and incremental authorization |
 | Continuity Sandwich | `spec/17_SHOT_REVISION_VERSIONING.md` | All incoming/outgoing pinned requirements, including fan-out |
@@ -306,7 +354,7 @@ VERIFIED below means verified in the specification/schema/task/evaluation contra
 
 All 43 schemas pass draft 2020-12 metaschema validation. Local references and JSON pointers resolve offline. Typed records reject unintended extra fields; creative content remains descriptive where exact physical semantics would be false precision. The explicit recursive JSON map is confined to provider-owned request parameters, not Director intent. Critical job/certainty/currency/scope/content/keyframe/lock/lifetime/no-retry values are compared against machine-readable canonical spec sections.
 
-41 positive/negative contract fixtures cover job vocabulary, paid links/certainty, reference isolation, empty UniversalVideoSpec sections, timeline structure/rational speed, imported versus generated provenance, no-paid QA and NONE keyframes. Cross-record ownership, temporal knowledge, atomic transactions and timeline arithmetic require domain tests: GS05/GS19/GS27 specify these and do not pretend JSON Schema alone can enforce them.
+85 positive/negative contract fixtures cover job vocabulary, paid links/certainty, reference isolation, empty UniversalVideoSpec sections, timeline structure/rational speed, imported versus generated provenance, no-paid QA, source-specific keyframes, claim-local evidence and contradictory capability records. Every fixture names mapped requirements and Goldens; its ID is indexed so accidental deletion cannot silently reduce coverage. Cross-record ownership, temporal knowledge, atomic transactions and timeline arithmetic require domain tests: GS05/GS19/GS27 specify these and do not pretend JSON Schema alone can enforce them.
 
 ## F. Task readiness
 
@@ -370,7 +418,7 @@ python -m unittest discover -s governance -p 'test_*.py' -v
 git diff --check
 ```
 
-Validator: **PASS**, 3040 checks at the final contract pass. The following counts describe assertions, not independent end-to-end application tests.
+Validator: **PASS**, 3587 checks at the 4.3.1 final contract pass (the earlier 4.3 pass had 3040). The following counts describe assertions, not independent end-to-end application tests.
 
 | Validation family | Checks |
 |---|---:|
@@ -380,24 +428,25 @@ Validator: **PASS**, 3040 checks at the final contract pass. The following count
 | schema_titles | 1 |
 | metaschemas | 43 |
 | typed_objects | 395 |
-| local_refs | 240 |
+| local_refs | 242 |
 | invariants | 12 |
 | critical_required | 5 |
 | traceability | 706 |
 | goldens | 2 |
 | tasks | 485 |
-| task_graph | 47 |
+| task_graph | 91 |
 | coverage | 3 |
 | phases | 14 |
 | profiles | 10 |
 | skills | 77 |
-| internal_paths | 698 |
+| internal_paths | 724 |
 | counts | 13 |
-| contract_fixtures | 41 |
+| fixture_integrity | 431 |
+| contract_fixtures | 85 |
 
-**13 governance unit tests passed**, comprising the valid-tree baseline and 12 deliberate mutations: missing required file, job vocabulary drift, paid certainty drift, missing authorization, auto-retry enabled, open timeline, broken local ref, missing task reading, unsafe paid order, false IMPLEMENTED, duplicate requirement and unsupported MEASURED promotion. Ordinary CI installs validator dependencies then runs these offline checks. It contains no paid provider test. Hosted GitHub Actions status is separate from local execution and must be read for the pushed commit before claiming hosted CI passed.
+**22 governance unit tests passed**: a valid-tree baseline, the 12 original deliberate mutations, eight added coverage/condition/mapping mutations and one synthetic provider-evidence shape test. Original mutations: missing required file, job vocabulary drift, paid certainty drift, missing authorization, auto-retry enabled, open timeline, broken local ref, missing task reading, unsafe paid order, false IMPLEMENTED, duplicate requirement and unsupported MEASURED promotion. Ordinary CI installs validator dependencies then runs these offline checks. It contains no paid provider test. Added mutations cover missing/wrong task-index entries, empty/duplicate/negative-deleted fixtures, requirement mapping drift and removed capability/claim conditions. The provider test uses synthetic metadata, not real measurements. Hosted GitHub Actions status is separate from local execution and must be read for the pushed commit before claiming hosted CI passed.
 
-A final full-tree pass also inspected schema/property/reference closure, all profile YAML, task/phase order, old state/enum spellings, illustrative duration examples, historical audit/version labels, traceability coverage and SPEC_LOCK immutability. No foundational unresolved contract contradiction was identified after these corrections. This is a bounded evidence-based audit, not a mathematical proof that all possible future bugs are impossible.
+A final full-tree pass also inspected schema/property/reference closure, all profile YAML, task/phase order, old state/enum spellings, illustrative duration examples, historical audit/version labels, traceability coverage and SPEC_LOCK immutability. The follow-up then demonstrated A17–A22 despite the earlier passing checks; those counterexamples and their regression gates are now included. No remaining foundational contradiction was identified within this bounded pass. This is a bounded evidence-based audit, not a mathematical proof that all possible future bugs are impossible.
 
 ## H. Remaining empirical unknowns
 
@@ -415,8 +464,43 @@ A final full-tree pass also inspected schema/property/reference closure, all pro
 
 The directly re-inspected public Seedance profile is pinned by returned blob SHA in evidence/SEEDANCE_KNOWLEDGE_STATUS.md. Other historical source maps are explicitly qualified and were not relabeled as freshly verified. These unknowns do not block TASK-001/spec embedding, but do block unqualified live routing and applicable real-provider release gates.
 
+
+### ASTRA Mission completion crosswalk
+
+These rows track the specification mission, not execution of the 43 application packets. A prior conversational detour produced a standalone TASK-001 reality report; it is not canonical audit evidence, does not change task status, and is not a prerequisite for this mission. No implementation repository is requested by this handoff.
+
+| Mission section | Obligation | Existing evidence / result | Classification |
+|---|---|---|---|
+| 0 | Audit role and production-contract scope | A–I of this report; AGENTS.md specification-maintenance scope | OK |
+| 1 | Full repository read/inventory | 242 base files read before edits; 252 final paths in AUDIT_INVENTORY.csv; unchanged hashes retained | OK |
+| 2–3 | Product identity and invariant authority | spec/00–03,15–16,46; R-001–003/016/048/058 | OK |
+| 4 | Bounded research/evidence intelligence | spec/04,33,40; research/evidence schemas; GS06/25 | OK |
+| 5–6 | Professional creative/filmcraft retrieval | 38 skill cards and 10 knowledge documents; spec/05,10; R-081; GS02/07/13; reviewed again in follow-up | OK |
+| 7 | StyleDNA and grammar precedence | spec/39; style_dna and creative_strategy schemas; GS02 | OK |
+| 8 | Long-form/series and knowledge separation | spec/07–08,32; scoped canon/character/context/snapshot schemas; GS05/27 | OK |
+| 9 | Reference roles, lock/lifetime and isolation | spec/06,41; reference_binding and ingestion schemas; GS08/12/18 | OK |
+| 10 | Adaptive segmentation | spec/11; generation_plan; task020; GS03/04/13/14 | OK |
+| 11 | Accepted-parent continuity scheduling | spec/12,21,29; baton/dependency/job schemas; GS03/10/27 | OK |
+| 12 | All-source selective keyframes | spec/13; A17 source-conditional schema and fixtures; TASK-024; GS08/14/16 | OK |
+| 13 | UniversalVideoSpec and compilation | spec/14–16; typed UV schema/stage fixtures; TASK-025–028 | OK |
+| 14 | Empirical model/provider knowledge | spec/15,24,37,46; A19 claim conditions; all bundled routes remain non-routable | EMPIRICAL_ONLY facts; OK contract |
+| 15–16 | Paid safety, authorization and attempt identity | spec/18,44; A20 explicit target links; attempt/job/auth schemas; GS10/22/24/27 | OK |
+| 17 A–G | Previously reported contract defects | A01–09 repaired; A17–21 close residual holes. TASK-001 stays audit-only; other packets have concrete tests | OK |
+| 18–20 | Contextual revision, versions and modality selection | spec/17,21,44; revision/shot/dependency schemas; GS09/17/21 | OK |
+| 21 | Durable assembly and FinalMaster QA | spec/42; typed timeline/master/QA schemas; GS19/21/27 | OK |
+| 22 | Simple VN/EN UX and independent output language | spec/20,30; project_intent/event/revision schemas; GS11 | OK |
+| 23 | Professional external round trip | spec/13,41; A17 no invented prompt on reuse; external provenance; GS08/18 | OK |
+| 24 | Accepted-second economics and reuse before generation | spec/11,18; production_strategy/cost; TASK-019/020/031; GS04/14 | OK; measured probabilities remain empirical |
+| 25 | Golden and benchmark coverage | 28 scenarios, benchmark rubric, 85 mapped contract fixtures; no paid CI | OK contract; future runtime tests pending |
+| 26 | Traceability | 88 requirements; no orphan task/schema/Golden; requirement wording clarified without false IMPLEMENTED | OK |
+| 27 | Structured governance | Validator, exact task/fixture coverage, local refs, invariant guards and 22 tests; section G | OK |
+| 28–29 | Minimal scope and no application implementation | Same 252 files; no new services, skills or application code in follow-up; no paid API call | OK |
+| 30–31 | Issue matrix and authority order | A01–22 issue matrix; pre-edit follow-up counterexamples retained; ADR-0001 addendum; SPEC_LOCK byte-identical | OK |
+| 32 A–I | Required final report | Sections A–I contain inventory, all high findings, changed paths, 32-area verification, 43-task matrix, tests and unknowns | OK |
+| 33 / final principle | Stop at contract closure; defer measured facts | No fabricated provider support or implementation completion; uncertain factual claims stay explicit; no speculative expansion | OK |
+
 ## I. Final verdict
 
 **READY WITH NON-BLOCKING EMPIRICAL UNKNOWNS**
 
-Applies to this hardened specification revision. Begin with TASK-001 against the actual implementation repository, follow the explicit safe order, and keep real provider/paid/release gates blocked until their evidence exists. This verdict does not claim that the application is implemented, live model quality is measured, or unmerged changes are already canonical on main.
+Applies to this hardened specification revision. The ASTRA specification mission does not execute numbered application tasks. When the owner separately starts implementation, begin with TASK-001, follow the explicit safe order and keep real provider/paid/release gates blocked until their evidence exists. An application repository is not a prerequisite for completing this specification audit. This verdict does not claim that the application is implemented, live model quality is measured, or unmerged changes are already canonical on main.
