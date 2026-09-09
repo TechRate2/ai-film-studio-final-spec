@@ -1,5 +1,7 @@
 # Final Canonical Specification Audit — V4.3.1
 
+Evidence refresh, 2026-09-09: the historical closure counts below describe the 252-file audited tree. A subsequent market/feasibility review adds `evidence/MARKET_FEASIBILITY_REVIEW.md`, bringing the current inventory to 253 files, and refreshes primary Seedance source pointers without changing normative contracts or runtime capability status. A23–A24 are two additional MEDIUM evidence findings; the 22 architecture findings and their severity totals below remain the historical audit result. See the new review for its narrower inspection method, representative market coverage and remaining empirical work. No competitive superiority or commercial release is certified.
+
 Audited base: `main@cf61168bfa8ce8303963f14fd9b45377d8690bfb`. Initial hardening merged as PR #9. Follow-up baseline: `main@538e63e8829af2429fc9b0b6602a544260a2d23b`; review branch: `audit/astra-followup-closure`. This report assesses the proposed hardened tree; main adoption is determined by Git history, not by the version label in this document. No application was built and no paid API credits were used.
 
 ## A. Repository inventory
