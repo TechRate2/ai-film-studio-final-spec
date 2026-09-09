@@ -1,4 +1,4 @@
-# Canonical Implementation Order V4.3.1
+# Canonical Implementation Order V4.4.0
 
 Task numbers are stable identifiers, **not permission to execute in numeric order when a dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
 
@@ -87,3 +87,12 @@ Exit: `phases/PHASE_6_BETA_RELEASE.md`.
 
 ## Machine-readable task prerequisites
 `governance/contract_index.json` records the exact safe execution order and conservative dependency chain. A dependency means its own acceptance is complete, not that all later phase demonstrations already exist. TASK-030 proves real generation/QA; Phase 2 proves the full revision/voice/master route after 035–037 and 031. Earlier task tests are mandatory; TASK-039 consolidates automation rather than postponing tests. All billable image/voice/video/probe submissions require 032 and 033; provider ports before that point remain submission-disabled. Foundation rights/tenant controls apply from ingestion, and commercial hardening is verified again in 042.
+
+## Phase 7 — Separate source-video localization, after core completion
+Start only after TASK-043 and `phases/PHASE_6_BETA_RELEASE.md` pass with real core evidence. Do not start this extension to avoid an unfinished main studio task.
+
+- TASK-044: Source ingestion, language analysis, translation and subtitle workspace
+- TASK-045: Multi-speaker dubbing and source-time retiming
+- TASK-046: AI check/alignment, selective revision, export and localization release
+
+Exit: `phases/PHASE_7_SOURCE_VIDEO_LOCALIZATION.md`. Core release requirements/GS scope is separate from extension acceptance to avoid a circular prerequisite. The extension has no video/image generation or lip-sync, and uses the existing Director and infrastructure.

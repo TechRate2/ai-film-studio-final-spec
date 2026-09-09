@@ -1,7 +1,7 @@
 # TASK-043 — Beta Release Gate
 
 ## Goal
-Prove the product is commercially testable against the complete canonical contract, not merely feature-complete by self-report.
+Prove the product is commercially testable against the CORE release scope of the canonical contract, not merely feature-complete by self-report.
 
 ## Read first
 - `spec/00_SPEC_LOCK.md`
@@ -15,8 +15,8 @@ Prove the product is commercially testable against the complete canonical contra
 - `traceability/REQUIREMENTS_TRACEABILITY.csv`
 
 ## Acceptance criteria
-- all critical traceability requirements have implementation refs + tests and are not PARTIAL/BLOCKED;
-- every phase exit gate satisfied with evidence;
+- all critical CORE traceability requirements (R-001–R-088) have implementation refs + tests and are not PARTIAL/BLOCKED;
+- every core phase exit gate (0–6) satisfied with evidence;
 - real Seedance vertical slice demonstrates create → durable paid attempt → QA → user shot revision → accepted version → continuity → voice/edit → FinalMaster;
 - no critical provider/model/cost/continuity/canon/safety drift;
 - backup/restore, deletion, outage/reconciliation and spend-kill-switch tested;
@@ -41,6 +41,9 @@ Additional mandatory reading (including transitive local schema refs):
 Requirements: R-040, R-070.
 Golden coverage: GS01, GS03, GS25.
 
-- [ ] Audit every phase and critical requirement against exact implementation/test refs, dates and real safe provider samples.
+- [ ] Audit every core phase (0–6) and CORE critical requirement against exact implementation/test refs, dates and real safe provider samples.
 - [ ] No missing, PARTIAL, BLOCKED or fixture-only evidence satisfies a required real gate; publish limitations and reject release on critical invariant failure.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Extension separation
+TASK-044–046 and LOCALIZATION requirements are subsequent work, not prerequisites of this task. Their absence cannot falsely block core release or permit core requirements to be skipped. New extension schema parsing may be tested, but its application functionality is disabled until its own Phase 7 gate.

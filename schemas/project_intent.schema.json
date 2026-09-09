@@ -63,6 +63,12 @@
         "vi",
         "en"
       ]
+    },
+    "workflow_kind": {
+      "enum": [
+        "STUDIO",
+        "LOCALIZATION"
+      ]
     }
   },
   "additionalProperties": false

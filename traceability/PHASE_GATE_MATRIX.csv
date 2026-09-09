@@ -6,3 +6,4 @@ phase,gate_document,required_tasks,required_evidence,status
 4,phases/PHASE_4_LONG_FORM_SERIES.md,"TASK-038,TASK-039,TASK-040,TASK-041",GS05 Episode2 continuation; scoped canon; voice/knowledge continuity; exact gate document remains binding,NOT_STARTED
 5,phases/PHASE_5_MULTI_PROVIDER_BENCHMARK.md,PROVIDER_EXPANSION_TEMPLATE,profile+compiler+adapter+probe evidence; GS15; exact gate document remains binding,NOT_STARTED
 6,phases/PHASE_6_BETA_RELEASE.md,"TASK-042,TASK-043",golden suite; real benchmarks; restore; security; known limits; exact gate document remains binding,NOT_STARTED
+7,phases/PHASE_7_SOURCE_VIDEO_LOCALIZATION.md,"TASK-044,TASK-045,TASK-046",CORE accepted first; GS29–GS33; real language/voice samples; source-preserving export; no forbidden media; restart/paid guard,NOT_STARTED

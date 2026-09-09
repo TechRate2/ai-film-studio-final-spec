@@ -1,0 +1,897 @@
+{
+  "type": "object",
+  "properties": {
+    "localization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workflow_kind": {
+      "const": "LOCALIZATION"
+    },
+    "source": {
+      "$ref": "common.schema.json#/$defs/version_ref"
+    },
+    "source_duration_ticks": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ticks_per_second": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_analysis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/version_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ui_locale": {
+      "enum": [
+        "vi",
+        "en"
+      ]
+    },
+    "language_detection": {
+      "$ref": "#/$defs/detection"
+    },
+    "target_language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "SUBTITLES_ONLY",
+        "DUB_ONLY",
+        "DUB_AND_SUBTITLES"
+      ]
+    },
+    "subtitle_output": {
+      "enum": [
+        "NONE",
+        "BURN_IN",
+        "SIDECAR",
+        "BOTH"
+      ]
+    },
+    "subtitle_format": {
+      "enum": [
+        "SRT",
+        "VTT",
+        "ASS"
+      ]
+    },
+    "subtitle_style_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_audio_mode": {
+      "enum": [
+        "ORIGINAL",
+        "REPLACE_SPEECH",
+        "MUTE_SOURCE"
+      ]
+    },
+    "background_artifact": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/version_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "speakers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/speaker"
+      },
+      "minItems": 0
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/segment"
+      },
+      "minItems": 0
+    },
+    "glossary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/term"
+      },
+      "minItems": 0
+    },
+    "time_map": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/time_span"
+      },
+      "minItems": 1
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lock"
+      },
+      "minItems": 0
+    },
+    "alignment_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "timeline": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/version_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "video_generation_allowed": {
+      "const": false
+    },
+    "image_generation_allowed": {
+      "const": false
+    },
+    "lip_sync_allowed": {
+      "const": false
+    },
+    "auto_paid_retry_allowed": {
+      "const": false
+    }
+  },
+  "required": [
+    "localization_id",
+    "project_id",
+    "version_id",
+    "workflow_kind",
+    "source",
+    "source_duration_ticks",
+    "ticks_per_second",
+    "source_analysis",
+    "ui_locale",
+    "language_detection",
+    "target_language",
+    "mode",
+    "subtitle_output",
+    "subtitle_format",
+    "subtitle_style_id",
+    "source_audio_mode",
+    "background_artifact",
+    "speakers",
+    "segments",
+    "glossary",
+    "time_map",
+    "locks",
+    "alignment_policy",
+    "timeline",
+    "video_generation_allowed",
+    "image_generation_allowed",
+    "lip_sync_allowed",
+    "auto_paid_retry_allowed"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LocalizationProject",
+  "$defs": {
+    "word": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_tick": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "end_tick": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "text",
+        "start_tick",
+        "end_tick",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "start_tick": {
+                "const": null
+              }
+            },
+            "required": [
+              "start_tick"
+            ]
+          },
+          "then": {
+            "properties": {
+              "end_tick": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "start_tick": {
+                "type": "integer"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "end_tick": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "speaker": {
+      "type": "object",
+      "properties": {
+        "speaker_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "voice_profile": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/version_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "consent_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "speaker_id",
+        "display_name",
+        "voice_profile",
+        "confidence",
+        "consent_refs"
+      ],
+      "additionalProperties": false
+    },
+    "segment": {
+      "type": "object",
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "speaker_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_language": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_start_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_end_tick": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_text": {
+          "type": "string"
+        },
+        "subtitle_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "spoken_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/word"
+          },
+          "minItems": 0
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review_status": {
+          "enum": [
+            "UNREVIEWED",
+            "VERIFIED",
+            "NEEDS_REVIEW"
+          ]
+        },
+        "overlap_group_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "delivery_note": {
+          "type": "string"
+        },
+        "dub_audio": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/version_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dub_duration_ticks": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "voice_speed": {
+          "$ref": "common.schema.json#/$defs/rational"
+        }
+      },
+      "required": [
+        "segment_id",
+        "speaker_id",
+        "source_language",
+        "source_start_tick",
+        "source_end_tick",
+        "source_text",
+        "subtitle_text",
+        "spoken_text",
+        "words",
+        "confidence",
+        "review_status",
+        "overlap_group_id",
+        "delivery_note",
+        "dub_audio",
+        "dub_duration_ticks",
+        "voice_speed"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "dub_audio": {
+                "const": null
+              }
+            },
+            "required": [
+              "dub_audio"
+            ]
+          },
+          "then": {
+            "properties": {
+              "dub_duration_ticks": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dub_audio": {
+                "$ref": "common.schema.json#/$defs/version_ref"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "dub_duration_ticks": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "speaker_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "spoken_text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "time_span": {
+      "type": "object",
+      "properties": {
+        "span_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_start_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_end_tick": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "speed": {
+          "$ref": "common.schema.json#/$defs/rational"
+        }
+      },
+      "required": [
+        "span_id",
+        "source_start_tick",
+        "source_end_tick",
+        "speed"
+      ],
+      "additionalProperties": false
+    },
+    "lock": {
+      "type": "object",
+      "properties": {
+        "lock_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field": {
+          "enum": [
+            "SOURCE_TEXT",
+            "SUBTITLE_TEXT",
+            "SPOKEN_TEXT",
+            "SPEAKER",
+            "VOICE",
+            "CUE_TIMING",
+            "VOICE_SPEED",
+            "VIDEO_SPEED",
+            "SUBTITLE_STYLE",
+            "GAIN"
+          ]
+        },
+        "coordinate_space": {
+          "enum": [
+            "SOURCE",
+            "TARGET",
+            "NOT_TEMPORAL"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "lock_id",
+        "target_id",
+        "field",
+        "coordinate_space",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pronunciation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "case_sensitive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "pronunciation",
+        "case_sensitive"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "policy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_reading_units_per_second": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "reading_unit": {
+          "enum": [
+            "GRAPHEME",
+            "WORD"
+          ]
+        },
+        "min_cue_duration_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_lines": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "min_voice_speed": {
+          "$ref": "common.schema.json#/$defs/rational"
+        },
+        "max_voice_speed": {
+          "$ref": "common.schema.json#/$defs/rational"
+        },
+        "max_boundary_error_ticks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_pause_shift_ticks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "target_loudness_lufs": {
+          "type": "number"
+        },
+        "max_true_peak_dbtp": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "policy_id",
+        "version_id",
+        "max_reading_units_per_second",
+        "reading_unit",
+        "min_cue_duration_ticks",
+        "max_lines",
+        "min_voice_speed",
+        "max_voice_speed",
+        "max_boundary_error_ticks",
+        "max_pause_shift_ticks",
+        "target_loudness_lufs",
+        "max_true_peak_dbtp"
+      ],
+      "additionalProperties": false
+    },
+    "detection": {
+      "type": "object",
+      "properties": {
+        "detected_language": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "override_language": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "detected_language",
+        "confidence",
+        "override_language",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "SUBTITLES_ONLY"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source_audio_mode": {
+            "const": "ORIGINAL"
+          },
+          "subtitle_output": {
+            "enum": [
+              "BURN_IN",
+              "SIDECAR",
+              "BOTH"
+            ]
+          },
+          "segments": {
+            "items": {
+              "properties": {
+                "spoken_text": {
+                  "type": "null"
+                },
+                "dub_audio": {
+                  "type": "null"
+                },
+                "dub_duration_ticks": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          "speakers": {
+            "items": {
+              "properties": {
+                "voice_profile": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          "background_artifact": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "DUB_ONLY"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "subtitle_output": {
+            "const": "NONE"
+          },
+          "source_audio_mode": {
+            "enum": [
+              "REPLACE_SPEECH",
+              "MUTE_SOURCE"
+            ]
+          },
+          "subtitle_style_id": {
+            "type": "null"
+          },
+          "segments": {
+            "items": {
+              "properties": {
+                "subtitle_text": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "DUB_AND_SUBTITLES"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "subtitle_output": {
+            "enum": [
+              "BURN_IN",
+              "SIDECAR",
+              "BOTH"
+            ]
+          },
+          "source_audio_mode": {
+            "enum": [
+              "REPLACE_SPEECH",
+              "MUTE_SOURCE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "subtitle_output": {
+            "enum": [
+              "BURN_IN",
+              "BOTH"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "subtitle_style_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

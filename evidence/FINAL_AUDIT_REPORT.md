@@ -1,3 +1,5 @@
+> Subsequent 4.4.0 owner-approved scope extension: see `evidence/LOCALIZATION_DESIGN_EVIDENCE.md` for original-video subtitles/dubbing, the 262-file inventory, new release partition and current validation. The 4.3.x findings and counts below are historical core-audit evidence, not the current manifest. No application task is completed by either audit.
+
 # Final Canonical Specification Audit — V4.3.1
 
 Evidence refresh, 2026-09-09: the historical closure counts below describe the 252-file audited tree. A subsequent market/feasibility review adds `evidence/MARKET_FEASIBILITY_REVIEW.md`, bringing the current inventory to 253 files, and refreshes primary Seedance source pointers without changing normative contracts or runtime capability status. A23–A24 are two additional MEDIUM evidence findings; the 22 architecture findings and their severity totals below remain the historical audit result. See the new review for its narrower inspection method, representative market coverage and remaining empirical work. No competitive superiority or commercial release is certified.

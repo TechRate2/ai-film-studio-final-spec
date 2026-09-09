@@ -31,3 +31,6 @@ No coding shortcut may bypass PaidAttemptGuard, upstream task reconciliation, sp
 
 ## No fake completion
 Never mark a task complete because code compiles. Completion requires its acceptance criteria and applicable golden scenarios.
+
+## Core-first extension execution
+`tasks/00_IMPLEMENTATION_ORDER.md` and the release_gate traceability field keep the main studio ahead of the standalone localization extension. Do not start TASK-044 until TASK-043 and Phase 6 pass. Persist a compact checkpoint at each accepted task: spec commit, active task/phase, exact implementation/test evidence, unresolved blockers and next eligible task. Resume from that evidence, not chat memory or a fabricated completion percentage. Changes to core schema defaults must preserve old fixtures and add targeted migration/counterexample evidence. Use the current manifest/index counts; never hardcode the old task count in agent prompts.

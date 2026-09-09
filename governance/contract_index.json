@@ -1,12 +1,12 @@
 {
-  "version": "4.3.1",
+  "version": "4.4.0",
   "counts": {
-    "specs": 47,
-    "tasks": 43,
-    "schemas": 43,
-    "goldens": 28,
-    "requirements": 88,
-    "phases": 7
+    "specs": 48,
+    "tasks": 46,
+    "schemas": 45,
+    "goldens": 33,
+    "requirements": 96,
+    "phases": 8
   },
   "execution_order": [
     "TASK-001",
@@ -51,7 +51,10 @@
     "TASK-040",
     "TASK-041",
     "TASK-042",
-    "TASK-043"
+    "TASK-043",
+    "TASK-044",
+    "TASK-045",
+    "TASK-046"
   ],
   "tasks": {
     "TASK-001": {
@@ -1154,6 +1157,99 @@
         "GS03",
         "GS25"
       ]
+    },
+    "TASK-044": {
+      "path": "tasks/TASK_044_SOURCE_VIDEO_SUBTITLES.md",
+      "depends_on": [
+        "TASK-043"
+      ],
+      "specs": [
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+        "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
+        "spec/41_MULTIMODAL_ASSET_INGESTION.md",
+        "spec/47_SOURCE_VIDEO_LOCALIZATION.md"
+      ],
+      "schemas": [
+        "schemas/localization_project.schema.json",
+        "schemas/composition_timeline.schema.json",
+        "schemas/project_intent.schema.json"
+      ],
+      "requirements": [
+        "R-089",
+        "R-090",
+        "R-091",
+        "R-094"
+      ],
+      "goldens": [
+        "GS29",
+        "GS30",
+        "GS32",
+        "GS33"
+      ]
+    },
+    "TASK-045": {
+      "path": "tasks/TASK_045_DUBBING_AND_RETIMING.md",
+      "depends_on": [
+        "TASK-044"
+      ],
+      "specs": [
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+        "spec/18_COST_SPEND_ATTEMPT_POLICY.md",
+        "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+        "spec/47_SOURCE_VIDEO_LOCALIZATION.md"
+      ],
+      "schemas": [
+        "schemas/localization_project.schema.json",
+        "schemas/composition_timeline.schema.json",
+        "schemas/voice_profile.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-091",
+        "R-092",
+        "R-095"
+      ],
+      "goldens": [
+        "GS29",
+        "GS30",
+        "GS31",
+        "GS32"
+      ]
+    },
+    "TASK-046": {
+      "path": "tasks/TASK_046_LOCALIZATION_REVIEW_AND_RELEASE.md",
+      "depends_on": [
+        "TASK-045"
+      ],
+      "specs": [
+        "spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md",
+        "spec/28_API_AND_EVENT_CONTRACTS.md",
+        "spec/42_TIMELINE_ASSEMBLY_EXPORT_MASTER_QA.md",
+        "spec/44_SPEND_AUTHORIZATION_REPAIR_FALLBACK.md",
+        "spec/47_SOURCE_VIDEO_LOCALIZATION.md"
+      ],
+      "schemas": [
+        "schemas/localization_project.schema.json",
+        "schemas/localization_review.schema.json",
+        "schemas/composition_timeline.schema.json",
+        "schemas/final_master.schema.json",
+        "schemas/paid_attempt.schema.json"
+      ],
+      "requirements": [
+        "R-089",
+        "R-092",
+        "R-093",
+        "R-094",
+        "R-095",
+        "R-096"
+      ],
+      "goldens": [
+        "GS29",
+        "GS30",
+        "GS31",
+        "GS32",
+        "GS33"
+      ]
     }
   },
   "invariants": [
@@ -1270,6 +1366,81 @@
           "keyword": "const"
         }
       ]
+    },
+    {
+      "key": "localization_mode",
+      "spec": "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/localization_project.schema.json",
+          "pointer": "/properties/mode",
+          "keyword": "enum"
+        }
+      ]
+    },
+    {
+      "key": "video_generation_allowed",
+      "spec": "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/localization_project.schema.json",
+          "pointer": "/properties/video_generation_allowed",
+          "keyword": "const"
+        },
+        {
+          "schema": "schemas/localization_review.schema.json",
+          "pointer": "/properties/video_generation_allowed",
+          "keyword": "const"
+        }
+      ]
+    },
+    {
+      "key": "image_generation_allowed",
+      "spec": "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/localization_project.schema.json",
+          "pointer": "/properties/image_generation_allowed",
+          "keyword": "const"
+        },
+        {
+          "schema": "schemas/localization_review.schema.json",
+          "pointer": "/properties/image_generation_allowed",
+          "keyword": "const"
+        }
+      ]
+    },
+    {
+      "key": "lip_sync_allowed",
+      "spec": "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/localization_project.schema.json",
+          "pointer": "/properties/lip_sync_allowed",
+          "keyword": "const"
+        },
+        {
+          "schema": "schemas/localization_review.schema.json",
+          "pointer": "/properties/lip_sync_allowed",
+          "keyword": "const"
+        }
+      ]
+    },
+    {
+      "key": "auto_paid_retry_allowed",
+      "spec": "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/localization_project.schema.json",
+          "pointer": "/properties/auto_paid_retry_allowed",
+          "keyword": "const"
+        },
+        {
+          "schema": "schemas/localization_review.schema.json",
+          "pointer": "/properties/auto_paid_retry_allowed",
+          "keyword": "const"
+        }
+      ]
     }
   ],
   "required_fields": {
@@ -1313,6 +1484,24 @@
       "continuity_out",
       "negative_risks",
       "timing_granularity"
+    ],
+    "localization_project.schema.json": [
+      "source",
+      "mode",
+      "time_map",
+      "locks",
+      "alignment_policy",
+      "video_generation_allowed",
+      "image_generation_allowed",
+      "lip_sync_allowed",
+      "auto_paid_retry_allowed"
+    ],
+    "localization_review.schema.json": [
+      "expected_project_version_id",
+      "input_artifact_versions",
+      "safe_patches",
+      "analysis_budget_id",
+      "auto_paid_retry_allowed"
     ]
   },
   "required_canonical_paths": [
@@ -1557,7 +1746,16 @@
     "tasks/TASK_043_BETA_RELEASE_GATE.md",
     "traceability/PHASE_GATE_MATRIX.csv",
     "traceability/README.md",
-    "traceability/REQUIREMENTS_TRACEABILITY.csv"
+    "traceability/REQUIREMENTS_TRACEABILITY.csv",
+    "docs/adr/ADR_0002_SOURCE_VIDEO_LOCALIZATION.md",
+    "spec/47_SOURCE_VIDEO_LOCALIZATION.md",
+    "schemas/localization_project.schema.json",
+    "schemas/localization_review.schema.json",
+    "phases/PHASE_7_SOURCE_VIDEO_LOCALIZATION.md",
+    "evidence/LOCALIZATION_DESIGN_EVIDENCE.md",
+    "tasks/TASK_044_SOURCE_VIDEO_SUBTITLES.md",
+    "tasks/TASK_045_DUBBING_AND_RETIMING.md",
+    "tasks/TASK_046_LOCALIZATION_REVIEW_AND_RELEASE.md"
   ],
   "fixture_ids": [
     "paid-unknown-reserved",
@@ -1644,6 +1842,180 @@
     "profile-observed-rejects-source_version",
     "profile-routable-rejects-modality",
     "profile-routable-rejects-verification_status",
-    "profile-routable-rejects-version"
-  ]
+    "profile-routable-rejects-version",
+    "localization-subtitle-valid-unknown-timing",
+    "localization-subtitle-valid-burnin",
+    "localization-subtitle-valid-silence",
+    "localization-rejects-video_generation_allowed",
+    "localization-rejects-image_generation_allowed",
+    "localization-rejects-lip_sync_allowed",
+    "localization-rejects-auto_paid_retry_allowed",
+    "localization-rejects-subtitle-voice",
+    "localization-rejects-subtitle-mute",
+    "localization-rejects-no-output",
+    "localization-rejects-burnin-no-style",
+    "localization-rejects-unknown-mode",
+    "localization-rejects-zero-rate",
+    "localization-rejects-empty-map",
+    "localization-rejects-missing-locks",
+    "localization-rejects-half-known-word-time",
+    "localization-dub-and-subtitles-valid",
+    "localization-dub-only-valid",
+    "localization-rejects-dub-without-speaker",
+    "localization-rejects-dub-without-duration",
+    "localization-review-valid-safe",
+    "localization-review-valid-no-safe-fix",
+    "localization-review-rejects-arbitrary-operation",
+    "localization-review-rejects-extra-command",
+    "localization-review-rejects-missing-snapshot",
+    "localization-review-rejects-auto-paid-retry",
+    "localization-review-rejects-no-analysis-budget",
+    "localization-review-rejects-clip-without-timeline"
+  ],
+  "release_gates": {
+    "CORE": {
+      "requirements": [
+        "R-001",
+        "R-002",
+        "R-003",
+        "R-004",
+        "R-005",
+        "R-006",
+        "R-007",
+        "R-008",
+        "R-009",
+        "R-010",
+        "R-011",
+        "R-012",
+        "R-013",
+        "R-014",
+        "R-015",
+        "R-016",
+        "R-017",
+        "R-018",
+        "R-019",
+        "R-020",
+        "R-021",
+        "R-022",
+        "R-023",
+        "R-024",
+        "R-025",
+        "R-026",
+        "R-027",
+        "R-028",
+        "R-029",
+        "R-030",
+        "R-031",
+        "R-032",
+        "R-033",
+        "R-034",
+        "R-035",
+        "R-036",
+        "R-037",
+        "R-038",
+        "R-039",
+        "R-040",
+        "R-041",
+        "R-042",
+        "R-043",
+        "R-044",
+        "R-045",
+        "R-046",
+        "R-047",
+        "R-048",
+        "R-049",
+        "R-050",
+        "R-051",
+        "R-052",
+        "R-053",
+        "R-054",
+        "R-055",
+        "R-056",
+        "R-057",
+        "R-058",
+        "R-059",
+        "R-060",
+        "R-061",
+        "R-062",
+        "R-063",
+        "R-064",
+        "R-065",
+        "R-066",
+        "R-067",
+        "R-068",
+        "R-069",
+        "R-070",
+        "R-071",
+        "R-072",
+        "R-073",
+        "R-074",
+        "R-075",
+        "R-076",
+        "R-077",
+        "R-078",
+        "R-079",
+        "R-080",
+        "R-081",
+        "R-082",
+        "R-083",
+        "R-084",
+        "R-085",
+        "R-086",
+        "R-087",
+        "R-088"
+      ],
+      "goldens": [
+        "GS01",
+        "GS02",
+        "GS03",
+        "GS04",
+        "GS05",
+        "GS06",
+        "GS07",
+        "GS08",
+        "GS09",
+        "GS10",
+        "GS11",
+        "GS12",
+        "GS13",
+        "GS14",
+        "GS15",
+        "GS16",
+        "GS17",
+        "GS18",
+        "GS19",
+        "GS20",
+        "GS21",
+        "GS22",
+        "GS23",
+        "GS24",
+        "GS25",
+        "GS26",
+        "GS27",
+        "GS28"
+      ],
+      "terminal_task": "TASK-043"
+    },
+    "LOCALIZATION": {
+      "requirements": [
+        "R-089",
+        "R-090",
+        "R-091",
+        "R-092",
+        "R-093",
+        "R-094",
+        "R-095",
+        "R-096"
+      ],
+      "goldens": [
+        "GS29",
+        "GS30",
+        "GS31",
+        "GS32",
+        "GS33"
+      ],
+      "terminal_task": "TASK-046",
+      "requires": "CORE"
+    }
+  }
 }

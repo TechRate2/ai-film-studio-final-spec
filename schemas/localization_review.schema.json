@@ -1,0 +1,370 @@
+{
+  "type": "object",
+  "properties": {
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "localization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_project_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_timeline": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/version_ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "input_artifact_versions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/version_ref"
+      },
+      "minItems": 1
+    },
+    "policy_version_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "command_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "analysis_budget_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "segment_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "category": {
+            "enum": [
+              "TRANSCRIPT",
+              "TRANSLATION",
+              "SPEAKER",
+              "LANGUAGE",
+              "TIMING",
+              "PACE",
+              "SUBTITLE_LAYOUT",
+              "BACKGROUND_BLEED",
+              "LOUDNESS",
+              "PROVENANCE",
+              "CAPABILITY",
+              "LOCK_CONFLICT"
+            ]
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "WARN",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "suggested_action": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "finding_id",
+          "segment_id",
+          "category",
+          "result",
+          "message",
+          "evidence_refs",
+          "suggested_action"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "safe_patches": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "const": "SET_CUE_TIMING"
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "start_tick": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_tick": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "operation",
+              "target_id",
+              "finding_ids",
+              "start_tick",
+              "end_tick"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "const": "SET_VOICE_SPEED"
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "speed": {
+                "$ref": "common.schema.json#/$defs/rational"
+              }
+            },
+            "required": [
+              "operation",
+              "target_id",
+              "finding_ids",
+              "speed"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "const": "SET_GAIN"
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "gain_db": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "operation",
+              "target_id",
+              "finding_ids",
+              "gain_db"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "const": "SET_FADES"
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "fade_in_ticks": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "fade_out_ticks": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "operation",
+              "target_id",
+              "finding_ids",
+              "fade_in_ticks",
+              "fade_out_ticks"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "const": "SET_SUBTITLE_STYLE"
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "style_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "operation",
+              "target_id",
+              "finding_ids",
+              "style_id"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "minItems": 0
+    },
+    "proposed_paid_segment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "auto_paid_retry_allowed": {
+      "const": false
+    },
+    "video_generation_allowed": {
+      "const": false
+    },
+    "image_generation_allowed": {
+      "const": false
+    },
+    "lip_sync_allowed": {
+      "const": false
+    }
+  },
+  "required": [
+    "review_id",
+    "project_id",
+    "localization_id",
+    "expected_project_version_id",
+    "expected_timeline",
+    "input_artifact_versions",
+    "policy_version_id",
+    "command_id",
+    "analysis_budget_id",
+    "findings",
+    "safe_patches",
+    "proposed_paid_segment_ids",
+    "auto_paid_retry_allowed",
+    "video_generation_allowed",
+    "image_generation_allowed",
+    "lip_sync_allowed"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LocalizationReview",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "safe_patches": {
+            "contains": {
+              "properties": {
+                "operation": {
+                  "enum": [
+                    "SET_CUE_TIMING",
+                    "SET_GAIN",
+                    "SET_FADES",
+                    "SET_SUBTITLE_STYLE"
+                  ]
+                }
+              },
+              "required": [
+                "operation"
+              ]
+            }
+          }
+        },
+        "required": [
+          "safe_patches"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_timeline": {
+            "$ref": "common.schema.json#/$defs/version_ref"
+          }
+        }
+      }
+    }
+  ]
+}
