@@ -210,6 +210,10 @@ compile_notes:
 - avoid overloaded heavy-VFX storyboard constraints unless benchmarks support them
 sources:
 - https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md
+- https://arxiv.org/abs/2604.14148
 unknowns:
 - Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
   are not verified for this project.
+- Primary technical report pointer inspected 2026-09-09; report scope is not this
+  project's current provider/account scope. Existing claim-local provenance remains
+  unchanged; no runtime support or measurement is inferred from source discovery.
