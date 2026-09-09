@@ -1,4 +1,4 @@
-# Golden Scenarios V4.3
+# Golden Scenarios V4.3.1
 
 These are behavioral acceptance scenarios, not aesthetic/virality guarantees. Tests may use deterministic fixtures unless explicitly marked as paid-provider smoke.
 
@@ -50,6 +50,8 @@ Agent creates copy-ready prompt + exact ref pack, imports external image, valida
 ### Required fixture and falsifiable assertions
 Fixture: valid external upload, wrong aspect/identity upload and upload for superseded pack version. Assert provenance and target pins, correction or STALE revalidation, and exactly zero ImageProvider generation submissions for every external case.
 
+Also provide a USER_SUPPLIED image whose original prompt is unknown and a PREVIOUS_ACCEPTED_FRAME with accepted-video lineage. Both work without a generation prompt and carry the selected artifact/version. Missing pin, cross-project asset, stale/rejected parent or bare video substituted for a frame blocks use without paid fallback. New internal/external generation packs still require the full copy/compile prompt contract.
+
 ## GS09 — Shot revision / Continuity Sandwich
 Accepted Shot5→Shot6→Shot7. User: “Make Shot6 sword motion slower, keep face/outfit/light/end state.” Keep v1, create v2, semantic diff only, use incoming Shot5 + outgoing Shot7 target, show incremental cost, stale Shot7 only if necessary.
 
@@ -85,6 +87,8 @@ Direct generation works without forced storyboard/keyframe.
 
 ### Required fixture and falsifiable assertions
 Fixture: simple B-roll with known direct route and no hard identity lock. Assert no storyboard/keyframe dependency and zero image submissions; compare an already accepted source asset and permit reuse without generation.
+
+NONE has no selected keyframe, camera/composition pack or source dependency; reject such contradictory fields. Empty legacy prompt/bindings may be omitted or accepted only as empty. Reusing an actual accepted frame uses PREVIOUS_ACCEPTED_FRAME, not a hidden source binding inside NONE.
 
 ## GS15 — Provider switch
 Same model through provider B exposes different API limits without Director rewrite; EffectiveCapability changes through profile/exposure, not creative branch.
@@ -122,6 +126,8 @@ ModelProfile says reference audio possible in principle, provider/account does n
 ### Required fixture and falsifiable assertions
 Matrix: each of five capability layers is SUPPORTED, UNSUPPORTED or UNKNOWN; hard denial wins, otherwise unresolved stays UNKNOWN. Test empty limit intersection, expired entitlement and separate 2.0/2.5 profiles. DEGRADED needs a linked alternative that itself passes resolution; unsupported rights cannot be routed around.
 
+Record-level counterexamples must fail schema validation: SUPPORTED with each individual non-affirmative layer, denial mislabeled UNKNOWN and DEGRADED without its decision link. Claim counterexamples: reported/unverified/synthesized evidence promoted to support, observed evidence with no sample refs/count/confidence, and routable family/unverified model. A documented scoped capability may pass without paid samples; that is not measured quality. A MEASURED provider profile can cite a qualifying exposure/timeout sample, while unrelated claims remain UNKNOWN. Runtime tests separately verify actual source/sample authenticity, expiry, account scope and alternative safety.
+
 ## GS21 — Accepted-version revert
 Shot6 v2 is accepted and makes Shot7 stale; user reverts accepted version to v1. Dependency graph re-evaluates currency from source versions. No stale paid artifact is regenerated automatically.
 
@@ -146,6 +152,8 @@ Provider A fails in NOT_SUBMITTED state: same logical authorized attempt may rou
 ### Required fixture and falsifiable assertions
 Matrix: NOT_SUBMITTED, SUBMITTED, UNKNOWN, FAILED_UNBILLED_CONFIRMED, BILLED_OR_OUTPUT_PRODUCED. Assert only confirmed noncreation/unbilled attempts may reuse logical authorization under route/cap policy; produced output followed by refund still needs new authorization. Cancel plus late success retains cost/result and does not release children.
 
+Attempt fixtures distinguish explicit null shot/version for a project-level probe from missing fields, empty IDs and a shot-bound attempt with no target version. The latter are rejected; schema-valid IDs still require owned target/request/authorization matching before submission.
+
 ## GS25 — Research and critique stop rules
 Two projects ask same stable model question within valid cache window; second reuses evidence. A current/provider-version change invalidates relevant evidence. Research stops once decision confidence/stop condition is met. Creative Critic/replan also stops at configured convergence/budget and escalates unresolved uncertainty rather than looping indefinitely.
 
@@ -154,6 +162,8 @@ Fixture: finite shared parent/child research and critic counters, restart near e
 
 ## GS26 — Contract and task readiness
 Fixture: complete canonical tree and a new/absent implementation repository. Validate metaschemas, local refs, exact enum/state sets, task dependencies, traceability, profiles and manifest/version counts. Remove a mandatory contract, mutate paid certainty, omit authorization ID, add an unknown timeline field and mark an unproven requirement IMPLEMENTED: each mutation fails. TASK-001 reports actual absence rather than inventing code; TASK-002 pins the contract; persistent owned IDs reject cross-project links. Ordinary CI has no paid credentials/calls.
+
+Delete a task-index entry or alias it to another packet; delete/duplicate a fixture or remove all negative cases: governance must fail. Fixture IDs and requirement/Golden mappings are explicit. Spec-audit completion does not execute TASK-001 or require an implementation repository: those task packets are deliverables for the later build stage, not an excuse to leave this audit unfinished.
 
 ## GS27 — Concurrent acceptance, spending and canon
 Fixture: two workers competing for the same candidate, independent candidates sharing one cap, parent revision during child claim, episode snapshot commit interrupted by crash and export racing a canon change. Assert atomic reservation/fencing, unique logical candidate execution, no incomplete canon snapshot, stale input revalidation and no false COMPLETE master. Expired/cancelled authorization and kill switch stop unsubmitted media across image/video/voice/probe, while UNKNOWN liabilities remain reserved. Temporal knowledge reads use the pinned story position.

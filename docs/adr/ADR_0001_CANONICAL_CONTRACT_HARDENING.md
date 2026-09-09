@@ -20,3 +20,11 @@ This repository contains specification, not an implemented production database. 
 
 ## Review and approval scope
 The owner explicitly authorized the exhaustive audit and minimal corrections preserving existing product behavior. This ADR records that authorization; it does not claim a separate external architecture review, owner approval of application deployment, live provider qualification or a successful commercial release. No Class C change to SPEC_LOCK was necessary. Findings, exact changed paths, task coverage and verification are in evidence/FINAL_AUDIT_REPORT.md and evidence/AUDIT_ISSUE_MATRIX.csv. Future behavior changes still follow governance/CANONICAL_CHANGE_POLICY.md.
+
+## 2026-09-09 follow-up — V4.3.1 contract closure
+
+Baseline: main@538e63e8829af2429fc9b0b6602a544260a2d23b. The owner requested continuation of the specification audit, not execution of application tasks. Pre-edit counterexamples A17–A22 exposed mandatory generation prompts on asset-reuse routes, unsupported capability/evidence promotion, omitted paid target links and removable governance coverage. This addendum records a Class B correction under the same audit authorization; SPEC_LOCK is unchanged.
+
+Use route-conditional keyframe generation/reuse/NONE records, local capability/evidence conditions and explicit nullable paid target links. Pin validator fixture IDs and task-index coverage; retain domain and empirical checks as future execution gates. Preserve existing requirement/task/Golden IDs and the single canonical tree. Prefer these bounded corrections over new services, duplicate final-spec documents or a mandatory regeneration workflow. Update SPEC_VERSION to 4.3.1 because previously accepted invalid records now fail validation.
+
+Consumers must revalidate old records. Bind reused assets only from real artifact/version provenance; do not manufacture prompts, evidence, sample counts or target IDs. Unsupported promotion returns to UNKNOWN and routability is disabled until justified. Missing paid provenance is reconciled/quarantined with liability retained, not silently backfilled. No application migration or paid probe is performed by this specification change.

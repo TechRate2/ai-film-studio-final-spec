@@ -1,4 +1,4 @@
-# AI Film Studio — Final Canonical Build Spec V4.3
+# AI Film Studio — Final Canonical Build Spec V4.3.1
 
 **Status:** CANONICAL SPECIFICATION — implementation evidence remains required
 **Repository role:** sole active source of truth for Codex, Claude and human engineers  
@@ -52,6 +52,6 @@ Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md
 Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
 
 ## Freeze rule
-**V4.3 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
+**V4.3.1 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
 See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.

@@ -13,7 +13,10 @@ This repository is the canonical product/build contract. Read this before touchi
 
 If implementation and canonical spec conflict, report the conflict; do not silently redefine the product.
 
-## Mandatory task bootstrap
+## Specification audit versus application implementation
+When assigned a canonical specification audit/hardening mission, audit and repair this repository's contracts, knowledge, tasks, schemas and governance. Numbered TASK-001 through TASK-043 are future implementation packets to audit, not tasks to execute merely because the owner says to continue the specification mission. Absence of application code is expected here and does not block specification audit completion. Use a findings/coverage matrix and preserve implementation statuses until real implementation evidence exists. Do not request an implementation repository or begin application work unless the owner changes the task scope to building the product.
+
+## Mandatory task bootstrap for application work
 1. Identify exactly one active numbered `TASK-___`.
 2. Read `SPEC_LOCK` and `governance/AI_CODING_PROTOCOL.md`.
 3. Read the task packet and only its linked canonical docs/schemas/playbooks.

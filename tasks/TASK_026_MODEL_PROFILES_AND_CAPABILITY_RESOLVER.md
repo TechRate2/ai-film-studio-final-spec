@@ -35,4 +35,5 @@ Golden coverage: GS15, GS20.
 
 - [ ] Resolve all five capability layers with denial/unknown precedence, limit intersections, exact version/route evidence and entitlement expiry.
 - [ ] Seedance 2.5 cannot inherit 2.0 values; family/unverified profiles cannot be production routes, and a declared degrade must itself resolve safely.
+- [ ] Reject a SUPPORTED snapshot when any of the five layers is UNKNOWN/UNSUPPORTED, an unlinked DEGRADED result, and SUPPORTED claims backed only by REPO_REPORTED/UNVERIFIED/SYNTHESIS. Accept documented scoped capability without falsely calling it measured. Verify sample provenance/freshness and linked alternative resolution separately from JSON validity.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

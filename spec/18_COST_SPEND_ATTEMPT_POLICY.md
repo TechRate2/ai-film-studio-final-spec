@@ -20,6 +20,8 @@ Default candidate count is 1. Multiple candidates must be deliberately planned a
 ## PaidAttemptGuard
 Each paid attempt stores attempt_id, artifact/shot/version, logical attempt ID, authorization ID, provider/model, upstream_task_id, idempotency key if available, prompt/reference hashes, estimate, actual cost, status, paid-state certainty and timestamps.
 
+Persist `shot_id` and `version_id` explicitly, using null only when the attempt has no corresponding shot or target version (for example a project-level probe). A shot-bound attempt requires its actual version_id; omission or an empty identifier is not an unknown-state representation. Artifact/request/authorization target consistency and ownership are checked before submission, not inferred from schema validity. Absence of provider idempotency support uses null for the provider key while the internal logical candidate identity remains mandatory.
+
 ## Retry/recovery semantics
 - Polling/recovering an already-created upstream task may be automatic.
 - Confirmed NOT_SUBMITTED/FAILED_UNBILLED_CONFIRMED logical submission may be retried within existing authorization according to provider policy.

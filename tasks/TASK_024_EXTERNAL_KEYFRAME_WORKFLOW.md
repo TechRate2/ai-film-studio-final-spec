@@ -41,4 +41,5 @@ Golden coverage: GS08, GS14, GS16, GS17, GS27.
 
 - [ ] Exercise all five sources with version-pinned packs, validation and explicit invalid-upload correction; real internal path uses the completed guard.
 - [ ] External/user/previous/NONE routes make zero internal image generation calls; stale pack upload and rejected internal image cannot trigger automatic paid fallback.
+- [ ] Accept USER_SUPPLIED and PREVIOUS_ACCEPTED_FRAME without inventing a generation prompt; require a real selected source artifact/version and validation contract. Reject missing source pins, rejected/stale parent-frame lineage and generation/source fields on NONE. AUTO_INTERNAL/EXTERNAL_ASSISTED still require a nonempty generation prompt.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

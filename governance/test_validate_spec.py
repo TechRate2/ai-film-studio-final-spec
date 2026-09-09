@@ -3,6 +3,7 @@ import json
 import shutil
 import tempfile
 import unittest
+import yaml
 from pathlib import Path
 from validate_spec import validate
 
@@ -69,6 +70,44 @@ class GovernanceTests(unittest.TestCase):
         def change(r):
             p=r/'profiles/models/seedance_2_0.yaml';p.write_text(p.read_text().replace('verification_status: PARTIAL','verification_status: MEASURED'))
         self.mutate(change,'MEASURED without scoped samples')
+
+    def test_task_index_omission(self):
+        self.mutate(lambda r:self.json_change(r,'governance/contract_index.json',lambda d:d['tasks'].pop('TASK-026')),'Task index coverage mismatch')
+
+    def test_task_index_wrong_path(self):
+        self.mutate(lambda r:self.json_change(r,'governance/contract_index.json',lambda d:d['tasks']['TASK-026'].update(path=d['tasks']['TASK-025']['path'])),'task index path mismatch')
+
+    def test_empty_fixture_suite(self):
+        self.mutate(lambda r:self.json_change(r,'evals/contract_fixtures.json',lambda d:d.update(cases=[])),'Fixture index coverage mismatch')
+
+    def test_duplicate_fixture(self):
+        self.mutate(lambda r:self.json_change(r,'evals/contract_fixtures.json',lambda d:d['cases'].append(d['cases'][0])),'Missing/duplicate fixture IDs')
+
+    def test_removed_negative_fixtures(self):
+        self.mutate(lambda r:self.json_change(r,'evals/contract_fixtures.json',lambda d:d.update(cases=[c for c in d['cases'] if c['valid']])),'positive/negative fixture coverage missing')
+
+    def test_fixture_requirement_drift(self):
+        self.mutate(lambda r:self.json_change(r,'evals/contract_fixtures.json',lambda d:d['cases'][0].update(requirements=['R-001'])),'schema/requirement drift')
+
+    def test_capability_condition_removed(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/effective_capability.schema.json',lambda d:d.pop('allOf')),'Fixture capability-supported-rejects-')
+
+    def test_claim_promotion_condition_removed(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/common.schema.json',lambda d:d['$defs']['claim'].pop('allOf')),'Fixture profile-rejects-promoted-')
+
+    def test_provider_measured_claim_shape(self):
+        # Synthetic metadata exercises the provider branch, not real measurement.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)/'repo'
+            shutil.copytree(self.source,root,ignore=shutil.ignore_patterns('.git','__pycache__'))
+            cases = json.loads((root/'evals/contract_fixtures.json').read_text())['cases']
+            sample = next(c['instance']['capabilities']['first_frame'] for c in cases if c['id']=='profile-observed-scoped-samples')
+            path = root/'profiles/providers/PROVIDER_PROFILE_TEMPLATE.yaml'
+            data = yaml.safe_load(path.read_text())
+            data['verification_status'] = 'MEASURED'
+            data['capability_exposure'] = {'synthetic_feature': sample}
+            path.write_text(yaml.safe_dump(data,sort_keys=False))
+            self.assertEqual([], validate(root)[0])
 
 if __name__=='__main__':
     unittest.main()

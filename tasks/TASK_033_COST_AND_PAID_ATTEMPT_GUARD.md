@@ -42,4 +42,5 @@ Golden coverage: GS01, GS04, GS09, GS10, GS16, GS17, GS22, GS24, GS27.
 
 - [ ] Atomically reserve all applicable caps and one authorized candidate slot; persist linkage/hash/request before transport and reconcile append-only settlement.
 - [ ] Race duplicate Create/workers/fallback, exceed cap, expire/cancel, refund after output and ambiguous timeout: no blind resubmit, hidden extra candidate or quality auto-retry.
+- [ ] Persist explicit nullable shot_id/version_id on every attempt; reject omitted or empty links and a shot-bound attempt without its target version. A project probe may use nulls; target/request/authorization ownership and version consistency still require transactional checks.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
