@@ -13,3 +13,6 @@ Work on exactly one canonical task.
 9. Do not mark complete if any acceptance criterion fails.
 
 If a canonical change appears necessary, stop that change and produce an ADR/spec-change proposal instead of silently redesigning.
+
+## Implementation handoff
+Before application work, follow `governance/IMPLEMENTATION_HANDOFF.md`: establish actual roots and loaded instructions, pin the canonical revision, verify prerequisites and preserve criterion-complete evidence/checkpoints. This does not start application tasks during a specification audit.

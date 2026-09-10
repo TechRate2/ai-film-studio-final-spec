@@ -1,4 +1,4 @@
-# Canonical Manifest — V4.4.0
+# Canonical Manifest — V4.4.1
 
 Required roots:
 - `AGENTS.md`, `CLAUDE.md`, `CODEX.md`, `SPEC_VERSION`

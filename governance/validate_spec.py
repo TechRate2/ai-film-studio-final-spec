@@ -55,6 +55,11 @@ def validate(root: Path):
     required = ["AGENTS.md", "CLAUDE.md", "CODEX.md", "README.md", "MANIFEST.md", "SPEC_VERSION", "spec/00_SPEC_LOCK.md", "tasks/00_IMPLEMENTATION_ORDER.md", "evals/GOLDEN_SCENARIOS.md", "traceability/REQUIREMENTS_TRACEABILITY.csv", ".github/workflows/spec-governance.yml", "governance/validate_spec.py", "governance/test_validate_spec.py"]
     for path in sorted(set(required + idx.get("required_canonical_paths", []))):
         check((root / path).is_file(), f"Missing required file: {path}", "required_files")
+    handoff_readers = ["AGENTS.md", "CODEX.md", "CLAUDE.md", "prompts/MASTER_IMPLEMENTER_PROMPT.md", "prompts/CODEX_TASK_BOOTSTRAP.md", "prompts/CLAUDE_TASK_BOOTSTRAP.md", "governance/AI_CODING_PROTOCOL.md", "governance/TASK_STATE_MACHINE.md", "tasks/TASK_002_CANONICAL_SPEC_EMBEDDING_AND_TRACEABILITY.md"]
+    check(idx.get("handoff_readers") == handoff_readers, "Handoff reader index drift", "handoff")
+    for name in handoff_readers:
+        path = root / name
+        check(path.is_file() and "`governance/IMPLEMENTATION_HANDOFF.md`" in path.read_text(), f"{name}: missing mandatory handoff reading", "handoff")
     if errors:
         return errors, dict(checks)
     versions = dict(line.split("=", 1) for line in (root / "SPEC_VERSION").read_text().splitlines() if "=" in line)

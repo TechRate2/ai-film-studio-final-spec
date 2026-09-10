@@ -65,3 +65,6 @@ Run applicable typecheck/lint/unit/integration/contract/golden tests. Update tra
 
 ## Architecture change
 Follow `governance/CANONICAL_CHANGE_POLICY.md`. Future Class C canonical changes require explicit owner approval before implementation.
+
+## Implementation handoff
+Before application work, follow `governance/IMPLEMENTATION_HANDOFF.md`: establish actual roots and loaded instructions, pin the canonical revision, verify prerequisites and preserve criterion-complete evidence/checkpoints. This does not start application tasks during a specification audit.

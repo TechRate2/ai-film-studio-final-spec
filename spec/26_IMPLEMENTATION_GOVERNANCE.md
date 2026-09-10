@@ -28,3 +28,11 @@ Task reports include exact files/symbols/migrations/API routes/tests and golden-
 
 ## Cross-agent workflow
 Recommended: one model implements, another independently reviews. The second model receives the task/spec and diff, not only the first model's summary.
+
+
+## Executable handoff and evidence currency
+`governance/IMPLEMENTATION_HANDOFF.md` defines the implementation-root instruction bridge, pinned spec adoption, baseline environment decisions, task receipts and resume protocol. Root agent instructions must actually load; a spec directory's mere presence is not sufficient. TASK-002 verifies discovery and CI wiring. This is implementation governance, not authorization to execute application tasks during a specification audit.
+
+Checkpoint commits may preserve PARTIAL/BLOCKED work and tests with explicit known failures; they are not acceptance or release. COMPLETE requires every criterion in the task packet (including prose acceptance requirements), prerequisite task/phase receipts and exact code/test evidence for the candidate implementation tree. Evidence must name its spec revision, implementation revision, environment, command/result and artifact/log. A changed relevant implementation invalidates prior proof; rerun affected checks before promotion. Never mark a skipped, unrun, fixture-only or unexplained failing real gate as passed. CI success on the spec alone proves no application behavior.
+
+Do not weaken acceptance assertions, remove failing scenarios, disable checks or relabel critical requirements merely to pass. Legitimate test correction requires a stated erroneous expectation, canonical authority and review of the replacement's equivalent coverage. Independent review must inspect the actual diff and evidence; self-review is recorded honestly and is not described as another reviewer. Missing an explicitly required review blocks the corresponding gate. Instructions do not supersede platform access controls or authorize spending.

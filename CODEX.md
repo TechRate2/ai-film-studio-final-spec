@@ -7,3 +7,6 @@ For a specification-audit assignment, follow the specification-maintenance scope
 Workflow: `REPOSITORY REALITY → GAP MAP → PLAN → IMPLEMENT → TEST → GOLDEN → SPEC AUDIT → TRACEABILITY → REPORT`.
 
 Do not run an open-ended whole-project pursuit. Respect safety prerequisites even when task numbers are non-sequential: TASK-032 and TASK-033 precede any real billable TASK-030 Seedance smoke. Provider/model expansion uses the non-numbered expansion/probe templates and must not rewrite Director.
+
+## Implementation handoff
+Before application work, follow `governance/IMPLEMENTATION_HANDOFF.md`: establish actual roots and loaded instructions, pin the canonical revision, verify prerequisites and preserve criterion-complete evidence/checkpoints. This does not start application tasks during a specification audit.
