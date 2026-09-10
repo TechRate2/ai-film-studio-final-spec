@@ -1,3 +1,5 @@
+> Current 4.4.1 handoff hardening: `evidence/IMPLEMENTATION_HANDOFF_REVIEW.md` records the latest governance delta and 265-file inventory. Earlier audit counts/results below remain historical evidence. Product scope is unchanged from 4.4.0.
+
 > Subsequent 4.4.0 owner-approved scope extension: see `evidence/LOCALIZATION_DESIGN_EVIDENCE.md` for original-video subtitles/dubbing, the 262-file inventory, new release partition and current validation. The 4.3.x findings and counts below are historical core-audit evidence, not the current manifest. No application task is completed by either audit.
 
 # Final Canonical Specification Audit — V4.3.1

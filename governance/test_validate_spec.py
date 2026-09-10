@@ -135,5 +135,16 @@ class GovernanceTests(unittest.TestCase):
     def test_localization_snapshot_required(self):
         self.mutate(lambda r:self.json_change(r,'schemas/localization_review.schema.json',lambda d:d['required'].remove('expected_project_version_id')),'Critical required fields missing')
 
+    def test_handoff_read_omission(self):
+        def change(r):
+            p=r/'CLAUDE.md';p.write_text(p.read_text().replace('`governance/IMPLEMENTATION_HANDOFF.md`','omitted'))
+        self.mutate(change,'missing mandatory handoff reading')
+
+    def test_handoff_index_omission(self):
+        self.mutate(lambda r:self.json_change(r,'governance/contract_index.json',lambda d:d['handoff_readers'].pop()),'Handoff reader index drift')
+
+    def test_handoff_guide_missing(self):
+        self.mutate(lambda r:(r/'governance/IMPLEMENTATION_HANDOFF.md').unlink(),'Missing required file')
+
 if __name__=='__main__':
     unittest.main()

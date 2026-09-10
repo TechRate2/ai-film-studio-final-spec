@@ -18,7 +18,7 @@ Every substantial coding session must identify exactly one active task packet. B
 7. **Self-audit** — compare exact behavior against canonical requirements.
 8. **Independent review** — preferably another model/reviewer checks drift, cost and continuity risks.
 9. **Traceability** — populate implementation refs/test refs; use PARTIAL rather than false completion.
-10. **Commit** — only after acceptance evidence exists.
+10. **Checkpoint or accept** — commit partial work with explicit PARTIAL/BLOCKED status when needed; promote COMPLETE only after current acceptance evidence exists.
 
 ## Anti-drift
 The agent may not redesign architecture because another pattern is fashionable or easier to code. It may propose an ADR, but must not silently implement a canonical change.
@@ -34,3 +34,6 @@ Never mark a task complete because code compiles. Completion requires its accept
 
 ## Core-first extension execution
 `tasks/00_IMPLEMENTATION_ORDER.md` and the release_gate traceability field keep the main studio ahead of the standalone localization extension. Do not start TASK-044 until TASK-043 and Phase 6 pass. Persist a compact checkpoint at each accepted task: spec commit, active task/phase, exact implementation/test evidence, unresolved blockers and next eligible task. Resume from that evidence, not chat memory or a fabricated completion percentage. Changes to core schema defaults must preserve old fixtures and add targeted migration/counterexample evidence. Use the current manifest/index counts; never hardcode the old task count in agent prompts.
+
+## Implementation handoff
+Before application work, follow `governance/IMPLEMENTATION_HANDOFF.md`: establish actual roots and loaded instructions, pin the canonical revision, verify prerequisites and preserve criterion-complete evidence/checkpoints. This does not start application tasks during a specification audit.

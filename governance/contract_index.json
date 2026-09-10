@@ -1,5 +1,5 @@
 {
-  "version": "4.4.0",
+  "version": "4.4.1",
   "counts": {
     "specs": 48,
     "tasks": 46,
@@ -1755,7 +1755,10 @@
     "evidence/LOCALIZATION_DESIGN_EVIDENCE.md",
     "tasks/TASK_044_SOURCE_VIDEO_SUBTITLES.md",
     "tasks/TASK_045_DUBBING_AND_RETIMING.md",
-    "tasks/TASK_046_LOCALIZATION_REVIEW_AND_RELEASE.md"
+    "tasks/TASK_046_LOCALIZATION_REVIEW_AND_RELEASE.md",
+    "governance/IMPLEMENTATION_HANDOFF.md",
+    "docs/adr/ADR_0003_IMPLEMENTATION_HANDOFF.md",
+    "evidence/IMPLEMENTATION_HANDOFF_REVIEW.md"
   ],
   "fixture_ids": [
     "paid-unknown-reserved",
@@ -2017,5 +2020,16 @@
       "terminal_task": "TASK-046",
       "requires": "CORE"
     }
-  }
+  },
+  "handoff_readers": [
+    "AGENTS.md",
+    "CODEX.md",
+    "CLAUDE.md",
+    "prompts/MASTER_IMPLEMENTER_PROMPT.md",
+    "prompts/CODEX_TASK_BOOTSTRAP.md",
+    "prompts/CLAUDE_TASK_BOOTSTRAP.md",
+    "governance/AI_CODING_PROTOCOL.md",
+    "governance/TASK_STATE_MACHINE.md",
+    "tasks/TASK_002_CANONICAL_SPEC_EMBEDDING_AND_TRACEABILITY.md"
+  ]
 }

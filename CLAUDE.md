@@ -9,3 +9,6 @@ Use one canonical numbered task per implementation session. Read `governance/AI_
 Implement vertically; preserve provider-neutral Director ports, EffectiveCapability resolution, scoped canon/ActiveContextPack, continuity dependencies, artifact currency/versioning, all-source keyframes, CompositionTimeline/FinalMaster and paid-attempt rules. Never create a new paid media attempt automatically after QA rejection or ambiguous timeout.
 
 Before completion run applicable tests/Golden Scenarios, update traceability, and self-audit against canonical requirements. If a future canonical change is genuinely needed, prepare ADR/spec-change proposal instead of silently applying it.
+
+## Implementation handoff
+Before application work, follow `governance/IMPLEMENTATION_HANDOFF.md`: establish actual roots and loaded instructions, pin the canonical revision, verify prerequisites and preserve criterion-complete evidence/checkpoints. This does not start application tasks during a specification audit.

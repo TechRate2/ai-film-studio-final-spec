@@ -1,4 +1,4 @@
-# Canonical Implementation Order V4.4.0
+# Canonical Implementation Order V4.4.1
 
 Task numbers are stable identifiers, **not permission to execute in numeric order when a dependency says otherwise**. Do not execute the whole project as one autonomous coding run. Phase exit gates are binding.
 
