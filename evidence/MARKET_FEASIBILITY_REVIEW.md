@@ -1,5 +1,88 @@
 # Market, production pain and feasibility review
 
+> Latest review: 2026-09-11, specification 4.4.2. The new workflow audit below supersedes the earlier endpoint-retrieval limitation and QA-contract assessment. Earlier sections preserve their dated evidence, not current execution claims.
+
+## 2026-09-11 workflow quality and cost audit
+
+### Scope and conclusion
+
+Baseline main: `1be7e30f0c4ca60a038b00ec03db13172603c380`, tree `a4d8d731f741e7a154cf123da5edeb99869109c6`, version 4.4.1. All 265 inventoried paths were reconciled; every non-self-referential hash matched the preceding full audit. This pass re-read the relevant Director, research, creative, production, compiler, QA, spend, benchmark and task contracts and inspected current official sources. It is a continuation of the recorded whole-repository audit, not a claim that all files were newly reread line by line or that the application was run.
+
+Two HIGH gaps are confirmed: contradictory QA could be stored as ACCEPTABLE, and prompt-implied API operation did not have an explicit preflight conformance case. Three MEDIUM gaps concern negative route cost, complete-route cost comparison and stale provider-source discovery. The pre-edit Q01–Q05 matrix records authority, impact and minimal fixes. Changes preserve the Generalist Director and existing task graph; no additional agent/service or application feature is warranted.
+
+The system should maximize accepted creative value within constraints, not model settings, number of searches, reasoning tokens or generated candidates. The contract now better prevents avoidable errors. Whether its Director makes better films or spends less than competitors remains a measured implementation question.
+
+### Current commercial evidence and limits
+
+Sources in this subsection were inspected 2026-09-11. Product pages establish public capabilities; documentation establishes stated behavior. Neither establishes a project's acceptance probability. Embedded examples and demonstrations were identified, but no full video playback, frame/audio evaluation, competitor account run or paid comparison was performed. Published examples are selected successes without a complete attempt/cost denominator.
+
+| Source | What was verified | Design implication — our inference |
+|---|---|---|
+| [Topview](https://www.topview.ai/) and [Canvas](https://www.topview.ai/canvas) | Public positioning includes conversational scene planning, model selection, editable shots, drama and reference analysis. | These are market expectations, not unique proof of our advantage. Compare the effort to finish and revise an accepted project. |
+| [Runway workflow Agent](https://help.runwayml.com/hc/en-us/articles/53645211363475-Building-and-running-Workflows-with-Agent) | Documents estimated-credit approval and automatic execution settings; acknowledges a completed workflow can have missing node outputs. | Job completion must not equal accepted project completion. Preserve per-artifact QA and FinalMaster gates. |
+| [LTX Studio](https://ltx.io/studio) | Public workflow joins scripts, reusable character/object/location Elements, storyboards, timeline and sound. | Keep project-level state and editable assembly; storyboards remain selective in this product. |
+| [Runway image-to-video guide](https://help.runwayml.com/hc/en-us/articles/48324313115155-Image-to-Video-Prompting-Guide) | Gen-4.5-oriented guide pairs prompts with example results, emphasizes motion and explains conflict between image motion cues and requested motion. | Inspect reference/prompt agreement before spending. This is a scoped hypothesis for other models, never an inherited Seedance default. |
+| [AtlasCloud reference guide](https://www.atlascloud.ai/blog/case-studies/generative-ai-model-seedance-2-0-a-guide-to-all-round-reference) | A provider-published Seedance 2.0 reference tutorial is available with examples. | Use examples to design controlled probes. The article's fixed identity/motion conditioning ratio has no project calibration and must not become a compiler rule. |
+| [ElevenLabs Dubbing Studio](https://elevenlabs.io/docs/eleven-creative/products/dubbing/dubbing-studio) | Documents speaker/clip editing, history and fixed-versus-dynamic timing trade-offs; the page now labels the product maintenance-only. | Reuse the proven interaction pattern, not a dependency on that UI's future development. Preserve timing, translation, speaker and version controls in our separate extension. |
+| [WhisperX](https://github.com/m-bain/whisperX) | Maintainer documents overlap, speaker attribution and alignment limitations. | Unknown word times and uncertain speakers require review paths; automatic alignment cannot claim universal precision. |
+
+The earlier 13-product map remains useful category coverage. This refresh is a targeted primary-source investigation of quality/cost decisions, not a worldwide census or an invented competitor ranking. No claim is made that a competitor lacks undocumented continuity, billing or safety protections.
+
+### Seedance and AtlasCloud decisions
+
+`evidence/SEEDANCE_KNOWLEDGE_STATUS.md` contains the dated endpoint and billing findings, including their source links. Exact public endpoint contracts can now be inspected for the owner's intended provider. Their existence removes an information-retrieval gap; it does not qualify an account or prove output quality.
+
+Keep 2.0 and 2.5 profiles and conformance tests independent. Resolve each exact endpoint operation before compiling; distinguish requested generation from provider enhancement. Inspect the account-specific quote for the exact payload and retain its estimate status. None of this authorizes generation or unlocks UNKNOWN capability layers. Vietnamese native dialogue, reference stability and long-sequence acceptance require their own samples.
+
+### Decision-by-decision audit
+
+OK means an existing contract covers the behavior; it does not mean implemented or empirically successful. All numbered implementation packets remain future work. Contract fixes below apply to the existing requirement mappings.
+
+| Step / canonical owner | Decision and durable output | Failure the implementation must catch | Assessment and proof target |
+|---|---|---|---|
+| Brief and scope — specs 02–03, 20 | Intent, audience, hard constraints, output language and complexity horizon determine scope. | A short multi-episode story is misrouted as disposable B-roll; UI locale changes dialogue. | OK; GS01/05/11. No fixed genre branch or second Director. |
+| Ingestion — specs 06, 41, 43 | Validate assets/rights; resolve entities; assign reference role, lock and lifetime. | Camera reference leaks face/background; corrupt upload or untrusted instructions enter Canon. | OK; GS02/18/23; inspect provenance and isolation, not only successful upload. |
+| Research — specs 04, 33, 40 | Identify a material uncertainty, reuse fresh evidence or search under shared limits, distill claims. | Repeated-source false corroboration, stale model fact, recursive research budget reset. | OK; GS06/25; decision-linked sources and persisted counters are required. |
+| Creative direction — specs 05, 10, 39 and filmcraft | Choose viewer promise, information/emotional progression, performance, motivated camera and payoff. | Generic cinematic adjectives hide missing scene purpose; every beat becomes a fast cut. | OK + EMPIRICAL_ONLY; GS02/07/13; evaluate complete scenes and viewer intent. |
+| Canon and context — specs 07–08, 32 | Resolve identity/aliases, world truth, individual knowledge and minimal ActiveContextPack. | A character acts on another character's secret; full Bible is repeatedly submitted. | OK; GS05/27; test asymmetric knowledge and concurrent updates. |
+| Production route — spec 11 | Compare reuse/still/motion/full generation and complete-route economics. | Lowest video price wins despite costly required audio/post; UNKNOWN or negative price looks free. | Q02/Q04 fixed; TASK-019, GS04/14 and schema boundary fixtures. |
+| Segmentation and references — specs 11–13 | Choose meaningful continuous/segmented/continuation units and the smallest sufficient inputs. | Automatic maximum duration, fixed small chunks, or mandatory keyframes inflate failure/cost. | OK; GS03/08/13/14/16; NONE must produce zero image work. |
+| Compile and expose — specs 14–16, 31, 46 | Pin universal intent, independent model/provider evidence, all five capability layers and compiled request. | Prompt implies editing while parameters request reference generation; newer model inherits old syntax. | Q03 fixed; TASK-027 and GS03 conformance variants. Actual adherence is empirical. |
+| Audio planning — specs 09, 42 | Decide native audio, controlled voice, narration, ambience/music and subtitle language. | English instruction text silently changes Vietnamese dialogue; unnecessary lip-sync/TTS is purchased. | OK + EMPIRICAL_ONLY; GS07/11/17. Preserve requested language and compare sufficient routes. |
+| Authorize and submit — specs 18, 29, 44 | Bind approved slots, request hashes, worst-case liability and durable submission identity. | Estimate is mistaken for a cap; local timeout or disappointing output triggers another paid call. | OK; GS10/22/24/27. Unknown liability blocks; no extra candidates by default. |
+| Dependency scheduling — specs 12, 21 | Parent acceptance releases a child with observed Baton plus canonical identity. | Successful upstream task releases an unaccepted or rejected parent. | OK; GS03/09/10; verify actual child call count remains zero. |
+| QA and acceptance — spec 19 | Evaluate required conditions and allowed imperfections; persist evidence and permitted acceptance. | Aesthetic mean/self-confidence overrides failed identity or missing required checks. | Q01 fixed; TASK-034, GS10 and negative schema/mutation tests. Calibration remains empirical. |
+| Contextual revision — specs 17, 21 | Smallest affected modality, immutable new version, incoming/user/outgoing continuity sandwich. | Subtitle typo spends video; changed ending silently invalidates the next accepted shot. | OK; GS09/11/21; selective STALE propagation and reversible acceptance. |
+| Assembly and final export — spec 42 | Compile durable timeline from accepted CURRENT versions; validate full master. | Missing/duplicated ranges, wrong language, audio holes or stale source produce false completion. | OK; GS19; do not infer FinalMaster success from node completion. |
+| Learn and recover — specs 22, 29, 35 | Scoped outcome evidence, versioned state, restore and controlled provider upgrades. | Technical failure teaches wrong taste; restart loses liability; new alias silently changes behavior. | OK + EMPIRICAL_ONLY; GS24/27/28; retain confounders and historical snapshots. |
+| Separate localization — spec 47 | Source video → transcript/speakers → translation → optional voice/subtitles → deterministic alignment/export. | Forced mouth/video regeneration, bad speaker mapping, stale auto-fix or hidden new TTS. | OK + EMPIRICAL_ONLY; TASK-044–046 after core, GS29–33. Keep source-preserving limits. |
+
+### What higher-quality reasoning should actually change
+
+For a quiet dramatic reveal, the Director may choose a held two-shot, a delayed reaction and silence because the viewer needs to notice who understood the secret. An orbit, several independent gestures and explanatory dialogue could weaken that purpose while increasing generation difficulty. For a product demonstration, exact verified packaging and a readable action may outweigh simulated lens spectacle. These are original illustrative directing decisions, not model-performance claims.
+
+The intelligence loop already has the needed pieces: relevant evidence and skills → explicit intent/constraints → bounded critique of a concrete risk → feasible production route → observable acceptance. Use a more capable reasoning configuration only when it measurably improves decisions enough to justify its latency/cost. Do not prescribe a permanent winning LLM or send the full repository into every turn. A future model/profile/compiler upgrade must preserve the same neutral contracts and pass relevant regression gates.
+
+Research should answer a decision-changing question, such as whether an endpoint accepts the chosen reference mode, rather than collect generic inspiration indefinitely. Prompt refinement before generation can be cheap; repeated paid generations are not an implicit continuation of reasoning. The existing authorization boundary remains binding.
+
+### Cost and empirical qualification
+
+Report generation cost per unique accepted source second separately from total finished-project cost, human intervention time and time to first accepted master. Include failed/rejected spend. Existing media, native sound, external assets and deterministic edits may avoid unnecessary generative stages, but compute/storage/rights costs still exist. A cheaper provider or lower tier is useful only if the required output remains acceptable.
+
+Before claiming an advantage, pre-register representative briefs and acceptance criteria under `evals/BENCHMARK_RUBRIC.md`: exact product demonstration, emotional reaction, multi-speaker Vietnamese dialogue, readable action, reference-isolated camera movement, factual explainer, long-form continuation and source-video localization. Compare matched constraints, recorded human work and all attempted outputs. Perform decision-only and failure/restart tests without paid APIs first; any media comparison requires credentials and an explicit sample/budget gate. Do not tune on selected successes and report them as unseen-test performance.
+
+Open empirical items: account exposure and deployed version, effective pricing, native Vietnamese/pronunciation quality, practical reference ceiling, duration/action reliability, preservation after revisions, QA false-acceptance rate and real user effort versus competitors. These do not justify another speculative architecture layer. They do prevent promises of universal film quality, perfect autonomy or guaranteed cost savings.
+
+### Exact 4.4.2 changes and verification
+
+The change inventory and validation results are recorded in `evidence/FINAL_AUDIT_REPORT.md`; Q01–Q05 are in `evidence/AUDIT_ISSUE_MATRIX.csv`. ADR 0004 records the contract decision. Source discovery leaves profiles PARTIAL/non-routable and all 96 requirement statuses NOT_STARTED. No application, paid generation or competitor trial was executed.
+
+Verdict: **READY WITH NON-BLOCKING EMPIRICAL UNKNOWNS** for staged implementation. This does not certify commercial release, full model qualification or superiority. The next useful progress is implementation and scoped evidence through the existing gates, not indefinite expansion of the specification.
+
+---
+
+## Historical review — 2026-09-09
+
 Review date: 2026-09-09. Baseline: main commit d720f8a8e51dd3c893ccca8b3fd7e7b404db10e7, specification 4.3.1. This is evidence and an evaluation plan, not a second canonical specification or a claim of implemented features. Existing requirements retain their authority. No application implementation, competitor account trial, paid generation or account-entitlement probe was performed.
 
 ## Decision

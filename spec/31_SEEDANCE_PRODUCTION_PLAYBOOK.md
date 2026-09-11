@@ -34,3 +34,5 @@ Treat as a separate model profile. Do not inherit 2.0 limits, bias, timing or re
 
 ## Evidence limit
 The included public profile reports experiments but does not supply this project's complete sample ledger or exact account/endpoint scope. These are hypotheses for probes, not measured universal defaults. Never drop a user composition lock because a source says an image always wins; reconcile the conflicting reference or block. Stage count, 15-second examples and reference ceilings are not fixed runtime rules. See evidence/SEEDANCE_KNOWLEDGE_STATUS.md.
+
+The dated AtlasCloud endpoint refresh in that evidence file informs provider-scoped conformance cases, not universal Seedance defaults. TASK-027 must apply spec/14's operation/prompt/parameter agreement to each independently qualified route. Native generation, enhancement, frame rate and container choices are distinct output settings; do not copy one model version's names or behavior into another. Endpoint existence alone does not establish this account's access, Vietnamese performance or acceptance probability.

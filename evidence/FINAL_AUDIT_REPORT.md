@@ -1,4 +1,59 @@
-> Current 4.4.1 handoff hardening: `evidence/IMPLEMENTATION_HANDOFF_REVIEW.md` records the latest governance delta and 265-file inventory. Earlier audit counts/results below remain historical evidence. Product scope is unchanged from 4.4.0.
+# Current audit closure — 4.4.2, 2026-09-11
+
+## A. Inventory and inspection scope
+Baseline main `1be7e30f0c4ca60a038b00ec03db13172603c380` has 265 inventoried files; all non-self-referential hashes matched before edits. The original full read and subsequent additions remain recorded below and in the inventory. This pass re-read the affected logical groups and current official sources; it does not claim a second fresh line-by-line read of every unchanged file. Final tree: **266 files**, with **22 modified and one added** relative to this baseline. Canonical counts remain **48 specs, 45 schemas, 46 numbered tasks, 8 phases, 33 Goldens and 96 requirements**. There are still 38 skill cards plus their README, ten filmcraft documents and fourteen profile files. No application code or paid samples were created.
+
+## B. Findings
+Pre-edit Q01–Q05 are preserved in `evidence/AUDIT_ISSUE_MATRIX.csv`. This pass found no additional CRITICAL issue, two HIGH and three MEDIUM issues. HIGH Q01: QAReport admitted ACCEPTABLE with MAJOR/FATAL or required FAIL/UNKNOWN; four baseline counterexamples reproduced it. HIGH Q03: prompt-implied API operation could disagree with requested mode/parameters without an explicit conformance acceptance case. MEDIUM Q02: negative route estimates were valid; Q04: total-route comparison needed a stronger acceptance case; Q05: older endpoint retrieval evidence was stale. All five are resolved at contract/evidence level. Runtime and media proof remain pending.
+
+## C. Exact files changed
+| File | Purpose |
+|---|---|
+| `MANIFEST.md` | Current canonical version. |
+| `README.md` | Active version and current audit entry; preserve historical handoff version. |
+| `SPEC_VERSION` | Version 4.4.2 and date. |
+| `docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md` | New Class B decision, alternatives and review consequences. |
+| `spec/11_PRODUCTION_STRATEGY_AND_SCENE_COMPLEXITY.md` | Complete feasible route costs, uncertainty and bounded-liability handoff. |
+| `spec/14_UNIVERSAL_VIDEO_SPEC.md` | Prompt/input-mode/parameter agreement before spending. |
+| `spec/19_QUALITY_GATES_QA.md` | Acceptance veto, policy-owned required checks and calibrated review. |
+| `spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md` | Provider-scoped conformance and independent output settings. |
+| `schemas/production_strategy.schema.json` | Reject negative known route cost; retain null. |
+| `schemas/qa_report.schema.json` | Reject contradictory ACCEPTABLE results. |
+| `tasks/TASK_019_PRODUCTION_STRATEGY_ENGINE.md` | Falsifiable complete-cost and uncertainty acceptance. |
+| `tasks/TASK_027_MODEL_PROMPT_COMPILERS.md` | Falsifiable operation/parameter conformance. |
+| `tasks/TASK_034_MEDIA_QA_AND_DIAGNOSIS.md` | Schema and domain acceptance guards, policy completeness/calibration. |
+| `evals/GOLDEN_SCENARIOS.md` | GS03/10/14 adversarial variants; current version heading. |
+| `evals/contract_fixtures.json` | Thirteen additional positive/negative contract cases. |
+| `governance/contract_index.json` | Version, ADR required path and exact fixture index. |
+| `governance/test_validate_spec.py` | Two mutations prove removal of new guards is caught. |
+| `profiles/models/seedance_2_5.yaml` | Refresh source-discovery note; do not promote runtime claims. |
+| `evidence/SEEDANCE_KNOWLEDGE_STATUS.md` | Dated exact-provider endpoint and billing evidence. |
+| `evidence/MARKET_FEASIBILITY_REVIEW.md` | Sixteen workflow groups, commercial source comparison, limits and economics. |
+| `evidence/AUDIT_ISSUE_MATRIX.csv` | Q01–Q05 findings and resolutions. |
+| `evidence/AUDIT_INVENTORY.csv` | Final path identities and affected-group review. |
+| `evidence/FINAL_AUDIT_REPORT.md` | This closure; older evidence remains dated below. |
+
+## D. Architecture verification
+The sixteen-step current workflow crosswalk is in `evidence/MARKET_FEASIBILITY_REVIEW.md`; the detailed original architecture verification below remains the baseline. Generalist Director, research-first distillation/stop rules, provider neutrality, adaptive scope, StyleDNA, filmcraft retrieval, Reference Intelligence, Project Canon, Character Knowledge and ActiveContextPack remain intact. Adaptive segmentation, Continuity DAG/Baton and optional keyframes including NONE are retained. UniversalVideoSpec compilation is strengthened; independent ModelProfile/ProviderProfile and five-layer EffectiveCapability remain unchanged. SpendAuthorization, PaidAttemptGuard and no blind paid retry are unchanged. Contextual revision, Continuity Sandwich, ShotVersionGraph and artifact currency remain first-class. Voice/localization, CompositionTimeline, FinalMaster, VN/EN UI, rights/security, long-form/series and scoped taste/outcome learning retain their gates. No new visible Director or fixed niche pipeline was introduced. Spec lock is unchanged.
+
+## E. Schema integrity
+All 45 Draft 2020-12 schemas validate; 288 local-reference assertions resolve. The dangerous enum/state invariants remain consistent. 126 contract fixtures now include positive review/optional uncertainty and negative acceptance/negative-cost cases. Cross-module shapes stay in the same normative schema tree. Required QA check completeness and media truth require domain/runtime validation; JSON Schema alone cannot prove them.
+
+## F. Task readiness
+All 46 task records, prerequisites, required readings and requirement/Golden mappings pass structured validation. Only TASK-019/027/034 acceptance is tightened; their existing R-083, R-017/R-030 and R-020/R-057 mappings cover these cases, so no duplicate requirements or new task IDs were added. Task numbering is not execution order: paid-safety prerequisites still precede real media, and localization follows core release. Every task remains subject to criterion-complete evidence and PARTIAL/BLOCKED reporting. All 96 requirement statuses remain NOT_STARTED. A document cannot guarantee a future coding agent will obey; independent evidence gates must reject false completion.
+
+## G. Exact validation
+Offline governance: 4337 assertions PASS, including 45 metaschemas, 288 local-reference assertions, 126 fixtures and all task/phase/traceability/profile checks. All 33 governance tests PASS, including new negative mutations. Final diff whitespace and inventory hash/path checks PASS. Commands: `python governance/validate_spec.py --json`, `python -m unittest discover -s governance -p 'test_*.py' -q`, and `git diff --check`, with dependencies from `governance/requirements.txt`. GitHub checks and branch adoption are verified against the published commit separately; this report does not infer them from local success. No application, media playback, account trial or provider generation is certified.
+
+## H. Remaining empirical unknowns
+Current account entitlement/prices, deployed version, practical reference limits, native Vietnamese/dialogue performance, acceptance probability, continuation reliability, revision preservation and evaluator calibration remain unmeasured. Public endpoint documentation is now available for the intended provider, but no runtime claim was promoted. Commercial demos and documentation cannot establish this project's quality/cost superiority. These are scoped integration/release gates, not reasons for endless architecture expansion.
+
+## I. Verdict
+**READY WITH NON-BLOCKING EMPIRICAL UNKNOWNS** for staged implementation. Commercial release and advertised model/language capabilities still require their actual acceptance evidence. No promise of universal perfection, autonomous success in all genres or guaranteed profitability is made.
+
+---
+
+> Historical 4.4.1 handoff hardening: `evidence/IMPLEMENTATION_HANDOFF_REVIEW.md` records that governance delta and its 265-file inventory. Earlier audit counts/results below remain historical evidence. Product scope is unchanged from 4.4.0.
 
 > Subsequent 4.4.0 owner-approved scope extension: see `evidence/LOCALIZATION_DESIGN_EVIDENCE.md` for original-video subtitles/dubbing, the 262-file inventory, new release partition and current validation. The 4.3.x findings and counts below are historical core-audit evidence, not the current manifest. No application task is completed by either audit.
 

@@ -31,4 +31,6 @@ Golden coverage: GS09, GS10, GS19, GS24.
 
 - [ ] Use evidence-bearing QA with required checks; accepted pointer changes only after permitted acceptance, never from a raw success response.
 - [ ] FATAL/MAJOR/UNKNOWN critical QA yields review/block and zero paid retry calls; deterministic repair is scoped and preserves source history.
+- [ ] Reject ACCEPTABLE with MAJOR/FATAL or required FAIL/UNKNOWN at serialization and acceptance boundaries. Domain tests also reject an omitted/duplicated required check, a producer-downgraded required flag and mismatched policy/version. Optional UNKNOWN remains permitted where the actual policy allows it. No accepted-pointer change or dependent release occurs on these failures.
+- [ ] Auto-accept is disabled outside the evaluator's calibrated scope; a high self-rating and attractive isolated frames cannot override an assembled-scene continuity or required dialogue failure.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

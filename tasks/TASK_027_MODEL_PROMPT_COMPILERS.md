@@ -47,4 +47,5 @@ Golden coverage: GS03.
 
 - [ ] Compile and pin request, profiles, compiler version, reference mappings and preserved/degraded constraints; snapshot round trip is reproducible.
 - [ ] Missing HARD_LOCK binding or contradictory duration/audio cannot silently disappear; transport stays outside compiler and Director stays outside vendor syntax.
+- [ ] Exercise a provider contract whose prompt can imply reference/edit/extend operations. Contradictory prompt/mode/parameters block before submission; consistent requests preserve approved operation, source roles and explicit audio/output choices. Unsupported mode hints are not emitted. Synthetic conformance tests do not assert actual model adherence.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.

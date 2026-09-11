@@ -120,7 +120,6 @@ sources:
 unknowns:
 - Exact model version, endpoint/account entitlement, pricing and sample-scoped reliability
   are not verified for this project.
-- Official announcement inspected 2026-09-09 (published 2026-07-31); announced
-  capabilities are not project measurements. Newer API search extracts mention 2.5,
-  but the complete endpoint contract was not retrieved. Neither present availability
-  nor absence is established. See evidence/SEEDANCE_KNOWLEDGE_STATUS.md.
+- Public AtlasCloud endpoint documentation was retrieved 2026-09-11; this updates
+  source discovery, not runtime claim verification. Account entitlement, deployed
+  version and measured behavior remain unverified. See evidence/SEEDANCE_KNOWLEDGE_STATUS.md.

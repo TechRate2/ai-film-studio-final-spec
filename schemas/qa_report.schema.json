@@ -181,5 +181,50 @@
       "minLength": 1
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "ACCEPTABLE"
+          }
+        },
+        "required": [
+          "disposition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "severity": {
+            "enum": [
+              "PASS",
+              "MINOR"
+            ]
+          },
+          "checks": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "required": {
+                    "const": true
+                  },
+                  "status": {
+                    "enum": [
+                      "FAIL",
+                      "UNKNOWN"
+                    ]
+                  }
+                },
+                "required": [
+                  "required",
+                  "status"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

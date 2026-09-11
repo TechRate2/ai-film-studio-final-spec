@@ -1,4 +1,4 @@
-# AI Film Studio — Final Canonical Build Spec V4.4.1
+# AI Film Studio — Final Canonical Build Spec V4.4.2
 
 **Status:** CANONICAL SPECIFICATION — implementation evidence remains required
 **Repository role:** sole active source of truth for Codex, Claude and human engineers  
@@ -52,7 +52,7 @@ Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md
 Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
 
 ## Freeze rule
-**V4.4.1 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
+**V4.4.2 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
 See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.
 
@@ -60,3 +60,5 @@ See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_D
 After the main studio passes TASK-043/Phase 6, TASK-044–046 build a separate original-video subtitle/dubbing workspace, governed by `spec/47_SOURCE_VIDEO_LOCALIZATION.md`. It never creates video/images or modifies lips. Users select subtitles, dubbing or both, edit voice/style/speed and request bounded AI alignment with undo and explicit paid revisions. Core scope is R-001–R-088; the extension adds R-089–R-096 and a separate Phase 7 gate. See `docs/adr/ADR_0002_SOURCE_VIDEO_LOCALIZATION.md` and `evidence/LOCALIZATION_DESIGN_EVIDENCE.md`.
 
 For the implementation folder setup, first session and restart/acceptance workflow, read `governance/IMPLEMENTATION_HANDOFF.md`. Evidence for the 4.4.1 handoff hardening is in `evidence/IMPLEMENTATION_HANDOFF_REVIEW.md`.
+
+For the 4.4.2 quality/cost workflow audit and current provider-source evidence, see `evidence/MARKET_FEASIBILITY_REVIEW.md` and `docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md`.
