@@ -42,6 +42,12 @@ class GovernanceTests(unittest.TestCase):
     def test_auto_retry(self):
         self.mutate(lambda r:self.json_change(r,'schemas/qa_report.schema.json',lambda d:d['properties']['auto_paid_retry_allowed'].update(const=True)),'Invariant mismatch auto_paid_retry_allowed')
 
+    def test_qa_acceptance_veto_removed(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/qa_report.schema.json',lambda d:d.pop('allOf')),'Fixture qa-fatal-cannot-accept')
+
+    def test_negative_route_cost(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/production_strategy.schema.json',lambda d:d['properties']['routes']['items']['properties']['estimated_cost'].pop('minimum')),'Fixture strategy-cost-negative')
+
     def test_open_timeline(self):
         self.mutate(lambda r:self.json_change(r,'schemas/composition_timeline.schema.json',lambda d:d['properties']['export_target'].update(type='object')),'untyped open object')
 

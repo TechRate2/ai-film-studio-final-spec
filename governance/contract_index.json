@@ -1,5 +1,5 @@
 {
-  "version": "4.4.1",
+  "version": "4.4.2",
   "counts": {
     "specs": 48,
     "tasks": 46,
@@ -1758,7 +1758,8 @@
     "tasks/TASK_046_LOCALIZATION_REVIEW_AND_RELEASE.md",
     "governance/IMPLEMENTATION_HANDOFF.md",
     "docs/adr/ADR_0003_IMPLEMENTATION_HANDOFF.md",
-    "evidence/IMPLEMENTATION_HANDOFF_REVIEW.md"
+    "evidence/IMPLEMENTATION_HANDOFF_REVIEW.md",
+    "docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md"
   ],
   "fixture_ids": [
     "paid-unknown-reserved",
@@ -1873,7 +1874,20 @@
     "localization-review-rejects-missing-snapshot",
     "localization-review-rejects-auto-paid-retry",
     "localization-review-rejects-no-analysis-budget",
-    "localization-review-rejects-clip-without-timeline"
+    "localization-review-rejects-clip-without-timeline",
+    "qa-fatal-cannot-accept",
+    "qa-fatal-review",
+    "qa-major-cannot-accept",
+    "qa-major-review",
+    "qa-fail-cannot-accept",
+    "qa-fail-review",
+    "qa-unknown-cannot-accept",
+    "qa-unknown-review",
+    "qa-optional-unknown",
+    "qa-minor-warning",
+    "strategy-cost-negative",
+    "strategy-cost-zero",
+    "strategy-cost-unknown"
   ],
   "release_gates": {
     "CORE": {

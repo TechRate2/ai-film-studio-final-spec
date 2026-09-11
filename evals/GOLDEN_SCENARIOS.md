@@ -1,4 +1,4 @@
-# Golden Scenarios V4.3.1
+# Golden Scenarios V4.4.2
 
 These are behavioral acceptance scenarios, not aesthetic/virality guarantees. Tests may use deterministic fixtures unless explicitly marked as paid-provider smoke.
 
@@ -19,6 +19,8 @@ Three active characters, dialogue, action and cliffhanger. Persist identity/outf
 
 ### Required fixture and falsifiable assertions
 Fixture: three characters with weapon/injury/light state and unequal beat complexity. Assert typed stages, explicit split reasons, accepted source pins and DAG sequencing. Reject parent, then accept it: child submission count stays zero until acceptance. A 15-second provider ceiling fixture is synthetic and is not a current capability claim.
+
+Compiler conformance variant: supply a synthetic endpoint with explicit reference/edit/extend constraints and a prompt that implies the wrong operation. Assert zero submission, actionable conflict and unchanged approved intent. A consistent variant compiles supported mode, source bindings, duration, audio and output settings without leaking endpoint syntax into Director inputs. Repeat with unsupported mode hints; no invented parameter may be sent.
 
 ## GS04 — 120s Saturn sci-fi
 Use factual research for Saturn/space realism when available; separate Fact Pack from creative strategy; create mini-story rather than sightseeing; selective keyframes; mixed-media optimization allowed; no duplicate paid retry.
@@ -64,6 +66,8 @@ Potential upstream creation followed by timeout must not trigger blind second pa
 ### Required fixture and falsifiable assertions
 Inject crash before send, after upstream creation before ID persistence, during polling and after output persistence before event delivery. Assert durable job/certainty transitions, one upstream task maximum per uncertain candidate, reserved liability across restart and no reliance on chat/event delivery for truth.
 
+QA acceptance variant: serialize MAJOR/FATAL or required FAIL/UNKNOWN as ACCEPTABLE and assert rejection. Remove a policy-required identity check or mark it optional: domain acceptance still blocks, accepted pointer stays unchanged, dependent submissions and paid retries remain zero. A policy-permitted optional UNKNOWN does not fail solely for being unknown; evaluator self-confidence cannot bypass missing calibration.
+
 ## GS11 — UI locale vs content language
 Workspace can switch Vietnamese ↔ English without mutating project canon/output language. Separately changing project dialogue Vietnamese → Chinese after visual acceptance must not regenerate visuals unless chosen lip-sync route truly requires it. Voice identity remains same character identity.
 
@@ -87,6 +91,8 @@ Direct generation works without forced storyboard/keyframe.
 
 ### Required fixture and falsifiable assertions
 Fixture: simple B-roll with known direct route and no hard identity lock. Assert no storyboard/keyframe dependency and zero image submissions; compare an already accepted source asset and permit reuse without generation.
+
+Cost variant: two otherwise sufficient routes have different video, required voice and post costs. Assert comparison uses the same total-cost basis, not the lowest video price. Negative estimates fail; UNKNOWN remains unknown. A higher resolution/upscale option or extra irrelevant reference is not selected solely because it is available or discounted. Unbounded final liability blocks paid handoff even when the estimated price fits the cap.
 
 NONE has no selected keyframe, camera/composition pack or source dependency; reject such contradictory fields. Empty legacy prompt/bindings may be omitted or accepted only as empty. Reusing an actual accepted frame uses PREVIOUS_ACCEPTED_FRAME, not a hidden source binding inside NONE.
 

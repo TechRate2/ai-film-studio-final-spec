@@ -1,5 +1,17 @@
 # Seedance Knowledge Status
 
+## Current provider-document refresh, 2026-09-11
+
+The complete public AtlasCloud reference-to-video request pages were retrieved for [2.0](https://www.atlascloud.ai/docs/more-models/bytedance/seedance-2.0-reference-to-video/generateVideo) and [2.5](https://www.atlascloud.ai/docs/more-models/bytedance/seedance-2.5-reference-to-video/generateVideo). This supersedes the earlier retrieval limitation for this provider only. Both pages are documentation evidence, not account execution proof.
+
+For 2.5, the page distinguishes reference/edit/extend operations. Prompt-implied operation must agree with parameters; an explicit hint can catch parameter errors before task creation but does not prevent later prompt disagreement. Editing requires one source video, adaptive aspect and duration -1. The page identifies 4k-esr as enhancement of native 1080p, not native 4K. These are provider-scoped compiler facts, not inherited 2.0 behavior or measured quality.
+
+For 2.0, the separate page describes 4–15-second requests, up to nine images/three videos, and audio references requiring visual input. It warns that a repeated seed does not guarantee identical results. Parameter names and exposure must be checked independently for each version.
+
+[Billing documentation](https://www.atlascloud.ai/docs/billing/model-billing) describes a non-generating calculate endpoint with account-adjusted estimates; token-billed video settles on actual output. An estimate is not an upper bound. [Failure documentation](https://www.atlascloud.ai/docs/billing/refunds) describes release on terminal provider failure; a local timeout is not proof of that terminal state. Preserve spec/44 reconciliation and bounded liability.
+
+Account entitlement, immutable deployed version, current account price, Vietnamese dialogue quality, practical reference ceiling and accepted-second reliability remain UNKNOWN here. Zero project samples were generated. No bundled runtime claim is promoted; model profiles remain independent, PARTIAL and non-routable. TASK-030, spec/37 and the provider expansion template must qualify actual routes before use.
+
 ## Source inspection, 2026-09-08
 Inspected `https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills/blob/main/skills/seedance-2-5-skill/references/model-profile.md`, returned Git blob `3b9ba23388da5d58777c1ec9ae573ea69f4e1fed`.
 

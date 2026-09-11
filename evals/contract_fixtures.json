@@ -7947,6 +7947,484 @@
       "goldens": [
         "GS32"
       ]
+    },
+    {
+      "id": "qa-fatal-cannot-accept",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "FATAL",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-fatal-review",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "FATAL",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "USER_REVIEW",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-major-cannot-accept",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "MAJOR",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-major-review",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "MAJOR",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "PASS",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "USER_REVIEW",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-fail-cannot-accept",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "FAIL",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-fail-review",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "FAIL",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "USER_REVIEW",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-unknown-cannot-accept",
+      "schema": "qa_report.schema.json",
+      "valid": false,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "UNKNOWN",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-unknown-review",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "UNKNOWN",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "USER_REVIEW",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-optional-unknown",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "PASS",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "UNKNOWN",
+            "required": false,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "qa-minor-warning",
+      "schema": "qa_report.schema.json",
+      "valid": true,
+      "instance": {
+        "qa_id": "qa1",
+        "project_id": "p1",
+        "artifact_id": "external-frame",
+        "artifact_version_id": "v1",
+        "policy_version": "qa1",
+        "severity": "MINOR",
+        "checks": [
+          {
+            "name": "identity",
+            "status": "WARN",
+            "required": true,
+            "score": null,
+            "evidence": {
+              "artifact_refs": [
+                {
+                  "artifact_id": "accepted-clip",
+                  "version_id": "v1"
+                }
+              ],
+              "measurements": {},
+              "notes": "Compared canonical reference"
+            },
+            "notes": ""
+          }
+        ],
+        "disposition": "ACCEPTABLE",
+        "auto_paid_retry_allowed": false
+      },
+      "requirements": [
+        "R-020"
+      ],
+      "goldens": [
+        "GS10"
+      ]
+    },
+    {
+      "id": "strategy-cost-negative",
+      "schema": "production_strategy.schema.json",
+      "valid": false,
+      "instance": {
+        "strategy_id": "s1",
+        "project_id": "p1",
+        "version": 1,
+        "objective": "Use existing accepted footage where sufficient",
+        "routes": [
+          {
+            "scope_id": "scene1",
+            "mode": "EXISTING_MEDIA",
+            "reason": "Synthetic cost boundary fixture, not a route recommendation",
+            "estimated_cost": -1
+          }
+        ],
+        "cost_rationale": "Known nonnegative or explicitly unknown"
+      },
+      "requirements": [
+        "R-083"
+      ],
+      "goldens": [
+        "GS14"
+      ]
+    },
+    {
+      "id": "strategy-cost-zero",
+      "schema": "production_strategy.schema.json",
+      "valid": true,
+      "instance": {
+        "strategy_id": "s1",
+        "project_id": "p1",
+        "version": 1,
+        "objective": "Use existing accepted footage where sufficient",
+        "routes": [
+          {
+            "scope_id": "scene1",
+            "mode": "EXISTING_MEDIA",
+            "reason": "Synthetic cost boundary fixture, not a route recommendation",
+            "estimated_cost": 0
+          }
+        ],
+        "cost_rationale": "Known nonnegative or explicitly unknown"
+      },
+      "requirements": [
+        "R-083"
+      ],
+      "goldens": [
+        "GS14"
+      ]
+    },
+    {
+      "id": "strategy-cost-unknown",
+      "schema": "production_strategy.schema.json",
+      "valid": true,
+      "instance": {
+        "strategy_id": "s1",
+        "project_id": "p1",
+        "version": 1,
+        "objective": "Use existing accepted footage where sufficient",
+        "routes": [
+          {
+            "scope_id": "scene1",
+            "mode": "EXISTING_MEDIA",
+            "reason": "Synthetic cost boundary fixture, not a route recommendation",
+            "estimated_cost": null
+          }
+        ],
+        "cost_rationale": "Known nonnegative or explicitly unknown"
+      },
+      "requirements": [
+        "R-083"
+      ],
+      "goldens": [
+        "GS14"
+      ]
     }
   ]
 }

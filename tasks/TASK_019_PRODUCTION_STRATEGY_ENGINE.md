@@ -44,4 +44,5 @@ Golden coverage: GS04, GS14.
 
 - [ ] Compare existing media, still+motion, continuation and full generation for the same intent; costs and unknown acceptance estimates are explicit.
 - [ ] Select reusable footage when sufficient without buying video; a cheap route cannot drop product truth or hard locks.
+- [ ] Compare complete feasible route cost with category breakdown; a lower video unit price can lose when required audio/reference/post costs are higher. Reject negative estimates, preserve UNKNOWN and do not rank it as free. Require a bounded-liability estimate before handing any route to paid execution.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
