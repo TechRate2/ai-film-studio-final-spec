@@ -1,6 +1,6 @@
 # Dự án AI Film Studio: giải thích cho chủ sản phẩm
 
-Ngày đối chiếu: 2026-09-13. Bản hợp đồng: **4.4.2**. Mốc đọc: `main@01a7767d57dd0ab78dde4cf25e5fbf1f0ef4c649`, cây Git `e0c7a53d16c1f8cb6781c95bc5c5b462fc892e72`.
+Ngày đối chiếu: 2026-09-13. Bản hợp đồng hiện tại: **4.5.0** (cập nhật lựa chọn thoại/voice theo ADR-0005). Mốc dưới đây ghi nhận lượt đọc nền trước cập nhật. Mốc đọc: `main@01a7767d57dd0ab78dde4cf25e5fbf1f0ef4c649`, cây Git `e0c7a53d16c1f8cb6781c95bc5c5b462fc892e72`.
 
 Đây là tài liệu giải thích, không phải đặc tả thay thế. Khi có khác biệt, thứ tự thẩm quyền trong AGENTS.md và spec/00 vẫn quyết định. Các khả năng dưới đây là **hành vi phải xây và kiểm chứng**, không phải tính năng đã chạy.
 
@@ -20,7 +20,7 @@ Có **hai chức năng người dùng độc lập**: Studio tạo video mới; 
 
 ## 2. Đã có những tài liệu nào, dùng để làm gì?
 
-Đợt đọc này kiểm kê **266 file được Git theo dõi**, không tính dữ liệu nội bộ của Git. Sau bổ sung hướng dẫn này là 267 file. Nội dung của toàn bộ tập file được xem xét; các bản JSON fixture lặp lại được đối chiếu bằng bản gốc và phần khác biệt không mất dữ liệu, không tuyên bố đó là đọc lại từng dòng lặp theo nguyên văn. Các đoạn đầu ra bị cắt đã được đọc bù. Hash của 266 file được kiểm tra không đổi trước khi chỉnh sửa.
+Đợt đọc này kiểm kê **266 file được Git theo dõi**, không tính dữ liệu nội bộ của Git. Sau bổ sung hướng dẫn này là 267 file; V4.5.0 thêm một ADR, tổng hiện tại 268 file. Nội dung của toàn bộ tập file được xem xét; các bản JSON fixture lặp lại được đối chiếu bằng bản gốc và phần khác biệt không mất dữ liệu, không tuyên bố đó là đọc lại từng dòng lặp theo nguyên văn. Các đoạn đầu ra bị cắt đã được đọc bù. Hash của 266 file được kiểm tra không đổi trước khi chỉnh sửa.
 
 | Nhóm | Số file tại mốc đọc | Ý nghĩa dễ hiểu |
 |---|---:|---|
@@ -29,7 +29,7 @@ Có **hai chức năng người dùng độc lập**: Studio tạo video mới; 
 | schemas | 45 | Mẫu dữ liệu chính xác để frontend, backend và Agent hiểu cùng một cấu trúc |
 | tasks | 49 | 46 nhiệm vụ có số và 3 tài liệu thứ tự/template |
 | phases | 8 | Các cổng nghiệm thu trước khi đi tiếp |
-| evals | 3 | 33 tình huống Golden, rubric benchmark và 126 trường hợp dữ liệu mẫu |
+| evals | 3 | 33 tình huống Golden, rubric benchmark và 143 trường hợp dữ liệu mẫu hiện tại |
 | skills | 39 | 38 thẻ kỹ năng truy xuất chọn lọc và một README |
 | knowledge | 10 | Kiến thức làm phim: quyết định, đánh đổi, khi không nên dùng kỹ thuật |
 | profiles | 14 | Hồ sơ model/provider/ảnh/giọng và hướng dẫn; gồm 10 file YAML |
@@ -38,7 +38,7 @@ Có **hai chức năng người dùng độc lập**: Studio tạo video mới; 
 | prompts | 7 | Cách khởi động và giao việc cho coding agent |
 | governance | 11 | Luật thay đổi, nghiệm thu, bàn giao và chương trình kiểm tra tài liệu |
 | traceability | 3 | Nối 96 yêu cầu với task, schema, Golden và bằng chứng triển khai |
-| docs | 5 | Các quyết định kiến trúc; hướng dẫn này là file thứ sáu |
+| docs | 5 | Các quyết định kiến trúc tại mốc đọc; hiện nhóm có 7 file gồm hướng dẫn này và ADR-0005 |
 | .github | 3 | Mẫu issue/PR và CI kiểm tra hợp đồng |
 
 **Cả 96 yêu cầu hiện vẫn mang trạng thái NOT_STARTED trong sổ triển khai.** Điều đó đúng với repo đặc tả: chưa có bằng chứng ứng dụng thực hiện chúng. Số file nhiều không có nghĩa đã xây được nhiều phần mềm. Ngược lại, cũng không nên xóa schema/test chỉ để repo nhìn gọn hơn.
@@ -105,11 +105,17 @@ Bốn thứ độc lập: ngôn ngữ giao diện, ngôn ngữ hướng dẫn mo
 
 | Nhu cầu | Hướng xử lý trong thiết kế |
 |---|---|
-| Native audio đã được chứng minh tốt cho yêu cầu | Có thể dùng trực tiếp, vẫn kiểm tra đầu ra |
-| Cần giọng Việt ổn định nhưng native chưa đạt | Chọn route giọng có kiểm chứng; xét hình ảnh và khớp môi cần thiết; báo tổng tiền |
+| Native audio đã được chứng minh tốt và được policy cho phép | Có thể dùng trực tiếp, vẫn kiểm tra đầu ra |
+| Chọn thoại Việt trong policy ban đầu | Dùng giọng riêng có kiểm chứng hoặc audio nhập; lip-sync thêm là tùy chọn, báo tổng tiền |
 | Clip thuyết minh ngoài hình | Có thể dùng voice riêng, không mặc định cần lip-sync |
 | Nhân vật lộ miệng nói chính xác | Cần kiểm chứng route đồng bộ hình/tiếng; không chỉ ghép TTS là xong |
 | Thoại Anh/Trung với Vietsub | Chỉ dùng khi người dùng đồng ý với lựa chọn nội dung này |
+
+**Lựa chọn mới đã chốt trong V4.5.0:** Studio hiện mặc định đề xuất thoại Trung (Quan thoại) khi dự án mới cần nói nhưng chưa yêu cầu ngôn ngữ nào. Bạn viết mô tả tiếng Việt không tự đổi thoại. Nếu bạn nói rõ “thoại Anh/Việt”, lựa chọn đó thắng mặc định và hiện trong bản xem trước; series giữ ngôn ngữ cũ. Yêu cầu không thoại không bị thêm thoại. Phụ đề mặc định tắt và chọn ngôn ngữ riêng.
+
+Chọn Việt hiện phương án giọng riêng (TTS hoặc audio phù hợp bạn tải lên) cùng chi phí. “Khớp môi” mặc định tắt; chỉ bật khi bạn chọn/yêu cầu rõ và route được kiểm chứng. Nếu để tắt mà có mặt nhân vật đang nói, phải hiểu và chấp nhận giới hạn lồng tiếng thường; không được báo đã khớp môi. Nếu bạn yêu cầu khớp môi nhưng route không đáp ứng, hệ thống báo trước khi chạy. Chọn ngôn ngữ/giọng không tự gọi API có phí; Create duyệt đúng kế hoạch và chi phí đã hiển thị.
+
+Sau khi xong phim Trung/Anh, nút dịch/thêm phụ đề mở một bản nháp dịch riêng từ đúng phiên bản phim đã chấp nhận; không tự mua lượt dịch hay lồng tiếng. Chức năng đó vẫn không sửa môi.
 
 Căn cứ: spec/09, 13–16, 31, 37, 46. Các profile hiện chưa được bật như những route production đã kiểm chứng.
 
@@ -174,7 +180,7 @@ U01 dựa vào manifest/order; U02 dựa spec/09,14,31,46; U03 dựa spec/17. Kh
 
 ## 12. Claude/Codex sẽ build theo cách nào?
 
-Dùng `governance/IMPLEMENTATION_HANDOFF.md` và `tasks/00_IMPLEMENTATION_ORDER.md`, không yêu cầu “đọc 267 file mỗi lần rồi tự làm hết”. Phiên đầu xác định repo triển khai, cài hướng dẫn gốc, ghim phiên bản hợp đồng và xác nhận môi trường. Mỗi lượt chọn một task đủ điều kiện, đọc tài liệu liên quan, xem code thật, lập thiếu hụt, làm một lát chức năng hoàn chỉnh và chứng minh từng tiêu chí.
+Dùng `governance/IMPLEMENTATION_HANDOFF.md` và `tasks/00_IMPLEMENTATION_ORDER.md`, không yêu cầu “đọc toàn bộ file mỗi lần rồi tự làm hết”. Phiên đầu xác định repo triển khai, cài hướng dẫn gốc, ghim phiên bản hợp đồng và xác nhận môi trường. Mỗi lượt chọn một task đủ điều kiện, đọc tài liệu liên quan, xem code thật, lập thiếu hụt, làm một lát chức năng hoàn chỉnh và chứng minh từng tiêu chí.
 
 | Giai đoạn | Công việc và bằng chứng cần có |
 |---|---|

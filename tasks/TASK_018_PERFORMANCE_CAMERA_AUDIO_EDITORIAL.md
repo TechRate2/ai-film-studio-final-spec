@@ -45,3 +45,7 @@ Golden coverage: GS02, GS03, GS07, GS13.
 - [ ] For dialogue and action fixtures persist playable intention, body/prop positions, eyelines, narrative camera function and audio/editorial decision.
 - [ ] Compare a motivated hold with a cut/move alternative; reject contradictory screen geography and excessive simultaneous choreography without measured support.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Language and directing regression acceptance (4.5.0)
+- [ ] GS13 contrasts a stable mechanism proof, held emotional reaction and tracking reveal. With niche fixed and intent changed, decisions adapt; with intent fixed and label changed, no canned camera route is forced. Persist purpose/alternative/visibility/end-state/complexity rationale using existing records; no mandatory cut count or extra paid candidate.
+- [ ] Reject conflicting continuous-take/cut instructions and camera-stable/actor-frozen conflation; retain required visual staging when language/sync capability is unavailable instead of quietly hiding faces.

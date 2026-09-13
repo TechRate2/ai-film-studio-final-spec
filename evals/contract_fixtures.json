@@ -8425,6 +8425,600 @@
       "goldens": [
         "GS14"
       ]
+    },
+    {
+      "id": "studio-audio-chinese-default",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-explicit-english",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "en",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-vietnamese-controlled",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "vi-VN",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "CONTROLLED",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-vietnamese-sync",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "vi",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "CONTROLLED",
+          "lip_sync_requested": true,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-no-speech",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "NONE",
+          "dialogue_language": null,
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NONE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-conflict-review",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "UNRESOLVED",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "NEEDS_CONFIRMATION"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-unsynced-ack",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "vi",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "CONTROLLED",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": true,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": true,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-native-vi",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "vi",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-native-vi-subtag",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "VI-vn",
+          "language_origin": "USER",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-silent-voice",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "NONE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-native-extra-sync",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": true,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-narration-sync",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "NARRATION",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "CONTROLLED",
+          "lip_sync_requested": true,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-false-resolved",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "UNRESOLVED",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-default-english",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "en",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-incomplete",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-localization",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "LOCALIZATION",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "NATIVE",
+          "lip_sync_requested": false,
+          "accept_unsynced_visible_speech": false,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
+    },
+    {
+      "id": "studio-audio-rejects-sync-and-mismatch",
+      "schema": "project_intent.schema.json",
+      "instance": {
+        "project_id": "synthetic-project",
+        "user_request": "Tạo một cảnh nói chuyện",
+        "objective": "synthetic intent fixture",
+        "constraints": {
+          "hard": [],
+          "soft": [],
+          "source_ids": []
+        },
+        "workflow_kind": "STUDIO",
+        "ui_locale": "vi",
+        "studio_audio": {
+          "policy_version": "studio-audio-v1",
+          "speech_mode": "DIALOGUE",
+          "dialogue_language": "zh-CN",
+          "language_origin": "DEFAULT",
+          "subtitle_language": null,
+          "voice_method": "CONTROLLED",
+          "lip_sync_requested": true,
+          "accept_unsynced_visible_speech": true,
+          "resolution": "RESOLVED"
+        }
+      },
+      "valid": false,
+      "requirements": [
+        "R-008"
+      ],
+      "goldens": [
+        "GS11",
+        "GS17"
+      ]
     }
   ]
 }

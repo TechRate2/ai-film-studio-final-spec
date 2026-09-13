@@ -45,3 +45,7 @@ Golden coverage: GS07, GS11, GS17.
 - [ ] Create language variants with speaker identity, pronunciation/source line IDs and timing constraints; provider handles remain scoped mappings.
 - [ ] Distinguish subtitle typo, unrendered text and baked spoken dialogue; only actual voice/lip-sync dependencies invalidate accepted visuals.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Language and directing regression acceptance (4.5.0)
+- [ ] Resolve `schemas/project_intent.schema.json` studio_audio under spec/09 precedence, preserving original script and linked localized lines. Test literal quoted-script ambiguity, mixed explicit per-line language, no speech, inherited language, and conflicting UI/chat edits. Reject vi/vi-VN native selection under studio-audio-v1 and never turn locale into speech language.
+- [ ] Prove resolution=NEEDS_CONFIRMATION cannot reach a paid plan; accepted language changes use versioned selective dependencies and cannot reuse stale authorizations. This task validates planning without submitting paid media.

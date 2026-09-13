@@ -152,5 +152,17 @@ class GovernanceTests(unittest.TestCase):
     def test_handoff_guide_missing(self):
         self.mutate(lambda r:(r/'governance/IMPLEMENTATION_HANDOFF.md').unlink(),'Missing required file')
 
+    def test_studio_default_language_drift(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/project_intent.schema.json',lambda d:d['properties']['studio_audio']['properties']['dialogue_language'].update(default='en')),'Invariant mismatch studio_default_dialogue_language')
+
+    def test_studio_native_vi_rejected(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/project_intent.schema.json',lambda d:d['properties']['studio_audio'].pop('allOf')),'Fixture studio-audio-rejects-native-vi')
+
+    def test_studio_sync_required(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/project_intent.schema.json',lambda d:d['properties']['studio_audio']['required'].remove('lip_sync_requested')),'Fixture studio-audio-rejects-incomplete')
+
+    def test_studio_localization_isolation(self):
+        self.mutate(lambda r:self.json_change(r,'schemas/project_intent.schema.json',lambda d:d.pop('allOf')),'Fixture studio-audio-rejects-localization')
+
 if __name__=='__main__':
     unittest.main()

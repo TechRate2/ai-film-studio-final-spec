@@ -1,4 +1,82 @@
-# Current audit closure — 4.4.2, 2026-09-11
+# Current audit closure — 4.5.0, 2026-09-13
+
+## A. Inventory and method
+Baseline main `a4efe10193e1402cb869e32b3568e0d062c2c3f6`, tree `85704e8fc7fcb60d5df725d20d6e2565d13349fe`. All **267 tracked paths** were compared with the prior full-content inventory and matched; prior content review was reused for unchanged files. This pass reread the affected normative/knowledge/task groups and current public sources, then reviewed all changed contracts and global links/state/traceability. It does not claim a new verbatim reread of every unchanged line. The previous full read, including lossless repeated-fixture review, remains documented below. Final inventory has **268 files**: one added ADR, no new service, schema family, task, Golden ID or skill card. Counts remain 48 specs, 45 schemas, 46 tasks, 8 phases, 33 Goldens, 96 requirements; 38 skill cards, ten filmcraft files, fourteen profile files. All implementation requirements/gates remain NOT_STARTED.
+
+## B. Pre-edit findings and authority
+V01 HIGH MISSING: Studio language/default/explicit-selection resolution had no shared persisted contract. V02 HIGH UNDER_SPECIFIED: native versus controlled spoken text and optional sync could lead to unwanted speech/mouth operations or false acceptance. V03 MEDIUM UNDER_SPECIFIED: compact camera cards needed practical counterfactual coverage decisions. V04 MEDIUM UNDER_SPECIFIED: live external skills/config could be mistaken for measured brain/provider truth, and runtime choices needed an explicit deployment ledger. The pre-edit matrix is preserved in AUDIT_ISSUE_MATRIX.csv. ADR-0005 records the owner's explicit Class C authorization for Chinese preset, controlled Vietnamese and optional sync. Existing SPEC_LOCK remains unchanged; no native-language quality claim is promoted. No new CRITICAL issue was established in this pass.
+
+## C. Exact changed files
+| File | Reason |
+|---|---|
+| `MANIFEST.md` | Current version, discovery or handoff/checklist consistency. |
+| `README.md` | Current version, discovery or handoff/checklist consistency. |
+| `SPEC_VERSION` | Current version, discovery or handoff/checklist consistency. |
+| `docs/PRODUCT_GUIDE_VI.md` | Vietnamese owner explanation of actual new defaults and optional sync. |
+| `docs/adr/ADR_0005_STUDIO_LANGUAGE_AND_VOICE_CHOICES.md` | Owner-authorized default/voice policy decision, alternatives, migration and evidence limits. |
+| `evals/GOLDEN_SCENARIOS.md` | Existing Golden coverage and 17 positive/negative preference fixtures. |
+| `evals/contract_fixtures.json` | Existing Golden coverage and 17 positive/negative preference fixtures. |
+| `evidence/AUDIT_INVENTORY.csv` | Exact audit findings, file coverage and closure evidence. |
+| `evidence/AUDIT_ISSUE_MATRIX.csv` | Exact audit findings, file coverage and closure evidence. |
+| `evidence/FINAL_AUDIT_REPORT.md` | Exact audit findings, file coverage and closure evidence. |
+| `evidence/MARKET_FEASIBILITY_REVIEW.md` | Primary-source public-skill/camera/audio adoption matrix and unmeasured limits. |
+| `examples/GS03_XIANXIA_60S_WALKTHROUGH.md` | Explicit Vietnamese examples conform to controlled-voice launch policy. |
+| `examples/GS04_SATURN_120S_WALKTHROUGH.md` | Explicit Vietnamese examples conform to controlled-voice launch policy. |
+| `governance/CANONICAL_COMPLETENESS_CHECKLIST.md` | Current version, discovery or handoff/checklist consistency. |
+| `governance/IMPLEMENTATION_HANDOFF.md` | Current version, discovery or handoff/checklist consistency. |
+| `governance/contract_index.json` | Pin defaults and fixture/task coverage; prove dangerous preference drift is rejected. |
+| `governance/test_validate_spec.py` | Pin defaults and fixture/task coverage; prove dangerous preference drift is rejected. |
+| `knowledge/filmcraft/COMPOSITION_AND_LENS_LANGUAGE.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `knowledge/filmcraft/DIRECTING_PRINCIPLES.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `schemas/project_intent.schema.json` | Closed Studio audio preference record, language/method/sync conditions; legacy readability retained. |
+| `skills/cinematography/camera_language.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `skills/cinematography/dialogue_scene.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `skills/cinematography/product.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `skills/creative/ugc.md` | Context-driven camera/proof/reaction choices, trade-offs and generation-aware checks. |
+| `spec/09_DIALOGUE_VOICE_LOCALIZATION.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/10_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/14_UNIVERSAL_VIDEO_SPEC.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/20_CHAT_FIRST_WORKSPACE_UX.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/30_UI_STATE_MACHINE.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/45_END_TO_END_WORKFLOW_STATE_MACHINES.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md` | Normative language/voice/sync precedence, compiler ownership, UI or capability/creative constraints. |
+| `tasks/TASK_002_CANONICAL_SPEC_EMBEDDING_AND_TRACEABILITY.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_005_CHAT_FIRST_WORKSPACE.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_017_DIALOGUE_VOICE_LOCALIZATION.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_018_PERFORMANCE_CAMERA_AUDIO_EDITORIAL.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_027_MODEL_PROMPT_COMPILERS.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_028_PROVIDER_PROFILES_AND_ADAPTERS.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_031_PROBE_AND_BENCHMARK_HARNESS.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_037_VOICE_SUBTITLE_MUSIC_ASSEMBLY.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `tasks/TASK_041_UI_REVIEW_SURFACES.md` | Concrete implementation acceptance for language, audio, directing or route qualification; no task marked done. |
+| `traceability/REQUIREMENTS_TRACEABILITY.csv` | R-008 points to the preference schema; all application requirements remain NOT_STARTED. |
+
+## D. Architecture and workflow verification
+One Generalist Director, provider-neutral ports and evidence-first bounded research remain intact. Adaptive SHORT/LONG_SINGLE/SERIES depth, scoped Canon/character knowledge/ActiveContextPack, StyleDNA, selective skill retrieval, reference isolation, meaningful segmentation, accepted-parent DAG/Baton, all five keyframe sources, typed UVS/compiler/profile/effective capability, spend reservation/reconciliation, no paid quality retry, immutable contextual revisions/Sandwich/selective currency, deterministic timeline/FinalMaster, rights/security and taste attribution retain their existing contracts and tests. This patch changes only the declared Studio audio preference/default boundary and hardens its connected decisions.
+
+Explicit output-language requests/inherited series state beat a new Chinese preset. No-speech skips voices; captions default Off independently. Vietnamese controlled voice can reuse imported audio. Additional sync is opt-in and qualified, with explicit acknowledgment for an ordinary visible-mouth dub and no waiver of requested mouth match. Compiler language is not spoken language; native/controlled ownership prevents duplicate speech. A linked source-localization draft is a separate deliberate action after accepted master and extension availability, with zero automatic media calls and no lip-sync tools. Camera choice follows beat purpose, evidence and capacity rather than niche labels or decorative movement count.
+
+## E. Schema integrity
+Draft 2020-12 metaschema validation passes for all 45 schemas; 288 local-reference assertions resolve; closed-record and existing state/enum checks pass. ProjectIntent.studio_audio has required fields and explicit conditional antecedents; Vietnamese native, contradictory sync/mismatch, silent voice, localization contamination, unresolved-as-resolved and wrong default-language records are rejected. JSON Schema defaults are annotations, not automatic value insertion. Legacy drafts remain readable; domain pre-spend resolution and cross-record authority are mandatory tasks/Goldens. A valid preference cannot itself authorize money or certify media.
+
+## F. Task readiness
+All 46 task IDs, dependency order, required reads and Golden/requirement/schema mappings pass governance. TASK-002/028/031 now require honest runtime selection/qualification evidence; TASK-005/017/018/027/037/041 own the new exact UI, language, compiler, camera and audio assertions. Existing tasks retain immediate deterministic acceptance testing; paid proofs remain after jobs/guard. No application task or empirical capability is marked implemented by this audit. Root handoff still requires exact criterion/code/test/commit evidence and honest PARTIAL checkpoints.
+
+## G. Validation
+Offline canonical validator PASS: 45 metaschemas, 288 local-reference assertions, 25 dangerous invariant comparisons, 143 mapped fixtures (17 new), no orphan schemas/tasks/Goldens and exact version/count checks. All 37 governance tests PASS (4 new negative mutations). git diff --check PASS. A mutation exposed vacuous conditional antecedents in the first draft of the new preference schema; explicit required keys in each if clause resolved this before publication. Tests prove document/schema consistency and drift detection, not app integration or real-generation quality. Changed file bytes/hashes are recorded in the inventory; report/inventory self-references use the Git tree anchor.
+
+## H. Evidence and unknowns
+Primary sources retrieved 2026-09-13: Topview's official skill landing page and six public generation/reference documents, ByteDance 2.0 page/2.5 launch examples, AtlasCloud 2.5 endpoint, LTX Studio and ElevenLabs dubbing docs. The market report records exact URLs and adopt/adapt/reject decisions. Search-engine fallback pages and an HTTP-403 LTX guide are explicitly excluded. No external skill was installed/executed, no proprietary Agent was reverse engineered, no paid output was generated and no whole-market/superiority claim is made.
+
+Unknowns remain: exact production LLM/search/ASR/TTS/sync choices, account entitlements, full billing liability, native speech/suppression/voice/sync quality, multi-face/complex-motion reliability, practical reference ceilings and accepted-second costs. These are separately qualified deployment/probe tasks; Chinese defaults and launch Vietnamese policy are not substitutes for empirical evidence.
+
+## I. Verdict
+**READY WITH NON-BLOCKING EMPIRICAL UNKNOWNS** for gated implementation of this canonical contract, not for selling an unbuilt/unqualified application. Stop speculative architecture expansion; execute the existing task graph and measure routes under explicit budgets.
+
+---
+
+# Historical audit closure — 4.4.2, 2026-09-11
 
 ## A. Inventory and inspection scope
 Baseline main `1be7e30f0c4ca60a038b00ec03db13172603c380` has 265 inventoried files; all non-self-referential hashes matched before edits. The original full read and subsequent additions remain recorded below and in the inventory. This pass re-read the affected logical groups and current official sources; it does not claim a second fresh line-by-line read of every unchanged file. Final tree: **266 files**, with **22 modified and one added** relative to this baseline. Canonical counts remain **48 specs, 45 schemas, 46 numbered tasks, 8 phases, 33 Goldens and 96 requirements**. There are still 38 skill cards plus their README, ten filmcraft documents and fourteen profile files. No application code or paid samples were created.

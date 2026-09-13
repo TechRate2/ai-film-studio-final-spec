@@ -69,7 +69,272 @@
         "STUDIO",
         "LOCALIZATION"
       ]
+    },
+    "studio_audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policy_version": {
+          "const": "studio-audio-v1"
+        },
+        "speech_mode": {
+          "enum": [
+            "NONE",
+            "NARRATION",
+            "DIALOGUE"
+          ]
+        },
+        "dialogue_language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "default": "zh-CN"
+        },
+        "language_origin": {
+          "enum": [
+            "DEFAULT",
+            "USER",
+            "INHERITED",
+            "UNRESOLVED"
+          ]
+        },
+        "subtitle_language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "default": null
+        },
+        "voice_method": {
+          "enum": [
+            "NONE",
+            "NATIVE",
+            "CONTROLLED"
+          ]
+        },
+        "lip_sync_requested": {
+          "type": "boolean",
+          "default": false
+        },
+        "accept_unsynced_visible_speech": {
+          "type": "boolean",
+          "default": false
+        },
+        "resolution": {
+          "enum": [
+            "RESOLVED",
+            "NEEDS_CONFIRMATION"
+          ]
+        }
+      },
+      "required": [
+        "policy_version",
+        "speech_mode",
+        "dialogue_language",
+        "language_origin",
+        "subtitle_language",
+        "voice_method",
+        "lip_sync_requested",
+        "accept_unsynced_visible_speech",
+        "resolution"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "speech_mode": {
+                "const": "NONE"
+              }
+            },
+            "required": [
+              "speech_mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "dialogue_language": {
+                "type": "null"
+              },
+              "voice_method": {
+                "const": "NONE"
+              },
+              "lip_sync_requested": {
+                "const": false
+              },
+              "accept_unsynced_visible_speech": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "speech_mode": {
+                "enum": [
+                  "NARRATION",
+                  "DIALOGUE"
+                ]
+              }
+            },
+            "required": [
+              "speech_mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "dialogue_language": {
+                "type": "string",
+                "minLength": 1
+              },
+              "voice_method": {
+                "enum": [
+                  "NATIVE",
+                  "CONTROLLED"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dialogue_language": {
+                "type": "string",
+                "pattern": "^[vV][iI](-|$)"
+              }
+            },
+            "required": [
+              "dialogue_language"
+            ]
+          },
+          "then": {
+            "properties": {
+              "voice_method": {
+                "const": "CONTROLLED"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "lip_sync_requested": {
+                "const": true
+              }
+            },
+            "required": [
+              "lip_sync_requested"
+            ]
+          },
+          "then": {
+            "properties": {
+              "speech_mode": {
+                "const": "DIALOGUE"
+              },
+              "voice_method": {
+                "const": "CONTROLLED"
+              },
+              "accept_unsynced_visible_speech": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "accept_unsynced_visible_speech": {
+                "const": true
+              }
+            },
+            "required": [
+              "accept_unsynced_visible_speech"
+            ]
+          },
+          "then": {
+            "properties": {
+              "speech_mode": {
+                "const": "DIALOGUE"
+              },
+              "voice_method": {
+                "const": "CONTROLLED"
+              },
+              "lip_sync_requested": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "language_origin": {
+                "const": "UNRESOLVED"
+              }
+            },
+            "required": [
+              "language_origin"
+            ]
+          },
+          "then": {
+            "properties": {
+              "resolution": {
+                "const": "NEEDS_CONFIRMATION"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "language_origin": {
+                "const": "DEFAULT"
+              },
+              "speech_mode": {
+                "enum": [
+                  "NARRATION",
+                  "DIALOGUE"
+                ]
+              }
+            },
+            "required": [
+              "language_origin",
+              "speech_mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "dialogue_language": {
+                "const": "zh-CN"
+              }
+            }
+          }
+        }
+      ]
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "studio_audio"
+        ]
+      },
+      "then": {
+        "required": [
+          "workflow_kind"
+        ],
+        "properties": {
+          "workflow_kind": {
+            "const": "STUDIO"
+          }
+        }
+      }
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-# AI Film Studio — Final Canonical Build Spec V4.4.2
+# AI Film Studio — Final Canonical Build Spec V4.5.0
 
 **Status:** CANONICAL SPECIFICATION — implementation evidence remains required
 **Repository role:** sole active source of truth for Codex, Claude and human engineers  
@@ -54,7 +54,7 @@ Before modifying an existing codebase, run `TASK-001_REPOSITORY_REALITY_AUDIT.md
 Exact current behavior/pricing/exposure of Seedance 2.5 and future Wan/Vidu/Kling/Veo/image/voice providers is empirical. `UNKNOWN/PARTIAL` remains explicit until current docs/provider probes/benchmarks establish evidence. These are runtime evidence gaps, not missing product architecture.
 
 ## Freeze rule
-**V4.4.2 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
+**V4.5.0 on `main` is the only active build contract.** Do not create alternative version trees or parallel “final” specs. Any future contract change must follow `governance/CANONICAL_CHANGE_POLICY.md` and update the same canonical tree with traceability/tests/CI.
 
 See `evidence/FINAL_AUDIT_REPORT.md` and `spec/25_ACCEPTANCE_AND_DEFINITION_OF_DONE.md`.
 
@@ -64,3 +64,5 @@ After the main studio passes TASK-043/Phase 6, TASK-044–046 build a separate o
 For the implementation folder setup, first session and restart/acceptance workflow, read `governance/IMPLEMENTATION_HANDOFF.md`. Evidence for the 4.4.1 handoff hardening is in `evidence/IMPLEMENTATION_HANDOFF_REVIEW.md`.
 
 For the 4.4.2 quality/cost workflow audit and current provider-source evidence, see `evidence/MARKET_FEASIBILITY_REVIEW.md` and `docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md`.
+
+For V4.5.0 Studio language/voice defaults and context-driven cinematography, see `docs/adr/ADR_0005_STUDIO_LANGUAGE_AND_VOICE_CHOICES.md`, `spec/09_DIALOGUE_VOICE_LOCALIZATION.md` and the dated public-skill adoption matrix in `evidence/MARKET_FEASIBILITY_REVIEW.md`. New unspecified speech proposes Chinese; explicit/inherited language wins, Vietnamese uses controlled voice, additional lip sync is opt-in, and captions are independent. These are product choices, not empirical model-quality claims.

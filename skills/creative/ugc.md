@@ -1,6 +1,6 @@
 ---
 skill_id: creative.ugc
-version: 1
+version: 2
 knowledge: knowledge/filmcraft/DIALOGUE_SCENES.md
 evidence_class: SYNTHESIS
 ---
@@ -20,3 +20,6 @@ Artificial stumbles or shake do not guarantee authenticity; avoid invented first
 Record the chosen mechanism, reason and source skill version in the relevant CreativeStrategy, UniversalVideoSpec or timeline decision. Speech sounds intentional and product evidence remains visible and truthful.
 
 Read the linked knowledge only for the missing decision. Capability/rights/locks/canon and spend rules outrank this heuristic. No failed aesthetic check authorizes paid regeneration.
+
+## Staging choices
+A personal review may use a locked camera, a purposeful handheld demonstration or off-screen narration over product evidence. Choose from viewer trust/proof and requested performance, not 'UGC means shake'. Keep handling and labels readable; allow pauses that feel intentional. If the user wants on-camera Vietnamese speech, retain that intent and disclose controlled-voice/sync feasibility and cost instead of silently converting to B-roll. Do not fabricate personal experience as a shortcut to credibility.
