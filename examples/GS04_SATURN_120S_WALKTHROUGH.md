@@ -51,7 +51,9 @@ DIALOGUE: “Tôi đã chờ khoảnh khắc này mười bảy năm.”
 CONTINUITY OUT: ship intact; commander inside; approach vector and light direction stable.
 ```
 
-## 7. Example Seedance 2.0 compiled prompt excerpt
+## 7. Illustrative Seedance 2.0 prompt intent excerpt
+This is not a verified callable request. Reference-token spelling below is illustrative; the exact model/provider compiler must emit documented syntax and bind input order. Native Vietnamese dialogue remains subject to language/route qualification under `spec/09_DIALOGUE_VOICE_LOCALIZATION.md` and `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md`. UNKNOWN support must lead to an explicit qualified voice alternative and complete cost preview, or a block; never an automatic change to English/Chinese dialogue. An English instruction does not prove Vietnamese speech capability.
+
 ```text
 @image1 defines the exact Odyssey-7 spacecraft design.
 @image2 defines Commander Minh's identity and flight suit.

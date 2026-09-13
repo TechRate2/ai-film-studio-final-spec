@@ -30,7 +30,8 @@ Use before declaring a spec release canonical.
 
 ## Coding-agent governance
 - exact manifest/version counts;
-- 43 numbered tasks intact;
+- all numbered tasks in the current MANIFEST intact (46 at V4.4.2);
+- core release precedes the separate source-video localization gate;
 - phase order reflects safety dependencies;
 - traceability maps every critical behavior;
 - golden scenarios cover regressions;

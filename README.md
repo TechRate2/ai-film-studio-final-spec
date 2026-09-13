@@ -7,6 +7,8 @@
 
 This repository is deliberately **spec-first**. It is not application code. Its job is to stop long vibe-coding sessions from drifting, simplifying continuity/cost rules, hard-coding providers, over-generating media or quietly turning the product into a generic text-to-video wrapper.
 
+For a plain Vietnamese explanation of the product, workflows, costs, build phases and current evidence limits, read [PRODUCT_GUIDE_VI.md](docs/PRODUCT_GUIDE_VI.md). It explains the canonical contract; it does not replace it.
+
 ## Product promise
 A user gives one natural-language request plus any mix of images, videos, audio, documents, scripts and references. One visible **Generalist Director** understands the goal, detects short/long/series scope, researches only where evidence is worth the cost, builds creative/story/character/canon/continuity state, directs performance/camera/audio/editing, chooses the cheapest production strategy that meets quality, compiles model-specific prompts, runs replaceable providers, reviews results, supports user-directed shot revision and external/internal keyframes, assembles final media and preserves project state for future episodes.
 
