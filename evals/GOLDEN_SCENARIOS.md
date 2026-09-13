@@ -22,6 +22,9 @@ Fixture: three characters with weapon/injury/light state and unequal beat comple
 
 Compiler conformance variant: supply a synthetic endpoint with explicit reference/edit/extend constraints and a prompt that implies the wrong operation. Assert zero submission, actionable conflict and unchanged approved intent. A consistent variant compiles supported mode, source bindings, duration, audio and output settings without leaking endpoint syntax into Director inputs. Repeat with unsupported mode hints; no invented parameter may be sent.
 
+### 4.5.0 compiler language ownership
+Use a Vietnamese user request with explicit Chinese, then English, then Vietnamese output. Chinese/English native requests contain the approved target-language lines. Vietnamese controlled requests do not instruct native video speech; qualified voice assets and optional sync are separate, pinned and costed. Assert no duplicate native/TTS voice. Reference-mode prompt meaning and API parameters must still agree. No paid probe runs in ordinary CI.
+
 ## GS04 — 120s Saturn sci-fi
 Use factual research for Saturn/space realism when available; separate Fact Pack from creative strategy; create mini-story rather than sightseeing; selective keyframes; mixed-media optimization allowed; no duplicate paid retry.
 
@@ -74,6 +77,9 @@ Workspace can switch Vietnamese ↔ English without mutating project canon/outpu
 ### Required fixture and falsifiable assertions
 Fixture matrix vi/en UI × vi/zh content, including locale switch during reconciliation. Assert identical canon/request/voice hashes for UI-only change, localized actionable labels and preserved monetary amounts. Spoken-language edit touches only actual voice/lip-sync dependencies.
 
+### 4.5.0 Studio language UI and precedence
+New Vietnamese UI/prose with unspecified speech exposes zh-CN and subtitles Off, without creating speech for a no-dialogue brief. Explicit English wins over default; explicit Vietnamese selects visible controlled voice with lip sync off. Inherited English series remains English. Conflicting explicit selections or ambiguous script locks enter NEEDS_CONFIRMATION with zero media calls. Changing ui_locale leaves all speech/subtitle/voice hashes unchanged. A clearly later user edit creates a new preference version and invalidates the stale cost preview. Test schema-valid preferences still fail domain pre-spend when actual line language, policy, ownership or capability disagrees. Mixed approved per-line languages remain distinct.
+
 ## GS12 — Product factual claim
 Ad script must not invent material product claims from image appearance. Claim comes from FACT_SOURCE/user-verified data.
 
@@ -85,6 +91,9 @@ Planner avoids exact overloaded choreography for all 10 in one generative shot; 
 
 ### Required fixture and falsifiable assertions
 Fixture: ten-person battle with one important duel. Assert registry can hold ten, active shots carry only useful cast, readable geography/causal action and explicit overload trade-off. Reject a plan requiring exact independent choreography for all ten without matching reliability evidence.
+
+### 4.5.0 camera purpose counterfactuals
+Compare an uninterrupted product-mechanism proof, emotional listener reaction and spatial reveal using the same generic content label; require different justified coverage where purpose differs. Change only the niche label while preserving intent/locks and verify no hardcoded tripod/handheld/orbit rule. Stable camera permits actor movement. A continuous take cannot also request reverse-angle cuts. Multiple storyboard views do not imply multiple paid generations. Score visibility, story change, continuity and cost rationale rather than camera-count adjectives.
 
 ## GS14 — No-keyframe simple B-roll
 Direct generation works without forced storyboard/keyframe.
@@ -113,6 +122,9 @@ Recurring character has VoiceProfile. Episode A Vietnamese and localized variant
 
 ### Required fixture and falsifiable assertions
 Fixture: same speaker with vi and zh variants, pronunciation lexicon and accepted visuals. Assert exact source-line/voice version links, timing preflight and no video regeneration for separable audio edits. Unsupported target language blocks/degrades explicitly; real controlled voice smoke is separate and budgeted.
+
+### 4.5.0 controlled voice and optional sync
+Cases: no-speech (zero voice/sync), native qualified zh/en, vi narration with uploaded voice (zero TTS/sync), vi with first authorized TTS, and controlled visible dialogue with sync off/on. Off must cause zero extra mouth-animation calls; without explicit mismatch acknowledgment, a visible unsynchronized plan blocks. An explicit mouth-match constraint blocks even with acknowledgment unless revised by the user. On requires route/face/speaker/language qualification, duration and itemized authorization. Native speech leakage/duplicate voice cannot pass QA or auto-trigger new paid repair. Changed audio preferences or unaccepted voice assets block dependent video calls. A later original-master translation action creates a draft only; LOCALIZATION cannot access lip sync.
 
 ## GS18 — Asset ingestion / dedupe / corrupt file
 User uploads duplicate character images, valid video, corrupt video and external keyframe. Valid duplicates resolve by hash/entity logic, corrupt media becomes FAILED/actionable, other assets continue, external source provenance is retained.

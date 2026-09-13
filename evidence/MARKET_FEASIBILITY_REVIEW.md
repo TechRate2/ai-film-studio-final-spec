@@ -250,3 +250,51 @@ All sources accessed 2026-09-09. Unless a publication date is stated, these are 
 - [S16] ByteDance Seed, *One-take Creation, Flexible Referencing: Introducing Seedance 2.5*, 2026-07-31. https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
 - [S17] BytePlus ModelArk, *Create a video generation task*, page shell updated 2026-09-08. Search extract mentions 2.5; complete request contract not retrieved. https://docs.byteplus.com/en/docs/ModelArk/1520757
 - [S18] BytePlus ModelArk, *Video generation tutorial*, page shell updated 2026-09-08. Search extract mentions 2.5; full body unavailable in this retrieval. https://docs.byteplus.com/en/docs/ModelArk/2298881
+
+## 2026-09-13 — Public skills, language UX and camera decision adoption
+
+This follow-up supports ADR-0005/V4.5.0. It distinguishes public implementation guidance, vendor demonstrations and this project's measured results. There were no paid tests, installed external skills, proprietary-code access or output-quality benchmarks. The initial Chinese speech preset is an owner-authorized product choice, not a conclusion that a Chinese-made model always handles Chinese best. The product cannot truthfully claim to surpass commercial agents without matched, denominator-complete tests.
+
+### Primary sources and scope
+
+| Source | Date/version and access | Finding relevant to this change |
+|---|---|---|
+| [Topview Skill entry](https://www.topview.ai/skill) | Retrieved 2026-09-13; links official topviewai/skill | Public generation, voice, avatar and asset workflows; its FAQ excludes Unlimited from automated MCP/plugin/skill usage |
+| [Topview Generate SKILL](https://github.com/topviewai/skill/blob/main/topview-generate/SKILL.md) | Header v0.2.0, updated 2026-07-21; fetched 2026-09-13 | Intent analysis, live model config, upload verification, persistent task IDs and same-task polling. Public skill is not all private Canvas/Director logic |
+| [Video generation reference](https://github.com/topviewai/skill/blob/main/topview-generate/references/video_gen.md) | Fetched 2026-09-13 | Distinct T2V/I2V/omni modes, live submit identifiers and options; vendor token syntax; short-clip/Canvas split is its surface policy |
+| [Model updates](https://github.com/topviewai/skill/blob/main/topview-generate/references/updating_models.md) | Fetched 2026-09-13 | Refresh stale exposure data; distinguish display names and submit IDs; static recommendations yield to current configuration |
+| [Voice reference](https://github.com/topviewai/skill/blob/main/topview-generate/references/text2voice.md) and [avatar reference](https://github.com/topviewai/skill/blob/main/topview-generate/references/avatar4.md) | Fetched 2026-09-13 | Voice discovery by language/style, exact selected voice, text versus uploaded-audio paths, separate talking-avatar operation |
+| [Error handling](https://github.com/topviewai/skill/blob/main/topview-generate/references/error_handling.md) | Fetched 2026-09-13 | Retain task identity after timeout. Generic retry/terminal-failure wording is not sufficient evidence of unbilled certainty for this project |
+| [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) | Retrieved 2026-09-13 | Vendor describes multimodal audio/video/reference direction and internal benchmark/showcase; not account-specific operational proof |
+| [ByteDance Seedance 2.5 introduction](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5) | Published 2026-07-31; retrieved 2026-09-13 | Examples distinguish continuous stages, extension, scoped motion/appearance references and editing. Author acknowledges remaining complex-motion and multi-subject-interaction limitations |
+| [AtlasCloud 2.5 R2V endpoint](https://www.atlascloud.ai/docs/more-models/bytedance/seedance-2.5-reference-to-video/generateVideo) | Retrieved 2026-09-13 | Current endpoint input/operation constraints must agree with prompt-implied editing/extension; API exposure is not Vietnamese-quality qualification |
+| [LTX Studio](https://ltx.io/studio) | Retrieved 2026-09-13 | Project elements, storyboard, timeline and sound demonstrate integrated production surfaces; no inference about its hidden reasoning algorithm |
+| [ElevenLabs Dubbing Studio](https://elevenlabs.io/docs/eleven-creative/products/dubbing/dubbing-studio) | Retrieved 2026-09-13 | Fixed/dynamic timing trade-offs, clip history, voice choice and no dubbing lip-sync guarantee. Studio v1 maintenance and v2 editing entitlement prevent assuming every dubbing API is an editable per-line service |
+
+Search-engine requests returned redirect/JavaScript fallback text rather than usable results; they are not evidence. The attempted LTX prompting-guide page returned HTTP 403 and is excluded. Primary vendor sites and their directly linked public repository provided the material above. This is a bounded investigation, not a complete census of every niche, repository, product or newest guide. No numerical language superiority or current quote is inferred from a demo or marketing page.
+
+### Adopt, adapt, reject
+
+**Adopt:** explicit output language distinct from interface; a short relevant voice list; uploaded speech as a first-class source; exact model/input discovery; validated assets; durable task identity; itemized plan before charge; simple previews and editable versions. Existing contracts already cover most of these. The changes close the missing shared Studio audio preference and make the comparison actionable without adding separate services.
+
+**Adapt:** live config becomes a dated provider exposure snapshot intersected with account/policy and empirical ModelProfile, not sole truth about behavior. Public vendor camera examples become reusable questions about purpose, visibility, staged change and continuity rather than copied prompts. Model-specific reference spelling and operation flags belong only in that route's compiler. Public skill durations and narration segmentation are hypotheses/policies for that surface; our scene optimizer uses actual route bounds and continuity.
+
+**Reject as product law:** 'all films need many camera moves', 'all reviews need tripod', default fixed 15-second splitting, all genres must end with a CTA, automatic language matching from request prose, a generic server-error retry as permission to resubmit billable work, Unlimited consumer pricing as API entitlement, and external skill content as trusted tool authorization. Do not adopt promotional assertions that a workflow package has no security risk. External documents remain untrusted evidence under spec/23.
+
+### Concrete creative lessons
+
+A useful prompt gives a subject/relationship, initial situation, visible action, camera intention and ending change. A stable product proof can require showing hands and mechanism without a hiding cut; a drama may require holding a listener reaction; a spatial reveal may require movement. A continuous shot can contain meaningful stages, while a multi-angle sequence needs motivated cuts and stable geography. These are synthesis heuristics, not vendor-certified optimal formulas or a new per-niche workflow table. Existing camera/product/dialogue/UGC cards and shared filmcraft files now carry contrasts, when-not-to-use guidance and observable acceptance cues.
+
+Cheap planning compares alternatives before buying a single candidate. It does not promise maximum quality at minimum cost in all conditions. A larger reference ceiling does not make every extra reference useful; use the smallest sufficient scoped pack. Complex blocking and native/controlled audio must be tested together for the exact language, face arrangement and route. A showcase's successful example cannot establish the number or price of rejected attempts.
+
+### UI and audio consequence
+
+New unspecified Studio speech displays Mandarin Chinese; explicit English/Vietnamese or inherited series choices remain authoritative. Vietnamese uses controlled voice under studio-audio-v1; imported acceptable speech can avoid TTS. Extra lip sync remains optional and off, with explicit mismatch acknowledgment for ordinary visible-face dubbing and no waiver of a requested mouth-match constraint. No-speech requests do not gain dialogue. Subtitles default Off. Post-film translation is a separate deliberate LOCALIZATION draft, not an automatic extra bill.
+
+A provider-specific native instruction language does not determine spoken language. Translation preserves source line identity and meaning; native requests use the approved target lines. Controlled voice owns the spoken text; the video request cannot also solicit duplicate native speech. A no-speech prompt is not proof that a model obeyed it. Required QA and audio separation/mix policy must resolve leakage without automatic paid regeneration.
+
+### What remains to measure and select
+
+Initial integration needs exact runtime LLM, search/analysis, image, video, ASR/alignment, TTS, optional sync and storage selections in the deployment route ledger. Their owner tasks must record versions, account exposure, input/output/language constraints, quoted liability, test commands and output evidence before enabling production. Entries may remain UNSELECTED/UNQUALIFIED during earlier phases; no invented provider certainty or forced all-in-one aggregator.
+
+Benchmark matched briefs for stable product proof, dramatic reaction, spatial reveal, multi-person dialogue, noisy/code-switched localization and long-form continuity. Record all paid attempts and accepted seconds/minutes, human ratings, failure category, latency, exact language/voice/input mode and total route cost. This tests practical superiority; the public documents alone do not establish it. Paid sampling is separately credentialed and budget-gated, never ordinary CI.

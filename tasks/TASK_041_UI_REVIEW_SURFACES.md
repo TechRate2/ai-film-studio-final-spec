@@ -41,3 +41,7 @@ Golden coverage: GS08, GS09, GS11.
 - [ ] Exercise accept/revert/revision/keyframe/cost details and error/reconciliation/stale states in vi/en through real persisted APIs.
 - [ ] Reload and out-of-order events preserve version/cost truth; raw provider errors do not replace actionable localized state and no advanced knobs are mandatory.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Language and directing regression acceptance (4.5.0)
+- [ ] Read `spec/09_DIALOGUE_VOICE_LOCALIZATION.md` and `schemas/project_intent.schema.json`; verify Chinese preset, explicit English/controlled Vietnamese, no-speech, caption Off/target, voice choice, sync toggle, cost preview, conflict and reload in vi/en UI. A later command cannot submit an earlier approved language/voice snapshot.
+- [ ] Accepted master translation action creates only a pinned LOCALIZATION draft after extension availability; source target/mode are separately selected and costed. No translation/TTS at click and no lip-sync in localization.

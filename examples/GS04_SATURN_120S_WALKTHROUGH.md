@@ -66,9 +66,11 @@ Stage 2: camera gently closes distance; rings reflect softly across canopy. End 
 
 Camera: very slow forward tracking, stable framing, no fast orbit, no aggressive zoom.
 Audio: subtle spacecraft hum and quiet breathing.
-Commander Minh says naturally in Vietnamese: “Tôi đã chờ khoảnh khắc này mười bảy năm.”
+No intelligible native speech; controlled Vietnamese speech is compiled and mixed separately.
 No subtitles. No text overlays.
 ```
+
+Approved controlled-voice line: “Tôi đã chờ khoảnh khắc này mười bảy năm.” The explicit Vietnamese request uses CONTROLLED under studio-audio-v1; the Chinese new-project preset does not replace it. Confirm whether this is off-screen narration or visible character speech before choosing any additional sync route. Do not charge for sync merely because the line is Vietnamese.
 
 ## 8. After Segment 1
 Run QA. If accepted, persist Continuity Baton: ship heading, commander position/suit, lighting, Saturn orientation, audio state, accepted last frame/video.

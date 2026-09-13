@@ -1,6 +1,6 @@
 ---
 skill_id: cinematography.product
-version: 1
+version: 2
 knowledge: knowledge/filmcraft/COMPOSITION_AND_LENS_LANGUAGE.md
 evidence_class: SYNTHESIS
 ---
@@ -20,3 +20,6 @@ Macro sacrifices scale; glossy hero light can hide texture. Do not hallucinate u
 Record the chosen mechanism, reason and source skill version in the relevant CreativeStrategy, UniversalVideoSpec or timeline decision. Shape/color/logo and claimed function remain supported by supplied evidence.
 
 Read the linked knowledge only for the missing decision. Capability/rights/locks/canon and spend rules outrank this heuristic. No failed aesthetic check authorizes paid regeneration.
+
+## Proof versus polish
+For reviews, decide what a viewer must inspect: dimensions, material, handling or an evidenced function. Choose stable framing/depth and lighting that make it inspectable; do not assume handheld means honest or tripod means boring. A hero move may support desire, while uninterrupted handling supports proof. Preserve exact product references and avoid inventing an unprovided reverse side. Explain when an insert/cut is needed and whether it weakens continuity of the demonstration.

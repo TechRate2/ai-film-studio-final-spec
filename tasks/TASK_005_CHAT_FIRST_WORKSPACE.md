@@ -38,3 +38,7 @@ Golden coverage: GS08, GS09, GS11.
 - [ ] Exercise vi/en composer, attachment, progress, blocked/error and preview states through persisted API data; reload reconstructs the same project.
 - [ ] Locale-only mutations leave canon, request hashes, voices and output language unchanged; reconnect with duplicate/out-of-order events cannot show false completion.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Language and directing regression acceptance (4.5.0)
+- [ ] Persist/render Studio speech language (zh-CN preset only when unspecified), independent subtitle Off/target and controlled voice/sync choices from studio_audio. Explicit English/Vietnamese chat wins over preset; conflicting explicit locks block before media calls. Reload and UI locale switches preserve choices. Test no-speech without invented dialogue and inherited series language without reset. Follow `spec/09_DIALOGUE_VOICE_LOCALIZATION.md`.
+- [ ] Selecting Vietnamese shows controlled voice cost and optional unchecked lip sync; an unsynchronized visible-mouth plan requires explicit acknowledgment and cannot waive a lip-match constraint. Create pins the shown preference/estimate version; no hidden TTS or sync is triggered by selection/preview.

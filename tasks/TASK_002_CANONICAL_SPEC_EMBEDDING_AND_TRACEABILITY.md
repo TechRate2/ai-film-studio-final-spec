@@ -54,3 +54,6 @@ Read `governance/IMPLEMENTATION_HANDOFF.md`.
 - [ ] Record environment/stack decisions and real baseline tooling commands before TASK-003; pending service/start commands name their owning task rather than claiming they already run.
 - [ ] Establish implementation-side ledger/receipts covering every criterion and current tested revision; distinguish PARTIAL checkpoint commits from COMPLETE acceptance.
 - [ ] Wire canonical validation to SPEC_ROOT and separate app CI to IMPLEMENTATION_ROOT. Demonstrate missing bridge, stale spec pin and failing application check cannot yield an accepted task merely because spec CI is green.
+
+## Runtime route selection
+- [ ] Initialize the deployment route ledger from `spec/46_EFFECTIVE_CAPABILITY_AND_PROVIDER_FALLBACK.md`; record UNSELECTED/UNQUALIFIED honestly and the owner task for each runtime dependency. Do not mark API choices/quality qualified from consumer subscriptions or a provider listing.

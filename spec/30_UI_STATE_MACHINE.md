@@ -27,3 +27,6 @@ Optional drawer can show evidence, CreativeStrategy, shot plan, UniversalVideoSp
 
 ## Projection, not competing persistence
 UI labels are projections of canonical run/job/artifact/acceptance records, not alternate worker states. AUTHORIZED/SUBMITTING/RUNNING project to producing; RECONCILING shows recovery; SUCCEEDED projects to review only after output/QA exists; CANCEL_REQUESTED remains cancelling until confirmation. STALE/BLOCKED/MISSING artifacts override any completed preview label. Persist locale as user preference; render the same resource IDs, amounts and authorization meaning in vi/en. Out-of-order events cannot roll back accepted versions or show false completion. Locale changes and refreshes are read-only for production state.
+
+## Audio-choice state
+Render studio_audio from the persisted ProjectIntent snapshot. Initial unset speech preferences may be proposed while UNDERSTANDING, but PLAN_READY/AUTHORIZED requires resolution=RESOLVED and capability/cost preflight. NEEDS_CONFIRMATION maps to a focused WAITING_USER explanation, never a new DurableJob state. Chinese/English/Vietnamese controls edit output preferences only; switching vi/en UI locale preserves them. Cancelled edits leave accepted versions/current language intact. Stale preview/authorization versions are rejected server-side and refreshed before Create.

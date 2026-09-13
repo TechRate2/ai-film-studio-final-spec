@@ -44,3 +44,6 @@ When every current task criterion passes, update task and requirement evidence a
 
 ## 5. Owner-facing handoff prompt
 Use `prompts/MASTER_IMPLEMENTER_PROMPT.md` after supplying the actual implementation folder and this canonical checkout. Keep the original 46 task packets, safe dependency order and eight phase gates. Do not ask the agent to rewrite the product or digest the whole canonical tree on every step. The goal is demonstrated progress, not an unbounded run or a self-reported percentage.
+
+## Runtime integration choices (4.5.0)
+TASK-002 records the deployment route ledger required by spec/46; initially unselected/unqualified entries are honest. Before enabling each modality, its owner task fills exact LLM/search/analysis/image/video/voice/sync/storage providers and versions, input/language constraints, credentials/entitlement, complete price/liability basis and test commands/evidence. No invented universal provider stack and no consumer-subscription-as-API assumption. Preserve defaults from spec/09/20 in tests rather than letting the coding agent choose them. Read the full architecture once for onboarding when needed; each implementation turn retrieves its exact task dependencies, not every skill/provider into every context.

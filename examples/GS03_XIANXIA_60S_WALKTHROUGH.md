@@ -36,13 +36,15 @@ This is desired creative intent, not a verified callable provider request or evi
 Continue directly from the accepted previous segment.
 No fighting now. The scene becomes still.
 
-Stage 1: Huyền Tôn looks at the Azure Sword rather than Lâm Uyên's face. Lâm Uyên steps forward half a pace. Huyền Tôn asks softly in Vietnamese: “Con vẫn chưa hiểu sao?” Pause.
+Stage 1: Huyền Tôn looks at the Azure Sword rather than Lâm Uyên's face. Lâm Uyên steps forward half a pace. Huyền Tôn pauses and studies Lâm Uyên, leaving the approved speech window clear.
 
-Stage 2: Huyền Tôn raises his eyes and says: “Cửu U Phong Ấn... chính con đã mở.” Lâm Uyên does not answer. Camera slowly pushes toward his reaction. A faint red ancient seal becomes visible beneath the torn collar.
+Stage 2: Huyền Tôn raises his eyes as the accusation lands. Lâm Uyên does not answer. Camera slowly pushes toward his reaction. A faint red ancient seal becomes visible beneath the torn collar.
 
 End state: extreme close-up of the glowing seal reflected in Lâm Uyên's eye.
-No subtitles. No additional dialogue. Keep faces, outfits, injuries, sword and night lighting unchanged.
+Video prompt audio ownership: no intelligible native speech. Controlled voice is compiled separately. No native subtitles. Keep faces, outfits, injuries, sword and night lighting unchanged.
 ```
+
+Approved controlled-voice lines (separate voice compiler input): “Con vẫn chưa hiểu sao?” and “Cửu U Phong Ấn... chính con đã mở.” Under studio-audio-v1, this explicit Vietnamese request stays Vietnamese and uses controlled voice. If the intended visible dialogue requires mouth match, the user selects a qualified costed sync route; otherwise an explicitly acknowledged ordinary-dub limitation is required. Do not silently change this scene into off-screen narration.
 
 ## 7. Episode commit
 After final acceptance, commit: master alive, seal missing, accusation heard but not necessarily believed, outfit/injury state, sword ownership, destroyed hall and cliffhanger. Episode 2 retrieves this canon rather than re-reading entire chat history.

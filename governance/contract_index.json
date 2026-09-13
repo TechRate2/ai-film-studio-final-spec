@@ -1,5 +1,5 @@
 {
-  "version": "4.4.2",
+  "version": "4.5.0",
   "counts": {
     "specs": 48,
     "tasks": 46,
@@ -151,7 +151,8 @@
       "specs": [
         "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
         "spec/28_API_AND_EVENT_CONTRACTS.md",
-        "spec/30_UI_STATE_MACHINE.md"
+        "spec/30_UI_STATE_MACHINE.md",
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md"
       ],
       "schemas": [
         "schemas/project_intent.schema.json",
@@ -469,7 +470,8 @@
       ],
       "schemas": [
         "schemas/dialogue_scene.schema.json",
-        "schemas/voice_profile.schema.json"
+        "schemas/voice_profile.schema.json",
+        "schemas/project_intent.schema.json"
       ],
       "requirements": [
         "R-008"
@@ -698,12 +700,14 @@
       "specs": [
         "spec/14_UNIVERSAL_VIDEO_SPEC.md",
         "spec/15_MODEL_INTELLIGENCE_AND_PROMPT_COMPILERS.md",
-        "spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md"
+        "spec/31_SEEDANCE_PRODUCTION_PLAYBOOK.md",
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md"
       ],
       "schemas": [
         "schemas/universal_video_spec.schema.json",
         "schemas/model_profile.schema.json",
-        "schemas/reference_binding.schema.json"
+        "schemas/reference_binding.schema.json",
+        "schemas/project_intent.schema.json"
       ],
       "requirements": [
         "R-017",
@@ -979,7 +983,8 @@
         "schemas/voice_profile.schema.json",
         "schemas/composition_timeline.schema.json",
         "schemas/final_master.schema.json",
-        "schemas/qa_report.schema.json"
+        "schemas/qa_report.schema.json",
+        "schemas/project_intent.schema.json"
       ],
       "requirements": [
         "R-051",
@@ -1081,11 +1086,13 @@
       "specs": [
         "spec/20_CHAT_FIRST_WORKSPACE_UX.md",
         "spec/28_API_AND_EVENT_CONTRACTS.md",
-        "spec/30_UI_STATE_MACHINE.md"
+        "spec/30_UI_STATE_MACHINE.md",
+        "spec/09_DIALOGUE_VOICE_LOCALIZATION.md"
       ],
       "schemas": [
         "schemas/event_envelope.schema.json",
-        "schemas/revision_request.schema.json"
+        "schemas/revision_request.schema.json",
+        "schemas/project_intent.schema.json"
       ],
       "requirements": [
         "R-023",
@@ -1441,6 +1448,50 @@
           "keyword": "const"
         }
       ]
+    },
+    {
+      "key": "studio_default_dialogue_language",
+      "spec": "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/project_intent.schema.json",
+          "pointer": "/properties/studio_audio/properties/dialogue_language",
+          "keyword": "default"
+        }
+      ]
+    },
+    {
+      "key": "studio_default_subtitle_language",
+      "spec": "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/project_intent.schema.json",
+          "pointer": "/properties/studio_audio/properties/subtitle_language",
+          "keyword": "default"
+        }
+      ]
+    },
+    {
+      "key": "studio_lip_sync_default",
+      "spec": "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/project_intent.schema.json",
+          "pointer": "/properties/studio_audio/properties/lip_sync_requested",
+          "keyword": "default"
+        }
+      ]
+    },
+    {
+      "key": "studio_audio_policy_version",
+      "spec": "spec/09_DIALOGUE_VOICE_LOCALIZATION.md",
+      "targets": [
+        {
+          "schema": "schemas/project_intent.schema.json",
+          "pointer": "/properties/studio_audio/properties/policy_version",
+          "keyword": "const"
+        }
+      ]
     }
   ],
   "required_fields": {
@@ -1759,7 +1810,8 @@
     "governance/IMPLEMENTATION_HANDOFF.md",
     "docs/adr/ADR_0003_IMPLEMENTATION_HANDOFF.md",
     "evidence/IMPLEMENTATION_HANDOFF_REVIEW.md",
-    "docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md"
+    "docs/adr/ADR_0004_QUALITY_AND_ROUTE_PREFLIGHT.md",
+    "docs/adr/ADR_0005_STUDIO_LANGUAGE_AND_VOICE_CHOICES.md"
   ],
   "fixture_ids": [
     "paid-unknown-reserved",
@@ -1887,7 +1939,24 @@
     "qa-minor-warning",
     "strategy-cost-negative",
     "strategy-cost-zero",
-    "strategy-cost-unknown"
+    "strategy-cost-unknown",
+    "studio-audio-chinese-default",
+    "studio-audio-explicit-english",
+    "studio-audio-vietnamese-controlled",
+    "studio-audio-vietnamese-sync",
+    "studio-audio-no-speech",
+    "studio-audio-conflict-review",
+    "studio-audio-unsynced-ack",
+    "studio-audio-rejects-native-vi",
+    "studio-audio-rejects-native-vi-subtag",
+    "studio-audio-rejects-silent-voice",
+    "studio-audio-rejects-native-extra-sync",
+    "studio-audio-rejects-narration-sync",
+    "studio-audio-rejects-false-resolved",
+    "studio-audio-rejects-default-english",
+    "studio-audio-rejects-incomplete",
+    "studio-audio-rejects-localization",
+    "studio-audio-rejects-sync-and-mismatch"
   ],
   "release_gates": {
     "CORE": {

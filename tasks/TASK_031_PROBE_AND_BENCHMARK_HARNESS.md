@@ -35,3 +35,6 @@ Golden coverage: GS03, GS04, GS14, GS15.
 - [ ] Version samples with exact input/output/route/profile/compiler/cost and human/automated rubric results; failed billed samples remain in aggregate cost.
 - [ ] No sample or zero accepted seconds yields unknown/null economics, not perfect acceptance. New paid samples require planned authorization; CI does not call providers.
 - [ ] For each criterion, record exact implementation/report path, test/assertion, result and applicable Golden subsection. Missing evidence is PARTIAL/BLOCKED, never DONE. Earlier tasks own their deterministic tests immediately; later integration results remain explicitly pending until their gate. No paid provider call is part of ordinary CI.
+
+## Deployment route proof
+- [ ] Before enabling a Studio voice/video/sync route, record native/controlled language, speaker/face arrangement, duration, speech suppression or separation, requested sync, accepted outputs and all paid costs. Distinguish docs-only exposure from measured samples. Chinese preference and Vietnamese controlled policy do not mark quality tests passed.
