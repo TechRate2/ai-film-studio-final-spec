@@ -29,7 +29,9 @@ Store world/faction/power-system, the hidden truth that Lâm Uyên is tied to th
 ## 5. Blocking example for final segment
 Huyền Tôn first looks at Lâm Uyên's sword, not his face. Lâm Uyên takes half a step forward. Huyền Tôn raises his eyes only before the reveal. Pause. Camera slowly pushes into Lâm Uyên reaction. Red seal appears beneath torn collar.
 
-## 6. Compiled prompt excerpt
+## 6. Illustrative prompt intent excerpt
+This is desired creative intent, not a verified callable provider request or evidence of native Vietnamese dialogue support. Apply `spec/09_DIALOGUE_VOICE_LOCALIZATION.md`, `spec/14_UNIVERSAL_VIDEO_SPEC.md` and exact-route EffectiveCapability before compilation/submission. If native Vietnamese is UNKNOWN or insufficient, propose a qualified controlled-voice route with its complete incremental cost and any visible-mouth constraints. Never silently replace the requested dialogue language. Continuation wording must match the actual endpoint operation and parameters.
+
 ```text
 Continue directly from the accepted previous segment.
 No fighting now. The scene becomes still.
